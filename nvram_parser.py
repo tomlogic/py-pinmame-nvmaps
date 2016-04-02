@@ -282,10 +282,13 @@ class ParseNVRAM(object):
 			# ignore scores with blank initials
 			if initials != '   ':
 				if score.has_key('score'):
-					scores.append('%s: %s %s' % (label, initials,
-						self.format(score['score'])))
+					formatted_score = '%s: %s %s' % (label, initials,
+						self.format(score['score']))
 				else:
-					scores.append('%s: %s' % (label, initials))
+					formatted_score = '%s: %s' % (label, initials)
+				if score.has_key('timestamp'):
+				    formatted_score += ' at ' + self.format(score['timestamp'])
+				scores.append(formatted_score)
 		return scores
 	
 	def last_played(self):
