@@ -274,6 +274,8 @@ class ParseNVRAM(object):
 		scores = []
 		for score in self.nv_json[section]:
 			label = score['label']
+			if label.startswith('_'):
+			    continue
 			if short_labels and score.has_key('short_label'):
 				label = score['short_label']
 			initials = self.format(score['initials'])
@@ -318,10 +320,14 @@ def main():
 	for section in ['audits', 'adjustments']:
 		if p.nv_json.has_key(section):
 			for group in sorted(p.nv_json[section].keys()):
+				if group.startswith('_'):
+				    continue
 				print group
 				print '-' * len(group)
 				audit_group = p.nv_json[section][group]
 				for audit in sorted(audit_group.keys()):
+					if audit.startswith('_'):
+						continue
 					dict = audit_group[audit]
 					print audit + ' ' + dict['label'] + ': ' + p.format(dict)
 				print
