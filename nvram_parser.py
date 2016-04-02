@@ -349,8 +349,8 @@ def main():
 	
 	# Verify all checksums in the file.  Note that we can eventually re-use
 	# that part of the memory map to update checksums if modifying nvram values.
-	p.verify_all_checksum16(verbose = False)
-	p.verify_all_checksum8(verbose = False)	
+	p.verify_all_checksum16(verbose = True)
+	p.verify_all_checksum8(verbose = True)	
 	
 if __name__ == '__main__': main()
 
