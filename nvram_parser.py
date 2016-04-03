@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import json
 import sys
+from datetime import datetime
 
 # Helper class to track whether multi-byte values in nvram file are big-endian
 # (MSB-first) or little-endian (LSB-first).  6809 (WPC) is big-endian.
@@ -127,23 +128,30 @@ class ParseNVRAM(object):
         # can now replace self.nvram[start:end]
         new_bytes = []
         
-        if format == 'bcd':
-            for x in old_bytes:
-                b = value % 100
-                new_bytes.append(b % 10 + 16 * (b / 10))
-                value /= 100
-            if self.byteorder == Endian.BIG:
-                new_bytes = reversed(new_bytes)
-        elif format == 'int' or format == 'enum':
-            for x in old_bytes:
-                b = value % 256
-                new_bytes.append(b)
-                value /= 256
-            if self.byteorder == Endian.BIG:
-                new_bytes = reversed(new_bytes)
-        elif format == 'ch':
+        if format == 'ch':
             assert type(value) is str and len(value) == len(old_bytes)
             new_bytes = list(value)
+        elif format == 'wpc_rtc':
+            if type(value) is datetime:
+                # for day of week 1=Sunday, 7=Saturday
+                # isoweekday() returns 1=Monday 7=Sunday
+                new_bytes = [value.year / 256, value.year % 256,
+                    value.month, value.day, value.isoweekday() % 7 + 1,
+                    value.hour, value.minute]
+        else:   # all formats where byte order applies
+            if format == 'bcd':
+                for x in old_bytes:
+                    b = value % 100
+                    new_bytes.append(b % 10 + 16 * (b / 10))
+                    value /= 100
+            elif format == 'int' or format == 'enum':
+                for x in old_bytes:
+                    b = value % 256
+                    new_bytes.append(b)
+                    value /= 256
+                    
+            if self.byteorder == Endian.BIG:
+                new_bytes = reversed(new_bytes)
             
         self.nvram[start:end] = bytearray(new_bytes)
     
