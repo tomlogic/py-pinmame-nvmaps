@@ -39,9 +39,8 @@ class ParseNVRAM(object):
         json_fh = open(json_path, 'r')
         self.nv_json = json.load(json_fh)
         json_fh.close()
-        if (self.nv_json.has_key('_endian') and
-            self.nv_json['_endian'] == 'little'):
-                self.byteorder = Endian.LITTLE
+        if self.nv_json.get('_endian') == 'little':
+            self.byteorder = Endian.LITTLE
         
     def load_nvram(self, nvram_path):
         nv_fh = open(nvram_path, 'rb')
@@ -72,17 +71,15 @@ class ParseNVRAM(object):
     # 'start' to 'start + length - 1' bytes (inclusive)
     # or the single byte at 'start' if 'end' and 'length' are not specified
     def get_bytes(self, dict):
-        start = 0
-        if dict.has_key('start'):
-            start = self.to_int(dict['start'])
+        start = self.to_int(dict.get('start', '0'))
         end = start
-        if dict.has_key('length'):
+        if 'length' in dict:
             length = self.to_int(dict['length'])
             if length <= 0:
                 raise AssertionError('invalid length (%s); must be > 0'
                     % (dict['length']))
             end = start + length - 1
-        elif dict.has_key('end'):
+        elif 'end' in dict:
             end = self.to_int(dict['end'])
             if end < start:
                 raise AssertionError('end (%s) is less than start (%s)'
@@ -96,7 +93,7 @@ class ParseNVRAM(object):
     # encodings.
     def get_value(self, dict):
         value = None
-        if dict.has_key('encoding'):
+        if 'encoding' in dict:
             format = dict['encoding']
             bytes = self.get_bytes(dict)
             if self.byteorder == Endian.BIG:
@@ -116,10 +113,8 @@ class ParseNVRAM(object):
                 value = bytes[0]
                     
             if value is not None:
-                if dict.has_key('scale'):
-                    value *= self.to_int(dict['scale'])
-                if dict.has_key('offset'):
-                    value += self.to_int(dict['offset'])
+                value *= self.to_int(dict.get('scale', '1'))
+                value += self.to_int(dict.get('offset', '0'))
         
         return value
     
@@ -156,27 +151,23 @@ class ParseNVRAM(object):
     def format_value(self, dict, value):
         # `special_values` contains strings to use in place of `value`
         # commonly used at the low end of a range for off/disabled
-        if dict.has_key('special_values'):
-            if dict['special_values'].has_key(str(value)):
-                return dict['special_values'][str(value)]
+        if 'special_values' in dict and str(value) in dict['special_values']:
+            return dict['special_values'][str(value)]
         
-        if dict.has_key('units'):
-            if dict['units'] == 'seconds':
-                m, s = divmod(value, 60)
-                h, m = divmod(m, 60)
-                return "%d:%02d:%02d" % (h, m, s)
-            elif dict['units'] == 'minutes':
-                return "%d:%02d:00" % divmod(value, 60)
-        suffix = ''
-        if dict.has_key('suffix'):
-            suffix = dict['suffix']
-        return self.format_score(value) + suffix
+        units = dict.get('units')
+        if units == 'seconds':
+            m, s = divmod(value, 60)
+            h, m = divmod(m, 60)
+            return "%d:%02d:%02d" % (h, m, s)
+        elif units == 'minutes':
+            return "%d:%02d:00" % divmod(value, 60)
+        return self.format_score(value) + dict.get('suffix', '')
     
     # format bytes from 'nvram' depending on members of 'dict'
     # uses 'encoding' to specify format
     # 'start' and either 'end' or 'length' for range of bytes
     def format(self, dict):
-        if not dict.has_key('encoding'):
+        if dict is None or 'encoding' not in dict:
             return None
         format = dict['encoding']
         value = self.get_value(dict)
@@ -202,9 +193,7 @@ class ParseNVRAM(object):
         retval = True
         bytes = self.get_bytes(dict)
         offset = self.to_int(dict['start'])
-        grouping = len(bytes)
-        if dict.has_key('groupings'):
-            grouping = dict['groupings']
+        grouping = dict.get('groupings', len(bytes))
         count = 0
         sum = 0
         for b in bytes:
@@ -226,9 +215,8 @@ class ParseNVRAM(object):
     
     def verify_all_checksum8(self, verbose = False, fix = False):
         retval = True
-        if self.nv_json.has_key('checksum8'):
-            for c in self.nv_json['checksum8']:
-                retval &= self.verify_checksum8(c, verbose, fix)
+        for c in self.nv_json.get('checksum8', []):
+            retval &= self.verify_checksum8(c, verbose, fix)
         return retval
     
     def verify_checksum16(self, dict, verbose = False, fix = False):
@@ -255,46 +243,42 @@ class ParseNVRAM(object):
     
     def verify_all_checksum16(self, verbose = False, fix = False):
         retval = True
-        if self.nv_json.has_key('checksum16'):
-            for c in self.nv_json['checksum16']:
-                retval &= self.verify_checksum16(c, verbose, fix)
+        for c in self.nv_json.get('checksum16', []):
+            retval &= self.verify_checksum16(c, verbose, fix)
         return retval
     
     def last_game_scores(self):
         scores = []
-        if self.nv_json.has_key('last_game'):
-            for p in self.nv_json['last_game']:
-                s = self.format(p)
-                if s != '0':
-                    scores.append(s)
+        for p in self.nv_json.get('last_game', []):
+            s = self.format(p)
+            if s != '0':
+                scores.append(s)
         return scores
     
     # section should be 'high_scores' or 'mode_champions'
     def high_scores(self, section = 'high_scores', short_labels = False):
         scores = []
-        for score in self.nv_json[section]:
-            label = score['label']
+        for score in self.nv_json.get(section, []):
+            label = score.get('label', '')
             if label.startswith('_'):
                 continue
-            if short_labels and score.has_key('short_label'):
-                label = score['short_label']
+            if short_labels:
+                label = score.get('short_label', label)
             initials = self.format(score['initials'])
             # ignore scores with blank initials
-            if initials != '   ':
-                if score.has_key('score'):
+            if initials is not None and initials != '   ':
+                if 'score' in score:
                     formatted_score = '%s: %s %s' % (label, initials,
                         self.format(score['score']))
                 else:
                     formatted_score = '%s: %s' % (label, initials)
-                if score.has_key('timestamp'):
+                if 'timestamp' in score:
                     formatted_score += ' at ' + self.format(score['timestamp'])
                 scores.append(formatted_score)
         return scores
     
     def last_played(self):
-        if not self.nv_json.has_key('last_played'):
-            return None
-        return self.format(self.nv_json['last_played'])
+        return self.format(self.nv_json.get('last_played'))
 
 def print_usage():
     print("Usage: %s <json_file> <nvram_file>" % (sys.argv[0]))
@@ -321,7 +305,7 @@ def main():
     p = ParseNVRAM(nv_json, nvram)
     
     for section in ['audits', 'adjustments']:
-        if p.nv_json.has_key(section):
+        if section in p.nv_json:
             for group in sorted(p.nv_json[section].keys()):
                 if group.startswith('_'):
                     continue
@@ -336,14 +320,14 @@ def main():
                 print
     
     for section in ['high_scores', 'mode_champions']:
-        if p.nv_json.has_key(section):
-            for score in p.high_scores(section, short_labels = True):
-                print score
+        for score in p.high_scores(section, short_labels = True):
+            print score
     
     print
     print "---Last Game---"
-    if p.nv_json.has_key('last_played'):
-        print p.format(p.nv_json['last_played'])
+    last_played = p.last_played()
+    if last_played is not None:
+        print last_played
     for s in p.last_game_scores():
         print s
     
