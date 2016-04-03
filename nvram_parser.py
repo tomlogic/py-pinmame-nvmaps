@@ -242,8 +242,8 @@ class ParseNVRAM(object):
 		calc_sum = 0xFFFF - (sum(bytes) & 0xFFFF)
 		if calc_sum != stored_sum:
 			if verbose:
-				print "checksum16 at %s: 0x%04X != 0x%04X" % (dict['start'],
-					calc_sum, stored_sum)
+				print "checksum16 at %s: 0x%04X != 0x%04X %s" % (dict['start'],
+					calc_sum, stored_sum, dict.get('label', ''))
 			if fix:
 				if self.byteorder == Endian.BIG:
 					self.nvram[checksum_offset:checksum_offset + 2] = [
