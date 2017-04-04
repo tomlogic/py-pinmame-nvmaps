@@ -194,7 +194,7 @@ class ParseNVRAM(object):
         if format == 'ch':
             result = ''
             if packed:
-                result = str(self.get_bytes(dict))
+                result = self.get_bytes(dict).decode('utf-8')
             else:
                 bytes = self.get_bytes(dict)
                 while bytes:
@@ -224,7 +224,7 @@ class ParseNVRAM(object):
                 if checksum != b:
                     if verbose:
                         retval = False
-                        print ("%u bytes at 0x%04X checksum8 0x%02X != 0x%02X"
+                        print("%u bytes at 0x%04X checksum8 0x%02X != 0x%02X"
                             % (grouping, offset - count, checksum, b))
                     if fix:
                         self.nvram[offset] = checksum
@@ -252,8 +252,8 @@ class ParseNVRAM(object):
         calc_sum = 0xFFFF - (sum(bytes) & 0xFFFF)
         if calc_sum != stored_sum:
             if verbose:
-                print "checksum16 at %s: 0x%04X != 0x%04X %s" % (dict['start'],
-                    calc_sum, stored_sum, dict.get('label', ''))
+                print("checksum16 at %s: 0x%04X != 0x%04X %s" % (dict['start'],
+                    calc_sum, stored_sum, dict.get('label', '')))
             if fix:
                 if self.byteorder == Endian.BIG:
                     self.nvram[checksum_offset:checksum_offset + 2] = [
@@ -331,33 +331,33 @@ def main():
             for group in sorted(p.nv_json[section].keys()):
                 if group.startswith('_'):
                     continue
-                print group
-                print '-' * len(group)
+                print(group)
+                print('-' * len(group))
                 audit_group = p.nv_json[section][group]
                 if isinstance(audit_group, list):
                     for audit in audit_group:
-                        print audit['label'] + ': ' + p.format(audit)
+                        print(audit['label'] + ': ' + p.format(audit))
                 elif isinstance(audit_group, dict):
                     for audit_key in sorted(audit_group.keys()):
                         if audit_key.startswith('_'):
                             continue
                         audit = audit_group[audit_key]
-                        print audit_key + ' ' + audit['label'] + ': ' + p.format(audit)
+                        print(audit_key + ' ' + audit['label'] + ': ' + p.format(audit))
                 else:
-                    print "Can't process: ", audit_group
-                print
+                    print("Can't process: ", audit_group)
+                print()
     
     for section in ['high_scores', 'mode_champions']:
         for score in p.high_scores(section, short_labels = True):
-            print score
+            print(score)
     
-    print
-    print "---Last Game---"
+    print()
+    print("---Last Game---")
     last_played = p.last_played()
     if last_played is not None:
-        print last_played
+        print(last_played)
     for s in p.last_game_scores():
-        print s
+        print(s)
     
     # Verify all checksums in the file.  Note that we can eventually re-use
     # that part of the memory map to update checksums if modifying nvram values.
