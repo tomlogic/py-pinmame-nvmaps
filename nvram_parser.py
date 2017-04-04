@@ -334,11 +334,17 @@ def main():
                 print group
                 print '-' * len(group)
                 audit_group = p.nv_json[section][group]
-                for audit in sorted(audit_group.keys()):
-                    if audit.startswith('_'):
-                        continue
-                    dict = audit_group[audit]
-                    print audit + ' ' + dict['label'] + ': ' + p.format(dict)
+                if isinstance(audit_group, list):
+                    for audit in audit_group:
+                        print audit['label'] + ': ' + p.format(audit)
+                elif isinstance(audit_group, dict):
+                    for audit_key in sorted(audit_group.keys()):
+                        if audit_key.startswith('_'):
+                            continue
+                        audit = audit_group[audit_key]
+                        print audit_key + ' ' + audit['label'] + ': ' + p.format(audit)
+                else:
+                    print "Can't process: ", audit_group
                 print
     
     for section in ['high_scores', 'mode_champions']:
