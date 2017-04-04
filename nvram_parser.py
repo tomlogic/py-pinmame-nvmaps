@@ -199,6 +199,8 @@ class ParseNVRAM(object):
                 bytes = self.get_bytes(dict)
                 while bytes:
                     result += chr((bytes.pop(0) & 0x0F) * 16 + (bytes.pop(0) & 0x0F))
+            if result == dict.get('default', '   '):
+                return None
             return result
         elif format == 'wpc_rtc':
             # day of week is Sunday to Saturday indexed by [bytes[4] - 1]
@@ -286,7 +288,7 @@ class ParseNVRAM(object):
                 label = score.get('short_label', label)
             initials = self.format(score['initials'])
             # ignore scores with blank initials
-            if initials is not None and initials != '   ':
+            if initials is not None:
                 if 'score' in score:
                     formatted_score = '%s: %s %s' % (label, initials,
                         self.format(score['score']))
