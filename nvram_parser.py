@@ -273,7 +273,7 @@ class ParseNVRAM(object):
         scores = []
         for p in self.nv_json.get('last_game', []):
             s = self.format(p)
-            if s != '0':
+            if s != '0' or not scores:
                 scores.append(s)
         return scores
     
@@ -286,7 +286,7 @@ class ParseNVRAM(object):
                 continue
             if short_labels:
                 label = score.get('short_label', label)
-            initials = self.format(score['initials'])
+            initials = self.format(score.get('initials'))
             # ignore scores with blank initials
             if initials is not None:
                 if 'score' in score:
@@ -342,7 +342,10 @@ def main():
                         if audit_key.startswith('_'):
                             continue
                         audit = audit_group[audit_key]
-                        print(audit_key + ' ' + audit['label'] + ': ' + p.format(audit))
+                        value = p.format(audit)
+                        if value is None:
+                        	value = audit.get('default', '')
+                        print(audit_key + ' ' + audit['label'] + ': ' + value)
                 else:
                     print("Can't process: ", audit_group)
                 print('')
