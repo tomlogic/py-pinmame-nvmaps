@@ -345,13 +345,13 @@ def main():
                         print(audit_key + ' ' + audit['label'] + ': ' + p.format(audit))
                 else:
                     print("Can't process: ", audit_group)
-                print()
+                print('')
     
     for section in ['high_scores', 'mode_champions']:
         for score in p.high_scores(section, short_labels = True):
             print(score)
     
-    print()
+    print('')
     print("---Last Game---")
     last_played = p.last_played()
     if last_played is not None:
