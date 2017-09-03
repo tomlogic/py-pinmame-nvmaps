@@ -194,7 +194,7 @@ class ParseNVRAM(object):
         if format == 'ch':
             result = ''
             if packed:
-                result = self.get_bytes(dict).decode('utf-8')
+                result = self.get_bytes(dict).decode('latin-1')
             else:
                 bytes = self.get_bytes(dict)
                 while bytes:
