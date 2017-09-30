@@ -35,39 +35,39 @@ class ParseNVRAM(object):
         self.nv_json = nv_json
         self.nvram = nvram
         self.byteorder = Endian.BIG  # default setting
-    
+
     def load_json(self, json_path):
         json_fh = open(json_path, 'r')
         self.nv_json = json.load(json_fh)
         json_fh.close()
         if self.nv_json.get('_endian') == 'little':
             self.byteorder = Endian.LITTLE
-        
+
     def load_nvram(self, nvram_path):
         nv_fh = open(nvram_path, 'rb')
         self.nvram = bytearray(nv_fh.read())
         nv_fh.close()
-    
+
     # Format large numbers with thousands separators (',' or '.').  Uses
     # locale setting in Python 2.7 or later, manually uses ',' for Python 2.6.
     def format_score(self, number):
         if sys.version_info >= (2,7,0):
             return '{0:,}'.format(number)
-        
+
         s = '%d' % number
         groups = []
         while s and s[-1].isdigit():
             groups.append(s[-3:])
             s = s[:-3]
         return s + ','.join(reversed(groups))
-    
+
     # Return 'v' if already an int, otherwise assume string and convert
     # with a base of '0' (which handles leading 0 as octal and 0x as hex)
     def to_int(self, v):
         if type(v) is int:
             return v
         return int(v, 0)
-        
+
     # return 'start' to 'end' bytes (inclusive) from 'self.nvram', or
     # 'start' to 'start + length - 1' bytes (inclusive)
     # or the single byte at 'start' if 'end' and 'length' are not specified
@@ -76,7 +76,7 @@ class ParseNVRAM(object):
         if 'offsets' in dict:
             return bytearray(map((lambda offset: self.nvram[self.to_int(offset)]),
                 dict['offsets']))
-        
+
         start = self.to_int(dict.get('start', '0'))
         end = start
         if 'length' in dict:
@@ -90,9 +90,9 @@ class ParseNVRAM(object):
             if end < start:
                 raise AssertionError('end (%s) is less than start (%s)'
                     % (dict['end'], dict['start']))
-        
+
         return self.nvram[start:end + 1]
-    
+
     # same as get_bytes_unmasked() but apply the mask in 'mask' if present
     def get_bytes(self, dict):
         bytes = self.get_bytes_unmasked(dict)
@@ -100,7 +100,7 @@ class ParseNVRAM(object):
             mask = self.to_int(dict['mask'])
             return bytearray(map((lambda b: b & mask), bytes))
         return bytes
-    
+
     # Return an integer value from one or more bytes in memory
     # handles multi-byte integers (int), binary coded decimal (bcd) and
     # single-byte enumerated (enum) values.  Returns None for unsupported
@@ -115,7 +115,7 @@ class ParseNVRAM(object):
                 byte_iter = iter(bytes)
             else:
                 byte_iter = bytes.reversed()
-            
+
             if format == 'bcd':
                 value = 0
                 for b in byte_iter:
@@ -129,13 +129,13 @@ class ParseNVRAM(object):
                     value = value * 256 + b
             elif format == 'enum':
                 value = bytes[0]
-                    
+
             if value is not None:
                 value *= self.to_int(dict.get('scale', '1'))
                 value += self.to_int(dict.get('offset', '0'))
-        
+
         return value
-    
+
     # replace a value stored in self.nvram[]
     def set_value(self, dict, value):
         format = dict['encoding']
@@ -144,7 +144,7 @@ class ParseNVRAM(object):
         end = start + len(old_bytes)
         # can now replace self.nvram[start:end]
         new_bytes = []
-        
+
         if format == 'ch':
             assert type(value) is str and len(value) == len(old_bytes)
             new_bytes = list(value)
@@ -166,19 +166,19 @@ class ParseNVRAM(object):
                     b = value % 256
                     new_bytes.append(b)
                     value /= 256
-                    
+
             if self.byteorder == Endian.BIG:
                 new_bytes = reversed(new_bytes)
-            
+
         self.nvram[start:end] = bytearray(new_bytes)
-    
+
     # format a multi-byte integer using options in 'dict'
     def format_value(self, dict, value):
         # `special_values` contains strings to use in place of `value`
         # commonly used at the low end of a range for off/disabled
         if 'special_values' in dict and str(value) in dict['special_values']:
             return dict['special_values'][str(value)]
-        
+
         units = dict.get('units')
         if units == 'seconds':
             m, s = divmod(value, 60)
@@ -187,7 +187,7 @@ class ParseNVRAM(object):
         elif units == 'minutes':
             return "%d:%02d:00" % divmod(value, 60)
         return self.format_score(value) + dict.get('suffix', '')
-    
+
     # format bytes from 'nvram' depending on members of 'dict'
     # uses 'encoding' to specify format
     # 'start' and either 'end' or 'length' for range of bytes
@@ -223,7 +223,7 @@ class ParseNVRAM(object):
                 bytes[2], bytes[3],
                 bytes[5], bytes[6])
         return '[?' + format + '?]'
-    
+
     def verify_checksum8(self, dict, verbose = False, fix = False):
         retval = True
         bytes = self.get_bytes(dict)
@@ -247,13 +247,13 @@ class ParseNVRAM(object):
                 count += 1
             offset += 1
         return retval
-    
+
     def verify_all_checksum8(self, verbose = False, fix = False):
         retval = True
         for c in self.nv_json.get('checksum8', []):
             retval &= self.verify_checksum8(c, verbose, fix)
         return retval
-    
+
     def verify_checksum16(self, dict, verbose = False, fix = False):
         bytes = self.get_bytes(dict)
         # pop last two bytes as stored checksum16
@@ -275,13 +275,13 @@ class ParseNVRAM(object):
                     self.nvram[checksum_offset:checksum_offset + 2] = [
                         calc_sum % 256, calc_sum / 256]
         return calc_sum == stored_sum
-    
+
     def verify_all_checksum16(self, verbose = False, fix = False):
         retval = True
         for c in self.nv_json.get('checksum16', []):
             retval &= self.verify_checksum16(c, verbose, fix)
         return retval
-    
+
     def last_game_scores(self):
         scores = []
         for p in self.nv_json.get('last_game', []):
@@ -289,7 +289,7 @@ class ParseNVRAM(object):
             if s != '0' or not scores:
                 scores.append(s)
         return scores
-    
+
     # section should be 'high_scores' or 'mode_champions'
     def high_scores(self, section = 'high_scores', short_labels = False):
         scores = []
@@ -311,13 +311,13 @@ class ParseNVRAM(object):
                     formatted_score += ' at ' + self.format(score['timestamp'])
                 scores.append(formatted_score)
         return scores
-    
+
     def last_played(self):
         return self.format(self.nv_json.get('last_played'))
 
 def print_usage():
     print("Usage: %s <json_file> <nvram_file>" % (sys.argv[0]))
-    
+
 def main():
     if len(sys.argv) < 3:
         print_usage()
@@ -328,17 +328,17 @@ def main():
         if jsonpath.find('.json', 0) == -1 or nvpath.find('.nv', 0) == -1:
             print_usage()
             return
-    
+
     json_fh = open(jsonpath, 'r')
     nv_json = json.load(json_fh)
     json_fh.close()
-    
+
     nv_fh = open(nvpath, 'rb')
     nvram = bytearray(nv_fh.read())
     nv_fh.close()
-    
+
     p = ParseNVRAM(nv_json, nvram)
-    
+
     for section in ['audits', 'adjustments']:
         if section in p.nv_json:
             for group in sorted(p.nv_json[section].keys()):
@@ -357,16 +357,16 @@ def main():
                         audit = audit_group[audit_key]
                         value = p.format(audit)
                         if value is None:
-                        	value = audit.get('default', '')
+                            value = audit.get('default', '')
                         print(audit_key + ' ' + audit['label'] + ': ' + value)
                 else:
                     print("Can't process: ", audit_group)
                 print('')
-    
+
     for section in ['high_scores', 'mode_champions']:
         for score in p.high_scores(section, short_labels = True):
             print(score)
-    
+
     print('')
     print("---Last Game---")
     last_played = p.last_played()
@@ -374,11 +374,11 @@ def main():
         print(last_played)
     for s in p.last_game_scores():
         print(s)
-    
+
     # Verify all checksums in the file.  Note that we can eventually re-use
     # that part of the memory map to update checksums if modifying nvram values.
     p.verify_all_checksum16(verbose = True)
-    p.verify_all_checksum8(verbose = True)	
-    
+    p.verify_all_checksum8(verbose = True)
+
 if __name__ == '__main__': main()
 
