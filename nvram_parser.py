@@ -71,7 +71,12 @@ class ParseNVRAM(object):
     # return 'start' to 'end' bytes (inclusive) from 'self.nvram', or
     # 'start' to 'start + length - 1' bytes (inclusive)
     # or the single byte at 'start' if 'end' and 'length' are not specified
-    def get_bytes(self, dict):
+    # or the bytes from offsets in a list called 'offsets'
+    def get_bytes_unmasked(self, dict):
+        if 'offsets' in dict:
+            return bytearray(map((lambda offset: self.nvram[self.to_int(offset)]),
+                dict['offsets']))
+        
         start = self.to_int(dict.get('start', '0'))
         end = start
         if 'length' in dict:
@@ -87,6 +92,14 @@ class ParseNVRAM(object):
                     % (dict['end'], dict['start']))
         
         return self.nvram[start:end + 1]
+    
+    # same as get_bytes_unmasked() but apply the mask in 'mask' if present
+    def get_bytes(self, dict):
+        bytes = self.get_bytes_unmasked(dict)
+        if 'mask' in dict:
+            mask = self.to_int(dict['mask'])
+            return bytearray(map((lambda b: b & mask), bytes))
+        return bytes
     
     # Return an integer value from one or more bytes in memory
     # handles multi-byte integers (int), binary coded decimal (bcd) and
