@@ -34,14 +34,19 @@ class ParseNVRAM(object):
     def __init__(self, nv_json, nvram):
         self.nv_json = nv_json
         self.nvram = nvram
-        self.byteorder = Endian.BIG  # default setting
+        self.set_byteorder()
+
+    def set_byteorder(self):
+        if self.nv_json.get('_endian') == 'little':
+            self.byteorder = Endian.LITTLE
+        else:
+            self.byteorder = Endian.BIG  # default setting
 
     def load_json(self, json_path):
         json_fh = open(json_path, 'r')
         self.nv_json = json.load(json_fh)
         json_fh.close()
-        if self.nv_json.get('_endian') == 'little':
-            self.byteorder = Endian.LITTLE
+        self.set_byteorder()
 
     def load_nvram(self, nvram_path):
         nv_fh = open(nvram_path, 'rb')
@@ -111,21 +116,19 @@ class ParseNVRAM(object):
             format = dict['encoding']
             bytes = self.get_bytes(dict)
             packed = dict.get('packed', True)
-            if self.byteorder == Endian.BIG:
-                byte_iter = iter(bytes)
-            else:
-                byte_iter = bytes.reversed()
+            if self.byteorder == Endian.LITTLE:
+                bytes.reverse()
 
             if format == 'bcd':
                 value = 0
-                for b in byte_iter:
+                for b in bytes:
                     if packed:
                         value = value * 100 + (b >> 4) * 10 + (b & 0x0F)
                     else:
                         value = value * 10 + (b & 0x0F)
             elif format == 'int':
                 value = 0
-                for b in byte_iter:
+                for b in bytes:
                     value = value * 256 + b
             elif format == 'enum':
                 value = bytes[0]
