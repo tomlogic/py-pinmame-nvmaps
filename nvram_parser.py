@@ -73,15 +73,12 @@ class ParseNVRAM(object):
             return v
         return int(v, 0)
 
-    # return 'start' to 'end' bytes (inclusive) from 'self.nvram', or
-    # 'start' to 'start + length - 1' bytes (inclusive)
-    # or the single byte at 'start' if 'end' and 'length' are not specified
-    # or the bytes from offsets in a list called 'offsets'
-    def get_bytes_unmasked(self, dict):
+    # offsets for a given dict
+    def offsets(self, dict):
         if 'offsets' in dict:
-            return bytearray(map((lambda offset: self.nvram[self.to_int(offset)]),
-                dict['offsets']))
-
+            return map((lambda offset: self.to_int(offset)),
+                dict['offsets'])
+                
         start = self.to_int(dict.get('start', '0'))
         end = start
         if 'length' in dict:
@@ -96,7 +93,15 @@ class ParseNVRAM(object):
                 raise AssertionError('end (%s) is less than start (%s)'
                     % (dict['end'], dict['start']))
 
-        return self.nvram[start:end + 1]
+        return list(range(start, end + 1))
+    
+    # return 'start' to 'end' bytes (inclusive) from 'self.nvram', or
+    # 'start' to 'start + length - 1' bytes (inclusive)
+    # or the single byte at 'start' if 'end' and 'length' are not specified
+    # or the bytes from offsets in a list called 'offsets'
+    def get_bytes_unmasked(self, dict):
+        return bytearray(map((lambda offset: self.nvram[offset]),
+            self.offsets(dict)))
 
     # same as get_bytes_unmasked() but apply the mask in 'mask' if present
     def get_bytes(self, dict):
@@ -318,6 +323,55 @@ class ParseNVRAM(object):
     def last_played(self):
         return self.format(self.nv_json.get('last_played'))
 
+    def dump_audit(self, audit, key=None):
+        value = self.format(audit)
+        if value is None:
+            value = audit.get('default', '')
+        if key:
+            label = key + ' ' + audit['label']
+        else:
+            label = audit['label']
+        print(label + ': ' + value)
+    
+    def dump(self, checksums=True):
+        for section in ['audits', 'adjustments']:
+            if section in self.nv_json:
+                for group in sorted(self.nv_json[section].keys()):
+                    if group.startswith('_'):
+                        continue
+                    print(group)
+                    print('-' * len(group))
+                    audit_group = self.nv_json[section][group]
+                    if isinstance(audit_group, list):
+                        for audit in audit_group:
+                            self.dump_audit(audit)
+                    elif isinstance(audit_group, dict):
+                        for audit_key in sorted(audit_group.keys()):
+                            if audit_key.startswith('_'):
+                                continue
+                            self.dump_audit(audit_group[audit_key], audit_key)
+                    else:
+                        print("Can't process: ", audit_group)
+                    print('')
+
+        for section in ['high_scores', 'mode_champions']:
+            for score in self.high_scores(section, short_labels = True):
+                print(score)
+
+        print('')
+        print("---Last Game---")
+        last_played = self.last_played()
+        if last_played is not None:
+            print(last_played)
+        for s in self.last_game_scores():
+            print(s)
+
+        if checksums:
+            # Verify all checksums in the file.  Note that we can eventually re-use
+            # that part of the memory map to update checksums if modifying nvram values.
+            self.verify_all_checksum16(verbose = True)
+            self.verify_all_checksum8(verbose = True)
+	
 def print_usage():
     print("Usage: %s <json_file> <nvram_file>" % (sys.argv[0]))
 
@@ -341,47 +395,7 @@ def main():
     nv_fh.close()
 
     p = ParseNVRAM(nv_json, nvram)
-
-    for section in ['audits', 'adjustments']:
-        if section in p.nv_json:
-            for group in sorted(p.nv_json[section].keys()):
-                if group.startswith('_'):
-                    continue
-                print(group)
-                print('-' * len(group))
-                audit_group = p.nv_json[section][group]
-                if isinstance(audit_group, list):
-                    for audit in audit_group:
-                        print(audit['label'] + ': ' + p.format(audit))
-                elif isinstance(audit_group, dict):
-                    for audit_key in sorted(audit_group.keys()):
-                        if audit_key.startswith('_'):
-                            continue
-                        audit = audit_group[audit_key]
-                        value = p.format(audit)
-                        if value is None:
-                            value = audit.get('default', '')
-                        print(audit_key + ' ' + audit['label'] + ': ' + value)
-                else:
-                    print("Can't process: ", audit_group)
-                print('')
-
-    for section in ['high_scores', 'mode_champions']:
-        for score in p.high_scores(section, short_labels = True):
-            print(score)
-
-    print('')
-    print("---Last Game---")
-    last_played = p.last_played()
-    if last_played is not None:
-        print(last_played)
-    for s in p.last_game_scores():
-        print(s)
-
-    # Verify all checksums in the file.  Note that we can eventually re-use
-    # that part of the memory map to update checksums if modifying nvram values.
-    p.verify_all_checksum16(verbose = True)
-    p.verify_all_checksum8(verbose = True)
+    p.dump()
 
 if __name__ == '__main__': main()
 
