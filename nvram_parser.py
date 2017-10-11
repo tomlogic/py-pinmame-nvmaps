@@ -360,6 +360,10 @@ class ParseNVRAM(object):
                         print("Can't process: ", audit_group)
                     print('')
 
+        if 'game_state' in self.nv_json:
+            for key, value in self.nv_json['game_state'].items():
+                print(value.get('label', '?') + ': ' + self.format(value))
+        
         for section in ['high_scores', 'mode_champions']:
             for score in self.high_scores(section, short_labels = True):
                 print(score)
