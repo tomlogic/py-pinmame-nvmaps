@@ -298,25 +298,31 @@ class ParseNVRAM(object):
                 scores.append(s)
         return scores
 
-    # section should be 'high_scores' or 'mode_champions'
-    def high_scores(self, section = 'high_scores', short_labels = False):
-        scores = []
-        for score in self.nv_json.get(section, []):
-            label = score.get('label', '')
-            if label.startswith('_'):
-                continue
+    def high_score(self, entry, short_labels=False):
+        formatted_score = None
+        label = entry.get('label', '')
+        if not label.startswith('_'):
             if short_labels:
-                label = score.get('short_label', label)
-            initials = self.format(score.get('initials'))
+                label = entry.get('short_label', label)
+            initials = self.format(entry.get('initials'))
             # ignore scores with blank initials
             if initials is not None:
-                if 'score' in score:
+                if 'score' in entry:
                     formatted_score = '%s: %s %s' % (label, initials,
-                        self.format(score['score']))
+                        self.format(entry['score']))
                 else:
                     formatted_score = '%s: %s' % (label, initials)
-                if 'timestamp' in score:
-                    formatted_score += ' at ' + self.format(score['timestamp'])
+                if 'timestamp' in entry:
+                    formatted_score += ' at ' + self.format(entry['timestamp'])
+            
+        return formatted_score
+    
+    # section should be 'high_scores' or 'mode_champions'
+    def high_scores(self, section='high_scores', short_labels=False):
+        scores = []
+        for entry in self.nv_json.get(section, []):
+            formatted_score = self.high_score(entry, short_labels)
+            if formatted_score:
                 scores.append(formatted_score)
         return scores
 
