@@ -131,7 +131,7 @@ class ParseNVRAM(object):
                         value = value * 100 + (b >> 4) * 10 + (b & 0x0F)
                     else:
                         value = value * 10 + (b & 0x0F)
-            elif format == 'int':
+            elif format == 'int' or format == 'bits':
                 value = 0
                 for b in bytes:
                     value = value * 256 + b
@@ -207,6 +207,15 @@ class ParseNVRAM(object):
         packed = dict.get('packed', True)
         if format == 'bcd' or format == 'int':
             return self.format_value(dict, value)
+        elif format == 'bits':
+            values = dict.get('values', [])
+            mask = 1
+            bits_value = 0
+            for b in values:
+                if value & mask:
+                    bits_value += b
+                mask <<= 1
+            return self.format_value(dict, bits_value)
         elif format == 'enum':
             values = dict['values']
             if value > len(values):
@@ -214,15 +223,18 @@ class ParseNVRAM(object):
             return values[value]
         if format == 'ch':
             result = ''
+            bytes = self.get_bytes(dict)
             if packed:
-                result = self.get_bytes(dict).decode('latin-1')
+                result = bytes.decode('latin-1', 'ignore')
             else:
-                bytes = self.get_bytes(dict)
                 while bytes:
                     result += chr((bytes.pop(0) & 0x0F) * 16 + (bytes.pop(0) & 0x0F))
             if result == dict.get('default', '   '):
                 return None
             return result
+        elif format == 'raw':
+            bytes = self.get_bytes(dict)
+            return ' '.join("%02x" % b for b in bytes)
         elif format == 'wpc_rtc':
             # day of week is Sunday to Saturday indexed by [bytes[4] - 1]
             bytes = self.get_bytes(dict)
