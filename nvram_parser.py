@@ -30,6 +30,7 @@ class Endian:
     LITTLE = 1234
     BIG = 4321
 
+
 class ParseNVRAM(object):
     def __init__(self, nv_json, nvram):
         self.nv_json = nv_json
@@ -55,7 +56,8 @@ class ParseNVRAM(object):
 
     # Format large numbers with thousands separators (',' or '.').  Uses
     # locale setting in Python 2.7 or later, manually uses ',' for Python 2.6.
-    def format_score(self, number):
+    @staticmethod
+    def format_number(number):
         if sys.version_info >= (2,7,0):
             return '{0:,}'.format(number)
 
@@ -68,7 +70,8 @@ class ParseNVRAM(object):
 
     # Return 'v' if already an int, otherwise assume string and convert
     # with a base of '0' (which handles leading 0 as octal and 0x as hex)
-    def to_int(self, v):
+    @staticmethod
+    def to_int(v):
         if type(v) is int:
             return v
         return int(v, 0)
@@ -105,11 +108,11 @@ class ParseNVRAM(object):
 
     # same as get_bytes_unmasked() but apply the mask in 'mask' if present
     def get_bytes(self, dict):
-        bytes = self.get_bytes_unmasked(dict)
+        ba = self.get_bytes_unmasked(dict)
         if 'mask' in dict:
             mask = self.to_int(dict['mask'])
-            return bytearray(map((lambda b: b & mask), bytes))
-        return bytes
+            return bytearray(map((lambda b: b & mask), ba))
+        return ba
 
     # Return an integer value from one or more bytes in memory
     # handles multi-byte integers (int), binary coded decimal (bcd) and
@@ -118,25 +121,25 @@ class ParseNVRAM(object):
     def get_value(self, dict):
         value = None
         if 'encoding' in dict:
-            format = dict['encoding']
-            bytes = self.get_bytes(dict)
+            encoding = dict['encoding']
+            ba = self.get_bytes(dict)
             packed = dict.get('packed', True)
             if self.byteorder == Endian.LITTLE:
-                bytes.reverse()
+                ba.reverse()
 
-            if format == 'bcd':
+            if encoding == 'bcd':
                 value = 0
-                for b in bytes:
+                for b in ba:
                     if packed:
                         value = value * 100 + (b >> 4) * 10 + (b & 0x0F)
                     else:
                         value = value * 10 + (b & 0x0F)
-            elif format == 'int' or format == 'bits':
+            elif encoding == 'int' or encoding == 'bits':
                 value = 0
-                for b in bytes:
+                for b in ba:
                     value = value * 256 + b
-            elif format == 'enum':
-                value = bytes[0]
+            elif encoding == 'enum':
+                value = ba[0]
 
             if value is not None:
                 value *= self.to_int(dict.get('scale', '1'))
@@ -146,17 +149,17 @@ class ParseNVRAM(object):
 
     # replace a value stored in self.nvram[]
     def set_value(self, dict, value):
-        format = dict['encoding']
+        encoding = dict['encoding']
         old_bytes = self.get_bytes(dict);
         start = self.to_int(dict['start'])
         end = start + len(old_bytes)
         # can now replace self.nvram[start:end]
         new_bytes = []
 
-        if format == 'ch':
+        if encoding == 'ch':
             assert type(value) is str and len(value) == len(old_bytes)
             new_bytes = list(value)
-        elif format == 'wpc_rtc':
+        elif encoding == 'wpc_rtc':
             if type(value) is datetime:
                 # for day of week 1=Sunday, 7=Saturday
                 # isoweekday() returns 1=Monday 7=Sunday
@@ -164,12 +167,12 @@ class ParseNVRAM(object):
                     value.month, value.day, value.isoweekday() % 7 + 1,
                     value.hour, value.minute]
         else:   # all formats where byte order applies
-            if format == 'bcd':
+            if encoding == 'bcd':
                 for x in old_bytes:
                     b = value % 100
                     new_bytes.append(b % 10 + 16 * (b / 10))
                     value /= 100
-            elif format == 'int' or format == 'enum':
+            elif encoding == 'int' or encoding == 'enum':
                 for x in old_bytes:
                     b = value % 256
                     new_bytes.append(b)
@@ -194,95 +197,94 @@ class ParseNVRAM(object):
             return "%d:%02d:%02d" % (h, m, s)
         elif units == 'minutes':
             return "%d:%02d:00" % divmod(value, 60)
-        return self.format_score(value) + dict.get('suffix', '')
+        return self.format_number(value) + dict.get('suffix', '')
 
     # format bytes from 'nvram' depending on members of 'dict'
     # uses 'encoding' to specify format
     # 'start' and either 'end' or 'length' for range of bytes
-    def format(self, dict):
-        if dict is None or 'encoding' not in dict:
+    def format(self, entry):
+        if entry is None or 'encoding' not in entry:
             return None
-        format = dict['encoding']
-        value = self.get_value(dict)
-        packed = dict.get('packed', True)
-        if format == 'bcd' or format == 'int':
-            return self.format_value(dict, value)
-        elif format == 'bits':
-            values = dict.get('values', [])
+        encoding = entry['encoding']
+        value = self.get_value(entry)
+        packed = entry.get('packed', True)
+        if encoding == 'bcd' or encoding == 'int':
+            return self.format_value(entry, value)
+        elif encoding == 'bits':
+            values = entry.get('values', [])
             mask = 1
             bits_value = 0
             for b in values:
                 if value & mask:
                     bits_value += b
                 mask <<= 1
-            return self.format_value(dict, bits_value)
-        elif format == 'enum':
-            values = dict['values']
-            if value > len(values):
+            return self.format_value(entry, bits_value)
+        elif encoding == 'enum':
+            values = entry['values']
+            if value >= len(values):
                 return '?' + str(value)
             return values[value]
-        if format == 'ch':
+
+        ba = self.get_bytes(entry)
+        if encoding == 'ch':
             result = ''
-            bytes = self.get_bytes(dict)
             if packed:
-                result = bytes.decode('latin-1', 'ignore')
+                result = ba.decode('latin-1', 'ignore')
             else:
-                while bytes:
-                    result += chr((bytes.pop(0) & 0x0F) * 16 + (bytes.pop(0) & 0x0F))
-            if result == dict.get('default', '   '):
+                while ba:
+                    result += chr((ba.pop(0) & 0x0F) * 16 + (ba.pop(0) & 0x0F))
+            if result == entry.get('default', '   '):
                 return None
             return result
-        elif format == 'raw':
-            bytes = self.get_bytes(dict)
-            return ' '.join("%02x" % b for b in bytes)
-        elif format == 'wpc_rtc':
-            # day of week is Sunday to Saturday indexed by [bytes[4] - 1]
-            bytes = self.get_bytes(dict)
+        elif encoding == 'raw':
+            return ' '.join("%02x" % b for b in ba)
+        elif encoding == 'wpc_rtc':
+            # day of week is Sunday to Saturday indexed by [ba[4] - 1]
             return '%04u-%02u-%02u %02u:%02u' % (
-                bytes[0] * 256 + bytes[1],
-                bytes[2], bytes[3],
-                bytes[5], bytes[6])
-        return '[?' + format + '?]'
+                ba[0] * 256 + ba[1],
+                ba[2], ba[3],
+                ba[5], ba[6])
+        return '[?' + encoding + '?]'
 
     def verify_checksum8(self, dict, verbose = False, fix = False):
-        retval = True
-        bytes = self.get_bytes(dict)
+        valid = True
+        ba = self.get_bytes(dict)
         offset = self.to_int(dict['start'])
-        grouping = dict.get('groupings', len(bytes))
+        grouping = dict.get('groupings', len(ba))
         count = 0
-        sum = 0
-        for b in bytes:
+        calc_sum = 0
+        for b in ba:
             if count == grouping - 1:
-                checksum = 0xFF - (sum & 0xFF)
+                checksum = 0xFF - (calc_sum & 0xFF)
                 if checksum != b:
                     if verbose:
-                        retval = False
+                        valid = False
                         print("%u bytes at 0x%04X checksum8 0x%02X != 0x%02X"
                             % (grouping, offset - count, checksum, b))
                     if fix:
                         self.nvram[offset] = checksum
-                count = sum = 0
+                count = calc_sum = 0
             else:
-                sum += b
+                calc_sum += b
                 count += 1
             offset += 1
-        return retval
+        return valid
 
     def verify_all_checksum8(self, verbose = False, fix = False):
-        retval = True
+        valid = True
         for c in self.nv_json.get('checksum8', []):
-            retval &= self.verify_checksum8(c, verbose, fix)
-        return retval
+            valid &= self.verify_checksum8(c, verbose, fix)
+        return valid
 
     def verify_checksum16(self, dict, verbose = False, fix = False):
-        bytes = self.get_bytes(dict)
+        ba = self.get_bytes(dict)
         # pop last two bytes as stored checksum16
         if self.byteorder == Endian.BIG:
-            stored_sum = bytes.pop() + bytes.pop() * 256
+            stored_sum = ba.pop() + ba.pop() * 256
         else:
-            stored_sum = bytes.pop() * 256 + bytes.pop()
-        checksum_offset = self.to_int(dict['start']) + len(bytes)
-        calc_sum = 0xFFFF - (sum(bytes) & 0xFFFF)
+            stored_sum = ba.pop() * 256 + ba.pop()
+        checksum_offset = self.to_int(dict['start']) + len(ba)
+        calc_sum = 0xFFFF - (sum(ba) & 0xFFFF)
         if calc_sum != stored_sum:
             if verbose:
                 print("checksum16 at %s: 0x%04X != 0x%04X %s" % (dict['start'],
@@ -297,10 +299,10 @@ class ParseNVRAM(object):
         return calc_sum == stored_sum
 
     def verify_all_checksum16(self, verbose = False, fix = False):
-        retval = True
+        valid = True
         for c in self.nv_json.get('checksum16', []):
-            retval &= self.verify_checksum16(c, verbose, fix)
-        return retval
+            valid &= self.verify_checksum16(c, verbose, fix)
+        return valid
 
     def last_game_scores(self):
         scores = []
@@ -401,9 +403,11 @@ class ParseNVRAM(object):
             # that part of the memory map to update checksums if modifying nvram values.
             self.verify_all_checksum16(verbose = True)
             self.verify_all_checksum8(verbose = True)
-	
+
+
 def print_usage():
     print("Usage: %s <json_file> <nvram_file>" % (sys.argv[0]))
+
 
 def main():
     if len(sys.argv) < 3:
@@ -427,5 +431,5 @@ def main():
     p = ParseNVRAM(nv_json, nvram)
     p.dump()
 
-if __name__ == '__main__': main()
 
+if __name__ == '__main__': main()
