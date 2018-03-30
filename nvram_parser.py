@@ -341,7 +341,7 @@ class ParseNVRAM(object):
     def last_played(self):
         return self.format(self.nv_json.get('last_played'))
 
-    def dump_audit(self, audit, key=None):
+    def format_audit(self, audit, key=None):
         value = self.format(audit)
         if value is None:
             value = audit.get('default', '')
@@ -349,28 +349,36 @@ class ParseNVRAM(object):
             label = key + ' ' + audit['label']
         else:
             label = audit['label']
-        print(label + ': ' + value)
+        return label + ': ' + value
     
+    def dump_audit(self, audit, key=None):
+        print(self.format_audit(audit, key))
+
+    def entry_list(self, section, group):
+        entries = []
+        audit_group = self.nv_json[section][group]
+        if isinstance(audit_group, list):
+            for audit in audit_group:
+                entries.append((None, audit))
+        elif isinstance(audit_group, dict):
+            for audit_key in sorted(audit_group.keys()):
+                if audit_key.startswith('_'):
+                    continue
+                entries.append((audit_key, audit_group[audit_key]))
+        else:
+            ValueError("Can't process %s/%s" % (section, group))
+        return entries
+
     def dump(self, checksums=True):
         for section in ['audits', 'adjustments']:
-            if section in self.nv_json:
-                for group in sorted(self.nv_json[section].keys()):
-                    if group.startswith('_'):
-                        continue
-                    print(group)
-                    print('-' * len(group))
-                    audit_group = self.nv_json[section][group]
-                    if isinstance(audit_group, list):
-                        for audit in audit_group:
-                            self.dump_audit(audit)
-                    elif isinstance(audit_group, dict):
-                        for audit_key in sorted(audit_group.keys()):
-                            if audit_key.startswith('_'):
-                                continue
-                            self.dump_audit(audit_group[audit_key], audit_key)
-                    else:
-                        print("Can't process: ", audit_group)
-                    print('')
+            for group in sorted(self.nv_json.get(section, {}).keys()):
+                if group.startswith('_'):
+                    continue
+                print(group)
+                print('-' * len(group))
+                for entry in self.entry_list(section, group):
+                    print(self.format_audit(entry[1], entry[0]))
+                print('')
 
         if 'game_state' in self.nv_json:
             for key, value in self.nv_json['game_state'].items():
