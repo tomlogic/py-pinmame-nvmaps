@@ -25,63 +25,23 @@ import sys
 from datetime import datetime
 
 
-class ParseNVRAM(object):
-    def __init__(self, nv_json, nvram):
-        self.nv_json = nv_json
-        self.nvram = nvram
-        self.big_endian = True
-        self.mapping = []
-        self.process_json()
-
-    def load_json(self, json_path):
-        json_fh = open(json_path, 'r')
-        self.nv_json = json.load(json_fh)
-        json_fh.close()
-        self.process_json()
-
-    """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
-    self.mapping, a normalized list of JSON entries as 4-item lists.
-        0 (section): audits, adjustments, game_state, or score_record
-        1 (group): None or a group name for the section
-        2 (key): None or the sortable "key" for the mapping
-        3 (mapping): entry with mapping description
-    """
-    def process_json(self):
-        self.big_endian = self.nv_json.get('_endian') != 'little'
-        self.mapping = []
-        for section in ['audits', 'adjustments']:
-            for group in sorted(self.nv_json.get(section, {}).keys()):
-                if group.startswith('_'):
-                    continue
-                for entry in self.entry_list(section, group):
-                    self.mapping.append([section, group, entry[0],  entry[1]])
-
-        if 'game_state' in self.nv_json:
-            for key, entry in self.nv_json['game_state'].items():
-                self.mapping.append(['game_state', 'Game State', key, entry])
-
-        player_num = 1
-        for p in self.nv_json.get('last_game', []):
-            entry = p.copy()
-            entry['label'] = 'Player %u' % player_num
-            entry['short_label'] = 'P%u' % player_num
-            self.mapping.append(['game_state', 'Player Scores', None, entry])
-            player_num += 1
-
-        for section in ['high_scores', 'mode_champions']:
-            for entry in self.nv_json.get(section, []):
-                self.mapping.append(['score_record', section, None, entry])
-
-    def load_nvram(self, nvram_path):
-        nv_fh = open(nvram_path, 'rb')
-        self.nvram = bytearray(nv_fh.read())
-        nv_fh.close()
+class RamMapping(object):
+    def __init__(self, entry, big_endian, section=None, group=None, key=None):
+        self.entry = entry
+        self.big_endian = big_endian
+        self.section = section
+        self.group = group
+        self.key = key
+        self.sub_entry = {}
+        for sub in ['initials', 'score', 'timestamp']:
+            if sub in entry:
+                self.sub_entry[sub] = RamMapping(entry[sub], big_endian)
 
     # Format large numbers with thousands separators (',' or '.').  Uses
     # locale setting in Python 2.7 or later, manually uses ',' for Python 2.6.
     @staticmethod
     def format_number(number):
-        if sys.version_info >= (2,7,0):
+        if sys.version_info >= (2, 7, 0):
             return '{0:,}'.format(number)
 
         s = '%d' % number
@@ -99,49 +59,48 @@ class ParseNVRAM(object):
             return v
         return int(v, 0)
 
-    # offsets for a given entry
-    def offsets(self, entry):
-        if 'initials' in entry or 'score' in entry:
-            # special-case handling for high score records
-            offsets = list()
-            for sub_entry in ['initials', 'score', 'timestamp']:
-                if sub_entry in entry:
-                    offsets += self.offsets(entry[sub_entry])
-            return offsets
+    # convert start/end/length/offsets to list of byte offsets
+    def offsets(self):
+        if self.sub_entry:
+            # special-case handling for high score or other combined records
+            o = list()
+            for key, sub in self.sub_entry.items():
+                o += sub.offsets()
+            return o
 
-        if 'offsets' in entry:
+        if 'offsets' in self.entry:
             return map((lambda offset: self.to_int(offset)),
-                       entry['offsets'])
-                
-        start = self.to_int(entry.get('start', '0'))
+                       self.entry['offsets'])
+
+        start = self.to_int(self.entry.get('start', '0'))
         end = start
-        if 'length' in entry:
-            length = self.to_int(entry['length'])
+        if 'length' in self.entry:
+            length = self.to_int(self.entry['length'])
             if length <= 0:
                 raise AssertionError('invalid length (%s); must be > 0'
-                                     % (entry['length']))
+                                     % (self.entry['length']))
             end = start + length - 1
-        elif 'end' in entry:
-            end = self.to_int(entry['end'])
+        elif 'end' in self.entry:
+            end = self.to_int(self.entry['end'])
             if end < start:
                 raise AssertionError('end (%s) is less than start (%s)'
-                                     % (entry['end'], entry['start']))
+                                     % (self.entry['end'], self.entry['start']))
 
         return list(range(start, end + 1))
-    
+
     # return 'start' to 'end' bytes (inclusive) from 'self.nvram', or
     # 'start' to 'start + length - 1' bytes (inclusive)
     # or the single byte at 'start' if 'end' and 'length' are not specified
     # or the bytes from offsets in a list called 'offsets'
-    def get_bytes_unmasked(self, entry):
-        return bytearray(map((lambda offset: self.nvram[offset]),
-                             self.offsets(entry)))
+    def get_bytes_unmasked(self, nvram):
+        return bytearray(map((lambda offset: nvram[offset]),
+                             self.offsets()))
 
     # same as get_bytes_unmasked() but apply the mask in 'mask' if present
-    def get_bytes(self, entry):
-        ba = self.get_bytes_unmasked(entry)
-        if 'mask' in entry:
-            mask = self.to_int(entry['mask'])
+    def get_bytes(self, nvram):
+        ba = self.get_bytes_unmasked(nvram)
+        if 'mask' in self.entry:
+            mask = self.to_int(self.entry['mask'])
             return bytearray(map((lambda b: b & mask), ba))
         return ba
 
@@ -149,12 +108,12 @@ class ParseNVRAM(object):
     # handles multi-byte integers (int), binary coded decimal (bcd) and
     # single-byte enumerated (enum) values.  Returns None for unsupported
     # encodings.
-    def get_value(self, entry):
+    def get_value(self, nvram):
         value = None
-        if 'encoding' in entry:
-            encoding = entry['encoding']
-            ba = self.get_bytes(entry)
-            packed = entry.get('packed', True)
+        if 'encoding' in self.entry:
+            encoding = self.entry['encoding']
+            ba = self.get_bytes(nvram)
+            packed = self.entry.get('packed', True)
             if not self.big_endian:
                 ba.reverse()
 
@@ -173,18 +132,18 @@ class ParseNVRAM(object):
                 value = ba[0]
 
             if value is not None:
-                value *= self.to_int(entry.get('scale', '1'))
-                value += self.to_int(entry.get('offset', '0'))
+                value *= self.to_int(self.entry.get('scale', '1'))
+                value += self.to_int(self.entry.get('offset', '0'))
 
         return value
 
     # replace a value stored in self.nvram[]
-    def set_value(self, entry, value):
-        encoding = entry['encoding']
-        old_bytes = self.get_bytes(entry);
-        start = self.to_int(entry['start'])
+    def set_value(self, nvram, value):
+        encoding = self.entry['encoding']
+        old_bytes = self.get_bytes(nvram)
+        start = self.to_int(self.entry['start'])
         end = start + len(old_bytes)
-        # can now replace self.nvram[start:end]
+        # can now replace nvram[start:end]
         new_bytes = []
 
         if encoding == 'ch':
@@ -212,55 +171,55 @@ class ParseNVRAM(object):
             if self.big_endian:
                 new_bytes = reversed(new_bytes)
 
-        self.nvram[start:end] = bytearray(new_bytes)
+        nvram[start:end] = bytearray(new_bytes)
 
     # format a multi-byte integer using options in 'entry'
-    def format_value(self, entry, value):
+    def format_value(self, value):
         # `special_values` contains strings to use in place of `value`
         # commonly used at the low end of a range for off/disabled
-        if 'special_values' in entry and str(value) in entry['special_values']:
-            return entry['special_values'][str(value)]
+        if 'special_values' in self.entry and str(value) in self.entry['special_values']:
+            return self.entry['special_values'][str(value)]
 
-        units = entry.get('units')
+        units = self.entry.get('units')
         if units == 'seconds':
             m, s = divmod(value, 60)
             h, m = divmod(m, 60)
             return "%d:%02d:%02d" % (h, m, s)
         elif units == 'minutes':
             return "%d:%02d:00" % divmod(value, 60)
-        return self.format_number(value) + entry.get('suffix', '')
+        return self.format_number(value) + self.entry.get('suffix', '')
 
     # format bytes from 'nvram' depending on members of 'entry'
     # uses 'encoding' to specify format
     # 'start' and either 'end' or 'length' for range of bytes
-    def format_entry(self, entry):
-        if entry is None:
+    def format_entry(self, nvram):
+        if self.entry is None:
             return None
-        if 'initials' in entry or 'score' in entry:
-            return self.format_high_score(entry)
-        if 'encoding' not in entry:
+        if 'initials' in self.sub_entry or 'score' in self.sub_entry:
+            return self.format_high_score(nvram)
+        if 'encoding' not in self.entry:
             return None
-        encoding = entry['encoding']
-        value = self.get_value(entry)
-        packed = entry.get('packed', True)
+        encoding = self.entry['encoding']
+        value = self.get_value(nvram)
+        packed = self.entry.get('packed', True)
         if encoding == 'bcd' or encoding == 'int':
-            return self.format_value(entry, value)
+            return self.format_value(value)
         elif encoding == 'bits':
-            values = entry.get('values', [])
+            values = self.entry.get('values', [])
             mask = 1
             bits_value = 0
             for b in values:
                 if value & mask:
                     bits_value += b
                 mask <<= 1
-            return self.format_value(entry, bits_value)
+            return self.format_value(bits_value)
         elif encoding == 'enum':
-            values = entry['values']
+            values = self.entry['values']
             if value >= len(values):
                 return '?' + str(value)
             return values[value]
 
-        ba = self.get_bytes(entry)
+        ba = self.get_bytes(nvram)
         if encoding == 'ch':
             result = ''
             if packed:
@@ -268,7 +227,7 @@ class ParseNVRAM(object):
             else:
                 while ba:
                     result += chr((ba.pop(0) & 0x0F) * 16 + (ba.pop(0) & 0x0F))
-            if result == entry.get('default', '   '):
+            if result == self.entry.get('default', '   '):
                 return None
             return result
         elif encoding == 'raw':
@@ -281,10 +240,116 @@ class ParseNVRAM(object):
                 ba[5], ba[6])
         return '[?' + encoding + '?]'
 
-    def verify_checksum8(self, entry, verbose = False, fix = False):
+    def format_label(self, key=None, short_label=False):
+        label = self.entry.get('label', '?')
+        if label.startswith('_'):
+            return None
+        if short_label:
+            label = self.entry.get('short_label', label)
+        if key:
+            label = key + ' ' + label
+        return label
+
+    def format_high_score(self, nvram):
+        elements = []
+        for sub in ['initials', 'score', 'timestamp']:
+            if sub in self.sub_entry:
+                elements.append(self.sub_entry[sub].format_entry(nvram))
+        if elements:
+            return ' '.join(elements)
+        return None
+
+    """Return a tuple of (label, value)
+    """
+    def format_mapping(self, nvram):
+        value = self.format_entry(nvram)
+        if self.section in ['audits', 'adjustments']:
+            if value is None:
+                value = self.entry.get('default', '')
+            return self.format_label(self.key), value
+        elif self.section in ['game_state', 'score_record']:
+            return self.format_label(), value
+        else:
+            ValueError('Unrecognized section', self.section)
+
+
+class ParseNVRAM(object):
+    def __init__(self, nv_json, nvram):
+        self.nv_json = nv_json
+        self.nvram = nvram
+        self.big_endian = True
+        self.mapping = []
+        self.process_json()
+
+    def load_json(self, json_path):
+        json_fh = open(json_path, 'r')
+        self.nv_json = json.load(json_fh)
+        json_fh.close()
+        self.process_json()
+
+    """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
+    self.mapping, a normalized list of JSON entries as 4-item lists.
+        0 (section): audits, adjustments, game_state, or score_record
+        1 (group): None or a group name for the section
+        2 (key): None or the sortable "key" for the mapping
+        3 (mapping): entry with mapping description
+            def __init__(self, entry, big_endian, section, group, key=None):
+
+    """
+    def process_json(self):
+        self.big_endian = self.nv_json.get('_endian') != 'little'
+        self.mapping = []
+        for section in ['audits', 'adjustments']:
+            for group in sorted(self.nv_json.get(section, {}).keys()):
+                if group.startswith('_'):
+                    continue
+                for entry in self.entry_list(section, group):
+                    self.mapping.append(RamMapping(entry[1],
+                                                   self.big_endian,
+                                                   section,
+                                                   group,
+                                                   entry[0]))
+
+        if 'game_state' in self.nv_json:
+            for key, entry in self.nv_json['game_state'].items():
+                self.mapping.append(RamMapping(entry,
+                                               self.big_endian,
+                                               'game_state',
+                                               'Game State',
+                                               key))
+
+        player_num = 1
+        for p in self.nv_json.get('last_game', []):
+            entry = p.copy()
+            entry['label'] = 'Player %u' % player_num
+            entry['short_label'] = 'P%u' % player_num
+            self.mapping.append(RamMapping(entry,
+                                           self.big_endian,
+                                           'game_state',
+                                           'Player Scores'))
+            player_num += 1
+
+        for section in ['high_scores', 'mode_champions']:
+            for entry in self.nv_json.get(section, []):
+                self.mapping.append(RamMapping(entry,
+                                               self.big_endian,
+                                               'score_record',
+                                               section))
+
+    def load_nvram(self, nvram_path):
+        nv_fh = open(nvram_path, 'rb')
+        self.nvram = bytearray(nv_fh.read())
+        nv_fh.close()
+
+    # legacy "glue" method to create RamMapping object on-demand
+    def ram_mapping(self, entry):
+        return RamMapping(entry, self.big_endian)
+
+    def verify_checksum8(self, entry, verbose=False, fix=False):
         valid = True
-        ba = self.get_bytes(entry)
-        offset = self.to_int(entry['start'])
+        m = self.ram_mapping(entry)
+        ba = m.get_bytes(self.nvram)
+        offset = m.to_int(entry['start'])
         grouping = entry.get('groupings', len(ba))
         count = 0
         calc_sum = 0
@@ -305,20 +370,21 @@ class ParseNVRAM(object):
             offset += 1
         return valid
 
-    def verify_all_checksum8(self, verbose = False, fix = False):
+    def verify_all_checksum8(self, verbose=False, fix=False):
         valid = True
         for c in self.nv_json.get('checksum8', []):
             valid &= self.verify_checksum8(c, verbose, fix)
         return valid
 
-    def verify_checksum16(self, entry, verbose = False, fix = False):
-        ba = self.get_bytes(entry)
+    def verify_checksum16(self, entry, verbose=False, fix=False):
+        m = self.ram_mapping(entry)
+        ba = m.get_bytes(self.nvram)
         # pop last two bytes as stored checksum16
         if self.big_endian:
             stored_sum = ba.pop() + ba.pop() * 256
         else:
             stored_sum = ba.pop() * 256 + ba.pop()
-        checksum_offset = self.to_int(entry['start']) + len(ba)
+        checksum_offset = m.to_int(entry['start']) + len(ba)
         calc_sum = 0xFFFF - (sum(ba) & 0xFFFF)
         if calc_sum != stored_sum:
             if verbose:
@@ -333,7 +399,7 @@ class ParseNVRAM(object):
                         calc_sum % 256, calc_sum / 256]
         return calc_sum == stored_sum
 
-    def verify_all_checksum16(self, verbose = False, fix = False):
+    def verify_all_checksum16(self, verbose=False, fix=False):
         valid = True
         for c in self.nv_json.get('checksum16', []):
             valid &= self.verify_checksum16(c, verbose, fix)
@@ -342,59 +408,16 @@ class ParseNVRAM(object):
     def last_game_scores(self):
         scores = []
         for p in self.nv_json.get('last_game', []):
-            s = self.format_entry(p)
+            s = self.ram_mapping(p).format_entry(self.nvram)
             if s != '0' or not scores:
                 scores.append(s)
         return scores
 
-    @staticmethod
-    def format_label(entry, key=None, short_label=False):
-        label = entry.get('label', '?')
-        if label.startswith('_'):
-            return None
-        if short_label:
-            label = entry.get('short_label', label)
-        if key:
-            label = key + ' ' + label
-        return label
-
-    def format_high_score(self, entry):
-        record = self.format_entry(entry.get('initials'))
-        # ignore scores with blank initials
-        if record:
-            if 'score' in entry:
-                record += ' ' + self.format_entry(entry['score'])
-            if 'timestamp' in entry:
-                record += ' at ' + self.format_entry(entry['timestamp'])
-        return record
-
-    def high_score(self, entry, short_labels=False):
-        label = self.format_label(entry, key=None, short_label=short_labels)
-        if label:
-            record = self.format_high_score(entry)
-            return '%s: %s' % (label, record)
-        return None
-    
-    # section should be 'high_scores' or 'mode_champions'
-    def high_scores(self, section='high_scores', short_labels=False):
-        scores = []
-        for entry in self.nv_json.get(section, []):
-            formatted_score = self.high_score(entry, short_labels)
-            if formatted_score:
-                scores.append(formatted_score)
-        return scores
-
     def last_played(self):
-        return self.format_entry(self.nv_json.get('last_played'))
-
-    def format_audit(self, audit, key=None):
-        value = self.format_entry(audit)
-        if value is None:
-            value = audit.get('default', '')
-        return self.format_label(audit, key) + ': ' + value
-
-    def dump_audit(self, audit, key=None):
-        print(self.format_audit(audit, key))
+        lp = self.nv_json.get('last_played')
+        if not lp:
+            return None
+        return self.ram_mapping(lp).format_entry(self.nvram)
 
     def entry_list(self, section, group):
         entries = []
@@ -411,31 +434,16 @@ class ParseNVRAM(object):
             ValueError("Can't process %s/%s" % (section, group))
         return entries
 
-    """Return a tuple of (label, value) for a normalized mapping entry.
-    """
-    def format_mapping(self, normalized):
-        (section, group, key, mapping) = normalized
-        value = self.format_entry(mapping)
-        if section in ['audits', 'adjustments']:
-            if value is None:
-                value = mapping.get('default', '')
-            return (self.format_label(mapping, key), value)
-        elif section in ['game_state', 'score_record']:
-            return (self.format_label(mapping), value)
-        else:
-            ValueError('Not a normalized entry', normalized)
-
     def dump(self, checksums=True):
         last_group = None
         for map_entry in self.mapping:
-            (section, group, key, mapping) = map_entry
-            if group != last_group:
+            if map_entry.group != last_group:
                 print('')
-                if group is not None:
-                    print(group)
-                    print('-' * len(group))
-                last_group = group
-            print('%s: %s' % self.format_mapping(map_entry))
+                if map_entry.group is not None:
+                    print(map_entry.group)
+                    print('-' * len(map_entry.group))
+                last_group = map_entry.group
+            print('%s: %s' % map_entry.format_mapping(self.nvram))
 
         last_played = self.last_played()
         if last_played is not None:
