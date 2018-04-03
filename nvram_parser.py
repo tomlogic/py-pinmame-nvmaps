@@ -24,17 +24,13 @@ import json
 import sys
 from datetime import datetime
 
-# Helper class to track whether multi-byte values in nvram file are big-endian
-# (MSB-first) or little-endian (LSB-first).  6809 (WPC) is big-endian.
-class Endian:
-    LITTLE = 1234
-    BIG = 4321
-
 
 class ParseNVRAM(object):
     def __init__(self, nv_json, nvram):
         self.nv_json = nv_json
         self.nvram = nvram
+        self.big_endian = True
+        self.mapping = []
         self.process_json()
 
     def load_json(self, json_path):
@@ -43,7 +39,7 @@ class ParseNVRAM(object):
         json_fh.close()
         self.process_json()
 
-    """Process JSON file loaded into self.nv_json.  Sets self.byteorder and
+    """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
     self.mapping, a normalized list of JSON entries as 4-item lists.
         0 (section): audits, adjustments, game_state, or score_record
         1 (group): None or a group name for the section
@@ -51,10 +47,7 @@ class ParseNVRAM(object):
         3 (mapping): entry with mapping description
     """
     def process_json(self):
-        if self.nv_json.get('_endian') == 'little':
-            self.byteorder = Endian.LITTLE
-        else:
-            self.byteorder = Endian.BIG  # default setting
+        self.big_endian = self.nv_json.get('_endian') != 'little'
         self.mapping = []
         for section in ['audits', 'adjustments']:
             for group in sorted(self.nv_json.get(section, {}).keys()):
@@ -162,7 +155,7 @@ class ParseNVRAM(object):
             encoding = entry['encoding']
             ba = self.get_bytes(entry)
             packed = entry.get('packed', True)
-            if self.byteorder == Endian.LITTLE:
+            if not self.big_endian:
                 ba.reverse()
 
             if encoding == 'bcd':
@@ -216,7 +209,7 @@ class ParseNVRAM(object):
                     new_bytes.append(b)
                     value /= 256
 
-            if self.byteorder == Endian.BIG:
+            if self.big_endian:
                 new_bytes = reversed(new_bytes)
 
         self.nvram[start:end] = bytearray(new_bytes)
@@ -321,7 +314,7 @@ class ParseNVRAM(object):
     def verify_checksum16(self, entry, verbose = False, fix = False):
         ba = self.get_bytes(entry)
         # pop last two bytes as stored checksum16
-        if self.byteorder == Endian.BIG:
+        if self.big_endian:
             stored_sum = ba.pop() + ba.pop() * 256
         else:
             stored_sum = ba.pop() * 256 + ba.pop()
@@ -332,7 +325,7 @@ class ParseNVRAM(object):
                 print("checksum16 at %s: 0x%04X != 0x%04X %s" % (entry['start'],
                                                                  calc_sum, stored_sum, entry.get('label', '')))
             if fix:
-                if self.byteorder == Endian.BIG:
+                if self.big_endian:
                     self.nvram[checksum_offset:checksum_offset + 2] = [
                         calc_sum / 256, calc_sum % 256]
                 else:
