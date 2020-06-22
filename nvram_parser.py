@@ -286,7 +286,8 @@ class ParseNVRAM(object):
         self.nvram = nvram
         self.big_endian = True
         self.mapping = []
-        self.process_json()
+        if nv_json is not None:
+            self.process_json()
 
     def load_json(self, json_path):
         json_fh = open(json_path, 'r')
@@ -440,6 +441,17 @@ class ParseNVRAM(object):
         else:
             ValueError("Can't process %s/%s" % (section, group))
         return entries
+
+    # section should be 'high_scores' or 'mode_champions'
+    def high_scores(self, section='high_scores', short_labels=False):
+        scores = []
+        for entry in self.mapping:
+            if entry.group == section:
+                score = entry.format_high_score(self.nvram)
+                if score is not None:
+                    scores.append('%s: %s' %
+                        (entry.format_label(short_label=short_labels), score))
+        return scores
 
     def dump(self, checksums=True):
         last_group = None
