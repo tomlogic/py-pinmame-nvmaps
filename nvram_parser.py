@@ -114,7 +114,7 @@ class RamMapping(object):
             encoding = self.entry['encoding']
             ba = self.get_bytes(nvram)
             packed = self.entry.get('packed', True)
-            if not self.big_endian:
+            if self.entry.get('endian') == 'little' or not self.big_endian:
                 ba.reverse()
 
             if encoding == 'bcd':
@@ -132,7 +132,11 @@ class RamMapping(object):
                 value = ba[0]
 
             if value is not None:
-                value *= self.to_int(self.entry.get('scale', '1'))
+                scale = self.entry.get('scale', '1')
+                if type(scale) is float:
+                    value *= scale
+                else:
+                    value *= self.to_int(scale)
                 value += self.to_int(self.entry.get('offset', '0'))
 
         return value
@@ -223,7 +227,7 @@ class RamMapping(object):
         if encoding == 'ch':
             result = ''
             if packed:
-                result = ba.decode('latin-1', 'ignore')
+                result = ba.decode('ascii', 'ignore')
             else:
                 while ba:
                     result += chr((ba.pop(0) & 0x0F) * 16 + (ba.pop(0) & 0x0F))
@@ -254,7 +258,10 @@ class RamMapping(object):
         elements = []
         for sub in ['initials', 'score', 'timestamp']:
             if sub in self.sub_entry:
-                elements.append(self.sub_entry[sub].format_entry(nvram))
+                # during high score entry on High Speed, `initials` returns None
+                formatted = self.sub_entry[sub].format_entry(nvram)
+                if formatted:
+                    elements.append(formatted)
         if elements:
             return ' '.join(elements)
         return None
