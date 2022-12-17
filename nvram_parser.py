@@ -26,16 +26,16 @@ from datetime import datetime
 
 
 class RamMapping(object):
-    def __init__(self, entry, big_endian, section=None, group=None, key=None):
+    def __init__(self, entry, settings, section=None, group=None, key=None):
         self.entry = entry
-        self.big_endian = big_endian
+        self.settings = settings
         self.section = section
         self.group = group
         self.key = key
         self.sub_entry = {}
         for sub in ['initials', 'score', 'timestamp']:
             if sub in entry:
-                self.sub_entry[sub] = RamMapping(entry[sub], big_endian)
+                self.sub_entry[sub] = RamMapping(entry[sub], settings)
 
     # Format large numbers with thousands separators (',' or '.').  Uses
     # locale setting in Python 2.7 or later, manually uses ',' for Python 2.6.
@@ -114,7 +114,7 @@ class RamMapping(object):
             encoding = self.entry['encoding']
             ba = self.get_bytes(nvram)
             packed = self.entry.get('packed', True)
-            if self.entry.get('endian') == 'little' or not self.big_endian:
+            if self.entry.get('endian') == 'little' or not self.settings['big_endian']:
                 ba.reverse()
 
             if encoding == 'bcd':
@@ -141,7 +141,7 @@ class RamMapping(object):
 
         return value
 
-    # replace a value stored in self.nvram[]
+    # undocumented and incomplete method to replace a value stored in self.nvram[]
     def set_value(self, nvram, value):
         encoding = self.entry['encoding']
         old_bytes = self.get_bytes(nvram)
@@ -150,6 +150,7 @@ class RamMapping(object):
         # can now replace nvram[start:end]
         new_bytes = []
 
+        # TODO: update to use char_map if present
         if encoding == 'ch':
             assert type(value) is str and len(value) == len(old_bytes)
             new_bytes = list(value)
@@ -172,7 +173,7 @@ class RamMapping(object):
                     new_bytes.append(b)
                     value /= 256
 
-            if self.big_endian:
+            if self.settings['big_endian']:
                 new_bytes = reversed(new_bytes)
 
         nvram[start:end] = bytearray(new_bytes)
@@ -226,7 +227,11 @@ class RamMapping(object):
         ba = self.get_bytes(nvram)
         if encoding == 'ch':
             result = ''
-            if packed:
+            if self.settings['char_map']:
+                # TODO: this ignores a potential packed=False setting
+                for b in ba:
+                    result += self.settings['char_map'][b]
+            elif packed:
                 result = ba.decode('ascii', 'ignore')
             else:
                 while ba:
@@ -284,7 +289,7 @@ class ParseNVRAM(object):
     def __init__(self, nv_json, nvram):
         self.nv_json = nv_json
         self.nvram = nvram
-        self.big_endian = True
+        self.settings = {'big_endian': True, 'char_map': None}
         self.mapping = []
         if nv_json is not None:
             self.process_json()
@@ -305,7 +310,8 @@ class ParseNVRAM(object):
 
     """
     def process_json(self):
-        self.big_endian = self.nv_json.get('_endian') != 'little'
+        self.settings['big_endian'] = self.nv_json.get('_endian') != 'little'
+        self.settings['char_map'] = self.nv_json.get('char_map', None)
         self.mapping = []
         for section in ['audits', 'adjustments']:
             for group in sorted(self.nv_json.get(section, {}).keys()):
@@ -313,7 +319,7 @@ class ParseNVRAM(object):
                     continue
                 for entry in self.entry_list(section, group):
                     self.mapping.append(RamMapping(entry[1],
-                                                   self.big_endian,
+                                                   self.settings,
                                                    section,
                                                    group,
                                                    entry[0]))
@@ -321,7 +327,7 @@ class ParseNVRAM(object):
         if 'game_state' in self.nv_json:
             for key, entry in self.nv_json['game_state'].items():
                 self.mapping.append(RamMapping(entry,
-                                               self.big_endian,
+                                               self.settings,
                                                'game_state',
                                                'Game State',
                                                key))
@@ -332,7 +338,7 @@ class ParseNVRAM(object):
             entry['label'] = 'Player %u' % player_num
             entry['short_label'] = 'P%u' % player_num
             self.mapping.append(RamMapping(entry,
-                                           self.big_endian,
+                                           self.settings,
                                            'game_state',
                                            'Player Scores'))
             player_num += 1
@@ -340,7 +346,7 @@ class ParseNVRAM(object):
         for section in ['high_scores', 'mode_champions']:
             for entry in self.nv_json.get(section, []):
                 self.mapping.append(RamMapping(entry,
-                                               self.big_endian,
+                                               self.settings,
                                                'score_record',
                                                section))
 
@@ -351,7 +357,7 @@ class ParseNVRAM(object):
 
     # legacy "glue" method to create RamMapping object on-demand
     def ram_mapping(self, entry):
-        return RamMapping(entry, self.big_endian)
+        return RamMapping(entry, self.settings)
 
     def verify_checksum8(self, entry, verbose=False, fix=False):
         valid = True
@@ -388,7 +394,7 @@ class ParseNVRAM(object):
         m = self.ram_mapping(entry)
         ba = m.get_bytes(self.nvram)
         # pop last two bytes as stored checksum16
-        if self.big_endian:
+        if self.settings['big_endian']:
             stored_sum = ba.pop() + ba.pop() * 256
         else:
             stored_sum = ba.pop() * 256 + ba.pop()
@@ -399,7 +405,7 @@ class ParseNVRAM(object):
                 print("checksum16 at %s: 0x%04X != 0x%04X %s" % (entry['start'],
                                                                  calc_sum, stored_sum, entry.get('label', '')))
             if fix:
-                if self.big_endian:
+                if self.settings['big_endian']:
                     self.nvram[checksum_offset:checksum_offset + 2] = [
                         calc_sum / 256, calc_sum % 256]
                 else:
