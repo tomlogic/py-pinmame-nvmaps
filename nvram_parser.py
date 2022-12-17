@@ -2,9 +2,9 @@
 
 """
 ParseNVRAM: a tool for extracting information from PinMAME's ".nv" files.
-This program makes us of content from the PinMAME NVRAM Maps project.
+This program makes use of content from the PinMAME NVRAM Maps project.
 
-Copyright (C) 2015 by Tom Collins <tom@tomlogic.com>
+Copyright (C) 2015-2022 by Tom Collins <tom@tomlogic.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published
@@ -105,7 +105,7 @@ class RamMapping(object):
         return ba
 
     # Return an integer value from one or more bytes in memory
-    # handles multi-byte integers (int), binary coded decimal (bcd) and
+    # handles multibyte integers (int), binary coded decimal (bcd) and
     # single-byte enumerated (enum) values.  Returns None for unsupported
     # encodings.
     def get_value(self, nvram):
@@ -158,16 +158,16 @@ class RamMapping(object):
                 # for day of week 1=Sunday, 7=Saturday
                 # isoweekday() returns 1=Monday 7=Sunday
                 new_bytes = [value.year / 256, value.year % 256,
-                    value.month, value.day, value.isoweekday() % 7 + 1,
-                    value.hour, value.minute]
+                             value.month, value.day, value.isoweekday() % 7 + 1,
+                             value.hour, value.minute]
         else:   # all formats where byte order applies
             if encoding == 'bcd':
-                for x in old_bytes:
+                for _ in old_bytes:
                     b = value % 100
                     new_bytes.append(b % 10 + 16 * (b / 10))
                     value /= 100
             elif encoding == 'int' or encoding == 'enum':
-                for x in old_bytes:
+                for _ in old_bytes:
                     b = value % 256
                     new_bytes.append(b)
                     value /= 256
@@ -177,7 +177,7 @@ class RamMapping(object):
 
         nvram[start:end] = bytearray(new_bytes)
 
-    # format a multi-byte integer using options in 'entry'
+    # format a multibyte integer using options in 'entry'
     def format_value(self, value):
         # `special_values` contains strings to use in place of `value`
         # commonly used at the low end of a range for off/disabled
@@ -368,7 +368,7 @@ class ParseNVRAM(object):
                     if verbose:
                         valid = False
                         print("%u bytes at 0x%04X checksum8 0x%02X != 0x%02X"
-                            % (grouping, offset - count, checksum, b))
+                              % (grouping, offset - count, checksum, b))
                     if fix:
                         self.nvram[offset] = checksum
                 count = calc_sum = 0
@@ -450,7 +450,8 @@ class ParseNVRAM(object):
                 score = entry.format_high_score(self.nvram)
                 if score is not None:
                     scores.append('%s: %s' %
-                        (entry.format_label(short_label=short_labels), score))
+                                  (entry.format_label(short_label=short_labels),
+                                   score))
         return scores
 
     def dump(self, checksums=True):
@@ -471,8 +472,8 @@ class ParseNVRAM(object):
         if checksums:
             # Verify all checksums in the file.  Note that we can eventually re-use
             # that part of the memory map to update checksums if modifying nvram values.
-            self.verify_all_checksum16(verbose = True)
-            self.verify_all_checksum8(verbose = True)
+            self.verify_all_checksum16(verbose=True)
+            self.verify_all_checksum8(verbose=True)
 
 
 def print_usage():
@@ -502,4 +503,5 @@ def main():
     p.dump()
 
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    main()
