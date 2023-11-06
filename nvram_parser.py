@@ -368,12 +368,15 @@ class ParseNVRAM(object):
                                                    entry[0]))
 
         if 'game_state' in self.nv_json:
-            for key, entry in self.nv_json['game_state'].items():
-                self.mapping.append(RamMapping(entry,
-                                               self.metadata,
-                                               'game_state',
-                                               'Game State',
-                                               key))
+            for key, entries in self.nv_json['game_state'].items():
+                if not isinstance(entries, list):
+                    entries = [entries]
+                for entry in entries:
+                    self.mapping.append(RamMapping(entry,
+                                                   self.metadata,
+                                                   'game_state',
+                                                   'Game State',
+                                                   key))
 
         player_num = 1
         for p in self.nv_json.get('last_game', []):
