@@ -25,6 +25,11 @@ import sys
 from datetime import datetime
 
 
+NIBBLE_BOTH = 0
+NIBBLE_LOW = 1
+NIBBLE_HIGH = 2
+
+
 class RamMapping(object):
     def __init__(self, entry, metadata, section=None, group=None, key=None):
         self.entry = entry
@@ -72,7 +77,7 @@ class RamMapping(object):
             return map((lambda offset: self.to_int(offset)),
                        self.entry['offsets'])
 
-        start = self.to_int(self.entry.get('start', '0'))
+        start = self.to_int(self.entry.get('start', 0))
         end = start
         if 'length' in self.entry:
             length = self.to_int(self.entry['length'])
@@ -104,6 +109,30 @@ class RamMapping(object):
             return bytearray(map((lambda b: b & mask), ba))
         return ba
 
+    @staticmethod
+    def bcd(value):
+        # Ignore nibbles 0xA to 0xF (0xF = blank on Dracula/Wild Fyre)
+        return 0 if value > 9 else value
+
+    # return NIBBLE_BOTH, NIBBLE_LOW, or NIBBLE_HIGH based on `nibble`
+    # attribute or the deprecated `packed` attribute.
+    def nibble(self):
+        nibble = 'both' if self.entry.get('packed', True) else 'low'
+        nibble = self.entry.get('nibble', nibble)
+        if nibble == 'both':
+            return NIBBLE_BOTH
+        elif nibble == 'low':
+            return NIBBLE_LOW
+        elif nibble == 'high':
+            return NIBBLE_HIGH
+        else:
+            raise ValueError("invalid `nibble` value")
+
+    # return TRUE if this entry is little endian (LSB first)
+    def little_endian(self):
+        default = 'big' if self.metadata['big_endian'] else 'little'
+        return self.entry.get('endian', default) == 'little'
+
     # Return an integer value from one or more bytes in memory
     # handles multibyte integers (int), binary coded decimal (bcd) and
     # single-byte enumerated (enum) values.  Returns None for unsupported
@@ -113,17 +142,21 @@ class RamMapping(object):
         if 'encoding' in self.entry:
             encoding = self.entry['encoding']
             ba = self.get_bytes(nvram)
-            packed = self.entry.get('packed', True)
-            if self.entry.get('endian') == 'little' or not self.metadata['big_endian']:
+            if self.little_endian():
                 ba.reverse()
 
             if encoding == 'bcd':
+                nibble = self.nibble()
                 value = 0
                 for b in ba:
-                    if packed:
-                        value = value * 100 + (b >> 4) * 10 + (b & 0x0F)
+                    if nibble == NIBBLE_BOTH:
+                        value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
+                    elif nibble == NIBBLE_LOW:
+                        value = value * 10 + self.bcd(b & 0x0F)
+                    elif nibble == NIBBLE_HIGH:
+                        value = value * 10 + self.bcd(b >> 4)
                     else:
-                        value = value * 10 + (b & 0x0F)
+                        raise ValueError('unsupported NIBBLE option')
             elif encoding == 'int' or encoding == 'bits':
                 value = 0
                 for b in ba:
@@ -132,12 +165,12 @@ class RamMapping(object):
                 value = ba[0]
 
             if value is not None:
-                scale = self.entry.get('scale', '1')
+                scale = self.entry.get('scale', 1)
                 if type(scale) is float:
                     value *= scale
                 else:
                     value *= self.to_int(scale)
-                value += self.to_int(self.entry.get('offset', '0'))
+                value += self.to_int(self.entry.get('offset', 0))
 
         return value
 
@@ -173,7 +206,7 @@ class RamMapping(object):
                     new_bytes.append(b)
                     value /= 256
 
-            if self.metadata['big_endian']:
+            if not self.little_endian():
                 new_bytes = reversed(new_bytes)
 
         nvram[start:end] = bytearray(new_bytes)
@@ -204,9 +237,9 @@ class RamMapping(object):
             return self.format_high_score(nvram)
         if 'encoding' not in self.entry:
             return None
+
         encoding = self.entry['encoding']
         value = self.get_value(nvram)
-        packed = self.entry.get('packed', True)
         if encoding == 'bcd' or encoding == 'int':
             return self.format_value(value)
         elif encoding == 'bits':
@@ -226,14 +259,19 @@ class RamMapping(object):
 
         ba = self.get_bytes(nvram)
         if encoding == 'ch':
+            nibble = self.nibble()
             result = ''
             char_map = self.metadata.get('char_map')
             while ba:
-                if packed:
+                if nibble == NIBBLE_BOTH:
                     b = ba.pop(0)
-                else:
+                elif nibble == NIBBLE_LOW:
                     # Robowars uses unpacked character encoding
                     b = (ba.pop(0) & 0x0F) * 16 + (ba.pop(0) & 0x0F)
+                elif nibble == NIBBLE_HIGH:
+                    b = (ba.pop(0) >> 4) * 16 + (ba.pop(0) >> 4)
+                else:
+                    raise ValueError('unsupported nibble attribute')
                 if char_map:
                     result += char_map[b]
                 else:
@@ -330,12 +368,15 @@ class ParseNVRAM(object):
                                                    entry[0]))
 
         if 'game_state' in self.nv_json:
-            for key, entry in self.nv_json['game_state'].items():
-                self.mapping.append(RamMapping(entry,
-                                               self.metadata,
-                                               'game_state',
-                                               'Game State',
-                                               key))
+            for key, entries in self.nv_json['game_state'].items():
+                if not isinstance(entries, list):
+                    entries = [entries]
+                for entry in entries:
+                    self.mapping.append(RamMapping(entry,
+                                                   self.metadata,
+                                                   'game_state',
+                                                   'Game State',
+                                                   key))
 
         player_num = 1
         for p in self.nv_json.get('last_game', []):
