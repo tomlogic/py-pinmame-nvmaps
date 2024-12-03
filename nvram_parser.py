@@ -274,6 +274,8 @@ class RamMapping(object):
                     raise ValueError('unsupported nibble attribute')
                 if char_map:
                     result += char_map[b]
+                elif b == 0:    # treat as null-terminated string
+                    break
                 else:
                     result += chr(b)
             if result == self.entry.get('default', '   '):
