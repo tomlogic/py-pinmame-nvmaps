@@ -1,4 +1,4 @@
-#!env python
+#!/usr/bin/env python3
 
 """
 ParseNVRAM: a tool for extracting information from PinMAME's ".nv" files.
