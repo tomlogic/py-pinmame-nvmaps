@@ -1,0 +1,16 @@
+Using map ../maps/kissc.nv.json for kissc.nv
+
+Game State
+----------
+Credits: 3
+
+Player Scores
+-------------
+Player 1: 6,550
+Player 2: 10,520
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 275,550

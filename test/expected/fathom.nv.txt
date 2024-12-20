@@ -1,0 +1,16 @@
+Using map ../maps/fathom.nv.json for fathom.nv
+
+Game State
+----------
+Credits: 7
+
+Player Scores
+-------------
+Player 1: 39,130
+Player 2: 25,110
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 563,440

@@ -1,0 +1,16 @@
+Using map ../maps/embryond.nv.json for embryond.nv
+
+Game State
+----------
+Credits: 10
+
+Player Scores
+-------------
+Player 1: 43,380
+Player 2: 49,840
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 49,840

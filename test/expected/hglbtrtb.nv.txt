@@ -1,0 +1,16 @@
+Using map ../maps/hglbtrtb.nv.json for hglbtrtb.nv
+
+Game State
+----------
+Credits: 0
+
+Player Scores
+-------------
+Player 1: 26,810
+Player 2: 23,710
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 130,120

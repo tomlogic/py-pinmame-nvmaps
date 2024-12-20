@@ -1,0 +1,16 @@
+Using map ../maps/paragon.nv.json for paragon.nv
+
+Game State
+----------
+Credits: 4
+
+Player Scores
+-------------
+Player 1: 25,830
+Player 2: 14,330
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 25,830
