@@ -290,7 +290,8 @@ class RamMapping(object):
                 b = ba.pop(0)
                 if char_map:
                     result += char_map[b]
-                elif b == 0:    # treat as null-terminated string
+                elif b == 0 and self.entry.get('null', 'ignore') != 'ignore':
+                    # treat as null-terminated or truncated string
                     break
                 else:
                     result += chr(b)
