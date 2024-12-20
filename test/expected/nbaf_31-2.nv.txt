@@ -1,0 +1,85 @@
+Using map ../maps/nbaf_31.nv.json for nbaf_31-2.nv
+
+A.1 Standard Adjustments
+------------------------
+01 Balls Per Game: 3
+02 Tilt Warnings: 3
+03 Max E.B. Count: 4
+04 Max E.B. Per B.I.P.: OFF
+05 Replay System: Off
+06 Replay Percent: 7
+07 Replay Start: 100
+08 Replay Levels: 1
+09 Replay L1: 100
+10 Replay L2: OFF
+11 Replay L3: OFF
+12 Replay L4: OFF
+13 Replay Boost: AUTO
+14 Replay Award: Credit
+15 Special Award: Credit
+16 Match Award: Credit
+17 Ex. Ball Ticket: NO
+18 Max. Tick./Player: 25
+19 Match Feature: 7%
+20 Custom Message: ON
+21 Language: English
+22 Clock Style: AM/PM
+23 Date Style: Mmm. DD, YY
+24 Show Time + Date: NO
+25 Allow Dim. Illum.: YES
+26 Tournament Play: NO
+27 Euro. Scr. Format: NO
+28 Min. Vol. Override: NO
+29 GI Power Saver: 15 MINUTES
+30 Power Save Level: 5
+31 Ticket Exp. Board: NO
+32 No Bonus Flips: YES
+33 Game Restart: SLOW
+
+Player Scores
+-------------
+Player 1: 27
+Player 2: 33
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: GG  150
+First Place: TMK 130
+Second Place: KCQ 110
+Third Place: CAT 90
+Fourth Place: MAS 70
+
+mode_champions
+--------------
+BLAZERS: TMK 51
+BUCKS: CJS 48
+BULLETS: III 71
+BULLS: LED 30,136
+CAVALIERS: ROG 10,084
+CELTICS: LFS 20,104
+CLIPPERS: ASR 52
+GRIZZLIES: POP 41
+HAWKS: JAP 53
+HEAT: VJP 43
+HORNETS: BRE 47
+JAZZ: DJW 46
+KINGS: EAE 49
+KNICKS: RRR 50
+LAKERS: ADG 10,072
+MAGIC: BCM 45
+MAVERICKS: PML 39
+NETS: TEX 58
+NUGGETS: MW  35
+PACERS: TWU 32
+PISTONS: XAQ 10,070
+RAPTORS: UTB 33
+ROCKETS: GIW 31
+76ERS: ZAP 55
+SUPERSONICS: GG  54
+SPURS: KCQ 44
+SUNS: MAT 40
+T-WOLVES: KOZ 37
+WARRIORS: JIM 57
+Last Played: 2024-09-21 00:01
