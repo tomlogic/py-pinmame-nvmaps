@@ -2,7 +2,7 @@ Using map ../maps/dvlrider.nv.json for dvlrider.nv
 
 Game State
 ----------
-Credits: 37
+Credits: 7
 
 Player Scores
 -------------
