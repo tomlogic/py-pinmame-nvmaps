@@ -120,8 +120,13 @@ class RamMapping(object):
     # return NIBBLE_BOTH, NIBBLE_LOW, or NIBBLE_HIGH based on `nibble`
     # attribute or the deprecated `packed` attribute.
     def nibble(self):
-        nibble = 'both' if self.entry.get('packed', True) else 'low'
-        nibble = self.entry.get('nibble', nibble)
+        nibble = self.metadata['nibble']
+        if not self.entry.get('packed', True):
+            # if entry has 'packed=false', replace file's default with 'nibble=low'
+            nibble = 'low'
+        else:
+            nibble = self.entry.get('nibble', nibble)
+
         if nibble == 'both':
             return NIBBLE_BOTH
         elif nibble == 'low':
@@ -334,7 +339,7 @@ class ParseNVRAM(object):
     def __init__(self, nv_json, nvram):
         self.nv_json = nv_json
         self.nvram = nvram
-        self.metadata = {'big_endian': True}
+        self.metadata = {'big_endian': True, 'nibble': 'both'}
         self.mapping = []
         if nv_json is not None:
             self.process_json()
