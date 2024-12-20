@@ -104,9 +104,36 @@ class RamMapping(object):
         return bytearray(map((lambda offset: nvram[offset]),
                              self.offsets()))
 
-    # same as get_bytes_unmasked() but apply the mask in 'mask' if present
     def get_bytes(self, nvram):
+        """Same as get_bytes_unmasked() but:
+        - reverses little-endian sequences for integer encodings (bcd, int, bits)
+        - combines nibbles into complete bytes
+        - if appropriate, applies a mask to each byte
+        """
         ba = self.get_bytes_unmasked(nvram)
+        # convert certain byte sequences from little_endian to big endian
+        if 'encoding' in self.entry and self.little_endian():
+            if self.entry['encoding'] in ['bcd', 'int', 'bits']:
+                ba.reverse()
+
+        nibble = self.nibble()
+        if nibble != NIBBLE_BOTH:
+            # combine nibbles of ba
+            new_ba = []
+            value = 0
+            while len(ba):
+                b = ba.pop(0)
+                if nibble == NIBBLE_LOW:
+                    b = b & 0x0F
+                else:
+                    b = b >> 4
+                value = (value << 4) + b
+                if len(ba) % 2 == 0:
+                    # if remaining byte count is even, save new value
+                    new_ba.append(value)
+                    value = 0
+            return new_ba
+
         if 'mask' in self.entry:
             mask = self.to_int(self.entry['mask'])
             return bytearray(map((lambda b: b & mask), ba))
@@ -150,21 +177,11 @@ class RamMapping(object):
         if 'encoding' in self.entry:
             encoding = self.entry['encoding']
             ba = self.get_bytes(nvram)
-            if self.little_endian():
-                ba.reverse()
 
             if encoding == 'bcd':
-                nibble = self.nibble()
                 value = 0
                 for b in ba:
-                    if nibble == NIBBLE_BOTH:
-                        value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
-                    elif nibble == NIBBLE_LOW:
-                        value = value * 10 + self.bcd(b & 0x0F)
-                    elif nibble == NIBBLE_HIGH:
-                        value = value * 10 + self.bcd(b >> 4)
-                    else:
-                        raise ValueError('unsupported NIBBLE option')
+                    value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
             elif encoding == 'int' or encoding == 'bits':
                 value = 0
                 for b in ba:
@@ -267,19 +284,10 @@ class RamMapping(object):
 
         ba = self.get_bytes(nvram)
         if encoding == 'ch':
-            nibble = self.nibble()
             result = ''
             char_map = self.metadata.get('char_map')
             while ba:
-                if nibble == NIBBLE_BOTH:
-                    b = ba.pop(0)
-                elif nibble == NIBBLE_LOW:
-                    # Robowars uses unpacked character encoding
-                    b = (ba.pop(0) & 0x0F) * 16 + (ba.pop(0) & 0x0F)
-                elif nibble == NIBBLE_HIGH:
-                    b = (ba.pop(0) >> 4) * 16 + (ba.pop(0) >> 4)
-                else:
-                    raise ValueError('unsupported nibble attribute')
+                b = ba.pop(0)
                 if char_map:
                     result += char_map[b]
                 elif b == 0:    # treat as null-terminated string
