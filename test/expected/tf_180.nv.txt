@@ -1,0 +1,26 @@
+Using map ../maps/tf_180.nv.json for tf_180.nv
+
+Player Scores
+-------------
+Player 1: 584,950
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Autobot Grand Champion: OPT 75,000,000
+Autobot #1: JAZ 55,000,000
+Autobot #2: PWL 40,000,000
+Autobot #3: IRN 30,000,000
+Autobot #4: BEE 25,000,000
+Decepticon Grand Champion: MEG 75,000,000
+Decepticon #1: STR 55,000,000
+Decepticon #2: SND 40,000,000
+Decepticon #3: SHK 30,000,000
+Decepticon #4: BLK 25,000,000
+
+mode_champions
+--------------
+Combo: LON 20
+Best Combo Champion: LON 327,681-WAY

@@ -1,0 +1,19 @@
+Using map ../maps/polic_l4.nv.json for polic_l4.nv
+
+Game State
+----------
+Credits: 3
+
+Player Scores
+-------------
+Player 1: 508,040
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: MDR 6,000,000
+Second Place: BSO 5,500,000
+Third Place: PVA 5,000,000
+Fourth Place: CPG 4,500,000

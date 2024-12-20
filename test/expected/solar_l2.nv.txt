@@ -1,0 +1,12 @@
+Using map ../maps/williams.system7.nv.json for solar_l2.nv
+
+Game State
+----------
+Credits: 32
+
+high_scores
+-----------
+First Place: 2,500,000
+Second Place: 0
+Third Place: 0
+Fourth Place: 0

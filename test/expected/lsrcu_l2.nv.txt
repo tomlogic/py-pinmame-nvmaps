@@ -1,0 +1,12 @@
+Using map ../maps/williams.system7.nv.json for lsrcu_l2.nv
+
+Game State
+----------
+Credits: 31
+
+high_scores
+-----------
+First Place: 2,500,000
+Second Place: 2,100,000
+Third Place: 1,700,000
+Fourth Place: 1,300,000

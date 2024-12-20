@@ -1,0 +1,35 @@
+Using map ../maps/gottlieb_80b-2.nv.json for robowars-default.nv
+
+Bookkeeping
+-----------
+01 Left Chute Coins: 0
+02 Right Chute Coins: 0
+03 Center Chute Coins: 0
+04 Total Plays: 0
+05 Total Replays: 0
+07 Extra Balls: 0
+08 Tilts: 0
+09 Specials: 0
+10 Times HGTD Awarded: 0
+14 Highest Game To Date: 0
+14a HGTD Initials: 
+15 Game Time: 0 seconds
+
+Standard Adjustments
+--------------------
+06 Replay Percentage: 0%
+11 First High Score: 0
+12 Second High Score: 0
+13 Third High Score: 0
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+High Score #1: 0
+High Score #2: 0
+High Score #3: 0
+High Score #4: 0
+High Score #5: 0

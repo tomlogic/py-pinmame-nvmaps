@@ -1,0 +1,20 @@
+Using map ../maps/ww_lh6.nv.json for ww_lh6.nv
+
+Player Scores
+-------------
+Player 1: 700,330
+Player 2: 450,130
+Player 3: 835,020
+Player 4: 600,220
+
+high_scores
+-----------
+RIVER MASTER: MAB 200,000,000
+First Place: DEN 120,000,000
+Second Place: CG  100,000,000
+Third Place: TEX 90,000,000
+Fourth Place: EJB 80,000,000
+
+mode_champions
+--------------
+Insanity Record: RSM 12 Water Falls

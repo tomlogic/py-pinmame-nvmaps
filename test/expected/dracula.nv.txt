@@ -1,0 +1,39 @@
+Using map ../maps/stern-m100.nv.json for dracula.nv
+
+Audits
+------
+05 Credits: 0
+06 Total Plays: 419
+07 Total Replays: 18
+08 HSTD Beaten: 5
+09 Coin Chute 2: 7
+10 Coin Chute 1: 0
+11 Coin Chute 3: 406
+
+Adjustments
+-----------
+01 Replay 1: 0
+02 Replay 2: 0
+03 Replay 3: 0
+04 High Score: 440,040
+
+Game State
+----------
+Match: 70
+Ball: 70
+Credits: 0
+P1: 32,520
+P2: 22,510
+P3: 0
+P4: 0
+
+Player Scores
+-------------
+Player 1: 32,520
+Player 2: 22,510
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 440,040

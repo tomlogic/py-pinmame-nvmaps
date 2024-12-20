@@ -1,0 +1,138 @@
+Using map ../maps/tsptr_l3.nv.json for tsptr_l3.nv
+
+Audits
+------
+01 Left Coins: 7
+02 Center Coins: 5
+03 Right Coins: 0
+04 Paid Credits: 27
+05 Total Plays: 8
+06 Total Free: 0
+08 Replay Awards: 0
+10 Special Awards: 0
+12 Match Awards: 0
+13 HSTD Credits: 0
+15 Extra Balls: 0
+18 Minutes of Play: 0
+19 Balls Played: 2
+20 Replay 1 Awards: 0
+21 Replay 2 Awards: 0
+22 Replay 3 Awards: 0
+23 Replay 4 Awards: 0
+24 1 Player Games: 0
+25 2 Player Games: 0
+26 3 Player Games: 0
+27 4 Player Games: 0
+28 Burn in Cycles: 0
+29 Made Multiball: 0
+30 Made Jackpot: 0
+31 Made Kickback: 0
+32 Made Bonus 5X: 0
+33 Xporter 1 Mil. Lit: 0
+34 Made Xporter 1 Mil.: 0
+35 Excellerator: 0
+36 Excellerator 250K Made: 0
+37 Extra Ball Lit: 0
+38 Rescue Bonus Made: 0
+39 HSTD Reset Counter: 2,992
+40 0.0-0.4 Mil. Score: 0
+41 0.5-0.9 Mil. Score: 0
+42 1.0-1.4 Mil. Score: 0
+43 1.5-1.9 Mil. Score: 0
+44 2.0-2.9 Mil. Score: 0
+45 3.0-3.9 Mil. Score: 0
+46 4.0-4.9 Mil. Score: 0
+47 5.0-5.9 Mil. Score: 0
+48 6.0-7.9 Mil. Score: 0
+49 8.0-9.9 Mil. Score: 0
+50 10-99 Mil. Score: 0
+51 Av. Min. Game Time: 0
+52 Left Drains: 0
+53 Right Drains: 0
+54 3 Plays/1$: 0
+
+Adjustments
+-----------
+01 Auto Replay %: 10
+02a Replay Start: 2,500,000
+02b Replay Level 1: 2,500,000
+03a Replay Levels: 1
+03b Replay Level 2: Off
+04b Replay Level 3: Off
+05b Replay Level 4: Off
+06 Replay Award: Credit
+07 Special Award: Credit
+08 Match Feature: 10%
+09 Balls Per Game: 3
+10 Tilt Warnings: 3
+11 Max Extra Balls: 2
+12 Max Credits: 10
+13 Highest Scores: On
+14 Backup High Score 1: 7,000,000
+15 Backup High Score 2: 6,500,000
+16 Backup High Score 3: 6,000,000
+17 Backup High Score 4: 5,500,000
+18 High Score 1 Credits: 1
+19 High Score 2 Credits: 1
+20 High Score 3 Credits: 1
+21 High Score 4 Credits: 1
+22 HSTD Reset Every: 3,000 plays
+23 Free Play: No
+24 Pricing: 1
+25 Left Units: 1
+26 Center Units: 4
+27 Right Units: 1
+28 Units/Credit: 1
+29 Units/Bonus: 0
+30 Minimum Units: 0
+31 Spinner On Value: 3K
+32 Left Kickback: Yes
+33 Xporter Memory: Yes
+34 Special Memory: Yes
+35 Rescue Memory: Yes
+36 Xporter Bonus Time: Yes
+37 Top Lane Memory: Yes
+38 Extra Ball Memory: Yes
+39 Jackpot Adv. Value: 5K
+40 Easy Lock (via Ret Lns): Yes
+41 Top Lane Change: Yes
+42 Consol Extra Ball: Yes
+43 Extra Ball Percent: 33%
+44 Extra Ball On: 5X
+45 Xcel Memory: Yes
+46 Not Used: 0
+47 Consolation Time: 35 seconds
+48 Attract Sounds: None
+49 Custom Message: On
+49a Custom Msg Line 1:  G E T    M  E  
+49b Custom Msg Line 2:   OUTTA   HERE  
+49c Custom Msg Line 3: BEAM ME UP BALLY
+50 Display AU 01 - 04: Yes
+51 Unused Adjustment: 0
+52 Unused Adjustment: 0
+
+Game State
+----------
+Current Player: 1
+Player Count: 1
+Ball: n/a
+Match: 0
+Playfield Multiplier: 1X
+Bonus: 0
+Bonus Multiplier: 1X
+X-Cellerator Value: 10,000
+Jackpot Bonus: 530,000
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: COL 7,000,000
+Second Place: DAN 6,500,000
+Third Place: TIM 6,000,000
+Fourth Place: R/J 5,500,000

@@ -1,0 +1,15 @@
+Using map ../maps/f14_l1.nv.json for f14_l1.nv
+
+Player Scores
+-------------
+Player 1: 13,460
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: EJB 4,000,000
+Second Place: CLF 3,800,000
+Third Place: JCD 3,600,000
+Fourth Place: KWD 3,400,000

@@ -1,0 +1,35 @@
+Using map ../maps/gottlieb_80b-2.nv.json for robowars.nv
+
+Bookkeeping
+-----------
+01 Left Chute Coins: 0
+02 Right Chute Coins: 11
+03 Center Chute Coins: 21
+04 Total Plays: 7
+05 Total Replays: 0
+07 Extra Balls: 0
+08 Tilts: 0
+09 Specials: 0
+10 Times HGTD Awarded: 1
+14 Highest Game To Date: 123,000
+14a HGTD Initials: SOM
+15 Game Time: 300 seconds
+
+Standard Adjustments
+--------------------
+06 Replay Percentage: 0%
+11 First High Score: 0
+12 Second High Score: 0
+13 Third High Score: 0
+
+Game State
+----------
+Credits: 7
+
+high_scores
+-----------
+High Score #1: SOM 123,000
+High Score #2: AAA 122,090
+High Score #3: DDD 116,030
+High Score #4: CCC 88,210
+High Score #5: BBB 87,000

@@ -1,0 +1,15 @@
+Using map ../maps/eatpm_l4.nv.json for eatpm_l4.nv
+
+Player Scores
+-------------
+Player 1: 32,040
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: LOU 8,000,000
+Second Place: CLS 7,000,000
+Third Place: LJR 6,000,000
+Fourth Place: ROG 5,000,000

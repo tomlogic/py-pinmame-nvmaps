@@ -1,0 +1,106 @@
+Using map ../maps/dw_l2.nv.json for dw_l2.nv
+
+B.2 Earnings Audits
+-------------------
+02 Recent Left Slot: 0
+03 Recent Cent. Slot: 4
+04 Recent Rght. Slot: 9
+05 Recent 4th Slot: 0
+06 Recent Paid Cred: 11
+07 Recent Serv. Cred: 0
+09 Total Left Slot: 0
+10 Total Cent. Slot: 4
+11 Total Rght. Slot: 9
+12 Total 4th Slot: 0
+13 Total Paid Cred: 11
+14 Total Serv. Cred: 0
+
+B.3 Standard Audits
+-------------------
+01 Games Started: 3
+02 Total Plays: 1
+03 Total Free Plays: 1
+05 Replay Awards: 0
+07 Special Awards: 0
+09 Match Awards: 1
+11 H.S.T.D. Credits: 0
+13 Extra Balls: 0
+15 ?Tickets Awarded: 0
+17 Left Drains: 0
+18 Right Drains: 0
+21 Play Time: 0:00:40
+22 Machine On: 0:25:00
+23 Balls Played: 3
+24 Tilts: 0
+25 Replay 1 Awards: 0
+26 Replay 2 Awards: 0
+27 Replay 3 Awards: 0
+28 Replay 4 Awards: 0
+29 1 Player Games: 1
+30 2 Player Games: 0
+31 3 Player Games: 0
+32 4 Player Games: 0
+33 H.S.T.D. Reset Count: 0
+34 Burn-in Time: 0:00:00
+35 1st Replay Level: 707M
+36 Left Flipper: 178
+37 Right Flipper: 170
+
+B.4 Feature Audits
+------------------
+01 Buy-In Ex. Balls: 0
+
+Game State
+----------
+Escape A: 20
+Escape B: 20
+Repair A: 20
+Repair B: 20
+Player Count: 1
+Current Player: 1
+Ball: 3
+Extra Balls: 0
+Pre-P1 bytes?: 00 00 00 00 ff 00 04 00 00
+P1 Bonus Multiplier: 2
+P1 Bonus: 66,000
+P1 Repair Millions: 0
+P1 Transmat Value: 250,000
+P1 Unknown #2: 00 00 00 00 00
+P1 Escape Level: 1
+P1 Unknown #2a: 00 00
+P1 W-H-O: 0
+P1 Unknown #2b: 01
+P1 Video Round Completed: 0
+P1 Video Related: 00
+P1 Video Mode Bonus: 0
+P1 Unknown #4: 00 00 00 00 00
+P1 Unknown #5: 00 00 09
+P1 Multiball Round: 0
+P1 Unknown #5b: 0a 00 00 00 00 00 02
+P1 Playfield X countdown: 0
+P1 Doctors: 0
+P1 Unknown #6: 00 00 00 00 00 00 00 00 00 00 00 00
+Playfield X: 0.0X
+Time Factor A: 0
+Time Factor B: 1
+
+Player Scores
+-------------
+Player 1: 4,262,570
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: WHO 300,000,000
+First Place: BSO 250,000,000
+Second Place: BIL 200,000,000
+Third Place: HEY 150,000,000
+Fourth Place: S   100,000,000
+
+mode_champions
+--------------
+Loop Champion: WHO 6
+Highest Davros Wave: WHO 0
+Last Played: 2024-01-31 00:01

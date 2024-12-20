@@ -1,0 +1,16 @@
+Using map ../maps/nf_23x.nv.json for nf_23x.nv
+
+Player Scores
+-------------
+Player 1: 110,365,920
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: SSR 2,000,000,000
+First Place: MAT 1,600,000,000
+Second Place: ZAP 1,400,000,000
+Third Place: DAN 1,200,000,000
+Fourth Place: PJP 1,000,000,000

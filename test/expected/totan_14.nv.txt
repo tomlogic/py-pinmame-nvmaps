@@ -1,0 +1,16 @@
+Using map ../maps/totan_14.nv.json for totan_14.nv
+
+Player Scores
+-------------
+Player 1: 678,040
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: KOZ 9,250,000
+1st: POP 9,000,000
+2nd: MAX 8,750,000
+3rd: SKA 8,500,000
+4th: ZAB 8,000,000

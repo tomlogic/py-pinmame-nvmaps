@@ -1,0 +1,16 @@
+Using map ../maps/socrking.nv.json for socrking.nv
+
+Game State
+----------
+Credits: 71
+
+Player Scores
+-------------
+Player 1: 137,680
+Player 2: 414,950
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 13,500,000

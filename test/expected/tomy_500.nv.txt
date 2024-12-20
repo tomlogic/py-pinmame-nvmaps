@@ -1,0 +1,17 @@
+Using map ../maps/tomy_400.nv.json for tomy_500.nv
+
+Player Scores
+-------------
+Player 1: 4,702,109,630
+Player 2: 4,349,414,040
+Player 3: 4,152,202,031
+Player 4: 3,720,203,230
+
+high_scores
+-----------
+1st: CNH 1,000,000,000
+2nd: IVE 900,000,000
+3rd: ED  800,000,000
+4th: DAN 700,000,000
+5th: MCS 600,000,000
+6th: JEN 500,000,000

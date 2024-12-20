@@ -1,0 +1,16 @@
+Using map ../maps/mcastle.nv.json for mcastle.nv
+
+Game State
+----------
+Credits: 93
+
+Player Scores
+-------------
+Player 1: 131,430
+Player 2: 113,210
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 7,500,000

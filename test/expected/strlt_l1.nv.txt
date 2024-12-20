@@ -1,0 +1,12 @@
+Using map ../maps/williams.system7.nv.json for strlt_l1.nv
+
+Game State
+----------
+Credits: 2
+
+high_scores
+-----------
+First Place: 3,000,000
+Second Place: 0
+Third Place: 0
+Fourth Place: 0

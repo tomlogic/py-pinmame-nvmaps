@@ -1,0 +1,25 @@
+Using map ../maps/ts_lx5.nv.json for ts_lx5.nv
+
+Player Scores
+-------------
+Player 1: 142,239,830
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: MAB 700,000,000
+Best Agent #1: BRE 650,000,000
+Best Agent #2: BCF 600,000,000
+Best Agent #3: DTW 550,000,000
+Best Agent #4: DWF 500,000,000
+Buyin Champion: BRE 900,000,000
+BuyIn Score #1: MAB 850,000,000
+BuyIn Score #2: BCF 800,000,000
+BuyIn Score #3: TEX 750,000,000
+BuyIn Score #4: ASR 700,000,000
+
+mode_champions
+--------------
+Shadow Loop Champ: TEX 2 Loops

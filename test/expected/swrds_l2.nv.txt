@@ -1,0 +1,19 @@
+Using map ../maps/swrds_l2.nv.json for swrds_l2.nv
+
+Game State
+----------
+Credits: 12
+
+Player Scores
+-------------
+Player 1: 25,030
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: AMK 5,000,000
+Second Place: DKL 4,500,000
+Third Place: DTW 4,000,000
+Fourth Place: BLS 3,500,000

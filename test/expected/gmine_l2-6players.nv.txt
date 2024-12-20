@@ -1,0 +1,18 @@
+Using map ../maps/gmine_l2.nv.json for gmine_l2-6players.nv
+
+Game State
+----------
+Credits: 26
+
+Player Scores
+-------------
+Player 1: 2,237
+Player 2: 1,744
+Player 3: 1,053
+Player 4: 454
+Player 5: 1,738
+Player 6: 368
+
+high_scores
+-----------
+High Score: 200

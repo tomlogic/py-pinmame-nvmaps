@@ -1,0 +1,12 @@
+Using map ../maps/williams.system7.nv.json for pharo_l2.nv
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+First Place: 2,300,000
+Second Place: 0
+Third Place: 0
+Fourth Place: 0

@@ -1,0 +1,16 @@
+Using map ../maps/dvlrider.nv.json for dvlrider.nv
+
+Game State
+----------
+Credits: 37
+
+Player Scores
+-------------
+Player 1: 200,430
+Player 2: 129,760
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 4,000,000

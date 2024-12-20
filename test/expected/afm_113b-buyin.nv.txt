@@ -1,0 +1,151 @@
+Using map ../maps/afm_113.nv.json for afm_113b-buyin.nv
+
+B.2 Earnings Audits
+-------------------
+02 Recent Left Slot: 2
+03 Recent Cent. Slot: 15
+04 Recent Rght. Slot: 4
+05 Recent 4th Slot: 0
+06 Recent Paid Cred: 40
+07 Recent Serv. Cred: 2
+09 Total Left Slot: 2
+10 Total Cent. Slot: 15
+11 Total Rght. Slot: 4
+12 Total 4th Slot: 0
+13 Total Paid Cred: 40
+14 Total Serv. Cred: 2
+
+B.3 Standard Audits
+-------------------
+01 Games Started: 7
+02 Total Plays: 1
+03 Total Free Plays: 0
+05 Replay Awards: 0
+09 Match Awards: 0
+11 H.S.T.D. Credits: 0
+13 Extra Balls: 0
+15 Tickets Awarded: 0
+17 Left Drains: 0
+18 Right Drains: 0
+21 Play Time: 0:02:00
+22 Minutes On: 0:19:00
+23 Balls Played: 3
+24 Tilts: 0
+25 Replay 1 Awards: 0
+26 Replay 2 Awards: 0
+27 Replay 3 Awards: 0
+28 Replay 4 Awards: 0
+29 1 Player Games: 0
+30 2 Player Games: 0
+31 3 Player Games: 0
+32 4 Player Games: 0
+33 H.S.T.D. Reset Count: 2,999
+34 Burn-in Time: 0:00:00
+35 1st Replay Level: 4,000M
+36 Left Flipper: 80
+37 Right Flipper: 99
+
+B.5 Histograms
+--------------
+01 0-199M Score: 0
+02 200-399M Score: 0
+03 400-599M Score: 0
+04 600-799M Score: 0
+05 800-999M Score: 0
+06 1-1.49B Score: 0
+07 1.5B-1.99B Score: 0
+08 2-2.99B Score: 0
+09 3-3.99B Score: 0
+10 4-4.99B Score: 0
+11 5-6.99B Score: 0
+12 7-8.99B Score: 0
+13 Over 9B Score: 0
+14 Game Time 0.0-1.0M: 0
+15 Game Time 1.0-1.5M: 0
+16 Game Time 1.5-2.0M: 0
+17 Game Time 2.0-2.5M: 0
+18 Game Time 2.5-3.0M: 0
+19 Game Time 3.0-3.5M: 0
+20 Game Time 3.5-4.0M: 0
+21 Game Time 4-5M: 0
+22 Game Time 5-6M: 0
+23 Game Time 6-8M: 0
+24 Game Time 8-10M: 0
+25 Game Time 10-15M: 0
+26 Game Time > 15M: 0
+
+B.6 Timestamps
+--------------
+02 Totals Cleared: 2023-11-07 00:14
+03 Clock Last Set: 2023-11-07 00:14
+04 Audits Cleared: 2023-11-07 00:14
+05 Coins Cleared: 2023-11-07 00:14
+06 Factory Setting: 2023-11-07 00:14
+07 Last Game Start: 2024-06-19 16:42
+08 Last Replay: 2023-11-07 00:14
+09 Last HSTD Reset: 2023-11-07 00:14
+10 Champion Reset: 2023-11-07 00:14
+11 Last Printout: 2023-11-07 00:14
+12 Last Serv. Cred: 2024-12-06 16:07
+13 R. Universe Won: 2023-11-07 00:14
+
+A.1 Standard Adjustments
+------------------------
+01 Balls Per Game: 3
+02 Tilt Warnings: 3
+03 Max E.B. Count: 4
+04 Max E.B. Per B.I.P: OFF
+05 Replay System: Auto %
+06 Replay Percent: 10
+07 Replay Start: 4,000M
+08 Replay Levels: 1
+09 Replay L1: 4,000M
+10 Replay L2: OFF
+11 Replay L3: OFF
+12 Replay L4: OFF
+13 Replay Boost: 1
+14 Replay: Credit
+16 Match Award: Credit
+17 Ex. Ball Ticket: NO
+18 Max Tick/Player: 25
+19 Match Feature: 7%
+20 Custom Message: ON
+21 Language: English
+22 Clock Style: AM/PM
+23 Date Style: Mmm. DD, YY
+24 Show Time + Date: NO
+25 Allow Dim. Illum.: YES
+26 Tournament Play: NO
+27 Euro. Scr. Format: NO
+28 Min. Vol. Override: NO
+29 GI Power Saver: 15 MINUTES
+30 Power Save Level: 5
+31 Ticket Exp. Board: NO
+32 No Bonus Flips: YES
+33 Game Restart: SLOW
+34 Allow Chase Ball: YES
+
+Player Scores
+-------------
+Player 1: 51,477,300
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: SLL 7,500,000,000
+First Place: BRE 7,000,000,000
+Second Place: LFS 6,500,000,000
+Third Place: RCF 6,000,000,000
+Fourth Place: DTW 5,500,000,000
+Buy-In Score #1: DWF 5,000,000,000
+Buy-In Score #2: ASR 4,500,000,000
+Buy-In Score #3: BCM 4,000,000,000
+Buy-In Score #4: MOO 3,500,000,000
+
+mode_champions
+--------------
+Martian Champion: LFS 20 Martians Destroyed
+Ruler of the Universe: TEX 2023-11-07 00:14
+Last Played: 2024-12-06 00:01

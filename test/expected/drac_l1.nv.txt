@@ -1,0 +1,99 @@
+Using map ../maps/drac_l1.nv.json for drac_l1.nv
+
+A.1 Standard Adjustments
+------------------------
+01 Balls Per Game: 3
+02 Tilt Warnings: 3
+03 Max E.B Count: 4
+04 Max E.B Per B.I.P: OFF
+05 Replay System: Auto %
+06 Replay Percent: 10
+07 Replay Start: 200M
+08 Replay Levels: 1
+13 Replay Boost: 50M
+14 Replay Award: Credit
+15 Special Award: Credit
+16 Match Award: Credit
+17 Ex. Ball Ticket: NO
+18 Max. Tick,/Player: 25%
+19 Match Feature: 10%
+20 Custom Message: ON
+21 Language: English
+22 Clock Style: AM/PM
+23 Date Style: Mmm. DD YY
+24 Show Time + Date: NO
+25 Allow Dm. Illum: YES
+26 Tournament Play: NO
+27 Euro. Scr Format: NO
+28 Min. Vol. Override: NO
+29 GI Power Saver: 15 MINUTES
+30 Power Save Level: 5
+31 Ticket Exp. Board: NO
+32 No Bonus Flips: NO
+33 Game Restart: SLOW
+
+A.2 Feature Adjustments
+-----------------------
+01 Ball  Time: 35 Sec
+02 Auto. %Special&Match: YES
+03 Ball Saver: 2 Sec
+04 Auto. Ex.Ball: 20 %
+05 1st ExB. Lit At: 8 Loops
+06 Next ExB. Lit At: 16 Loops
+07 V.Mode ExBall At: 2 Waves
+08 Volume Change: YES
+09 Pre-lite V.Mode: NONE
+10 V.Mode Award: NONE
+11 Bonus 'X' Memory: YES
+12 Castle Lock Time: 15
+13 Castle Jackpot: 20 Sec
+14 Jet Timer: 10
+15 Pre-lite Coffin: NONE
+16 Coffin Ramp Time: 15 Sec
+17 Left Ramp Time: 10 Sec
+18 Mystery Time: 5 Sec
+19 Mystery Pre-Lit: Game Start
+20 Myst:Castle Lock: 10 %
+21 Myst:Coffin Lock: 10 %
+22 Myst:V.Mode Lit: 10 %
+23 Myst:Bonus: 25 %
+24 Video Mode Diff.: Medium
+25 1st Loop Bonus: 6 Loop
+26 Other Loop Bonus: 6 Loop
+27 1st Mist M.B. Lit: 5 Loop
+28 Other Mist M.B: 10 Loop
+29 1st Bats: 3 Loop
+30 Other Bats: 10 Loop
+31 Bats Time: 15 Sec
+32 Number of Bats: 15
+33 Outlane Lit at: 15 Altar
+34 1st Rats At: 3 Altar
+35 Next Rats At: 5 Altar
+36 Number of Rats: 15
+37 Rats Timer: 15 Sec
+38 Timed Plunger: OFF
+39 Flipped Plunger: NO
+40 Fancy A. Mode G.I: YES
+41 Attr. Mode Sounds: NONE
+42 Magnet: Enabled
+43 Family Mode: NO
+44 Game Over Unlock: NO
+
+Player Scores
+-------------
+Player 1: 595,070
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Greatest Vampire Hunter: CD 300,000,000
+Best Hunter #1: BSO 250,000,000
+Best Hunter #2: BIL 200,000,000
+Best Hunter #3: P H 150,000,000
+Best Hunter #4: S   100,000,000
+
+mode_champions
+--------------
+Loop Champion: CD  6

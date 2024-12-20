@@ -1,0 +1,16 @@
+Using map ../maps/dh_lx2.nv.json for dh_lx2.nv
+
+Player Scores
+-------------
+Player 1: 12,000,000
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: CJS 900,000,000
+#1: BSO 800,000,000
+#2: BIL 700,000,000
+#3: VJP 600,000,000
+#4: PAT 500,000,000
