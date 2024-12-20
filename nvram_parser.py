@@ -20,7 +20,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+import argparse
+import glob
 import json
+import os
 import sys
 from datetime import datetime
 
@@ -530,31 +533,54 @@ class ParseNVRAM(object):
             self.verify_all_checksum8(verbose=True)
 
 
-def print_usage():
-    print("Usage: %s <json_file> <nvram_file>" % (sys.argv[0]))
+def find_map(nvfile):
+    """Find a map that will work with the ROM of the given nram file."""
+    basename = os.path.basename(nvfile)
+    (name, extension) = os.path.splitext(basename)
+    # remove anything after the first hyphen
+    (rom, _, _) = name.partition('-')
+
+    # search the maps for one that has this name in its list of ROMs
+    maps = os.path.join(os.path.dirname(__file__), 'maps', '*.nv.json')
+    # print("Searching %s for %s..." % (maps, rom))
+    for mapfile in glob.glob(maps):
+        with open(mapfile, 'r') as f:
+            nv_json = json.load(f)
+            if rom in nv_json.get('_roms'):
+                print("Using map %s for %s" % (mapfile, basename))
+                return nv_json
+
+    print("Couldn't find a map for %s" % basename)
 
 
 def main():
-    if len(sys.argv) < 3:
-        print_usage()
-        return
-    else:
-        jsonpath = sys.argv[1]
-        nvpath = sys.argv[2]
-        if jsonpath.find('.json', 0) == -1 or nvpath.find('.nv', 0) == -1:
-            print_usage()
+    parser = argparse.ArgumentParser(description='PinMAME nvram Parser')
+    parser.add_argument('--map', help='map file (typically ending in .nv.json)')
+    parser.add_argument('--nvram', help='nvram file to parse')
+    parser.add_argument('--dump', help='dump the contents of <nvram> using <map>', action='store_true')
+    args = parser.parse_args()
+
+    if args.dump:
+        nvpath = args.nvram
+        if nvpath.find('.nv', 0) == -1:
+            parser.print_help()
             return
+        with open(nvpath, 'rb') as f:
+            nvram = bytearray(f.read())
 
-    json_fh = open(jsonpath, 'r')
-    nv_json = json.load(json_fh)
-    json_fh.close()
+        if args.map:
+            with open(args.map, 'r') as f:
+                nv_json = json.load(f)
+        else:
+            # find a JSON file for the given nvram file
+            nv_json = find_map(nvpath)
 
-    nv_fh = open(nvpath, 'rb')
-    nvram = bytearray(nv_fh.read())
-    nv_fh.close()
+        p = ParseNVRAM(nv_json, nvram)
+        p.dump()
 
-    p = ParseNVRAM(nv_json, nvram)
-    p.dump()
+    else:
+        parser.print_help()
+        return
 
 
 if __name__ == '__main__':
