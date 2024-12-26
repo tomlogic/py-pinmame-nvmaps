@@ -2,7 +2,7 @@ Using map ../maps/pinchamp.nv.json for pinchamp.nv
 
 Game State
 ----------
-Credits: 9
+Credits: 39
 
 Player Scores
 -------------

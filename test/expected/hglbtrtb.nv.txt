@@ -1,5 +1,25 @@
 Using map ../maps/hglbtrtb.nv.json for hglbtrtb.nv
 
+Bookkeeping functions
+---------------------
+05 Current Credits: 10
+06 Total Plays (Played and Free Games): 10
+07 Total Replays (Free Games): 0
+08 Total times 'High Score To Date' is beat: 1
+09 Coins Dropped thru Coin Chute #1: 21
+10 Coins Dropped thru Coin Chute #2: 0
+11 Coins Dropped thru Coin Chute #3: 32
+12 Number of Specials awarded from Panel Specials Only: 0
+13 Number of minutes of Game Play: 3
+14 Number of Service Credits: 10
+
+High score functions
+--------------------
+01 Extra ball / Free game score level 1: OFF
+02 Extra ball / Free game score level 2: OFF
+03 Extra ball / Free game score level 3: OFF
+04 High score to date: 130,120
+
 Game State
 ----------
 Credits: 0

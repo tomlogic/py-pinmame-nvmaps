@@ -2,7 +2,7 @@ Using map ../maps/stargoda.nv.json for stargoda.nv
 
 Game State
 ----------
-Credits: 7
+Credits: 17
 
 Player Scores
 -------------

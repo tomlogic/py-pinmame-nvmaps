@@ -2,7 +2,7 @@ Using map ../maps/robot.nv.json for robot.nv
 
 Game State
 ----------
-Credits: 2
+Credits: 22
 
 Player Scores
 -------------

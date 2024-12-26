@@ -2,7 +2,7 @@ Using map ../maps/socrking.nv.json for socrking.nv
 
 Game State
 ----------
-Credits: 1
+Credits: 71
 
 Player Scores
 -------------

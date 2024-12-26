@@ -20,7 +20,7 @@ Game adjustments
 17 High Score award #2: No Award
 18 ???: 1
 19 High Score to date or over 10.000.000 score feature: No Award
-20 ???: 0
+20 ???: 11
 21 ???: 6
 
 High score functions

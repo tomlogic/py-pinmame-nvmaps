@@ -2,7 +2,7 @@ Using map ../maps/tmachzac.nv.json for tmachzac.nv
 
 Game State
 ----------
-Credits: 7
+Credits: 47
 
 Player Scores
 -------------

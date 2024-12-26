@@ -2,7 +2,7 @@ Using map ../maps/strapids.nv.json for strapids.nv
 
 Game State
 ----------
-Credits: 7
+Credits: 17
 
 Player Scores
 -------------
