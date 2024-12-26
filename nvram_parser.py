@@ -555,13 +555,15 @@ def find_map(nvfile):
     (rom, _, _) = name.partition('-')
 
     # search the maps for one that has this name in its list of ROMs
-    maps = os.path.join(os.path.dirname(__file__), 'maps', '*.nv.json')
+    my_dir = os.path.dirname(__file__)
+    maps = os.path.join(my_dir, 'maps', '*.nv.json')
     # print("Searching %s for %s..." % (maps, rom))
     for mapfile in glob.glob(maps):
         with open(mapfile, 'r') as f:
             nv_json = json.load(f)
             if rom in nv_json.get('_roms'):
-                print("Using map %s for %s" % (mapfile, basename))
+                print("Using map %s for %s" %
+                      (os.path.relpath(mapfile), basename))
                 return nv_json
 
     print("Couldn't find a map for %s" % basename)
