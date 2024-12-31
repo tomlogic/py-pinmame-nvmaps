@@ -132,11 +132,12 @@ class RamMapping(object):
                     # if remaining byte count is even, save new value
                     new_ba.append(value)
                     value = 0
-            return new_ba
+            ba = new_ba
 
         if 'mask' in self.entry:
             mask = self.to_int(self.entry['mask'])
-            return bytearray(map((lambda b: b & mask), ba))
+            ba = bytearray(map((lambda b: b & mask), ba))
+
         return ba
 
     @staticmethod
