@@ -121,7 +121,7 @@ class RamMapping(object):
             # combine nibbles of ba
             new_ba = []
             value = 0
-            while len(ba):
+            while ba:
                 b = ba.pop(0)
                 if nibble == NIBBLE_LOW:
                     b = b & 0x0F
@@ -555,17 +555,15 @@ def find_map(nvfile):
     # remove anything after the first hyphen
     (rom, _, _) = name.partition('-')
 
-    # search the maps for one that has this name in its list of ROMs
-    my_dir = os.path.dirname(__file__)
-    maps = os.path.join(my_dir, 'maps', '*.nv.json')
-    # print("Searching %s for %s..." % (maps, rom))
-    for mapfile in glob.glob(maps):
-        with open(mapfile, 'r') as f:
-            nv_json = json.load(f)
-            if rom in nv_json.get('_roms'):
+    # search the index for an appropriate map
+    maps_root = os.path.join(os.path.dirname(__file__), 'maps')
+    with open(os.path.join(maps_root, 'index.json')) as f:
+        map_file = json.load(f).get(rom)
+        if map_file:
+            with open(os.path.join(maps_root, map_file), 'r') as m:
                 print("Using map %s for %s" %
-                      (os.path.relpath(mapfile), basename))
-                return nv_json
+                      (os.path.relpath(map_file), basename))
+                return json.load(m)
 
     print("Couldn't find a map for %s" % basename)
 
