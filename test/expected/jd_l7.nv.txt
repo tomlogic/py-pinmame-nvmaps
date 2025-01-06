@@ -1,0 +1,23 @@
+Using map maps/williams/wpc/jd_l7.nv.json for jd_l7.nv
+
+Game State
+----------
+WPC Game ID: 20020
+Replay: 150,000,000
+
+high_scores
+-----------
+Grand Champion: JBJ 130,000,000
+First Place: CMP 125,000,000
+Second Place: FEJ 120,000,000
+Third Place: MJJ 115,000,000
+Fourth Place: J T 110,000,000
+
+mode_champions
+--------------
+Super Game GC: JBJ 350,000,000
+Super Game #1: C K 320,000,000
+Super Game #2: EAG 310,000,000
+Super Game #3: TEX 300,000,000
+Super Game #4: PNH 290,000,000
+Last Played: 2025-01-05 00:01

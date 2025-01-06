@@ -1,0 +1,21 @@
+Using map maps/williams/wpc/corv_21.nv.json for corv_21.nv
+
+Game State
+----------
+WPC Game ID: 50036
+Replay: 850,000,000
+
+high_scores
+-----------
+Grand Champion: TWU 1,500,000,000
+First Place: G G 1,250,000,000
+Second Place: TMK 1,100,000,000
+Third Place: P H 1,000,000,000
+Fourth Place: E G 950,000,000
+
+mode_champions
+--------------
+Future Car Champ: WAG
+World Speed Record: TEX 4 Loops
+Cornering Record: GER 2 Loops
+Last Played: 2025-01-02 00:01

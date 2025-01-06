@@ -1,0 +1,15 @@
+Using map maps/williams/wpc/ij_l7.nv.json for ij_l7.nv
+
+Game State
+----------
+WPC Game ID: 50017
+Replay: 351,000,000
+
+high_scores
+-----------
+Grand Champion: MDR 500,000,000
+First Place: BRE 400,000,000
+Second Place: DTW 350,000,000
+Third Place: JWS 300,000,000
+Fourth Place: AJP 273,981,420
+Last Played: 2025-01-05 00:01

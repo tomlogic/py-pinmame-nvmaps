@@ -1,0 +1,20 @@
+Using map maps/williams/wpc/mb_10.nv.json for mb_10.nv
+
+Game State
+----------
+WPC Game ID: 50065
+Replay: 60,000,000
+
+high_scores
+-----------
+Grand Champion: GAG 150,000,000
+First Place: LFS 125,000,000
+Second Place: CAS 100,000,000
+Third Place: RCF 90,000,000
+Fourth Place: VJP 80,000,000
+
+mode_champions
+--------------
+Monster Bash Champion: K O 50,000,000
+Monsters of Rock Champion: ASR 200,000,000
+Last Played: 2025-01-05 00:01

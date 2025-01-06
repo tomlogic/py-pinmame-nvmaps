@@ -1,0 +1,19 @@
+Using map maps/williams/wpc/br_l4.nv.json for br_l4.nv
+
+Game State
+----------
+WPC Game ID: 20013
+Replay: 30,000,000
+
+high_scores
+-----------
+Grand Champion: JT  70,000,000
+First Place: BRE 55,000,000
+Second Place: MAX 50,000,000
+Third Place: P H 45,000,000
+Fourth Place: E P 40,000,000
+
+mode_champions
+--------------
+Most Ships Sunk: SLL 2 ships
+Last Played: 2025-01-02 00:01

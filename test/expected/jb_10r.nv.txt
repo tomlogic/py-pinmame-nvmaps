@@ -1,0 +1,23 @@
+Using map maps/williams/wpc/jb_10r.nv.json for jb_10r.nv
+
+Game State
+----------
+WPC Game ID: 50051
+Replay: 3,800,000,000
+
+high_scores
+-----------
+Grand Champion: J J 6,500,000,000
+First Place: LED 6,000,000,000
+Second Place: LNK 5,500,000,000
+Third Place: JAP 5,250,000,000
+Fourth Place: JWH 5,000,000,000
+Buy-In #1: DTW 7,500,000,000
+Buy-In #2: BSO 7,000,000,000
+Buy-In #3: J Y 6,500,000,000
+Buy-In #4: KMT 6,000,000,000
+
+mode_champions
+--------------
+Casino Run Champ: VLK 1,000,000,000
+Last Played: 2025-01-03 00:01

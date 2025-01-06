@@ -1,0 +1,23 @@
+Using map maps/williams/wpc/fs_lx5.nv.json for fs_lx5.nv
+
+Game State
+----------
+WPC Game ID: 50029
+Replay: 400,000,000
+
+high_scores
+-----------
+Grand Champion: JBJ 1,000,000,000
+First Place: CMP 640,000,000
+Second Place: DAV 630,000,000
+Third Place: FEJ 620,000,000
+Fourth Place: J T 610,000,000
+Buy-In #1: FLI 1,000,000,000
+Buy-In #2: NTS 980,000,000
+Buy-In #3: TON 960,000,000
+Buy-In #4: ES  940,000,000
+
+mode_champions
+--------------
+Top Bowler: JBJ 120
+Last Played: 2025-01-03 00:01
