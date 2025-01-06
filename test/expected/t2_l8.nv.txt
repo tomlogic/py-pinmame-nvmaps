@@ -1,0 +1,17 @@
+Using map maps/williams/wpc/t2_l8.nv.json for t2_l8.nv
+
+Game State
+----------
+WPC Game ID: 50013
+Credits: 0
+Volume: 12
+Replay: 30,000,000
+
+high_scores
+-----------
+Grand Champion: AJA 150,000,000
+First Place: XAQ 90,000,000
+Second Place: DOC 70,000,000
+Third Place: JAS 50,000,000
+Fourth Place: JCS 30,000,000
+Last Played: 2025-01-06 00:01

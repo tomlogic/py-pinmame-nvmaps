@@ -1,0 +1,17 @@
+Using map maps/williams/wpc/taf_l5.nv.json for taf_h4.nv
+
+Game State
+----------
+WPC Game ID: 20017
+Credits: 0
+Volume: 12
+Replay: 90,000,000
+
+high_scores
+-----------
+Grand Champion: MAB 200,000,000
+First Place: PML 150,000,000
+Second Place: VLK 135,000,000
+Third Place: J K 120,000,000
+Fourth Place: CG  105,000,000
+Last Played: 2025-01-06 00:01

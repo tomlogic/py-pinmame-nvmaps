@@ -1,0 +1,21 @@
+Using map maps/williams/wpc/wd_12.nv.json for wd_12.nv
+
+Game State
+----------
+WPC Game ID: 50044
+Credits: 0
+Volume: 12
+Replay: 1,500,000,000
+
+high_scores
+-----------
+Grand Champion: BSO 1,750,000,000
+First Place: XAQ 1,500,000,000
+Second Place: L D 1,250,000,000
+Third Place: WMN 1,000,000,000
+Fourth Place: Z B 750,000,000
+
+mode_champions
+--------------
+The Roof Champion: XAQ
+Last Played: 2025-01-06 00:01

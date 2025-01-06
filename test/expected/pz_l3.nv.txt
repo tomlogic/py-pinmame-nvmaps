@@ -1,0 +1,18 @@
+Using map maps/williams/wpc/pz_l3.nv.json for pz_l3.nv
+
+Game State
+----------
+WPC Game ID: 20004
+Credits: 0
+Volume: 12
+Replay: 30,000,000
+Big Bang: 20,000,000
+
+high_scores
+-----------
+Grand Champion: DEN 75,000,000
+First Place: ZAP 60,000,000
+Second Place: JRS 55,000,000
+Third Place: DWF 50,000,000
+Fourth Place: WHS 45,000,000
+Last Played: 2025-01-05 00:01

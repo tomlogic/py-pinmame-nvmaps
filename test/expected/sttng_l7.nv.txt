@@ -1,0 +1,28 @@
+Using map maps/williams/wpc/sttng_l7.nv.json for sttng_l7.nv
+
+Game State
+----------
+WPC Game ID: 50023
+Credits: 0
+Volume: 12
+Replay: 450,000,000
+
+high_scores
+-----------
+Grand Champion: SSR 1,000,000,000
+First Place: DAN 800,000,000
+Second Place: ZAP 600,000,000
+Third Place: GER 400,000,000
+Fourth Place: CAB 200,000,000
+
+mode_champions
+--------------
+Officer's Club #1: WAG 5,000,000,000
+Officer's Club #2: LED 2,000,000,000
+Officer's Club #3: WAL 1,000,000,000
+Officer's Club #4: JAP 500,000,000
+Q Continuum #1: TEX 16,000,000,000
+Q Continuum #2: XAQ 14,000,000,000
+Q Continuum #3: MAT 12,000,000,000
+Q Continuum #4: TED 10,000,000,000
+Last Played: 2025-01-06 00:01

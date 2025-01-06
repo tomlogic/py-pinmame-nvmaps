@@ -1,0 +1,21 @@
+Using map maps/williams/wpc/pop_lx5.nv.json for pop_lx5.nv
+
+Game State
+----------
+WPC Game ID: 50022
+Credits: 0
+Volume: 12
+Replay: 190,000,000
+
+high_scores
+-----------
+Grand Champion: MAB 260,000,000
+First Place: BSO 250,000,000
+Second Place: PH  230,000,000
+Third Place: ZB  200,000,000
+Fourth Place: TEX 190,000,000
+
+mode_champions
+--------------
+Loop Champion: GER 2 Loops
+Last Played: 2025-01-05 00:01
