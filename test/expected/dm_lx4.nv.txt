@@ -1,4 +1,4 @@
-Using map ../maps/dm_lx4.nv.json for dm_lx4.nv
+Using map maps/williams/wpc/dm_lx4.nv.json for dm_lx4.nv
 
 B.2 Earnings Audits
 -------------------
@@ -133,19 +133,28 @@ B.6 Timestamps
 10 Champion Reset: 2024-02-16 09:12
 11 Last Printout: 2024-02-16 09:12
 12 Last Serv. Cred: 2024-02-16 09:12
+91 Unused Timestamp #1: 2024-02-16 09:12
+92 Unused Timestamp #2: 2024-02-16 09:12
+93 Unused Timestamp #3: 2024-02-16 09:12
 
-B.X Unidentified
-----------------
-01 ? (@0x1901): 0
-02 ? (@0x1907): 0
-04 ? (@0x19BB): 0
-05 ?boot count: 4
-06 ? (@0x19C7): 0
-07 ? (@0x19CD): 0
-10 ? (@0x1C4A): 2024-02-16 09:12
-11 ? (@0x1C51): 2024-02-16 09:12
-12 ? (@0x1C58): 2024-02-16 09:12
-13 Volume: 27
+B.X Debug
+---------
+01 Exec Lockups: 0
+02 Power Ups: 4
+03 Slam Tilts: 0
+04 Plumb-Bob Hits: 0
+05 Ball Roll Tilts: 0
+06 Fatal Errors: 0
+07 Non-Fatal Errors: 0
+08 Lockup 1 Addr: 0
+09 Lockup 1 PID/LEF: 0
+10 Lockup 2 Addr: 0
+11 Lockup 2 PID/LEF: 0
+
+B.X Unused Audits
+-----------------
+91 ? (@6401): 0
+92 ? (@6407): 0
 
 A.1 Standard Adjustments
 ------------------------
@@ -208,6 +217,13 @@ A.2 Feature Adjustments
 21 Eyeball E.B. Mem.: YES
 24 Match Speech: ON
 25 Crash Ball Save: EASY
+
+Game State
+----------
+WPC Game ID: 50028
+Credits: 9
+Volume: 27
+Replay: 450,000,000
 
 Player Scores
 -------------
