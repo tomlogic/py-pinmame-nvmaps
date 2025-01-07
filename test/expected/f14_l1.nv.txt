@@ -1,4 +1,4 @@
-Using map ../maps/f14_l1.nv.json for f14_l1.nv
+Using map maps/williams/system11/f14_l1.nv.json for f14_l1.nv
 
 Player Scores
 -------------

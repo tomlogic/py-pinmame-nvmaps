@@ -1,4 +1,4 @@
-Using map ../maps/gldneye.nv.json for gldneye.nv
+Using map maps/sega/whitestar/gldneye.nv.json for gldneye.nv
 
 high_scores
 -----------

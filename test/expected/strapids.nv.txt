@@ -1,4 +1,4 @@
-Using map ../maps/strapids.nv.json for strapids.nv
+Using map maps/zaccaria/gen1/strapids.nv.json for strapids.nv
 
 Game State
 ----------

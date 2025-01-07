@@ -1,4 +1,4 @@
-Using map ../maps/williams.system7.nv.json for tmfnt_l5.nv
+Using map maps/williams/williams.system7.nv.json for tmfnt_l5.nv
 
 Game State
 ----------

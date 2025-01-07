@@ -1,4 +1,4 @@
-Using map ../maps/hod.nv.json for hod.nv
+Using map maps/zaccaria/gen1/hod.nv.json for hod.nv
 
 Game State
 ----------

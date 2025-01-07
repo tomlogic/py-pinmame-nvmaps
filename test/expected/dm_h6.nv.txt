@@ -210,6 +210,12 @@ A.2 Feature Adjustments
 25 Crash Ball Save: EASY
 26 Vulgar Speech: OFF
 
+Game State
+----------
+Credits: 1
+Volume: 12
+Replay: 450,000,000
+
 Player Scores
 -------------
 Player 1: 0

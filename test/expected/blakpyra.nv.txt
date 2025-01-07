@@ -1,4 +1,4 @@
-Using map ../maps/blakpyra.nv.json for blakpyra.nv
+Using map maps/bally/as-2518-35/blakpyra.nv.json for blakpyra.nv
 
 Bookkeeping functions
 ---------------------

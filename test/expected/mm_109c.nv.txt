@@ -1,4 +1,4 @@
-Using map ../maps/mm_109.nv.json for mm_109c.nv
+Using map maps/williams/wpc/mm_109.nv.json for mm_109c.nv
 
 B.2 Earnings Audits
 -------------------
@@ -87,6 +87,12 @@ B.6 Timestamps
 10 Champion Reset: 2024-01-17 14:48
 11 Last Printout: 2024-01-17 14:48
 12 Last Serv. Cred: 2024-01-17 14:48
+
+Game State
+----------
+Credits: 8
+Volume: 27
+Replay: 28,000,000
 
 Player Scores
 -------------

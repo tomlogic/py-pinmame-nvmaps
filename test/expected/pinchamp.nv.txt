@@ -1,4 +1,4 @@
-Using map ../maps/pinchamp.nv.json for pinchamp.nv
+Using map maps/zaccaria/gen2/pinchamp.nv.json for pinchamp.nv
 
 Game State
 ----------

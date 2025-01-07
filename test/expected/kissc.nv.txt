@@ -1,4 +1,4 @@
-Using map ../maps/kissc.nv.json for kissc.nv
+Using map maps/bally/as-2518-35/kissc.nv.json for kissc.nv
 
 Game State
 ----------

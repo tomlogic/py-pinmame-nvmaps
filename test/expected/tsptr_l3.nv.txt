@@ -1,4 +1,4 @@
-Using map ../maps/tsptr_l3.nv.json for tsptr_l3.nv
+Using map maps/williams/system11/tsptr_l3.nv.json for tsptr_l3.nv
 
 Audits
 ------

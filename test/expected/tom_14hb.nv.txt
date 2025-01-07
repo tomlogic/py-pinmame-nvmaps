@@ -1,4 +1,4 @@
-Using map ../maps/tom_13.nv.json for tom_14hb.nv
+Using map maps/williams/wpc/tom_13.nv.json for tom_14hb.nv
 
 B.3 Standard Audits
 -------------------
@@ -157,6 +157,9 @@ Theatre Value: 0
 Player Count: 0
 Current Player: 1
 Ball: 1
+Credits: 8
+Volume: 27
+Replay: 600,000,000
 
 Player Scores
 -------------

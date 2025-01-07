@@ -1,4 +1,10 @@
-Using map ../maps/nf_23x.nv.json for nf_23x.nv
+Using map maps/williams/wpc/nf_23x.nv.json for nf_23x.nv
+
+Game State
+----------
+Credits: 10
+Volume: 27
+Replay: 900,000,000
 
 Player Scores
 -------------

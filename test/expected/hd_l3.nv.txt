@@ -1,4 +1,10 @@
-Using map ../maps/hd_l3.nv.json for hd_l3.nv
+Using map maps/williams/wpc/hd_l3.nv.json for hd_l3.nv
+
+Game State
+----------
+Credits: 0
+Volume: 12
+Replay: 5,000,000
 
 Player Scores
 -------------

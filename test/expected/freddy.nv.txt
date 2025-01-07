@@ -1,4 +1,4 @@
-Using map ../maps/freddy.nv.json for freddy.nv
+Using map maps/gottlieb/system3/freddy.nv.json for freddy.nv
 
 Player Scores
 -------------

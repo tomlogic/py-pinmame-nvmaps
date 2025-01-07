@@ -1,4 +1,4 @@
-Using map ../maps/eatpm_l4.nv.json for eatpm_l4.nv
+Using map maps/williams/system11/eatpm_l4.nv.json for eatpm_l4.nv
 
 Player Scores
 -------------

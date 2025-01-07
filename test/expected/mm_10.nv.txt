@@ -88,6 +88,12 @@ B.6 Timestamps
 11 Last Printout: 2025-01-07 10:28
 12 Last Serv. Cred: 2025-01-07 10:28
 
+Game State
+----------
+Credits: 0
+Volume: 12
+Replay: 28,000,000
+
 Player Scores
 -------------
 Player 1: 0

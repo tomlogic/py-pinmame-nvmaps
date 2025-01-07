@@ -1,4 +1,10 @@
-Using map ../maps/totan_14.nv.json for totan_14.nv
+Using map maps/williams/wpc/totan_14.nv.json for totan_14.nv
+
+Game State
+----------
+Credits: 9
+Volume: 27
+Replay: 8,000,000
 
 Player Scores
 -------------

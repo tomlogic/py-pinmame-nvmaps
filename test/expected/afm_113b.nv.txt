@@ -1,4 +1,4 @@
-Using map ../maps/afm_113.nv.json for afm_113b.nv
+Using map maps/williams/wpc/afm_113.nv.json for afm_113b.nv
 
 B.2 Earnings Audits
 -------------------
@@ -124,6 +124,12 @@ A.1 Standard Adjustments
 32 No Bonus Flips: YES
 33 Game Restart: SLOW
 34 Allow Chase Ball: YES
+
+Game State
+----------
+Credits: 6
+Volume: 26
+Replay: 4,000,000,000
 
 Player Scores
 -------------

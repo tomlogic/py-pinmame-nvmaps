@@ -1,4 +1,4 @@
-Using map ../maps/jm_12r.nv.json for jm_12r.nv
+Using map maps/williams/wpc/jm_12r.nv.json for jm_12r.nv
 
 B.2 Earnings Audits
 -------------------
@@ -197,6 +197,12 @@ A.2 Feature Adjustments
 16 Hand Position X: 44
 17 Hand Position Y: -24
 18 Hand Disabled: NO
+
+Game State
+----------
+Credits: 10
+Volume: 28
+Replay: 2,500,000,000
 
 Player Scores
 -------------

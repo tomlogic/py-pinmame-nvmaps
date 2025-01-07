@@ -1,4 +1,4 @@
-Using map ../maps/jplstw22.nv.json for jplstw22.nv
+Using map maps/sega/whitestar/jplstw22.nv.json for jplstw22.nv
 
 Player Scores
 -------------

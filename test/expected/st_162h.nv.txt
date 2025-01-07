@@ -1,4 +1,4 @@
-Using map ../maps/st_162h.nv.json for st_162h.nv
+Using map maps/stern/sam/st_162h.nv.json for st_162h.nv
 
 Player Scores
 -------------

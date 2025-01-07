@@ -1,4 +1,4 @@
-Using map ../maps/tomy_400.nv.json for tomy_500.nv
+Using map maps/dataeast/version3/tomy_400.nv.json for tomy_500.nv
 
 Player Scores
 -------------

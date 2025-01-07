@@ -4,6 +4,8 @@ Game State
 ----------
 WPC Game ID: 50017
 Replay: 351,000,000
+Credits: 0
+Volume: 28
 
 high_scores
 -----------

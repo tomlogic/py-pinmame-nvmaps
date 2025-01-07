@@ -1,4 +1,4 @@
-Using map ../maps/dvlrider.nv.json for dvlrider.nv
+Using map maps/zaccaria/gen2/dvlrider.nv.json for dvlrider.nv
 
 Game State
 ----------

@@ -1,4 +1,4 @@
-Using map ../maps/cycln_l5.nv.json for cycln_l5.nv
+Using map maps/williams/system11/cycln_l5.nv.json for cycln_l5.nv
 
 Game State
 ----------

@@ -1,4 +1,4 @@
-Using map ../maps/tmachzac.nv.json for tmachzac.nv
+Using map maps/zaccaria/gen2/tmachzac.nv.json for tmachzac.nv
 
 Game State
 ----------

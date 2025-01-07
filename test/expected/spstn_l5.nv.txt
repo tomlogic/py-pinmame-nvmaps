@@ -1,4 +1,4 @@
-Using map ../maps/spstn_l5.nv.json for spstn_l5.nv
+Using map maps/williams/system11/spstn_l5.nv.json for spstn_l5.nv
 
 Game State
 ----------

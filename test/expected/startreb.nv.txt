@@ -1,4 +1,4 @@
-Using map ../maps/startreb.nv.json for startreb.nv
+Using map maps/bally/as-2518-35/startreb.nv.json for startreb.nv
 
 Game State
 ----------

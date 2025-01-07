@@ -1,4 +1,4 @@
-Using map ../maps/fh_l9.nv.json for fh_l9.nv
+Using map maps/williams/wpc/fh_l9.nv.json for fh_l9.nv
 
 B.2 Earnings Audits
 -------------------
@@ -87,6 +87,12 @@ B.6 Timestamps
 10 Champion Reset: 2015-11-17 11:08
 11 Last Printout: 2015-11-17 11:08
 12 Last Serv. Cred: 2015-11-17 11:08
+
+Game State
+----------
+Credits: 0
+Volume: 12
+Replay: 9,100,000
 
 Player Scores
 -------------

@@ -1,4 +1,4 @@
-Using map ../maps/diner_l4.nv.json for diner_l4.nv
+Using map maps/williams/system11/diner_l4.nv.json for diner_l4.nv
 
 Player Scores
 -------------

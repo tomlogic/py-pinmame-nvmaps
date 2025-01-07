@@ -1,4 +1,4 @@
-Using map ../maps/gmine_l2.nv.json for gmine_l2-6players.nv
+Using map maps/williams/system11/gmine_l2.nv.json for gmine_l2-6players.nv
 
 Game State
 ----------

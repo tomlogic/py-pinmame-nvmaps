@@ -1,4 +1,4 @@
-Using map ../maps/drac_l1.nv.json for drac_l1.nv
+Using map maps/williams/wpc/drac_l1.nv.json for drac_l1.nv
 
 A.1 Standard Adjustments
 ------------------------
@@ -78,6 +78,12 @@ A.2 Feature Adjustments
 42 Magnet: Enabled
 43 Family Mode: NO
 44 Game Over Unlock: NO
+
+Game State
+----------
+Credits: 10
+Volume: 27
+Replay: 200,000,000
 
 Player Scores
 -------------

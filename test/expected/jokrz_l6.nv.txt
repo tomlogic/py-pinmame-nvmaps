@@ -1,4 +1,4 @@
-Using map ../maps/jokrz_l6.nv.json for jokrz_l6.nv
+Using map maps/williams/system11/jokrz_l6.nv.json for jokrz_l6.nv
 
 Game State
 ----------

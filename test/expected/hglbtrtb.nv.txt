@@ -1,4 +1,4 @@
-Using map ../maps/hglbtrtb.nv.json for hglbtrtb.nv
+Using map maps/bally/as-2518-35/hglbtrtb.nv.json for hglbtrtb.nv
 
 Bookkeeping functions
 ---------------------

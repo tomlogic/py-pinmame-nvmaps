@@ -1,4 +1,4 @@
-Using map ../maps/swrds_l2.nv.json for swrds_l2.nv
+Using map maps/williams/system11/swrds_l2.nv.json for swrds_l2.nv
 
 Game State
 ----------

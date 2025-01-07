@@ -1,4 +1,4 @@
-Using map ../maps/farfalla.nv.json for farfalla.nv
+Using map maps/zaccaria/gen2/farfalla.nv.json for farfalla.nv
 
 Game State
 ----------

@@ -1,4 +1,4 @@
-Using map ../maps/esha_la3.nv.json for esha_la3.nv
+Using map maps/williams/system11/esha_la3.nv.json for esha_la3.nv
 
 Game State
 ----------

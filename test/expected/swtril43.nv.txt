@@ -1,4 +1,4 @@
-Using map ../maps/swtril43.nv.json for swtril43.nv
+Using map maps/dataeast/version3/swtril43.nv.json for swtril43.nv
 
 Player Scores
 -------------

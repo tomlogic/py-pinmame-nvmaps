@@ -1,4 +1,4 @@
-Using map ../maps/stargoda.nv.json for stargoda.nv
+Using map maps/zaccaria/gen1/stargoda.nv.json for stargoda.nv
 
 Game State
 ----------

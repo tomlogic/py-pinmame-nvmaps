@@ -1,4 +1,4 @@
-Using map ../maps/mcastle.nv.json for mcastle.nv
+Using map maps/zaccaria/gen2/mcastle.nv.json for mcastle.nv
 
 Game State
 ----------

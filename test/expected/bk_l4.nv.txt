@@ -1,4 +1,4 @@
-Using map ../maps/williams.system7.nv.json for bk_l4.nv
+Using map maps/williams/williams.system7.nv.json for bk_l4.nv
 
 Game State
 ----------

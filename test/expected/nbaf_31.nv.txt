@@ -1,4 +1,4 @@
-Using map ../maps/nbaf_31.nv.json for nbaf_31.nv
+Using map maps/williams/wpc/nbaf_31.nv.json for nbaf_31.nv
 
 A.1 Standard Adjustments
 ------------------------
@@ -35,6 +35,12 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: NO
 32 No Bonus Flips: YES
 33 Game Restart: SLOW
+
+Game State
+----------
+Credits: 9
+Volume: 27
+Replay: 100
 
 Player Scores
 -------------

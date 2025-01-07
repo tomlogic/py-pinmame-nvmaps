@@ -1,4 +1,4 @@
-Using map ../maps/williams.system7.nv.json for lsrcu_l2.nv
+Using map maps/williams/williams.system7.nv.json for lsrcu_l2.nv
 
 Game State
 ----------

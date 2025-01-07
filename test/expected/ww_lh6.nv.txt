@@ -1,4 +1,9 @@
-Using map ../maps/ww_lh6.nv.json for ww_lh6.nv
+Using map maps/williams/wpc/ww_lh6.nv.json for ww_lh6.nv
+
+Game State
+----------
+Volume: 24
+Replay: 90,000,000
 
 Player Scores
 -------------

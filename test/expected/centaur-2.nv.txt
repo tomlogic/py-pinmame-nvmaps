@@ -1,4 +1,4 @@
-Using map ../maps/centaur.nv.json for centaur-2.nv
+Using map maps/bally/as-2518-35/centaur.nv.json for centaur-2.nv
 
 Bookkeeping functions
 ---------------------

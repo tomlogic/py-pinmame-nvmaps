@@ -1,4 +1,4 @@
-Using map ../maps/gottlieb_80b-2.nv.json for robowars.nv
+Using map maps/gottlieb/gottlieb_80b-2.nv.json for robowars.nv
 
 Bookkeeping
 -----------

@@ -1,4 +1,4 @@
-Using map ../maps/williams.system7.nv.json for strlt_l1.nv
+Using map maps/williams/williams.system7.nv.json for strlt_l1.nv
 
 Game State
 ----------

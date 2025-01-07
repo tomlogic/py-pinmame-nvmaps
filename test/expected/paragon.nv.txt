@@ -1,4 +1,4 @@
-Using map ../maps/paragon.nv.json for paragon.nv
+Using map maps/bally/as-2518-35/paragon.nv.json for paragon.nv
 
 Game State
 ----------

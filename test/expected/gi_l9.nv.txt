@@ -4,6 +4,8 @@ Game State
 ----------
 WPC Game ID: 20003
 Replay: 25,000,000
+Credits: 0
+Volume: 12
 
 high_scores
 -----------

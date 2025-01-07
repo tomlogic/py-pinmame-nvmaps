@@ -1,4 +1,10 @@
-Using map ../maps/ww_l5.nv.json for ww_l5.nv
+Using map maps/williams/wpc/ww_l5.nv.json for ww_l5.nv
+
+Game State
+----------
+Credits: 1
+Volume: 12
+Replay: 90,000,000
 
 Player Scores
 -------------

@@ -5,6 +5,8 @@ Game State
 WPC Game ID: 50012
 Jackpot Value: 5,000,000
 Replay: 26,000,000
+Credits: 0
+Volume: 27
 
 high_scores
 -----------

@@ -1,4 +1,10 @@
-Using map ../maps/ts_lx5.nv.json for ts_lx5.nv
+Using map maps/williams/wpc/ts_lx5.nv.json for ts_lx5.nv
+
+Game State
+----------
+Credits: 10
+Volume: 27
+Replay: 500,000,000
 
 Player Scores
 -------------

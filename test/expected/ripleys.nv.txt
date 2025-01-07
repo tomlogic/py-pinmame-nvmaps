@@ -1,4 +1,4 @@
-Using map ../maps/ripleys.nv.json for ripleys.nv
+Using map maps/stern/whitestar/ripleys.nv.json for ripleys.nv
 
 Player Scores
 -------------

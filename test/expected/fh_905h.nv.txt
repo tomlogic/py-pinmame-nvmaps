@@ -1,4 +1,10 @@
-Using map ../maps/fh_905h.nv.json for fh_905h.nv
+Using map maps/williams/wpc/fh_905h.nv.json for fh_905h.nv
+
+Game State
+----------
+Credits: 3
+Volume: 12
+Replay: 7,200,000
 
 Player Scores
 -------------

@@ -1,4 +1,4 @@
-Using map ../maps/bnzai_l3.nv.json for bnzai_l3.nv
+Using map maps/williams/system11/bnzai_l3.nv.json for bnzai_l3.nv
 
 Game State
 ----------

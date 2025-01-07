@@ -4,6 +4,7 @@ Game State
 ----------
 WPC Game ID: 50062
 Replay: 25,000,000
+Volume: 12
 
 high_scores
 -----------

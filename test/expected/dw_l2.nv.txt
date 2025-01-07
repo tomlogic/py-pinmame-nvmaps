@@ -1,4 +1,4 @@
-Using map ../maps/dw_l2.nv.json for dw_l2.nv
+Using map maps/williams/wpc/dw_l2.nv.json for dw_l2.nv
 
 B.2 Earnings Audits
 -------------------
@@ -83,6 +83,9 @@ P1 Unknown #6: 00 00 00 00 00 00 00 00 00 00 00 00
 Playfield X: 0.0X
 Time Factor A: 0
 Time Factor B: 1
+Credits: 9
+Volume: 27
+Replay: 200,000,000
 
 Player Scores
 -------------

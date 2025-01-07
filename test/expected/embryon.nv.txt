@@ -1,4 +1,4 @@
-Using map ../maps/embryond.nv.json for embryon.nv
+Using map maps/bally/as-2518-35/embryond.nv.json for embryon.nv
 
 Game State
 ----------
