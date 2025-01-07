@@ -1,0 +1,15 @@
+Using map maps/williams/wpc/jy_12.nv.json for jy_12.nv
+
+Game State
+----------
+WPC Game ID: 50052
+Replay: 20,000,000
+
+high_scores
+-----------
+Grand Champion: BSO 50,000,000
+First Place: XAQ 35,000,000
+Second Place: KGG 25,000,000
+Third Place: Z B 15,000,000
+Fourth Place: P M 10,000,000
+Last Played: 2025-01-07 00:01

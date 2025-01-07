@@ -1,0 +1,18 @@
+Using map maps/williams/wpc/dm_dt101.nv.json for dm_dt101.nv
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: DAD 50
+First Place: SAM 40
+Second Place: JOE 30
+Third Place: ISA 20
+Fourth Place: MOM 10
+Fifth Place: 0
+Last Played: 2025-01-07 00:01
