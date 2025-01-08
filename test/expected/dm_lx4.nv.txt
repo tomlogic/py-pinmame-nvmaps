@@ -220,17 +220,15 @@ A.2 Feature Adjustments
 
 Game State
 ----------
-WPC Game ID: 50028
-Credits: 9
-Volume: 27
-Replay: 450,000,000
-
-Player Scores
--------------
+Players: 1
 Player 1: 1,421,550
 Player 2: 0
 Player 3: 0
 Player 4: 0
+WPC Game ID: 50028
+Credits: 9
+Volume: 27
+Replay: 450,000,000
 
 high_scores
 -----------

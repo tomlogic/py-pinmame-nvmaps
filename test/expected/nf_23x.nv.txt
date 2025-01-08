@@ -2,16 +2,14 @@ Using map maps/williams/wpc/nf_23x.nv.json for nf_23x.nv
 
 Game State
 ----------
-Credits: 10
-Volume: 27
-Replay: 900,000,000
-
-Player Scores
--------------
+Players: 1
 Player 1: 110,365,920
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Credits: 10
+Volume: 27
+Replay: 900,000,000
 
 high_scores
 -----------

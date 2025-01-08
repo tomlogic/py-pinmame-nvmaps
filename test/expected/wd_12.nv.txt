@@ -2,6 +2,11 @@ Using map maps/williams/wpc/wd_12.nv.json for wd_12.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 50044
 Credits: 0
 Volume: 12

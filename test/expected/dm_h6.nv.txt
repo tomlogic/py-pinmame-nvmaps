@@ -212,16 +212,14 @@ A.2 Feature Adjustments
 
 Game State
 ----------
-Credits: 1
-Volume: 12
-Replay: 450,000,000
-
-Player Scores
--------------
+Players: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Credits: 1
+Volume: 12
+Replay: 450,000,000
 
 high_scores
 -----------

@@ -2,6 +2,11 @@ Using map maps/williams/wpc/congo_21.nv.json for congo_21.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 50050
 Replay: 800,000,000
 Credits: 0

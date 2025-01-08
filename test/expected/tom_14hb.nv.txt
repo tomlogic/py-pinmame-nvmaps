@@ -153,20 +153,17 @@ A.2 Feature Adjustments
 
 Game State
 ----------
+Players: 2
+Player 1: 9,950,010
+Player 2: 9,210,280
+Player 3: 0
+Player 4: 0
 Theatre Value: 0
-Player Count: 0
 Current Player: 1
 Ball: 1
 Credits: 8
 Volume: 27
 Replay: 600,000,000
-
-Player Scores
--------------
-Player 1: 9,950,010
-Player 2: 9,210,280
-Player 3: 0
-Player 4: 0
 
 high_scores
 -----------

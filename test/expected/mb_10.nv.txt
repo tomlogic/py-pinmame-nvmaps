@@ -2,6 +2,11 @@ Using map maps/williams/wpc/mb_10.nv.json for mb_10.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 50065
 Replay: 60,000,000
 Credits: 0

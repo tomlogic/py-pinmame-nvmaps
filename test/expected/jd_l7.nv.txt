@@ -2,6 +2,11 @@ Using map maps/williams/wpc/jd_l7.nv.json for jd_l7.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 20020
 Replay: 150,000,000
 Credits: 0

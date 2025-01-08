@@ -2,6 +2,11 @@ Using map maps/williams/wpc/hurr_l2.nv.json for hurr_l2.nv
 
 Game State
 ----------
+Players: 1
+Player 1: 100,030
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 50012
 Jackpot Value: 5,000,000
 Replay: 26,000,000

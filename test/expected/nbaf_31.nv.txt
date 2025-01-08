@@ -38,16 +38,14 @@ A.1 Standard Adjustments
 
 Game State
 ----------
-Credits: 9
-Volume: 27
-Replay: 100
-
-Player Scores
--------------
+Players: 1
 Player 1: 4
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Credits: 9
+Volume: 27
+Replay: 100
 
 high_scores
 -----------

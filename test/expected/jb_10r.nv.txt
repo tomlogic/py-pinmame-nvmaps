@@ -2,6 +2,11 @@ Using map maps/williams/wpc/jb_10r.nv.json for jb_10r.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 50051
 Replay: 3,800,000,000
 Credits: 0

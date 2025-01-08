@@ -127,16 +127,14 @@ A.1 Standard Adjustments
 
 Game State
 ----------
-Credits: 8
-Volume: 26
-Replay: 4,000,000,000
-
-Player Scores
--------------
+Players: 1
 Player 1: 51,477,300
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Credits: 8
+Volume: 26
+Replay: 4,000,000,000
 
 high_scores
 -----------

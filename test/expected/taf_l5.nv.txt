@@ -2,6 +2,11 @@ Using map maps/williams/wpc/taf_l5.nv.json for taf_l5.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 20017
 Credits: 0
 Volume: 12

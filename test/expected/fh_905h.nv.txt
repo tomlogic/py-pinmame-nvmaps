@@ -2,16 +2,14 @@ Using map maps/williams/wpc/fh_905h.nv.json for fh_905h.nv
 
 Game State
 ----------
-Credits: 3
-Volume: 12
-Replay: 7,200,000
-
-Player Scores
--------------
+Players: 3
 Player 1: 756,330
 Player 2: 605,990
 Player 3: 1,014,990
 Player 4: 0
+Credits: 3
+Volume: 12
+Replay: 7,200,000
 
 high_scores
 -----------

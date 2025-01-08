@@ -2,16 +2,14 @@ Using map maps/williams/wpc/dh_lx2.nv.json for dh_lx2.nv
 
 Game State
 ----------
-Credits: 9
-Volume: 12
-Replay: 500,000,000
-
-Player Scores
--------------
+Players: 1
 Player 1: 12,000,000
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Credits: 9
+Volume: 12
+Replay: 500,000,000
 
 high_scores
 -----------

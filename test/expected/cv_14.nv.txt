@@ -2,6 +2,11 @@ Using map maps/williams/wpc/cv_14.nv.json for cv_14.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 50062
 Replay: 25,000,000
 Credits: 0

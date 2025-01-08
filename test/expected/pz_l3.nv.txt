@@ -2,6 +2,11 @@ Using map maps/williams/wpc/pz_l3.nv.json for pz_l3.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 20004
 Credits: 0
 Volume: 12

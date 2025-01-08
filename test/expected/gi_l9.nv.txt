@@ -2,6 +2,11 @@ Using map maps/williams/wpc/gi_l9.nv.json for gi_l9.nv
 
 Game State
 ----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
 WPC Game ID: 20003
 Replay: 25,000,000
 Credits: 0

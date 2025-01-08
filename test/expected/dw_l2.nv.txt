@@ -52,11 +52,15 @@ B.4 Feature Audits
 
 Game State
 ----------
+Players: 1
+Player 1: 4,262,570
+Player 2: 0
+Player 3: 0
+Player 4: 0
 Escape A: 20
 Escape B: 20
 Repair A: 20
 Repair B: 20
-Player Count: 1
 Current Player: 1
 Ball: 3
 Extra Balls: 0
@@ -86,13 +90,6 @@ Time Factor B: 1
 Credits: 9
 Volume: 27
 Replay: 200,000,000
-
-Player Scores
--------------
-Player 1: 4,262,570
-Player 2: 0
-Player 3: 0
-Player 4: 0
 
 high_scores
 -----------
