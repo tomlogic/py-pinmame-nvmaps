@@ -8,7 +8,7 @@ import glob
 import json
 from collections import OrderedDict
 
-MAP_DIR = '../maps/maps/williams/wpc/'
+MAP_DIR = './new_maps'
 NV_DIR = '../../pinmame/release/nvram/'
 PINMAME = '../../pinmame/release/'
 
