@@ -14,4 +14,6 @@ SCRIPTPATH=$(dirname "$SCRIPT")
     python3 ../nvram_parser.py --nvram "$file" --dump > "results/$filename.txt" 2>&1
   done
   diff --unified --recursive --ignore-matching-lines '^Using map ' expected results | more
+
+  python3 missing-test.py
 )
