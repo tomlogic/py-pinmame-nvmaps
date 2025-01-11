@@ -1,0 +1,22 @@
+Using map maps/stern/sam/st_162.nv.json for st_162.nv
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: RITCHIE 75,000,000
+High Score #1: ROPP 55,000,000
+High Score #2: FRERES 40,000,000
+High Score #3: ROTHARMEL 30,000,000
+High Score #4: KLYCE 25,000,000
+
+mode_champions
+--------------
+Combo Champion: WAISON 12 Combos
+Warp Champion: MIKE 6 Warps
+Medals Champion: XAQERY 5 Medals
