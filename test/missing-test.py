@@ -43,6 +43,4 @@ if map_files:
     print("Missing coverage for:")
     for file, roms in map_files.items():
         print("%s: %s" % (file, ', '.join(roms)))
-
-
-# go through the test files
+    raise SystemExit(1)

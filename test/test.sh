@@ -1,12 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-# Absolute path to this script, e.g. /home/user/bin/foo.sh
+# Absolute path to this script.
 SCRIPT=$(readlink -f "$0")
-# Absolute path this script is in, thus /home/user/bin
-SCRIPTPATH=$(dirname "$SCRIPT")
+# Absolute path this script is in.
+SCRIPT_PATH=$(dirname "$SCRIPT")
+
+# set exit code if there's an error
+# https://stackoverflow.com/a/73000327/266392
+trap 'RC=1' ERR
 
 (
-  cd "$SCRIPTPATH"
+  cd "$SCRIPT_PATH"  || exit 1
   mkdir -p results
   rm results/*.txt
   for file in nvram/*.nv; do
@@ -17,3 +21,5 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 
   python3 missing-test.py
 )
+
+exit $RC
