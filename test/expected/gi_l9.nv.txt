@@ -1,0 +1,22 @@
+Using map maps/williams/wpc/gi_l9.nv.json for gi_l9.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 20003
+Replay: 25,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: WLP 99,900,000
+First Place: D L 89,900,000
+Second Place: J H 79,900,000
+Third Place: J Y 69,900,000
+Fourth Place: G T 59,000,000
+Last Played: 2025-01-03 00:01

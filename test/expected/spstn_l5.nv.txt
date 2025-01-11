@@ -1,0 +1,19 @@
+Using map maps/williams/system11/spstn_l5.nv.json for spstn_l5.nv
+
+Game State
+----------
+Credits: 7
+
+Player Scores
+-------------
+Player 1: 4,291,770
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: 4,291,770
+Second Place: CLF 4,000,000
+Third Place: EJB 3,500,000
+Fourth Place: BLS 3,000,000

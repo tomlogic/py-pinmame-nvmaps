@@ -1,0 +1,24 @@
+Using map maps/williams/wpc/ww_l5.nv.json for ww_l5.nv
+
+Game State
+----------
+Players: 1
+Player 1: 1,680,030
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 1
+Volume: 12
+Replay: 90,000,000
+
+high_scores
+-----------
+RIVER MASTER: MAB 200,000,000
+First Place: DEN 120,000,000
+Second Place: CG  100,000,000
+Third Place: TEX 90,000,000
+Fourth Place: EJB 80,000,000
+
+mode_champions
+--------------
+Insanity Record: RSM 12 Water Falls

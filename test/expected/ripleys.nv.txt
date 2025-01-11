@@ -1,0 +1,16 @@
+Using map maps/stern/whitestar/ripleys.nv.json for ripleys.nv
+
+Player Scores
+-------------
+Player 1: 30,030
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: PML 50,000,000
+1st: LNK 31,000,000
+2nd: JRK 25,000,000
+3rd: J Y 22,000,000
+4th: C G 18,000,000

@@ -1,0 +1,28 @@
+Using map maps/williams/wpc/congo_21.nv.json for congo_21.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50050
+Replay: 800,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: WAG 1,500,000,000
+First Place: JT  1,400,000,000
+Second Place: EFH 1,300,000,000
+Third Place: VJP 1,200,000,000
+Fourth Place: ADG 900,000,000
+
+mode_champions
+--------------
+Buy-In #1: TOY 1,400,000,000
+Buy-In #2: SRG 1,300,000,000
+Diamond Champ: KO  100 Diamonds
+Last Played: 2025-01-02 00:01

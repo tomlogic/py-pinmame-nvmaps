@@ -1,0 +1,5 @@
+Using map maps/stern/m200/seawitch.nv.json for seawitch-default.nv
+
+high_scores
+-----------
+1st: 0

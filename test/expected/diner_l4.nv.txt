@@ -1,0 +1,15 @@
+Using map maps/williams/system11/diner_l4.nv.json for diner_l4.nv
+
+Player Scores
+-------------
+Player 1: 284,510
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Highest Score #1: TTR 8,000,000
+Highest Score #2: RMR 7,500,000
+Highest Score #3: ABG 7,000,000
+Highest Score #4: CDG 6,500,000

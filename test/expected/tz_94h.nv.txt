@@ -1,0 +1,30 @@
+Using map maps/williams/wpc/tz_94h.nv.json for tz_94h.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50020
+Credits: 0
+Volume: 12
+Replay: 250,000,000
+
+high_scores
+-----------
+Grand Champion: NIK 750,000,000
+First Place: DAD 700,000,000
+Second Place: PML 650,000,000
+Third Place: J K 600,000,000
+Fourth Place: C G 550,000,000
+
+mode_champions
+--------------
+Lost in the Zone Champion: TEX 300,000,000
+Buy-In High Score #1: TED 950,000,000
+Buy-In High Score #2: VLD 900,000,000
+Buy-In High Score #3: WAG 850,000,000
+Buy-In High Score #4: XAQ 800,000,000
+Last Played: 2025-01-06 00:01

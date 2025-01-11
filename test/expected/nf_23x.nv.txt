@@ -1,0 +1,27 @@
+Using map maps/williams/wpc/nf_23x.nv.json for nf_23x.nv
+
+Game State
+----------
+Players: 1
+Player 1: 110,365,920
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 10
+Volume: 27
+Replay: 900,000,000
+
+high_scores
+-----------
+Grand Champion: SSR 2,000,000,000
+First Place: MAT 1,600,000,000
+Second Place: ZAP 1,400,000,000
+Third Place: DAN 1,200,000,000
+Fourth Place: PJP 1,000,000,000
+
+mode_champions
+--------------
+Buy-In High Score #1: XAQ 1,600,000,000
+Buy-In High Score #2: TEX 1,500,000,000
+Buy-In High Score #3: LFS 1,400,000,000
+Buy-In High Score #4: TED 1,300,000,000

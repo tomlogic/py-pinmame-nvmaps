@@ -1,0 +1,29 @@
+Using map maps/williams/wpc/rs_l6.nv.json for rs_l6.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50024
+Credits: 0
+Volume: 12
+Replay: 500,000,000
+
+high_scores
+-----------
+Grand Champion: TED 1,200,000,000
+First Place: PML 900,000,000
+Second Place: XAQ 800,000,000
+Third Place: TEX 750,000,000
+Fourth Place: C G 700,000,000
+
+mode_champions
+--------------
+Today's HS #1: ASR 500,000,000
+Today's HS #2: J K 450,000,000
+Today's HS #3: CJL 400,000,000
+Today's HS #4: LED 350,000,000
+Last Played: 2025-01-06 00:01

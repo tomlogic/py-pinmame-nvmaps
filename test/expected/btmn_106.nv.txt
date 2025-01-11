@@ -1,0 +1,17 @@
+Using map maps/dataeast/version3/btmn_106.nv.json for btmn_106.nv
+
+Player Scores
+-------------
+Player 1: 339,930
+Player 2: 1,868,230
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Dark Knight: TIM 30,000,000
+1st Place: DAN 25,000,000
+2nd Place: JEK 20,000,000
+3rd Place:  NF 18,000,000
+4th Place: BLS 16,000,000
+5th Place: HEC 14,000,000

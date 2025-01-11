@@ -1,0 +1,181 @@
+Using map maps/williams/wpc/tom_13.nv.json for tom_14hb.nv
+
+B.3 Standard Audits
+-------------------
+01 Games Started: 3
+02 Total Plays: 0
+03 Total Free Plays: 0
+05 Replay Awards: 0
+07 Special Awards: 0
+09 Match Awards: 0
+11 H.S.T.D. Credits: 0
+13 Extra Balls: 0
+15 Tickets Awarded: 0
+17 Left Drains: 0
+18 Right Drains: 0
+21 Play Time: 0:00:00
+22 Machine On: 0:02:00
+23 Balls Played: 0
+24 Tilts: 0
+25 Replay 1 Awards: 0
+26 Replay 2 Awards: 0
+27 Replay 3 Awards: 0
+28 Replay 4 Awards: 0
+29 1 Player Games: 0
+30 2 Player Games: 0
+31 3 Player Games: 0
+32 4 Player Games: 0
+33 H.S.T.D. Reset Count: 3,000
+34 Burn-in Time: 0:00:00
+35 1st Replay Level: 600M
+36 Left Flipper: 32
+37 Right Flipper: 40
+
+B.4 Feature Audits
+------------------
+01 Buy-In Ex. Balls: 0
+02 Multiball: 0
+03 Illusions: 0
+04 Basement: 0
+05 Theatre: 0
+06 Balls Saved: 1
+08 Balls Vanished: 0
+09 Tiger Multiball: 0
+10 Locks Lit: 0
+11 Grand Finale: 0
+12 Midnight: 0
+13 1 Buy-In Games: 0
+14 2 Buy-In Games: 0
+15 3 Buy-In Games: 0
+16 >=4 Buy-In Games: 0
+17 Trunk Failures: 0
+18 Left Drain Save: 0
+19 Left Drain Miss: 0
+20 Right Drain Save: 0
+21 Left Drain Miss: 0
+22 Magnet Diverts: 0
+23 Trunk Ball Drain: 0
+24 Trunk Plain Hits: 1
+25 Trunk Magnet Hits: 0
+26 Trunk Lamp Hits: 0
+27 Trunk Scoop Hits: 0
+28 Got to 6 PM: 0
+29 Secret Locks: 0
+30 Pinball Cheats: 0
+
+B.5 Histograms
+--------------
+01 0-19M Score: 0
+02 20-49M Score: 0
+03 50-99M Score: 0
+04 100-249M Score: 0
+05 250-499M Score: 0
+06 500-599M Score: 0
+07 600-699M Score: 0
+08 700-799M Score: 0
+09 800-899M Score: 0
+10 900-999M Score: 0
+11 1-1.24B Score: 0
+12 1.25-1.49B Score: 0
+13 Over 1.5B Score: 0
+14 Game Time 0.0-1.0M: 0
+15 Game Time 1.0-1.5M: 0
+16 Game Time 1.5-2.0M: 0
+17 Game Time 2.0-2.5M: 0
+18 Game Time 2.5-3.0M: 0
+19 Game Time 3.0-3.5M: 0
+20 Game Time 3.5-4.0M: 0
+21 Game Time 4-5M: 0
+22 Game Time 5-6M: 0
+23 Game Time 6-8M: 0
+24 Game Time 8-10M: 0
+25 Game Time 10-15M: 0
+26 Game Time > 15M: 0
+
+A.1 Standard Adjustments
+------------------------
+01 Balls Per Game: 3
+02 Tilt Warnings: 3
+03 Max E.B. Count: 4
+04 Max E.B. Per B.I.P.: OFF
+05 Replay System: Auto %
+06 Replay Percent: 10
+07 Replay Start: 600M
+08 Replay Levels: 1
+09 Replay L1: 400M
+10 Replay L2: OFF
+11 Replay L3: OFF
+12 Replay L4: OFF
+13 Replay Boost: 50M
+14 Replay Award: Credit
+15 Special Award: Credit
+16 Match Award: Credit
+17 Ex. Ball Ticket: NO
+18 Max. Tick./Player: 25
+19 Match Feature: 7%
+20 Custom Message: ON
+21 Language: English
+22 Clock Style: AM/PM
+23 Date Style: Mmm. DD, YY
+24 Show Time + Date: NO
+25 Allow Dim. Illum.: YES
+26 Tournament Play: NO
+27 Euro. Scr. Format: NO
+28 Min. Vol. Override: NO
+29 GI Power Saver: 15 MINUTES
+30 Power Save Level: 5
+31 Ticket Exp. Board: NO
+32 No Bonus Flips: YES
+33 Game Restart: SLOW
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Buy-In Count: 4
+03 Attract Sounds: OFF
+04 Ball Save: ON
+05 Default Buy-In HS1: 1,000M
+06 Default Buy-In HS2: 980M
+07 Default Buy-In HS3: 960M
+08 Default Buy-In HS4: 940M
+09 % Spell Magic: 12%
+10 % Lite Extra Ball: 12%
+11 % Lite Special: 2%
+12 Trunk Ball Save: NO
+13 Hocus Pocus: 15
+14 Trunk Motor: ON
+15 German Speech: OFF
+16 'MAGIC' memory: 2nd mball.
+17 Difficult Lock: 2nd mball.
+18 Clock Start Hour: 12 NOON
+19 Mode Start Hits: 3
+20 Give Magic Letter: ON
+
+Game State
+----------
+Players: 2
+Player 1: 9,950,010
+Player 2: 9,210,280
+Player 3: 0
+Player 4: 0
+Theatre Value: 0
+Current Player: 1
+Ball: 1
+Credits: 8
+Volume: 27
+Replay: 600,000,000
+
+high_scores
+-----------
+Grand Champion: JBJ 800,000,000
+First Place: POP 640,000,000
+Second Place: ZAB 630,000,000
+Third Place: JWS 620,000,000
+Fourth Place: LTD 610,000,000
+
+mode_champions
+--------------
+BUY-IN SCORE #1: WWW 1,000,000,000
+BUY-IN SCORE #2: BMC 980,000,000
+BUY-IN SCORE #3: CMJ 960,000,000
+BUY-IN SCORE #4: ASR 940,000,000

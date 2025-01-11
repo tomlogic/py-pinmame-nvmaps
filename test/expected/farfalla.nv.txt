@@ -1,0 +1,16 @@
+Using map maps/zaccaria/gen2/farfalla.nv.json for farfalla.nv
+
+Game State
+----------
+Credits: 48
+
+Player Scores
+-------------
+Player 1: 94,220
+Player 2: 122,970
+Player 3: 166,030
+Player 4: 0
+
+high_scores
+-----------
+High Score: 4,000,000

@@ -1,4 +1,4 @@
-#!env python
+#!/usr/bin/env python3
 
 """
 ParseNVRAM: a tool for extracting information from PinMAME's ".nv" files.
@@ -20,7 +20,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+import argparse
+import glob
 import json
+import os
 import sys
 from datetime import datetime
 
@@ -101,12 +104,40 @@ class RamMapping(object):
         return bytearray(map((lambda offset: nvram[offset]),
                              self.offsets()))
 
-    # same as get_bytes_unmasked() but apply the mask in 'mask' if present
     def get_bytes(self, nvram):
+        """Same as get_bytes_unmasked() but:
+        - reverses little-endian sequences for integer encodings (bcd, int, bits)
+        - combines nibbles into complete bytes
+        - if appropriate, applies a mask to each byte
+        """
         ba = self.get_bytes_unmasked(nvram)
+        # convert certain byte sequences from little_endian to big endian
+        if 'encoding' in self.entry and self.little_endian():
+            if self.entry['encoding'] in ['bcd', 'int', 'bits']:
+                ba.reverse()
+
+        nibble = self.nibble()
+        if nibble != NIBBLE_BOTH:
+            # combine nibbles of ba
+            new_ba = []
+            value = 0
+            while ba:
+                b = ba.pop(0)
+                if nibble == NIBBLE_LOW:
+                    b = b & 0x0F
+                else:
+                    b = b >> 4
+                value = (value << 4) + b
+                if len(ba) % 2 == 0:
+                    # if remaining byte count is even, save new value
+                    new_ba.append(value)
+                    value = 0
+            ba = new_ba
+
         if 'mask' in self.entry:
             mask = self.to_int(self.entry['mask'])
-            return bytearray(map((lambda b: b & mask), ba))
+            ba = bytearray(map((lambda b: b & mask), ba))
+
         return ba
 
     @staticmethod
@@ -117,8 +148,13 @@ class RamMapping(object):
     # return NIBBLE_BOTH, NIBBLE_LOW, or NIBBLE_HIGH based on `nibble`
     # attribute or the deprecated `packed` attribute.
     def nibble(self):
-        nibble = 'both' if self.entry.get('packed', True) else 'low'
-        nibble = self.entry.get('nibble', nibble)
+        nibble = self.metadata['nibble']
+        if not self.entry.get('packed', True):
+            # if entry has 'packed=false', replace file's default with 'nibble=low'
+            nibble = 'low'
+        else:
+            nibble = self.entry.get('nibble', nibble)
+
         if nibble == 'both':
             return NIBBLE_BOTH
         elif nibble == 'low':
@@ -142,21 +178,11 @@ class RamMapping(object):
         if 'encoding' in self.entry:
             encoding = self.entry['encoding']
             ba = self.get_bytes(nvram)
-            if self.little_endian():
-                ba.reverse()
 
             if encoding == 'bcd':
-                nibble = self.nibble()
                 value = 0
                 for b in ba:
-                    if nibble == NIBBLE_BOTH:
-                        value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
-                    elif nibble == NIBBLE_LOW:
-                        value = value * 10 + self.bcd(b & 0x0F)
-                    elif nibble == NIBBLE_HIGH:
-                        value = value * 10 + self.bcd(b >> 4)
-                    else:
-                        raise ValueError('unsupported NIBBLE option')
+                    value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
             elif encoding == 'int' or encoding == 'bits':
                 value = 0
                 for b in ba:
@@ -259,22 +285,14 @@ class RamMapping(object):
 
         ba = self.get_bytes(nvram)
         if encoding == 'ch':
-            nibble = self.nibble()
             result = ''
             char_map = self.metadata.get('char_map')
             while ba:
-                if nibble == NIBBLE_BOTH:
-                    b = ba.pop(0)
-                elif nibble == NIBBLE_LOW:
-                    # Robowars uses unpacked character encoding
-                    b = (ba.pop(0) & 0x0F) * 16 + (ba.pop(0) & 0x0F)
-                elif nibble == NIBBLE_HIGH:
-                    b = (ba.pop(0) >> 4) * 16 + (ba.pop(0) >> 4)
-                else:
-                    raise ValueError('unsupported nibble attribute')
+                b = ba.pop(0)
                 if char_map:
                     result += char_map[b]
-                elif b == 0:    # treat as null-terminated string
+                elif b == 0 and self.entry.get('null', 'ignore') != 'ignore':
+                    # treat as null-terminated or truncated string
                     break
                 else:
                     result += chr(b)
@@ -331,7 +349,7 @@ class ParseNVRAM(object):
     def __init__(self, nv_json, nvram):
         self.nv_json = nv_json
         self.nvram = nvram
-        self.metadata = {'big_endian': True}
+        self.metadata = {'big_endian': True, 'nibble': 'both'}
         self.mapping = []
         if nv_json is not None:
             self.process_json()
@@ -530,31 +548,54 @@ class ParseNVRAM(object):
             self.verify_all_checksum8(verbose=True)
 
 
-def print_usage():
-    print("Usage: %s <json_file> <nvram_file>" % (sys.argv[0]))
+def find_map(nvfile):
+    """Find a map that will work with the ROM of the given nram file."""
+    basename = os.path.basename(nvfile)
+    (name, extension) = os.path.splitext(basename)
+    # remove anything after the first hyphen
+    (rom, _, _) = name.partition('-')
+
+    # search the index for an appropriate map
+    maps_root = os.path.join(os.path.dirname(__file__), 'maps')
+    with open(os.path.join(maps_root, 'index.json')) as f:
+        map_file = json.load(f).get(rom)
+        if map_file:
+            with open(os.path.join(maps_root, map_file), 'r') as m:
+                print("Using map %s for %s" %
+                      (os.path.relpath(map_file), basename))
+                return json.load(m)
+
+    print("Couldn't find a map for %s" % basename)
 
 
 def main():
-    if len(sys.argv) < 3:
-        print_usage()
-        return
-    else:
-        jsonpath = sys.argv[1]
-        nvpath = sys.argv[2]
-        if jsonpath.find('.json', 0) == -1 or nvpath.find('.nv', 0) == -1:
-            print_usage()
+    parser = argparse.ArgumentParser(description='PinMAME nvram Parser')
+    parser.add_argument('--map', help='map file (typically ending in .nv.json)')
+    parser.add_argument('--nvram', help='nvram file to parse')
+    parser.add_argument('--dump', help='dump the contents of <nvram> using <map>', action='store_true')
+    args = parser.parse_args()
+
+    if args.dump:
+        nvpath = args.nvram
+        if nvpath.find('.nv', 0) == -1:
+            parser.print_help()
             return
+        with open(nvpath, 'rb') as f:
+            nvram = bytearray(f.read())
 
-    json_fh = open(jsonpath, 'r')
-    nv_json = json.load(json_fh)
-    json_fh.close()
+        if args.map:
+            with open(args.map, 'r') as f:
+                nv_json = json.load(f)
+        else:
+            # find a JSON file for the given nvram file
+            nv_json = find_map(nvpath)
 
-    nv_fh = open(nvpath, 'rb')
-    nvram = bytearray(nv_fh.read())
-    nv_fh.close()
+        p = ParseNVRAM(nv_json, nvram)
+        p.dump()
 
-    p = ParseNVRAM(nv_json, nvram)
-    p.dump()
+    else:
+        parser.print_help()
+        return
 
 
 if __name__ == '__main__':

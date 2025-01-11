@@ -1,0 +1,16 @@
+Using map maps/zaccaria/gen2/robot.nv.json for robot.nv
+
+Game State
+----------
+Credits: 22
+
+Player Scores
+-------------
+Player 1: 166,350
+Player 2: 65,830
+Player 3: 105,190
+Player 4: 0
+
+high_scores
+-----------
+High Score: 7,500,000

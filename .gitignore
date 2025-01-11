@@ -1,1 +1,4 @@
 *.pyc
+
+/test/results
+.idea/

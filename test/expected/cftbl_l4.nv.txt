@@ -1,0 +1,22 @@
+Using map maps/williams/wpc/cftbl_l4.nv.json for cftbl_l4.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 20018
+Replay: 200,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: JBJ 180,000,000
+First Place: DRF 165,000,000
+Second Place: CMP 150,000,000
+Third Place: PDH 125,000,000
+Fourth Place: DOA 100,000,000
+Last Played: 2025-01-02 00:01

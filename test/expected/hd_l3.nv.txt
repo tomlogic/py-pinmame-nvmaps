@@ -1,0 +1,20 @@
+Using map maps/williams/wpc/hd_l3.nv.json for hd_l3.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Volume: 12
+Replay: 5,000,000
+
+high_scores
+-----------
+Grand Champion: BSO 15,000,000
+1st: JRS 12,000,000
+2nd: DWF 11,000,000
+3rd: MWS 10,000,000
+4th: GLH 9,000,000

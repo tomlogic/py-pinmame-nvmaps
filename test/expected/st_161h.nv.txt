@@ -1,0 +1,22 @@
+Using map maps/stern/sam/st_161h.nv.json for st_161h.nv
+
+Player Scores
+-------------
+Player 1: 691,690
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: SSR 75,000,000
+High Score #1: LON 55,000,000
+High Score #2: GGF 40,000,000
+High Score #3: JMR 30,000,000
+High Score #4: T 25,000,000
+
+mode_champions
+--------------
+Combo Champion: W 12 Combos
+Warp Champion: MDK 6 Warps
+Medals Champion: XAQ 5 Medals

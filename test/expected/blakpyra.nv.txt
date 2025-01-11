@@ -1,0 +1,37 @@
+Using map maps/bally/as-2518-35/blakpyra.nv.json for blakpyra.nv
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 10
+06 Total Plays (Played and Free Games): 5
+07 Total Replays (Free Games): 7
+08 Game Percentage: 0
+09 Total times 'High Score To Date' is beat: 4
+10 Coins Dropped thru Coin Chute #1: 5
+11 Coins Dropped thru Coin Chute #2: 0
+12 Coins Dropped thru Coin Chute #3: 3
+13 Number of Specials awarded from Panel Specials Only: 1
+14 Number of minutes of Game Play: 1
+15 Number of Service Credits: 0
+
+High score functions
+--------------------
+01 Extra ball / Free game score level 1: OFF
+02 Extra ball / Free game score level 2: OFF
+03 Extra ball / Free game score level 3: OFF
+04 High score to date: 2,186,150
+
+Game State
+----------
+Credits: 0
+
+Player Scores
+-------------
+Player 1: 2,186,150
+Player 2: 35,890
+Player 3: 33,160
+Player 4: 26,290
+
+high_scores
+-----------
+High Score: 2,186,150

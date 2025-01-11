@@ -1,0 +1,19 @@
+Using map maps/dataeast/version3/swtril43.nv.json for swtril43.nv
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+
+high_scores
+-----------
+#1 Jedi: LON 24,000,000
+#2 Jedi: JOE 21,000,000
+#3 Jedi: DAY 19,500,000
+#4 Jedi: KRT 18,000,000
+#5 Jedi: MAR 16,500,000
+#6 Jedi: JIM 15,000,000

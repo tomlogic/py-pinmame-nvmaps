@@ -1,0 +1,27 @@
+Using map maps/williams/wpc/cv_14.nv.json for cv_14.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50062
+Replay: 25,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: RRR 60,000,000
+First Place: POP 45,000,000
+Second Place: LTD 40,000,000
+Third Place: ROB 35,000,000
+Fourth Place: ZAB 30,000,000
+
+mode_champions
+--------------
+Cannon Ball Champ: TEX 50
+Party Champ: PAB 20,000,000
+Last Played: 2025-01-03 00:01

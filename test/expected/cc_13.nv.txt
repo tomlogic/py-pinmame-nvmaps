@@ -1,0 +1,22 @@
+Using map maps/williams/wpc/cc_13.nv.json for cc_13.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50066
+Replay: 32,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: MAT 100,000,000
+First Place: KOP 75,000,000
+Second Place: TOY 50,000,000
+Third Place: ROB 40,000,000
+Fourth Place: JY  30,000,000
+Last Played: 2025-01-02 00:01

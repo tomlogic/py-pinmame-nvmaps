@@ -1,0 +1,30 @@
+Using map maps/williams/wpc/sc_18.nv.json for sc_18s11.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 90003
+Credits: 0
+Volume: 12
+Replay: 2,500,000
+
+high_scores
+-----------
+Grand Champion: PML 4,000,000
+First Place: MAT 3,500,000
+Second Place: ADG 3,000,000
+Third Place: DAN 2,500,000
+Fourth Place: JY  2,250,000
+
+mode_champions
+--------------
+Assault Champion: PML 5,500,000
+Assault Master #1: MAT 4,900,000
+Assault Master #2: ADG 4,800,000
+Assault Master #3: DAN 4,700,000
+Assault Master #4: JY  4,600,000
+Last Played: 2025-01-06 00:01

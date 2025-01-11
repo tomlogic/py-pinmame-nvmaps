@@ -1,0 +1,8 @@
+Using map maps/williams/system9/sorcr_l2.nv.json for sorcr_l2.nv
+
+high_scores
+-----------
+?: 2,500,000
+?: 2,000,000
+?: 1,500,000
+?: 1,100,000

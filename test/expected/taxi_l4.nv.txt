@@ -1,0 +1,19 @@
+Using map maps/williams/system11/taxi_l4.nv.json for taxi_l4.nv
+
+Game State
+----------
+Credits: 8
+
+Player Scores
+-------------
+Player 1: 376,450
+Player 2: 147,170
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: SJO 4,500,000
+Second Place: DLB 4,000,000
+Third Place: LED 3,500,000
+Fourth Place: P J 3,000,000

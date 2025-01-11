@@ -1,0 +1,16 @@
+Using map maps/bally/as-2518-35/bmx.nv.json for bmx.nv
+
+Game State
+----------
+Credits: 7
+
+Player Scores
+-------------
+Player 1: 115,620
+Player 2: 10,240
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 115,620

@@ -1,0 +1,10 @@
+Using map maps/sega/whitestar/gldneye.nv.json for gldneye.nv
+
+high_scores
+-----------
+First Place: WMT 2,400,000,000
+Second Place: JRP 2,100,000,000
+Third Place: RFH 1,950,000,000
+Fourth Place: BTB 1,800,000,000
+Fifth Place: NF  1,650,000,000
+Sixth Place: DAY 1,500,000,000

@@ -1,0 +1,45 @@
+Using map maps/williams/wpc/bop_l7.nv.json for bop_l7.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50002
+Replay: 7,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: JT  15,000,000
+First Place: ZB  12,000,000
+Second Place: DWF 11,000,000
+Third Place: JWH 10,000,000
+Fourth Place: RK  9,000,000
+
+mode_champions
+--------------
+Billionaire #1: BRE 1,004,206,800
+Billionaire #2: SLL 1,001,005,690
+Billionaire #3: CCC 1,000,000,000
+Billionaire #4: DDD 1,000,000,000
+Billionaire #5: EEE 1,000,000,000
+Billionaire #6: FFF 1,000,000,000
+Billionaire #7: GGG 1,000,000,000
+Billionaire #8: HHH 1,000,000,000
+Billionaire #9: III 1,000,000,000
+Billionaire #10: JJJ 1,000,000,000
+Billionaire #11: KKK 1,000,000,000
+Billionaire #12: LLL 1,000,000,000
+Billionaire #13: MMM 1,000,000,000
+Billionaire #14: NNN 1,000,000,000
+Billionaire #15: OOO 1,000,000,000
+Billionaire #16: PPP 1,000,000,000
+Billionaire #17: QQQ 1,000,000,000
+Billionaire #18: RRR 1,000,000,000
+Billionaire #19: SSS 1,000,000,000
+Billionaire #20: TTT 1,000,000,000
+Last Played: 2024-12-31 00:01

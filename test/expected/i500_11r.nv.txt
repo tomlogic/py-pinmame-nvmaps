@@ -1,0 +1,31 @@
+Using map maps/williams/wpc/i500_11r.nv.json for i500_11r.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50026
+Replay: 360,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: MAB 700,000,000
+First Place: DEN 650,000,000
+Second Place: CJS 600,000,000
+Third Place: ONE 550,000,000
+Fourth Place: WIN 500,000,000
+Buy-In Champion: CJS 900,000,000
+Buy-In #1: MAB 900,000,000
+Buy-In #2: CG  850,000,000
+Buy-In #3: BCM 800,000,000
+Buy-In #4: ASR 750,000,000
+
+mode_champions
+--------------
+Pit Stop Record: TEX 15 seconds
+Last Played: 2025-01-03 00:01

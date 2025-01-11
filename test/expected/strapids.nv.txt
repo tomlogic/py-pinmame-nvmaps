@@ -1,0 +1,16 @@
+Using map maps/zaccaria/gen1/strapids.nv.json for strapids.nv
+
+Game State
+----------
+Credits: 17
+
+Player Scores
+-------------
+Player 1: 114,490
+Player 2: 65,920
+Player 3: 53,440
+Player 4: 0
+
+high_scores
+-----------
+High Score: 120,140

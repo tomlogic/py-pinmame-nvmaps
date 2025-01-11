@@ -1,0 +1,19 @@
+Using map maps/williams/system11/bk2k_l4.nv.json for bk2k_l4.nv
+
+Game State
+----------
+Credits: 8
+
+Player Scores
+-------------
+Player 1: 307,040
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Greatest Hero 1: SSR 5,500,000
+Greatest Hero 2: EJB 5,000,000
+Greatest Hero 3: DTW 4,500,000
+Greatest Hero 4: BLS 4,000,000

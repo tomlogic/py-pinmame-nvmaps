@@ -1,0 +1,28 @@
+Using map maps/williams/wpc/cp_16.nv.json for cp_16.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50063
+Replay: 50,000,000
+Credits: 0
+Volume: 12
+
+high_scores
+-----------
+Grand Champion: PJP 75,000,000
+First Place: XAQ 65,000,000
+Second Place: BEC 55,000,000
+Third Place: P B 45,000,000
+Fourth Place: L D 35,000,000
+
+mode_champions
+--------------
+Pub Champ: B C
+Jump Rope Champ: JIM 20 Jumps
+Speed Bag Champ: PJP 15 Hits
+Last Played: 2025-01-02 00:01

@@ -1,0 +1,39 @@
+Using map maps/stern/stern-m100.nv.json for stingray.nv
+
+Audits
+------
+05 Credits: 10
+06 Total Plays: 357
+07 Total Replays: 20
+08 HSTD Beaten: 7
+09 Coin Chute 2: 9
+10 Coin Chute 1: 0
+11 Coin Chute 3: 283
+
+Adjustments
+-----------
+01 Replay 1: 0
+02 Replay 2: 0
+03 Replay 3: 0
+04 High Score: 820,710
+
+Game State
+----------
+Match: 2
+Ball: 2
+Credits: 10
+P1: 41,440
+P2: 0
+P3: 0
+P4: 0
+
+Player Scores
+-------------
+Player 1: 301,300
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 820,710

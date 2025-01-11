@@ -1,0 +1,16 @@
+Using map maps/zaccaria/gen2/tmachzac.nv.json for tmachzac.nv
+
+Game State
+----------
+Credits: 47
+
+Player Scores
+-------------
+Player 1: 580,340
+Player 2: 43,100
+Player 3: 66,500
+Player 4: 0
+
+high_scores
+-----------
+High Score: 4,000,000

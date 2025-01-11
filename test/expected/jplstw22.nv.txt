@@ -1,0 +1,17 @@
+Using map maps/sega/whitestar/jplstw22.nv.json for jplstw22.nv
+
+Player Scores
+-------------
+Player 1: 267,920
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+#1: JRB 2,400,000,000
+#2: JEK 2,100,000,000
+#3: NF  1,950,000,000
+#4: DAY 1,800,000,000
+#5: KRT 1,650,000,000
+#6: JIM 1,500,000,000

@@ -1,0 +1,30 @@
+Using map maps/williams/wpc/wcs_l2.nv.json for wcs_l2.nv
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+WPC Game ID: 50031
+Credits: 0
+Volume: 12
+Replay: 900,000,000
+
+high_scores
+-----------
+Grand Champion: MAT 2,000,000,000
+First Place: POP 1,600,000,000
+Second Place: DAD 1,400,000,000
+Third Place: K O 1,200,000,000
+Fourth Place: JES 1,000,000,000
+
+mode_champions
+--------------
+Final Match Goal Champ: V P 6 Goals
+Buy-In High Score #1: CJS 2,600,000,000
+Buy-In High Score #2: VLK 2,400,000,000
+Buy-In High Score #3: SAC 2,200,000,000
+Buy-In High Score #4: EAE 2,000,000,000
+Last Played: 2025-01-06 00:01

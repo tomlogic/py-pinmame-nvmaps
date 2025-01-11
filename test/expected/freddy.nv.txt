@@ -1,0 +1,16 @@
+Using map maps/gottlieb/system3/freddy.nv.json for freddy.nv
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Dream Master: BRI 160,000,000
+Dream Warriors: LVS 140,000,000
+Dream Warriors: CIN 120,000,000
+Dream Warriors: JON 100,000,000
+Dream Warriors: GIL 80,000,000

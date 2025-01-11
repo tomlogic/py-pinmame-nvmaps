@@ -1,0 +1,19 @@
+Using map maps/williams/system11/esha_la3.nv.json for esha_ma3.nv
+
+Game State
+----------
+Credits: 7
+
+Player Scores
+-------------
+Player 1: 67,020
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: JON 6,500,000
+Second Place: LED 6,000,000
+Third Place: PJ  5,500,000
+Fourth Place: SJO 5,000,000

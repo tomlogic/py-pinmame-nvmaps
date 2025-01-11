@@ -1,0 +1,19 @@
+Using map maps/williams/system11/bnzai_l3.nv.json for bnzai_l3.nv
+
+Game State
+----------
+Credits: 4
+
+Player Scores
+-------------
+Player 1: 134,190
+Player 2: 0
+Player 3: 0
+Player 4: 40,002
+
+high_scores
+-----------
+First Place: KJF 4,000,000
+Second Place: J C 3,800,000
+Third Place: JEJ 3,600,000
+Fourth Place: SJO 3,400,000

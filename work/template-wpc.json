@@ -1,0 +1,46 @@
+{
+  "_notes": [
+    "Compiled by Tom Collins using template-wpc.json.",
+    "WPC"
+  ],
+  "_copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
+  "_license": "GNU Lesser General Public License v3.0",
+  "_endian": "big",
+  "_ramsize": 0,
+  "_roms": [
+  ],
+  "_fileformat": 0.1,
+  "_version": 0.1,
+  "last_played": {
+    "start": 6144,
+    "encoding": "wpc_rtc",
+    "length": 7
+  },
+  "game_state": {
+    "game_id": {
+      "label": "WPC Game ID",
+      "start": 6156,
+      "encoding": "ch",
+      "length": 5
+    }
+  },
+  "high_scores": [
+  ],
+  "mode_champions": [
+  ],
+  "checksum8": [
+    {
+      "start": 6161,
+      "end": 9999,
+      "groupings": 6,
+      "label": "Audits"
+    }
+  ],
+  "checksum16": [
+    {
+      "start": 9999,
+      "end": 9999,
+      "label": "Adjustments"
+    }
+  ]
+}

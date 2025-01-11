@@ -1,0 +1,12 @@
+Using map maps/williams/williams.system7.nv.json for csmic_l1.nv
+
+Game State
+----------
+Credits: 12
+
+high_scores
+-----------
+First Place: 2,500,000
+Second Place: 0
+Third Place: 0
+Fourth Place: 0

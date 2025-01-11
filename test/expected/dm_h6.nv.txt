@@ -1,0 +1,235 @@
+Using map maps/williams/wpc/dm_h6.nv.json for dm_h6.nv
+
+B.2 Earnings Audits
+-------------------
+02 Recent Left Slot: 0
+03 Recent Cent. Slot: 0
+04 Recent Rght. Slot: 0
+05 Recent 4th Slot: 0
+06 Recent Paid Cred: 0
+07 Recent Serv. Cred: 1
+09 Total Left Slot: 0
+10 Total Cent. Slot: 0
+11 Total Rght. Slot: 0
+12 Total 4th Slot: 0
+13 Total Paid Cred: 0
+14 Total Serv. Cred: 1
+
+B.3 Standard Audits
+-------------------
+01 Games Started: 0
+02 Total Plays: 0
+03 Total Free Plays: 0
+05 Replay Awards: 0
+07 Special Awards: 0
+09 Match Awards: 0
+11 H.S.T.D. Credits: 0
+13 Extra Balls: 0
+15 Tickets Awarded: 0
+17 Left Drains: 0
+18 Right Drains: 0
+21 Play Time: 0:00:00
+22 Machine On: 0:01:00
+23 Balls Played: 0
+24 Tilts: 0
+25 Replay 1 Awards: 0
+26 Replay 2 Awards: 0
+27 Replay 3 Awards: 0
+28 Replay 4 Awards: 0
+29 1 Player Games: 0
+30 2 Player Games: 0
+31 3 Player Games: 0
+32 4 Player Games: 0
+33 H.S.T.D. Reset Count: 3,000
+34 Burn-in Time: 0:00:00
+35 1st Replay Level: 450M
+36 Left Flipper: 0
+37 Right Flipper: 0
+
+B.4 Feature Audits
+------------------
+01 Buy-In Ex. Balls: 0
+03 Combo 1st E.B.: 0
+04 Combo 2nd E.B.: 0
+05 Bonus X Ex. Ball: 0
+06 Computer Ex. Ball: 0
+07 Total Multiballs: 0
+08 1st Multiballs: 0
+09 2nd Multiballs: 0
+10 3rd Multiballs: 0
+11 4th Multiballs: 0
+12 Computer Awards: 0
+13 Ball Saves: 0
+14 Jackpots: 0
+15 Super Jackpots: 0
+16 Combos: 0
+17 Big Combos: 0
+18 Claw Visits: 0
+19 Claw Opened: 0
+20 Capture Simon: 0
+21 Super Jets: 0
+22 Prison Break: 0
+23 Claw Freezes: 0
+24 Acmags: 0
+25 Double Pr. Break: 0
+26 Triple Pr. Break: 0
+27 5 Ball M-Balls: 0
+28 Quick Freezes: 0
+29 Left Ramps: 0
+30 Right Ramps: 0
+31 Center Ramps: 0
+32 Side Ramps: 0
+33 Bonus X: 0
+34 Car Crashes: 0
+35 Eyeball hits: 0
+36 Explode Hurry-Up: 0
+37 Standup Complete: 0
+38 Demolition Time: 0
+39 Demo Champ Cred: 0
+40 Secret Features: 0
+41 Left Handle: 0
+42 Right Handle: 0
+43 Eyeball Ex. Ball: 0
+
+B.5 Histograms
+--------------
+01 0-19M Score: 0
+02 20-49M Score: 0
+03 50-99M Score: 0
+04 100-249M Score: 0
+05 250-499M Score: 0
+06 500-599M Score: 0
+07 600-699M Score: 0
+08 700-799M Score: 0
+09 800-899M Score: 0
+10 900-999M Score: 0
+11 1-1.24B Score: 0
+12 1.25-1.49B Score: 0
+13 Over 1.5B Score: 0
+14 Game Time 0.0-1.0M: 0
+15 Game Time 1.0-1.5M: 0
+16 Game Time 1.5-2.0M: 0
+17 Game Time 2.0-2.5M: 0
+18 Game Time 2.5-3.0M: 0
+19 Game Time 3.0-3.5M: 0
+20 Game Time 3.5-4.0M: 0
+21 Game Time 4-5M: 0
+22 Game Time 5-6M: 0
+23 Game Time 6-8M: 0
+24 Game Time 8-10M: 0
+25 Game Time 10-15M: 0
+26 Game Time > 15M: 0
+
+B.6 Timestamps
+--------------
+02 Totals Cleared: 2024-12-13 09:52
+03 Clock Last Set: 2024-12-13 09:52
+04 Audits Cleared: 2024-12-13 09:52
+05 Coins Cleared: 2024-12-13 09:52
+06 Factory Setting: 2024-12-13 09:52
+07 Last Game Start: 2024-12-13 09:52
+08 Last Replay: 2024-12-13 09:52
+09 Last HSTD Reset: 2024-12-13 09:52
+10 Champion Reset: 2024-12-13 09:52
+11 Last Printout: 2024-12-13 09:52
+12 Last Serv. Cred: 2025-01-07 10:24
+
+B.X Unidentified
+----------------
+01 ? (@0x1901): 0
+02 ? (@0x1907): 0
+04 ? (@0x19BB): 0
+05 ?boot count: 1
+06 ? (@0x19C7): 0
+07 ? (@0x19CD): 0
+10 ? (@0x1C72): 2024-12-13 09:52
+11 ? (@0x1C79): 2024-12-13 09:52
+12 ? (@0x1C80): 2024-12-13 09:52
+13 Volume: 12
+
+A.1 Standard Adjustments
+------------------------
+01 Balls Per Game: 3
+02 Tilt Warnings: 3
+03 Max E.B. Count: 4
+04 Max E.B. Per B.I.P.: OFF
+05 Replay System: Auto %
+06 Replay Percent: 10
+07 Replay Start: 450M
+08 Replay Levels: 1
+09 Replay L1: 450M
+10 Replay L2: OFF
+11 Replay L3: OFF
+12 Replay L4: OFF
+13 Replay Boost: 75M
+14 Replay Award: Credit
+15 Special Award: Credit
+16 Match Award: Credit
+17 Ex. Ball Ticket: NO
+18 Max. Tick./Player: 25
+19 Match Feature: 7%
+20 Custom Message: ON
+21 Language: English
+22 Clock Style: AM/PM
+23 Date Style: Mmm. DD, YY
+24 Show Time + Date: NO
+25 Allow Dim. Illum.: YES
+26 Tournament Play: NO
+27 Euro. Scr. Format: NO
+28 Min. Vol. Override: NO
+29 GI Power Saver: 15 MINUTES
+30 Power Save Level: 5
+31 Ticket Exp. Board: NO
+32 No Bonus Flips: YES
+33 Game Restart: SLOW
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Ball Saves: 1
+03 Ball Save Time: 6
+04 Timed Plunger: OFF
+05 Ex. Ball Percent: 20
+06 1st Ex.Ball Level: 12
+07 2nd Ex.Ball Level: 50
+08 Combo E.B. Memory: YES
+09 Bonus X EB Mem.: YES
+10 Computer EB Mem.: YES
+11 Claw Difficulty: EASY
+12 Q. Freeze Diff.: MEDIUM
+13 Combos/Computer: 10
+14 Computer Memory: YES
+15 A-Mode Sound: YES
+16 A-Mode Music: YES
+17 Cred. Champ. Demo: 1
+18 Flipper Plunger: NO
+19 Claw Disabled: NO
+20 Eyeball E.B. Level: 3
+21 Eyeball E.B. Mem.: YES
+24 Match Speech: ON
+25 Crash Ball Save: EASY
+26 Vulgar Speech: OFF
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 1
+Volume: 12
+Replay: 450,000,000
+
+high_scores
+-----------
+Grand Champion: TED 1,250,000,000
+First Place: WAG 950,000,000
+Second Place: DEN 800,000,000
+Third Place: DTW 650,000,000
+Fourth Place: HEY 500,000,000
+
+mode_champions
+--------------
+Demolition Time Champion: WIN 500,000,000
+Last Played: 2025-01-07 00:01

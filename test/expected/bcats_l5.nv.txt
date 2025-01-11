@@ -1,0 +1,19 @@
+Using map maps/williams/system11/bcats_l5.nv.json for bcats_l5.nv
+
+Game State
+----------
+Credits: 6
+
+Player Scores
+-------------
+Player 1: 1,520,990
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Baddest Cat 1: SOM 8,697,720
+Baddest Cat 2: BSO 6,000,000
+Baddest Cat 3: PVA 5,500,000
+Baddest Cat 4: BAD 5,000,000
