@@ -4,7 +4,7 @@
 ParseNVRAM: a tool for extracting information from PinMAME's ".nv" files.
 This program makes use of content from the PinMAME NVRAM Maps project.
 
-Copyright (C) 2015-2022 by Tom Collins <tom@tomlogic.com>
+Copyright (C) 2015-2025 by Tom Collins <tom@tomlogic.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published
@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import argparse
-import glob
 import json
 import os
 import sys
@@ -110,11 +109,26 @@ class RamMapping(object):
         - combines nibbles into complete bytes
         - if appropriate, applies a mask to each byte
         """
+        encoding = self.entry.get('encoding')
+        
+        # special case handling for dip switches
+        if encoding == 'dipsw':
+            value = 0
+            for bit in self.offsets():
+                bit -= 1        # switches start at 1 in file, 0 in memory
+                value <<= 1     # shift current value one bit left
+                bank = bit // 8
+                # dip switches are last 6 bytes of file
+                byte_value = nvram[-6 + bank]
+                if byte_value & (1 << (bit % 8)):
+                    value += 1
+            # might need to split into multiple list entries if value > 255
+            return [value]
+            
         ba = self.get_bytes_unmasked(nvram)
         # convert certain byte sequences from little_endian to big endian
-        if 'encoding' in self.entry and self.little_endian():
-            if self.entry['encoding'] in ['bcd', 'int', 'bits']:
-                ba.reverse()
+        if self.little_endian() and encoding in ['bcd', 'int', 'bits']:
+            ba.reverse()
 
         nibble = self.nibble()
         if nibble != NIBBLE_BOTH:
@@ -183,7 +197,7 @@ class RamMapping(object):
                 value = 0
                 for b in ba:
                     value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
-            elif encoding == 'int' or encoding == 'bits':
+            elif encoding in ['int', 'bits', 'dipsw']:
                 value = 0
                 for b in ba:
                     value = value * 256 + b
@@ -266,7 +280,7 @@ class RamMapping(object):
 
         encoding = self.entry['encoding']
         value = self.get_value(nvram)
-        if encoding == 'bcd' or encoding == 'int':
+        if encoding in ['bcd', 'int']:
             return self.format_value(value)
         elif encoding == 'bits':
             values = self.entry.get('values', [])
@@ -277,8 +291,11 @@ class RamMapping(object):
                     bits_value += b
                 mask <<= 1
             return self.format_value(bits_value)
-        elif encoding == 'enum':
+        elif encoding in ['enum', 'dipsw']:
             values = self.entry['values']
+            if isinstance(values, str):
+                # look up a shared list of values
+                values = self.metadata['values'].get(values, [])
             if value >= len(values):
                 return '?' + str(value)
             return values[value]
@@ -339,10 +356,10 @@ class RamMapping(object):
             if value is None:
                 value = self.entry.get('default', '')
             return self.format_label(self.key), value
-        elif self.section in ['game_state', 'score_record']:
+        elif self.section in ['game_state', 'score_record', 'dip_switches']:
             return self.format_label(), value
         else:
-            ValueError('Unrecognized section', self.section)
+            raise ValueError('Unrecognized section', self.section)
 
 
 class ParseNVRAM(object):
@@ -387,17 +404,22 @@ class ParseNVRAM(object):
                                                    group,
                                                    entry[0]))
 
-        if 'game_state' in self.nv_json:
-            for key, entries in self.nv_json['game_state'].items():
-                if not isinstance(entries, list):
-                    entries = [entries]
-                for entry in entries:
-                    self.mapping.append(RamMapping(entry,
-                                                   self.metadata,
-                                                   'game_state',
-                                                   'Game State',
-                                                   key))
-
+        groups = {
+            'game_state': 'Game State',
+            'dip_switches': 'DIP Switches'
+        }
+        for group, label in groups.items():
+            if group in self.nv_json:
+                for key, entries in self.nv_json[group].items():
+                    if not isinstance(entries, list):
+                        entries = [entries]
+                    for entry in entries:
+                        self.mapping.append(RamMapping(entry,
+                                                       self.metadata,
+                                                       group,
+                                                       label,
+                                                       key))
+        
         player_num = 1
         for p in self.nv_json.get('last_game', []):
             entry = p.copy()
