@@ -10,6 +10,11 @@ Player 4: 0
 Credits: 10
 Volume: 27
 Replay: 900,000,000
+Current Player: 1
+Ball: 2
+Extra Balls: 0
+EBs this Ball: 0
+Attract: IN GAME
 
 high_scores
 -----------

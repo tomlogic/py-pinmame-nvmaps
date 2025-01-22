@@ -164,6 +164,9 @@ Ball: 1
 Credits: 8
 Volume: 27
 Replay: 600,000,000
+Extra Balls: 0
+EBs this Ball: 0
+Attract: ATTRACT
 
 high_scores
 -----------

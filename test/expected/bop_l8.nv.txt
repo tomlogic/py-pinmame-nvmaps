@@ -1,4 +1,4 @@
-Using map maps/williams/wpc/bop_l7.nv.json for bop_l7.nv
+Using map maps/williams/wpc/bop_l7.nv.json for bop_l8.nv
 
 Game State
 ----------
@@ -47,4 +47,4 @@ Billionaire #17: QQQ 1,000,000,000
 Billionaire #18: RRR 1,000,000,000
 Billionaire #19: SSS 1,000,000,000
 Billionaire #20: TTT 1,000,000,000
-Last Played: 2024-12-31 00:01
+Last Played: 2025-01-12 00:01

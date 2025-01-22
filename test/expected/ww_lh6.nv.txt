@@ -9,6 +9,11 @@ Player 3: 835,020
 Player 4: 600,220
 Volume: 24
 Replay: 90,000,000
+Attract: IN GAME
+Current Player: 1
+Ball: 2
+Extra Balls: 0
+EBs this Ball: 0
 
 high_scores
 -----------
