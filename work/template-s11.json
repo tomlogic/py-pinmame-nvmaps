@@ -1,0 +1,52 @@
+{
+  "_notes": [
+    "Compiled by Tom Collins using template-s11.json."
+  ],
+  "_copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
+  "_license": "GNU Lesser General Public License v3.0",
+  "_endian": "big",
+  "_ramsize": 0,
+  "_roms": [
+  ],
+  "_fileformat": 0.1,
+  "_version": 0.1,
+  "_char_map": " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "game_state": {
+    "scores": [
+      {
+        "label": "Player 1",
+        "start": 512,
+        "encoding": "bcd",
+        "length": 4
+      },
+      {
+        "label": "Player 2",
+        "start": 516,
+        "encoding": "bcd",
+        "length": 4
+      },
+      {
+        "label": "Player 3",
+        "start": 520,
+        "encoding": "bcd",
+        "length": 4
+      },
+      {
+        "label": "Player 4",
+        "start": 524,
+        "encoding": "bcd",
+        "length": 4
+      }
+    ]
+   },
+  "high_scores": [
+  ],
+  "checksum8": [
+    {
+      "start": 6161,
+      "end": 9999,
+      "groupings": 4,
+      "label": "Audits"
+    }
+  ]
+}
