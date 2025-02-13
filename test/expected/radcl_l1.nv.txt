@@ -1,0 +1,15 @@
+Using map maps/williams/system11/radcl_l1.nv.json for radcl_l1.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: DAN 8,500,000
+Second Place: PP  8,000,000
+Third Place: LOU 7,500,000
+Fourth Place: DON 7,000,000

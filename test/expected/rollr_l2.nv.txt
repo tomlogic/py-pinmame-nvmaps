@@ -1,0 +1,15 @@
+Using map maps/williams/system11/rollr_l2.nv.json for rollr_l2.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: SSR 9,000,000
+Second Place: MAX 8,500,000
+Third Place: DWF 8,000,000
+Fourth Place: CAB 7,500,000

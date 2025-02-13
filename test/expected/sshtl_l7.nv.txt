@@ -1,0 +1,8 @@
+Using map maps/williams/system9.nv.json for sshtl_l7.nv
+
+high_scores
+-----------
+?: 4,500,000
+?: 4,000,000
+?: 3,500,000
+?: 3,000,000

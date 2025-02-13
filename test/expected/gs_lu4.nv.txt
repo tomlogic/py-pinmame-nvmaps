@@ -1,0 +1,15 @@
+Using map maps/williams/system11/gs_lu4.nv.json for gs_lu4.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: DAN 8,500,000
+Second Place: PP  8,000,000
+Third Place: TIM 7,500,000
+Fourth Place: JON 7,000,000

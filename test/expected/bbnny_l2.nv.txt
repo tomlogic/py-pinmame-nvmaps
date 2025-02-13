@@ -1,0 +1,15 @@
+Using map maps/williams/system11/bbnny_l2.nv.json for bbnny_l2.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: JT  8,500,000
+Second Place: PA  8,000,000
+Third Place: DL  7,500,000
+Fourth Place: PH  7,000,000

@@ -1,0 +1,16 @@
+Using map maps/williams/system11/dd_l2.nv.json for dd_l2.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Champion: HHR 10,000,000
+First Place: DEN 6,000,000
+Second Place: T P 5,500,000
+Third Place: CPG 5,000,000
+Fourth Place: JON 4,500,000

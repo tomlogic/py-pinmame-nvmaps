@@ -1,0 +1,15 @@
+Using map maps/williams/system11/milln_l3.nv.json for milln_l3.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: JWA 3,000,000
+Second Place: PFZ 2,500,000
+Third Place: CPG 2,000,000
+Fourth Place: TJE 1,500,000

@@ -1,0 +1,15 @@
+Using map maps/williams/system11/grand_l4.nv.json for grand_l4.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: BSO 3,000,000
+Second Place: EJS 2,600,000
+Third Place: WRP 2,200,000
+Fourth Place: PVA 1,800,000

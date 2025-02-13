@@ -1,4 +1,4 @@
-Using map maps/williams/system9/sorcr_l2.nv.json for sorcr_l2.nv
+Using map maps/williams/system9.nv.json for sorcr_l2.nv
 
 high_scores
 -----------

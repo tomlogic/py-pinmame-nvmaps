@@ -1,0 +1,19 @@
+Using map maps/williams/system11/pool_l7.nv.json for pool_l7.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+8-Ball Shark #1: BBB 1,090,000
+8-Ball Shark #2: CCC 1,080,000
+8-Ball Shark #3: DDD 1,070,000
+8-Ball Shark #4: EEE 1,060,000
+9-Ball Shark #1: FFF 2,090,000
+9-Ball Shark #2: GGG 2,080,000
+9-Ball Shark #3: HHH 2,070,000
+9-Ball Shark #4: III 2,060,000

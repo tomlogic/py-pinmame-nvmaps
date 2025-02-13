@@ -1,0 +1,15 @@
+Using map maps/williams/system11/fire_l3.nv.json for fire_l3.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: BSO 4,500,000
+Second Place: MWS 4,000,000
+Third Place: DAN 3,500,000
+Fourth Place: LEE 3,000,000

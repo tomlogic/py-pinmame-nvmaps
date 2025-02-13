@@ -1,0 +1,8 @@
+Using map maps/williams/system9.nv.json for comet_l4.nv
+
+high_scores
+-----------
+?: 3,000,000
+?: 2,500,000
+?: 2,000,000
+?: 1,500,000

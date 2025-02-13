@@ -1,0 +1,15 @@
+Using map maps/williams/system11/pb_l5.nv.json for pb_l5.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: BSO 3,000,000
+Second Place: PVA 2,500,000
+Third Place: PFZ 2,000,000
+Fourth Place: JJJ 1,500,000

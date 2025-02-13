@@ -1,0 +1,15 @@
+Using map maps/williams/system11/rdkng_l4.nv.json for rdkng_l4.nv
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: MDR 3,000,000
+Second Place: GNP 2,500,000
+Third Place: CPG 2,000,000
+Fourth Place: TOM 1,500,000
