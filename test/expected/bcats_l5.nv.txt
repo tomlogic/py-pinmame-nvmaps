@@ -3,9 +3,6 @@ Using map maps/williams/system11/bcats_l5.nv.json for bcats_l5.nv
 Game State
 ----------
 Credits: 6
-
-Player Scores
--------------
 Player 1: 1,520,990
 Player 2: 0
 Player 3: 0

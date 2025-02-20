@@ -3,9 +3,6 @@ Using map maps/williams/system11/polic_l4.nv.json for polic_l4.nv
 Game State
 ----------
 Credits: 3
-
-Player Scores
--------------
 Player 1: 508,040
 Player 2: 0
 Player 3: 0

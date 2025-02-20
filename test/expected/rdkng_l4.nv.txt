@@ -2,6 +2,7 @@ Using map maps/williams/system11/rdkng_l4.nv.json for rdkng_l4.nv
 
 Game State
 ----------
+Credits: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0

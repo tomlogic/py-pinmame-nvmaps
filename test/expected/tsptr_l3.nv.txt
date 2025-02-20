@@ -113,6 +113,7 @@ Adjustments
 
 Game State
 ----------
+Credits: 6
 Current Player: 1
 Player Count: 1
 Ball: n/a
@@ -122,9 +123,6 @@ Bonus: 0
 Bonus Multiplier: 1X
 X-Cellerator Value: 10,000
 Jackpot Bonus: 530,000
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0
 Player 3: 0

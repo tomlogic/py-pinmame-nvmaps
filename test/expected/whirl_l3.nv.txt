@@ -1,7 +1,8 @@
 Using map maps/williams/system11/whirl_l3.nv.json for whirl_l3.nv
 
-Player Scores
--------------
+Game State
+----------
+Credits: 10
 Player 1: 0
 Player 2: 0
 Player 3: 0

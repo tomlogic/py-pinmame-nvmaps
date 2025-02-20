@@ -3,9 +3,6 @@ Using map maps/williams/system11/taxi_l4.nv.json for taxi_l4.nv
 Game State
 ----------
 Credits: 8
-
-Player Scores
--------------
 Player 1: 376,450
 Player 2: 147,170
 Player 3: 0

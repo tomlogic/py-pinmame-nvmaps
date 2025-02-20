@@ -3,9 +3,6 @@ Using map maps/williams/system11/swrds_l2.nv.json for swrds_l2.nv
 Game State
 ----------
 Credits: 12
-
-Player Scores
--------------
 Player 1: 25,030
 Player 2: 0
 Player 3: 0

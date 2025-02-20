@@ -2,6 +2,7 @@ Using map maps/williams/system11/bbnny_l2.nv.json for bbnny_l2.nv
 
 Game State
 ----------
+Credits: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0

@@ -1,7 +1,8 @@
 Using map maps/williams/system11/eatpm_l4.nv.json for eatpm_l4.nv
 
-Player Scores
--------------
+Game State
+----------
+Credits: 8
 Player 1: 32,040
 Player 2: 0
 Player 3: 0

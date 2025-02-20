@@ -1,7 +1,8 @@
 Using map maps/williams/system11/diner_l4.nv.json for diner_l4.nv
 
-Player Scores
--------------
+Game State
+----------
+Credits: 10
 Player 1: 284,510
 Player 2: 0
 Player 3: 0

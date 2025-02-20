@@ -3,9 +3,6 @@ Using map maps/williams/system11/jokrz_l6.nv.json for jokrz_l6.nv
 Game State
 ----------
 Credits: 33
-
-Player Scores
--------------
 Player 1: 119,000
 Player 2: 0
 Player 3: 0

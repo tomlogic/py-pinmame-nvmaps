@@ -2,6 +2,7 @@ Using map maps/williams/system11/fire_l3.nv.json for fire_l3.nv
 
 Game State
 ----------
+Credits: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0

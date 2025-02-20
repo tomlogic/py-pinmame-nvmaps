@@ -1,7 +1,8 @@
 Using map maps/williams/system11/f14_l1.nv.json for f14_l1.nv
 
-Player Scores
--------------
+Game State
+----------
+Credits: 64
 Player 1: 13,460
 Player 2: 0
 Player 3: 0

@@ -3,9 +3,6 @@ Using map maps/williams/system11/bk2k_l4.nv.json for bk2k_l4.nv
 Game State
 ----------
 Credits: 8
-
-Player Scores
--------------
 Player 1: 307,040
 Player 2: 0
 Player 3: 0

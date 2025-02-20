@@ -3,9 +3,6 @@ Using map maps/williams/system11/esha_la3.nv.json for esha_la3.nv
 Game State
 ----------
 Credits: 5
-
-Player Scores
--------------
 Player 1: 869,880
 Player 2: 0
 Player 3: 0

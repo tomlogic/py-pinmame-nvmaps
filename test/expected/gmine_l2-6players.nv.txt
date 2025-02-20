@@ -3,9 +3,6 @@ Using map maps/williams/system11/gmine_l2.nv.json for gmine_l2-6players.nv
 Game State
 ----------
 Credits: 26
-
-Player Scores
--------------
 Player 1: 2,237
 Player 2: 1,744
 Player 3: 1,053

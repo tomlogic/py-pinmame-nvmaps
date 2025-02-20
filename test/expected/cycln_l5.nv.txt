@@ -3,9 +3,6 @@ Using map maps/williams/system11/cycln_l5.nv.json for cycln_l5.nv
 Game State
 ----------
 Credits: 5
-
-Player Scores
--------------
 Player 1: 368,140
 Player 2: 0
 Player 3: 0

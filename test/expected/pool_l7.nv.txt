@@ -2,6 +2,7 @@ Using map maps/williams/system11/pool_l7.nv.json for pool_l7.nv
 
 Game State
 ----------
+Credits: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0

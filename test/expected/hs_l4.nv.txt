@@ -103,6 +103,7 @@ Adjustments
 
 Game State
 ----------
+Credits: 29
 Hideout Jackpot: 280,000
 Player Count: 1
 Current Player: 1
@@ -113,9 +114,6 @@ Bonus: 0
 Bonus Multiplier: 1X
 Bonus Hold: No
 Tilt Warnings: 0
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0
 Player 3: 0

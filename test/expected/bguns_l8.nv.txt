@@ -3,9 +3,6 @@ Using map maps/williams/system11/bguns_l8.nv.json for bguns_l8.nv
 Game State
 ----------
 Credits: 67
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0
 Player 3: 0

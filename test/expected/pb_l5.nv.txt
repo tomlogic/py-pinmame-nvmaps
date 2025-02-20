@@ -2,6 +2,7 @@ Using map maps/williams/system11/pb_l5.nv.json for pb_l5.nv
 
 Game State
 ----------
+Credits: 2
 Player 1: 0
 Player 2: 0
 Player 3: 0

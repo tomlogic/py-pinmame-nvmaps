@@ -2,6 +2,7 @@ Using map maps/williams/system11/radcl_l1.nv.json for radcl_l1.nv
 
 Game State
 ----------
+Credits: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0
