@@ -1,8 +1,8 @@
-Using map maps/williams/system11/bguns_l8.nv.json for bguns_l8.nv
+Using map maps/williams/system11/bguns_la.nv.json for bguns_la.nv
 
 Game State
 ----------
-Credits: 67
+Credits: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0

@@ -10,6 +10,7 @@ import argparse
 import copy
 import json
 import os
+from collections import OrderedDict
 
 
 MY_DIR = os.path.dirname(__file__)
@@ -54,7 +55,7 @@ def load_nv(rom):
         data = bytearray(f.read())
     print("loaded %u bytes from %s.nv" % (len(data), rom))
     with open(os.path.join(MY_DIR, 'template-s11.json')) as f:
-        map_data = json.load(f)
+        map_data = json.load(f, object_pairs_hook=OrderedDict)
     map_data['_ramsize'] = len(data) & 0xFF00
     map_data['_roms'].append(rom)
     (audits_start, audits_end) = find_audits(data)
@@ -87,6 +88,7 @@ def load_nv(rom):
                                                  initials_start + 3 * i,
                                                  score_start + 4 * i,
                                                  mask=mask))
+        # had to manually find credits at 1805 with checksum at 1914
     else:
         for i in range(0, 4):
             map_data['high_scores'].append(score(HS_LONG[i],
@@ -94,6 +96,14 @@ def load_nv(rom):
                                                  score_start + 4 * i,
                                                  short_label=HS_SHORT[i],
                                                  mask=mask))
+        map_data['game_state']['credits'] = {
+            "label": "Credits",
+            "start": score_start - 1,
+            "length": 1,
+            "encoding": "bcd"
+        }
+        # start game_state with credits
+        map_data['game_state'].move_to_end('credits', last=False)
 
     map_data['checksum8'][0]['start'] = audits_start
     map_data['checksum8'][0]['end'] = audits_end

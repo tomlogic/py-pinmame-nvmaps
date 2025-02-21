@@ -1,0 +1,127 @@
+Using map maps/williams/system11/hs_l4.nv.json for hs_l3.nv
+
+Audits
+------
+01 Left Coins: 0
+02 Center Coins: 0
+03 Right Coins: 0
+04 Paid Credits: 0
+05 Total Plays: 0
+06 Total Free: 0
+08 Replay Awards: 0
+10 Special Awards: 0
+12 Match Awards: 0
+13 HSTD Credits: 0
+15 Extra Balls: 0
+18 Minutes of Play: 0
+19 Balls Played: 0
+20 Replay 1 Awards: 0
+21 Replay 2 Awards: 0
+22 Replay 3 Awards: 0
+23 Replay 4 Awards: 0
+24 1 Player Games: 0
+25 2 Player Games: 0
+26 3 Player Games: 0
+27 4 Player Games: 0
+28 Burn in Cycles: 0
+29 Yellow Lit: 0
+30 Red Lit: 0
+31 Multiballs: 0
+32 Jackpot Won: 0
+33 Special Lit: 0
+34 Freeway E.B. Lit: 0
+35 Ramp Shot: 0
+36 Jackpot E.B. Lit: 0
+37 Kickback Fired: 0
+38 Attract Mode Cycles: 0
+39 HSTD Reset Counter: 6,000
+40 Auto Replay Data 1: 0
+41 Auto Replay Data 2: 0
+42 Auto Replay Data 3: 0
+43 Auto Replay Data 4: 0
+44 Auto Replay Data 5: 0
+
+Adjustments
+-----------
+01 Auto Replay %: 10
+02a Replay Start: 1,400,000
+02b Replay Level 1: 1,400,000
+03a Replay Levels: 1
+03b Replay Level 2: Off
+04b Replay Level 3: Off
+05b Replay Level 4: Off
+06 Replay Award: Credit
+07 Special Award: Credit
+08 Match Feature: On
+09 Balls Per Game: 3
+10 Tilt Warnings: 3
+11 Max Extra Balls: 4
+12 Max Credits: 30
+13 Highest Scores: On
+14 Backup High Score 1: 4,000,000
+15 Backup High Score 2: 3,500,000
+16 Backup High Score 3: 3,000,000
+17 Backup High Score 4: 2,500,000
+18 High Score 1 Credits: 3
+19 High Score 2 Credits: 1
+20 High Score 3 Credits: 1
+21 High Score 4 Credits: 1
+22 HSTD Reset Every: 6,000 plays
+23 Free Play: No
+24 Pricing: 1
+25 Left Units: 1
+26 Center Units: 4
+27 Right Units: 1
+28 Units/Credit: 1
+29 Units/Bonus: 0
+30 Minimum Units: 0
+31 Freeway Start: 3-ball 50K, 5-ball 25K
+32 Freeway Memory: Regular
+33 Eject Hole Spots: 3-Ball Yes, 5-ball No
+34 Ramp Spots: Yes
+35 Light Special: 3-Ball Reg, 5-ball Hard
+36 Special Memory: No
+37 Police Light: On
+38 Kickback Memory: Easy
+39 Light Freeway: Regular
+40 Ramp Bonus Memory: No
+41 Extra Ball Memory: Yes
+42 Stoplight Targets: Regular
+43 Freeway Timer: Regular
+44 Siren Style: USA
+45 Attract Police Light: Yes
+46 Attract Starter: Yes
+47 Attract Sound: Yes
+48 Game Over Music: Yes
+49 Custom Message: On
+49a Custom Msg Line 1: RUN THE LIGHTo
+49b Custom Msg Line 2: AND GET AWAYoo
+49c Custom Msg Line 3: AT HIGH SPEEÄ 
+50 Switch Alarm Knocker: Yes
+51 Unused Adjustment: 
+52 Unused Adjustment: 0
+
+Game State
+----------
+Credits: 0
+Hideout Jackpot: 0
+Player Count: 1
+Current Player: 1
+Ball: n/a
+Match: 0
+Extra Balls: 3
+Bonus: 0
+Bonus Multiplier: 1X
+Bonus Hold: No
+Tilt Warnings: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+First Place: SSR 4,000,000
+Second Place: LED 3,500,000
+Third Place: ML  3,000,000
+Fourth Place: JWA 2,500,000

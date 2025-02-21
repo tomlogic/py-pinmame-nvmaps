@@ -119,6 +119,18 @@ def update(map_data, data):
           "encoding": "bcd"
         }
 
+    if 'current_ball' not in map_data['game_state']:
+        map_data['game_state']['current_ball'] = {
+            "label": "Ball",
+            "start": 56,
+            "encoding": "bcd",
+            "mask": "0x0F",
+            "special_values": {
+              "0": "n/a",
+              "15": "n/a"
+            }
+        }
+
     # start game_state with credits
     map_data['game_state'].move_to_end('credits', last=False)
 

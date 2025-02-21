@@ -7,6 +7,7 @@ Player 1: 376,450
 Player 2: 147,170
 Player 3: 0
 Player 4: 0
+Ball: n/a
 
 high_scores
 -----------
