@@ -47,17 +47,41 @@ def str_to_charmap(s):
     return retval
 
 
-def get_table_string(romdata, offset):
+charmapping = b' 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+
+def charmap_to_bytes(bytestring):
+    retval = []
+    for b in bytestring:
+        if b < len(charmapping):
+            retval.append(charmapping[b])
+        elif b == 0x39:
+            retval.append(ord('-'))
+        elif 85 <= b < 85 + len(charmapping):
+            retval.append(charmapping[b - 85])
+            retval.append(ord('.'))
+        elif 170 <= b <= 170 + len(charmapping):
+            retval.append(charmapping[b - 170])
+            retval.append(ord(','))
+        else:
+            print('0x%02X' % b)
+            retval.append(ord('?'))
+            # raise ValueError("Can't convert charmap to string %r" % bytestring)
+
+    return bytearray(retval)
+
+
+def get_bytes_via_table(romdata, entry_address, offset_mask):
     # offset is address of big endian address to 8 characters
-    str_addr = romdata[offset] * 256 + romdata[offset + 1]
-    str_addr &= ~0x4000     # mask off address bit to get file offset
-    return romdata[str_addr:str_addr + 8]
+    str_address = romdata[entry_address] * 256 + romdata[entry_address + 1]
+    str_offset = str_address & ~offset_mask        # mask off address bit to get file offset
+    return romdata[str_offset:str_offset + 8]
 
 
-def get_rom_label(romdata, offset, is_split, is_table):
-    if is_table:
+def get_rom_label(romdata, offset, offset_mask, is_split):
+    if offset_mask:
         # offset is address of two string table entries
-        return get_table_string(romdata, offset) + get_table_string(romdata, offset + 2)
+        return get_bytes_via_table(romdata, offset, offset_mask) + get_bytes_via_table(romdata, offset + 2, offset_mask)
     elif is_split:
         return romdata[offset:offset + 7] + b' ' + romdata[offset + 7: offset + 14]
     else:
@@ -67,6 +91,7 @@ def get_rom_label(romdata, offset, is_split, is_table):
 def get_audits(file, romdata, audit_region):
     charmap = False
     split = False
+    offset_mask = 0
     offset = romdata.find(b"  LEFT  COINS ")
     if offset > 0:
         # High Speed era -- split 7/7 display
@@ -79,14 +104,25 @@ def get_audits(file, romdata, audit_region):
         if offset < 0:
             offset = romdata.find(b"    LEFT COINS  ")
         if offset < 0:
-            # this won't work, since these games also use the string table
-            offset = romdata.find(str_to_charmap(b"   LEFT COINS   "))
-            if offset < 0:
-                offset = romdata.find(str_to_charmap(b"    LEFT COINS  "))
-            if offset > 0:
-                print("found charmap LEFT COINS!")
+            offset_increment = 4    # two 16-bit addresses
+            offset_mask = 0x4000    # bits to set when converting between file offset and address
+            coins = romdata.find(b' COINS  ')
+            if coins < 0:
+                # try searching for the "charmap" version of the COINS string
                 charmap = True
-                exit(100)
+                offset_mask = 0x8000
+                # first try b'COINS   ' (Diner) and then b' COINS  ' (Rollergames)
+                coins = romdata.find(str_to_charmap(b'COINS   '))
+                if coins < 0:
+                    # this version worked on Rollergames
+                    coins = romdata.find(str_to_charmap(b' COINS  '))
+            if coins < 0:
+                return None
+            print("coins at 0x%04X (%s charmap)" % (coins, "with" if charmap else "without"))
+            # hack for converting to a bytes object
+            coin_addr = coins | offset_mask
+            coin_pattern = bytes([(coin_addr >> 8), coin_addr & 0xFF])
+            offset = romdata.find(coin_pattern) - 2
         if offset < 0:
             return None
 
@@ -99,7 +135,9 @@ def get_audits(file, romdata, audit_region):
         audit_address += 4
     while True:
         audit_name = ''
-        label = get_rom_label(romdata, offset, split, False)
+        label = get_rom_label(romdata, offset, offset_mask, split)
+        if charmap:
+            label = charmap_to_bytes(label)
 
         for b in label:
             if b == 0x82:
@@ -145,6 +183,16 @@ def get_audits(file, romdata, audit_region):
     return audits
 
 
+# use this ROM file for each specific PinMAME version
+preferred_rom = {
+    'grand_l4': 'lzrd_u26.l4',  # most complete list of audits
+    'bnzai_l3': 'banz_u26.l3',  # final audit has an actual name(?) "PLAY AT TI"
+    'rdkng_l4': 'road_u26.l4',
+    'diner_l4': 'dinr_u27.l4',
+    'rollr_l2': 'rolr_u26.l2',
+}
+
+
 def try_audits_update(nv_map):
     global CURRENT_ROM
 
@@ -155,13 +203,8 @@ def try_audits_update(nv_map):
         try:
             with zipfile.ZipFile(ROM_DIR + rom_name + '.zip', 'r') as romzip:
                 for file in romzip.namelist():
-                    if rom_name == 'grand_l4' and file != 'lzrd_u26.l4':
-                        # prefer this ROM image in the ZIP over all others (more complete list of audits)
-                        continue
-                    if rom_name == 'bnzai_l3' and file != 'banz_u26.l3':
-                        # final audit has an actual name(?) "PLAY AT TI"
-                        continue
-                    if rom_name == 'rdkng_l4' and file != 'road_u26.l4':
+                    preferred = preferred_rom.get(rom_name)
+                    if preferred and file != preferred:
                         continue
                     with romzip.open(file) as f:
                         audits = get_audits(file, f.read(), nv_map['checksum8'][0])
