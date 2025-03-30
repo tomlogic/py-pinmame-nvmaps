@@ -571,7 +571,7 @@ class ParseNVRAM(object):
 
 
 def find_map(nvfile):
-    """Find a map that will work with the ROM of the given nram file."""
+    """Find a map that will work with the ROM of the given nvram file."""
     basename = os.path.basename(nvfile)
     (name, extension) = os.path.splitext(basename)
     # remove anything after the first hyphen
