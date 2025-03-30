@@ -1,4 +1,4 @@
-Using map maps/williams/system11/radcl_l1.nv.json for radcl_l1.nv
+Using map maps/williams/system11/gs_lu4.nv.json for gs_la3.nv
 
 Audits
 ------
@@ -24,16 +24,16 @@ Audits
 26 3 PLAYER GAMES: 0
 27 4 PLAYER GAMES: 0
 28 BURN-IN CYCLES: 0
-29 MADE 4 RADS: 0
+29 MADE SPOT LETTER: 0
 30 MADE MULTI-BALL: 0
-31 MADE MEGA MILL.: 0
-32 MADE BONUS 5X: 0
-33 MADE TOP MILLION: 0
-34 BONUS 1 MILLION: 0
-35 RAD MILLION: 0
-36 LIT LOOP EXBALL: 0
-37 MADE SNAKE RUN: 0
-38 MADE CON. EXBALL: 0
+31 MADE GRAND PRIZE: 0
+32 MADE BONUS 8 X: 0
+33 MADE OUTL EXBALL: 0
+34 WHEEL EX.BALL LIT: 0
+35 WHEEL 1 MILLION: 0
+36 WHEEL 2 MILLION: 0
+37 WHEEL BONUS HELD: 0
+38 MADE BIG BUCKS: 0
 39 H.S.RESET COUNTER: 3,000
 40 0.0-0.4 MIL. SCORE: 0
 41 0.5-0.9 MIL. SCORE: 0
@@ -56,11 +56,11 @@ Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
-Ball: n/a
+Ball: 1
 
 high_scores
 -----------
-First Place: DAN 8,500,000
-Second Place: PP  8,000,000
-Third Place: LOU 7,500,000
-Fourth Place: DON 7,000,000
+First Place: DAN 8,000,000
+Second Place: PP  7,500,000
+Third Place: TIM 7,000,000
+Fourth Place: JON 6,500,000
