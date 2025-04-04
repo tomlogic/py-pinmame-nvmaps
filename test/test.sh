@@ -12,7 +12,7 @@ trap 'RC=1' ERR
 (
   cd "$SCRIPT_PATH"  || exit 1
   mkdir -p results
-  rm results/*.txt
+  rm -f results/*.txt
   for file in nvram/*.nv; do
     filename=$(basename "$file")
     python3 ../nvram_parser.py --nvram "$file" --dump > "results/$filename.txt" 2>&1
