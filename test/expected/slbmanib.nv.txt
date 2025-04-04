@@ -1,0 +1,21 @@
+Using map maps/bally/as-2518-35/slbmanib.nv.json for slbmanib.nv
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 0
+06 Total Plays (Played and Free Games): 0
+
+Game State
+----------
+Credits: 0
+
+Player Scores
+-------------
+Player 1: 90
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 0

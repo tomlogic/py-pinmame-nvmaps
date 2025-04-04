@@ -1,0 +1,10 @@
+Using map maps/bally/as-2518-35/rapidfir.nv.json for rapidfir.nv
+
+Game State
+----------
+Credits: 0
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0

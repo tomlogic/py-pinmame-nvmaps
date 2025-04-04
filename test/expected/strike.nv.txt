@@ -1,0 +1,7 @@
+Using map maps/zaccaria/strike.nv.json for strike.nv
+
+Game State
+----------
+Credits: 0
+Score: 0
+Ball to Play: 0

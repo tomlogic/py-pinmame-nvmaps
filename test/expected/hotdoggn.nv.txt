@@ -1,0 +1,16 @@
+Using map maps/bally/as-2518-35/hotdoggn.nv.json for hotdoggn.nv
+
+Game State
+----------
+Credits: 0
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 0
