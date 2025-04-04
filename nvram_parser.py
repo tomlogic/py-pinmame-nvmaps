@@ -449,10 +449,13 @@ class ParseNVRAM(object):
 
     def verify_checksum8(self, entry, verbose=False, fix=False):
         valid = True
+        label = entry.get('label', '(unlabeled)')
         m = self.ram_mapping(entry)
         ba = m.get_bytes(self.nvram)
         offset = m.to_int(entry['start'])
         grouping = entry.get('groupings', len(ba))
+        if len(ba) % grouping:
+            print("Error: checksum8 '%s' size not evenly divisible by groupings" % label)
         count = 0
         calc_sum = 0
         for b in ba:
@@ -461,8 +464,8 @@ class ParseNVRAM(object):
                 if checksum != b:
                     if verbose:
                         valid = False
-                        print("%u bytes at 0x%04X checksum8 0x%02X != 0x%02X"
-                              % (grouping, offset - count, checksum, b))
+                        print("Error: %u bytes at 0x%04X '%s' checksum8 0x%02X != 0x%02X"
+                              % (grouping, offset - count, label, checksum, b))
                     if fix:
                         self.nvram[offset] = checksum
                 count = calc_sum = 0
