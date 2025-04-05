@@ -1,4 +1,5 @@
-Using map maps/zaccaria/strike.nv.json for strike.nv
+Using map ../maps/maps/zaccaria/strike.nv.json for strike.nv
+Dumping known entries for strike.nv [Strike]...
 
 Game State
 ----------

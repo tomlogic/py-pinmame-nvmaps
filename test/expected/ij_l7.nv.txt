@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/ij_l7.nv.json for ij_l7.nv
+Using map ../maps/maps/williams/wpc/ij_l7.nv.json for ij_l7.nv
+Dumping known entries for ij_l7.nv [Indiana Jones: The Pinball Adventure (L-7)]...
 
 Game State
 ----------

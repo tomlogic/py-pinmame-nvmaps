@@ -1,4 +1,5 @@
-Using map maps/dataeast/version3/tomy_400.nv.json for tomy_500.nv
+Using map ../maps/maps/dataeast/version3/tomy_400.nv.json for tomy_500.nv
+Dumping known entries for tomy_500.nv [Tommy Pinball Wizard, The Who's (5.00 unofficial MOD)]...
 
 Player Scores
 -------------

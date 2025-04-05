@@ -1,4 +1,5 @@
-Using map maps/williams/system11/gmine_l2.nv.json for gmine_l2-6players.nv
+Using map ../maps/maps/williams/system11/gmine_l2.nv.json for gmine_l2-6players.nv
+Dumping known entries for gmine_l2-6players.nv [Gold Mine (Shuffle) (L-2)]...
 
 Game State
 ----------

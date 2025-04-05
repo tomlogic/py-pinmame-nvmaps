@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/i500_11r.nv.json for i500_11r.nv
+Using map ../maps/maps/williams/wpc/i500_11r.nv.json for i500_11r.nv
+Dumping known entries for i500_11r.nv [Indianapolis 500 (1.1R)]...
 
 Game State
 ----------

@@ -1,4 +1,5 @@
-Using map maps/williams/system11/bguns_la.nv.json for bguns_la.nv
+Using map ../maps/maps/williams/system11/bguns_la.nv.json for bguns_la.nv
+Dumping known entries for bguns_la.nv [Big Guns (L-A)]...
 
 Audits
 ------

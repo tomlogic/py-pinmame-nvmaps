@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/ww_lh6.nv.json for ww_lh6-default.nv
+Using map ../maps/maps/williams/wpc/ww_lh6.nv.json for ww_lh6-default.nv
+Dumping known entries for ww_lh6-default.nv [White Water (LH-6)]...
 
 Game State
 ----------

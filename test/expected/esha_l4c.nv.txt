@@ -1,4 +1,5 @@
-Using map maps/williams/system11/esha_la3.nv.json for esha_l4c.nv
+Using map ../maps/maps/williams/system11/esha_la3.nv.json for esha_l4c.nv
+Dumping known entries for esha_l4c.nv [Earthshaker (LA-4C Competition MOD)]...
 
 Audits
 ------

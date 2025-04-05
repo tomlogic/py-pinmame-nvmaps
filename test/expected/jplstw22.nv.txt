@@ -1,4 +1,5 @@
-Using map maps/sega/whitestar/jplstw22.nv.json for jplstw22.nv
+Using map ../maps/maps/sega/whitestar/jplstw22.nv.json for jplstw22.nv
+Dumping known entries for jplstw22.nv [Lost World: Jurassic Park, The (2.02)]...
 
 Player Scores
 -------------

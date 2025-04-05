@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/hotdoggb.nv.json for hotdoggb.nv
+Using map ../maps/maps/bally/as-2518-35/hotdoggb.nv.json for hotdoggb.nv
+Dumping known entries for hotdoggb.nv [Hot Doggin (7-digit conversion)]...
 
 Game State
 ----------

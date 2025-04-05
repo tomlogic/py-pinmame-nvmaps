@@ -1,4 +1,5 @@
-Using map maps/williams/system11/polic_l4.nv.json for polic_l4.nv
+Using map ../maps/maps/williams/system11/polic_l4.nv.json for polic_l4.nv
+Dumping known entries for polic_l4.nv [Police Force (LA-4)]...
 
 Audits
 ------

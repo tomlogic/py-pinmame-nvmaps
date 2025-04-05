@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/mb_106.nv.json for mb_106.nv
+Using map ../maps/maps/williams/wpc/mb_106.nv.json for mb_106.nv
+Dumping known entries for mb_106.nv [Monster Bash (1.06)]...
 
 Game State
 ----------

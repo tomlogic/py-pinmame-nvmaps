@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/rollstob.nv.json for rollstob.nv
+Using map ../maps/maps/bally/as-2518-35/rollstob.nv.json for rollstob.nv
+Dumping known entries for rollstob.nv [Rolling Stones (7-digit conversion)]...
 
 Game State
 ----------

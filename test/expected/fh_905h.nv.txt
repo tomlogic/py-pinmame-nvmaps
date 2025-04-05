@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/fh_905h.nv.json for fh_905h.nv
+Using map ../maps/maps/williams/wpc/fh_905h.nv.json for fh_905h.nv
+Dumping known entries for fh_905h.nv [Funhouse (9.05H)]...
 
 Game State
 ----------

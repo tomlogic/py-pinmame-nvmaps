@@ -1,4 +1,5 @@
-Using map maps/dataeast/version3/btmn_106.nv.json for btmn_106.nv
+Using map ../maps/maps/dataeast/version3/btmn_106.nv.json for btmn_106.nv
+Dumping known entries for btmn_106.nv [Batman (1.06)]...
 
 Player Scores
 -------------

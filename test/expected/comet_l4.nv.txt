@@ -1,4 +1,5 @@
-Using map maps/williams/system9.nv.json for comet_l4.nv
+Using map ../maps/maps/williams/system9.nv.json for comet_l4.nv
+Dumping known entries for comet_l4.nv [Comet (L-4)]...
 
 high_scores
 -----------

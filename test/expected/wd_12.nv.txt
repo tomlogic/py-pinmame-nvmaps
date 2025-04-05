@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/wd_12.nv.json for wd_12.nv
+Using map ../maps/maps/williams/wpc/wd_12.nv.json for wd_12.nv
+Dumping known entries for wd_12.nv [WHO Dunnit (1.2)]...
 
 Game State
 ----------

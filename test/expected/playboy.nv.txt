@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/playboy.nv.json for playboy.nv
+Using map ../maps/maps/bally/as-2518-35/playboy.nv.json for playboy.nv
+Dumping known entries for playboy.nv [Playboy]...
 
 Game State
 ----------

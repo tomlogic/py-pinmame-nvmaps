@@ -1,4 +1,5 @@
-Using map maps/williams/system11/rollr_l2.nv.json for rollr_l2.nv
+Using map ../maps/maps/williams/system11/rollr_l2.nv.json for rollr_l2.nv
+Dumping known entries for rollr_l2.nv [Rollergames (LA-2)]...
 
 Audits
 ------

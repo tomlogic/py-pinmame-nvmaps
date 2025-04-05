@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/nf_23x.nv.json for nf_23x.nv
+Using map ../maps/maps/williams/wpc/nf_23x.nv.json for nf_23x.nv
+Dumping known entries for nf_23x.nv [No Fear: Dangerous Sports (2.3X Export / S1.1)]...
 
 Game State
 ----------

@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/corv_21.nv.json for corv_21.nv
+Using map ../maps/maps/williams/wpc/corv_21.nv.json for corv_21.nv
+Dumping known entries for corv_21.nv [Corvette (2.1)]...
 
 Game State
 ----------

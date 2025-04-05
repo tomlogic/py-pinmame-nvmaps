@@ -1,4 +1,5 @@
-Using map maps/zaccaria/gen2/farfalla.nv.json for farfalla-hs-135.nv
+Using map ../maps/maps/zaccaria/gen2/farfalla.nv.json for farfalla-hs-135.nv
+Dumping known entries for farfalla-hs-135.nv [Farfalla]...
 
 Game State
 ----------

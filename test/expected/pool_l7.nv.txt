@@ -1,4 +1,5 @@
-Using map maps/williams/system11/pool_l7.nv.json for pool_l7.nv
+Using map ../maps/maps/williams/system11/pool_l7.nv.json for pool_l7.nv
+Dumping known entries for pool_l7.nv [Pool Sharks (LA-7)]...
 
 Audits
 ------

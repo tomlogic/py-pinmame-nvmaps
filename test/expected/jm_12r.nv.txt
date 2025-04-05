@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/jm_12r.nv.json for jm_12r.nv
+Using map ../maps/maps/williams/wpc/jm_12r.nv.json for jm_12r.nv
+Dumping known entries for jm_12r.nv [Johnny Mnemonic (1.2R)]...
 
 B.2 Earnings Audits
 -------------------

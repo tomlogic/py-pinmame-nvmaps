@@ -1,4 +1,5 @@
-Using map maps/williams/system11/tsptr_l3.nv.json for tsptr_l3.nv
+Using map ../maps/maps/williams/system11/tsptr_l3.nv.json for tsptr_l3.nv
+Dumping known entries for tsptr_l3.nv [Transporter the Rescue (L-3)]...
 
 Audits
 ------

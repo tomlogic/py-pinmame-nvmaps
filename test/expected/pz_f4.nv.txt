@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/pz_f4.nv.json for pz_f4.nv
+Using map ../maps/maps/williams/wpc/pz_f4.nv.json for pz_f4.nv
+Dumping known entries for pz_f4.nv [Party Zone, The (F-4 Fliptronic)]...
 
 Game State
 ----------

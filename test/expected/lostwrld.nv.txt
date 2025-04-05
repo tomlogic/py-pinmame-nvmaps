@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/lostwrld.nv.json for lostwrld.nv
+Using map ../maps/maps/bally/as-2518-35/lostwrld.nv.json for lostwrld.nv
+Dumping known entries for lostwrld.nv [Lost World]...
 
 Game State
 ----------

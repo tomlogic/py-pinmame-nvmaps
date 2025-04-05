@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/gw_l5.nv.json for gw_l5.nv
+Using map ../maps/maps/williams/wpc/gw_l5.nv.json for gw_l5.nv
+Dumping known entries for gw_l5.nv [Getaway: High Speed II, The (L-5)]...
 
 Game State
 ----------

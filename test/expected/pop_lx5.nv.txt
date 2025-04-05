@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/pop_lx5.nv.json for pop_lx5.nv
+Using map ../maps/maps/williams/wpc/pop_lx5.nv.json for pop_lx5.nv
+Dumping known entries for pop_lx5.nv [Popeye Saves The Earth (LX-5)]...
 
 Game State
 ----------

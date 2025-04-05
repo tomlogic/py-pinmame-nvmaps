@@ -1,4 +1,5 @@
-Using map maps/williams/williams.system7.nv.json for csmic_l1.nv
+Using map ../maps/maps/williams/williams.system7.nv.json for csmic_l1.nv
+Dumping known entries for csmic_l1.nv [Cosmic Gunfight (L-1)]...
 
 Game State
 ----------

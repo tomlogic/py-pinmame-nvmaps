@@ -1,4 +1,5 @@
-Using map maps/williams/williams.system7.nv.json for barra_l1.nv
+Using map ../maps/maps/williams/williams.system7.nv.json for barra_l1.nv
+Dumping known entries for barra_l1.nv [Barracora (L-1)]...
 
 Game State
 ----------

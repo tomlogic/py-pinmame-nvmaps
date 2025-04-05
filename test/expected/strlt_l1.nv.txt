@@ -1,4 +1,5 @@
-Using map maps/williams/williams.system7.nv.json for strlt_l1.nv
+Using map ../maps/maps/williams/williams.system7.nv.json for strlt_l1.nv
+Dumping known entries for strlt_l1.nv [Star Light (L-1)]...
 
 Game State
 ----------

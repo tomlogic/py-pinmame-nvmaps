@@ -1,4 +1,5 @@
-Using map maps/williams/system11/rdkng_l4.nv.json for rdkng_l4.nv
+Using map ../maps/maps/williams/system11/rdkng_l4.nv.json for rdkng_l4.nv
+Dumping known entries for rdkng_l4.nv [Road Kings (L-4)]...
 
 Audits
 ------

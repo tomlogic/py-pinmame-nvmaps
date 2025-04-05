@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/cftbl_l4.nv.json for cftbl_l4.nv
+Using map ../maps/maps/williams/wpc/cftbl_l4.nv.json for cftbl_l4.nv
+Dumping known entries for cftbl_l4.nv [Creature from the Black Lagoon (L-4)]...
 
 Game State
 ----------

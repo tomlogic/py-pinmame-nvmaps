@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/dh_lx2.nv.json for dh_lx2.nv
+Using map ../maps/maps/williams/wpc/dh_lx2.nv.json for dh_lx2.nv
+Dumping known entries for dh_lx2.nv [Dirty Harry (LX-2)]...
 
 Game State
 ----------

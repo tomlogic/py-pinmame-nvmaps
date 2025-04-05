@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/mm_10.nv.json for mm_10.nv
+Using map ../maps/maps/williams/wpc/mm_10.nv.json for mm_10.nv
+Dumping known entries for mm_10.nv [Medieval Madness (1.0)]...
 
 B.2 Earnings Audits
 -------------------

@@ -1,4 +1,5 @@
-Using map maps/zaccaria/gen2/dvlrider.nv.json for dvlrider.nv
+Using map ../maps/maps/zaccaria/gen2/dvlrider.nv.json for dvlrider.nv
+Dumping known entries for dvlrider.nv [Devil Riders]...
 
 Game State
 ----------

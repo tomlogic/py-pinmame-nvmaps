@@ -1,4 +1,5 @@
-Using map maps/zaccaria/gen2/pinchamp.nv.json for pinchamp.nv
+Using map ../maps/maps/zaccaria/gen2/pinchamp.nv.json for pinchamp.nv
+Dumping known entries for pinchamp.nv [Pinball Champ]...
 
 Game State
 ----------

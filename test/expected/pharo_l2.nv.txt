@@ -1,4 +1,5 @@
-Using map maps/williams/williams.system7.nv.json for pharo_l2.nv
+Using map ../maps/maps/williams/williams.system7.nv.json for pharo_l2.nv
+Dumping known entries for pharo_l2.nv [Pharaoh (L-2)]...
 
 Game State
 ----------

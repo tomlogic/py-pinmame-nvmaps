@@ -1,4 +1,5 @@
-Using map maps/williams/system11/radcl_l1.nv.json for radcl_l1.nv
+Using map ../maps/maps/williams/system11/radcl_l1.nv.json for radcl_l1.nv
+Dumping known entries for radcl_l1.nv [Radical! (L-1)]...
 
 Audits
 ------

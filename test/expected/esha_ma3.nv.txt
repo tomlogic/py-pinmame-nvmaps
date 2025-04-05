@@ -1,4 +1,5 @@
-Using map maps/williams/system11/esha_ma3.nv.json for esha_ma3.nv
+Using map ../maps/maps/williams/system11/esha_ma3.nv.json for esha_ma3.nv
+Dumping known entries for esha_ma3.nv [Earthshaker (LA-3 Metallica MOD)]...
 
 Audits
 ------

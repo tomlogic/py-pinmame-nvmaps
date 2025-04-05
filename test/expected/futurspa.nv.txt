@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/futurspa.nv.json for futurspa.nv
+Using map ../maps/maps/bally/as-2518-35/futurspa.nv.json for futurspa.nv
+Dumping known entries for futurspa.nv [Future Spa]...
 
 Game State
 ----------

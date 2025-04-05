@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/jd_l7.nv.json for jd_l7.nv
+Using map ../maps/maps/williams/wpc/jd_l7.nv.json for jd_l7.nv
+Dumping known entries for jd_l7.nv [Judge Dredd (L-7)]...
 
 Game State
 ----------

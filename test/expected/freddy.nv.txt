@@ -1,4 +1,5 @@
-Using map maps/gottlieb/system3/freddy.nv.json for freddy.nv
+Using map ../maps/maps/gottlieb/system3/freddy.nv.json for freddy.nv
+Dumping known entries for freddy.nv [Freddy: A Nightmare on Elm Street (rev. 3)]...
 
 Player Scores
 -------------

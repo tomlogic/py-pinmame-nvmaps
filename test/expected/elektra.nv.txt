@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/elektra.nv.json for elektra.nv
+Using map ../maps/maps/bally/as-2518-35/elektra.nv.json for elektra.nv
+Dumping known entries for elektra.nv [Elektra]...
 
 Game State
 ----------

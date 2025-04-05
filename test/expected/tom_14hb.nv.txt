@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/tom_13.nv.json for tom_14hb.nv
+Using map ../maps/maps/williams/wpc/tom_13.nv.json for tom_14hb.nv
+Dumping known entries for tom_14hb.nv [Theatre of Magic (1.4H Coin Play)]...
 
 B.3 Standard Audits
 -------------------

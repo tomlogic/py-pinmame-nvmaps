@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/hurr_l2.nv.json for hurr_l2.nv
+Using map ../maps/maps/williams/wpc/hurr_l2.nv.json for hurr_l2.nv
+Dumping known entries for hurr_l2.nv [Hurricane (L-2)]...
 
 Game State
 ----------

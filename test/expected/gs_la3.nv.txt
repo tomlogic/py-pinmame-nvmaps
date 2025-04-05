@@ -1,4 +1,5 @@
-Using map maps/williams/system11/gs_lu4.nv.json for gs_la3.nv
+Using map ../maps/maps/williams/system11/gs_lu4.nv.json for gs_la3.nv
+Dumping known entries for gs_la3.nv [Game Show (LA-3)]...
 
 Audits
 ------

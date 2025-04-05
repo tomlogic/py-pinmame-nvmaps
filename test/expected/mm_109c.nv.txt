@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/mm_109.nv.json for mm_109c.nv
+Using map ../maps/maps/williams/wpc/mm_109.nv.json for mm_109c.nv
+Dumping known entries for mm_109c.nv [Medieval Madness (1.09C Profanity)]...
 
 B.2 Earnings Audits
 -------------------

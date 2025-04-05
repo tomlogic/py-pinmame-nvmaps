@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/tafg_lx3.nv.json for tafg_lx3.nv
+Using map ../maps/maps/williams/wpc/tafg_lx3.nv.json for tafg_lx3.nv
+Dumping known entries for tafg_lx3.nv [Addams Family Special Collectors Edition Gold, The (LX-3)]...
 
 Game State
 ----------

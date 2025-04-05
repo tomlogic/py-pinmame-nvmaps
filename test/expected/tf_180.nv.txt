@@ -1,4 +1,5 @@
-Using map maps/stern/sam/tf_180.nv.json for tf_180.nv
+Using map ../maps/maps/stern/sam/tf_180.nv.json for tf_180.nv
+Dumping known entries for tf_180.nv [Transformers (V1.8)]...
 
 Player Scores
 -------------

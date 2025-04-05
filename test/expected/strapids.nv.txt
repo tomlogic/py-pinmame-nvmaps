@@ -1,4 +1,5 @@
-Using map maps/zaccaria/gen1/strapids.nv.json for strapids.nv
+Using map ../maps/maps/zaccaria/gen1/strapids.nv.json for strapids.nv
+Dumping known entries for strapids.nv [Shooting the Rapids]...
 
 Game State
 ----------

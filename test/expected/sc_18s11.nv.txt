@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/sc_18.nv.json for sc_18s11.nv
+Using map ../maps/maps/williams/wpc/sc_18.nv.json for sc_18s11.nv
+Dumping known entries for sc_18s11.nv [Safe Cracker (1.8 / S1.1)]...
 
 Game State
 ----------

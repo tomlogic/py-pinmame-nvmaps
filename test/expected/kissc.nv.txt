@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/kissc.nv.json for kissc.nv
+Using map ../maps/maps/bally/as-2518-35/kissc.nv.json for kissc.nv
+Dumping known entries for kissc.nv [Kiss (Free Play rev. 3)]...
 
 Game State
 ----------

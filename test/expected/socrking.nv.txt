@@ -1,4 +1,5 @@
-Using map maps/zaccaria/gen2/socrking.nv.json for socrking.nv
+Using map ../maps/maps/zaccaria/gen2/socrking.nv.json for socrking.nv
+Dumping known entries for socrking.nv [Soccer Kings]...
 
 Game State
 ----------

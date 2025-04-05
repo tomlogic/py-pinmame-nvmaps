@@ -1,4 +1,5 @@
-Using map maps/stern/stern-m100.nv.json for dracula.nv
+Using map ../maps/maps/stern/stern-m100.nv.json for dracula.nv
+Dumping known entries for dracula.nv [Dracula]...
 
 Audits
 ------

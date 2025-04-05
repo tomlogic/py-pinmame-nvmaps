@@ -31,8 +31,40 @@ NIBBLE_BOTH = 0
 NIBBLE_LOW = 1
 NIBBLE_HIGH = 2
 
+MAPS_ROOT = os.path.join(os.path.dirname(__file__), 'maps')
+
+
+def rom_name(rom):
+    """Return the descriptive ROM name for a given ROM (e.g., fh_l9)."""
+    with open(os.path.join(MAPS_ROOT, 'romnames.json')) as f:
+        return json.load(f).get(rom, '(Unknown ROM %s)' % rom)
+
+
+def map_for_rom(rom):
+    """Return full path to the mapfile for a given rom, or None if it isn't supported."""
+    with open(os.path.join(MAPS_ROOT, 'index.json')) as f:
+        map_file = json.load(f).get(rom)
+        if map_file:
+            return os.path.join(MAPS_ROOT, map_file)
+
+    return None
+
+
+def rom_for_nvpath(nvpath):
+    """Return the ROM name (e.g., fh_l9) from a full path to a .nv file."""
+    (name, extension) = os.path.splitext(os.path.basename(nvpath))
+    # remove anything after the first hyphen
+    (rom, _, _) = name.partition('-')
+    return rom
+
+
+def find_map(nvpath):
+    """Find a map that will work with the ROM of the given nvram file."""
+    return map_for_rom(rom_for_nvpath(nvpath))
+
 
 class RamMapping(object):
+    """Object representing a single entry from a nvram mapping file."""
     def __init__(self, entry, metadata, section=None, group=None, key=None):
         self.entry = entry
         self.metadata = metadata
@@ -44,10 +76,12 @@ class RamMapping(object):
             if sub in entry:
                 self.sub_entry[sub] = RamMapping(entry[sub], metadata)
 
-    # Format large numbers with thousands separators (',' or '.').  Uses
-    # locale setting in Python 2.7 or later, manually uses ',' for Python 2.6.
     @staticmethod
     def format_number(number):
+        """Format large numbers with thousands separators (',' or '.').
+
+        Uses locale setting in Python 2.7 or later; manually uses ',' for Python 2.6.
+        """
         if sys.version_info >= (2, 7, 0):
             return '{0:,}'.format(number)
 
@@ -58,16 +92,17 @@ class RamMapping(object):
             s = s[:-3]
         return s + ','.join(reversed(groups))
 
-    # Return 'v' if already an int, otherwise assume string and convert
-    # with a base of '0' (which handles leading 0 as octal and 0x as hex)
     @staticmethod
     def to_int(v):
+        """Returns 'v' if already an int, otherwise assume a string and convert
+        with a base of '0' (which handles leading 0 as octal and 0x as hex).
+        """
         if type(v) is int:
             return v
         return int(v, 0)
 
-    # convert start/end/length/offsets to list of byte offsets
     def offsets(self):
+        """Return a list of byte offsets based on the start/end/length/offsets attributes."""
         if self.sub_entry:
             # special-case handling for high score or other combined records
             o = list()
@@ -95,16 +130,20 @@ class RamMapping(object):
 
         return list(range(start, end + 1))
 
-    # return 'start' to 'end' bytes (inclusive) from 'self.nvram', or
-    # 'start' to 'start + length - 1' bytes (inclusive)
-    # or the single byte at 'start' if 'end' and 'length' are not specified
-    # or the bytes from offsets in a list called 'offsets'
     def get_bytes_unmasked(self, nvram):
+        """Return the bytes from an nvram file for a given RamMapping.
+
+        - 'start' to 'end' bytes (inclusive) from 'nvram', or
+        - 'start' to 'start + length - 1' bytes (inclusive)
+        - the single byte at 'start' if 'end' and 'length' are not specified
+        - bytes from offsets in a list called 'offsets'
+        """
         return bytearray(map((lambda offset: nvram[offset]),
                              self.offsets()))
 
     def get_bytes(self, nvram):
         """Same as get_bytes_unmasked() but:
+
         - reverses little-endian sequences for integer encodings (bcd, int, bits)
         - combines nibbles into complete bytes
         - if appropriate, applies a mask to each byte
@@ -156,18 +195,22 @@ class RamMapping(object):
 
     @staticmethod
     def bcd(value):
-        # Ignore nibbles 0xA to 0xF (0xF = blank on Dracula/Wild Fyre)
+        """Returns valid BCD value for a nibble, converting 0xA to 0xF to 0.
+
+        Multiple machines display a space for 0xF, but this routine doesn't support that.
+        """
         return 0 if value > 9 else value
 
-    # return NIBBLE_BOTH, NIBBLE_LOW, or NIBBLE_HIGH based on `nibble`
-    # attribute or the deprecated `packed` attribute.
     def nibble(self):
-        nibble = self.metadata['nibble']
+        """Return NIBBLE_BOTH, NIBBLE_LOW, or NIBBLE_HIGH based on `nibble`
+        attribute or the deprecated `packed` attribute.
+        """
         if not self.entry.get('packed', True):
             # if entry has 'packed=false', replace file's default with 'nibble=low'
             nibble = 'low'
         else:
-            nibble = self.entry.get('nibble', nibble)
+            # use the file's `nibble` setting if the entry doesn't override it
+            nibble = self.entry.get('nibble', self.metadata['nibble'])
 
         if nibble == 'both':
             return NIBBLE_BOTH
@@ -178,16 +221,18 @@ class RamMapping(object):
         else:
             raise ValueError("invalid `nibble` value")
 
-    # return TRUE if this entry is little endian (LSB first)
     def little_endian(self):
+        """Return True if this entry is little endian (LSB first)."""
         default = 'big' if self.metadata['big_endian'] else 'little'
         return self.entry.get('endian', default) == 'little'
 
-    # Return an integer value from one or more bytes in memory
-    # handles multibyte integers (int), binary coded decimal (bcd) and
-    # single-byte enumerated (enum) values.  Returns None for unsupported
-    # encodings.
     def get_value(self, nvram):
+        """Return the integer value for this entry using the provided nvram data.
+
+        Handles multibyte integers (int), binary coded decimal (bcd) and
+        single-byte enumerated (enum) values.  Returns None for unsupported
+        encodings.
+        """
         value = None
         if 'encoding' in self.entry:
             encoding = self.entry['encoding']
@@ -214,8 +259,8 @@ class RamMapping(object):
 
         return value
 
-    # undocumented and incomplete method to replace a value stored in self.nvram[]
     def set_value(self, nvram, value):
+        """Undocumented and incomplete method to replace the entry's value stored in `nvram`."""
         encoding = self.entry['encoding']
         old_bytes = self.get_bytes(nvram)
         start = self.to_int(self.entry['start'])
@@ -251,8 +296,9 @@ class RamMapping(object):
 
         nvram[start:end] = bytearray(new_bytes)
 
-    # format a multibyte integer using options in 'entry'
     def format_value(self, value):
+        """Format a multibyte integer using options in 'entry'."""
+
         # `special_values` contains strings to use in place of `value`
         # commonly used at the low end of a range for off/disabled
         if 'special_values' in self.entry and str(value) in self.entry['special_values']:
@@ -267,10 +313,8 @@ class RamMapping(object):
             return "%d:%02d:00" % divmod(value, 60)
         return self.format_number(value) + self.entry.get('suffix', '')
 
-    # format bytes from 'nvram' depending on members of 'entry'
-    # uses 'encoding' to specify format
-    # 'start' and either 'end' or 'length' for range of bytes
     def format_entry(self, nvram):
+        """Format bytes from 'nvram' for this entry."""
         if self.entry is None:
             return None
         if 'initials' in self.sub_entry or 'score' in self.sub_entry:
@@ -327,9 +371,10 @@ class RamMapping(object):
         return '[?' + encoding + '?]'
 
     def format_label(self, key=None, short_label=False):
+        """Return a formatted string for the entry's label, or None if it doesn't have one."""
         label = self.entry.get('label', '?')
         if label.startswith('_'):
-            return None
+            label = None
         if short_label:
             label = self.entry.get('short_label', label)
         if key:
@@ -337,6 +382,9 @@ class RamMapping(object):
         return label
 
     def format_high_score(self, nvram):
+        """Special method for formatting a High Score entry which might include one or
+        more sub-elements of `initials`, `score`, and `timestamp`.
+        """
         elements = []
         for sub in ['initials', 'score', 'timestamp']:
             if sub in self.sub_entry:
@@ -348,9 +396,12 @@ class RamMapping(object):
             return ' '.join(elements)
         return None
 
-    """Return a tuple of (label, value)
-    """
     def format_mapping(self, nvram):
+        """Return a tuple of (label, value) for this entry for the given nvram data.
+
+        Only works for certain sections of the file:
+            audits, adjustments, dip_switches, game_state, score_record
+        """
         value = self.format_entry(nvram)
         if self.section in ['audits', 'adjustments']:
             if value is None:
@@ -377,16 +428,16 @@ class ParseNVRAM(object):
         json_fh.close()
         self.process_json()
 
-    """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
-    self.mapping, a normalized list of JSON entries as 4-item lists.
-        0 (section): audits, adjustments, game_state, or score_record
-        1 (group): None or a group name for the section
-        2 (key): None or the sortable "key" for the mapping
-        3 (mapping): entry with mapping description
-            def __init__(self, entry, big_endian, section, group, key=None):
-
-    """
     def process_json(self):
+        """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
+        self.mapping, a normalized list of JSON entries as 4-item lists:
+
+            - 0 (section): audits, adjustments, game_state, or score_record
+            - 1 (group): None or a group name for the section
+            - 2 (key): None or the sortable "key" for the mapping
+            - 3 (mapping): entry with mapping description
+              def __init__(self, entry, big_endian, section, group, key=None):
+        """
         self.metadata['big_endian'] = self.nv_json.get('_endian') != 'little'
         # save all metadata keys starting with "_"
         for key in self.nv_json:
@@ -439,15 +490,20 @@ class ParseNVRAM(object):
                                                section))
 
     def load_nvram(self, nvram_path):
-        nv_fh = open(nvram_path, 'rb')
-        self.nvram = bytearray(nv_fh.read())
-        nv_fh.close()
+        """Set the nvram property of the ParseNVRAM object to the contents of an nvram file."""
+        with open(nvram_path, 'rb') as nv_fh:
+            self.nvram = bytearray(nv_fh.read())
 
-    # legacy "glue" method to create RamMapping object on-demand
     def ram_mapping(self, entry):
+        """Legacy "glue" method to create RamMapping object on-demand."""
         return RamMapping(entry, self.metadata)
 
     def verify_checksum8(self, entry, verbose=False, fix=False):
+        """Verify an entry from the checksum8 attribute of the map file.
+
+        - Set verbose to True to print errors for invalid checksums.
+        - Set fix to True to fix any invalid checksums.
+        """
         valid = True
         label = entry.get('label', '(unlabeled)')
         m = self.ram_mapping(entry)
@@ -476,12 +532,22 @@ class ParseNVRAM(object):
         return valid
 
     def verify_all_checksum8(self, verbose=False, fix=False):
+        """Verify all checksum8 entries from the map file.
+
+        - Set verbose to True to print errors for invalid checksums.
+        - Set fix to True to fix any invalid checksums.
+        """
         valid = True
         for c in self.nv_json.get('checksum8', []):
             valid &= self.verify_checksum8(c, verbose, fix)
         return valid
 
     def verify_checksum16(self, entry, verbose=False, fix=False):
+        """Verify an entry from the checksum16 attribute of the map file.
+
+        - Set verbose to True to print errors for invalid checksums.
+        - Set fix to True to fix any invalid checksums.
+        """
         m = self.ram_mapping(entry)
         ba = m.get_bytes(self.nvram)
         # pop last two bytes as stored checksum16
@@ -505,12 +571,21 @@ class ParseNVRAM(object):
         return calc_sum == stored_sum
 
     def verify_all_checksum16(self, verbose=False, fix=False):
+        """Verify all checksum16 entries from the map file.
+
+        - Set verbose to True to print errors for invalid checksums.
+        - Set fix to True to fix any invalid checksums.
+        """
         valid = True
         for c in self.nv_json.get('checksum16', []):
             valid &= self.verify_checksum16(c, verbose, fix)
         return valid
 
     def last_game_scores(self):
+        """Return a list of scores from the last_game attribute.
+
+        TODO: Update this to fall back on game_state.scores.
+        """
         scores = []
         for p in self.nv_json.get('last_game', []):
             s = self.ram_mapping(p).format_entry(self.nvram)
@@ -519,12 +594,17 @@ class ParseNVRAM(object):
         return scores
 
     def last_played(self):
+        """Return a timestamp if this map has a last_played entry, otherwise returns None."""
         lp = self.nv_json.get('last_played')
         if not lp:
             return None
         return self.ram_mapping(lp).format_entry(self.nvram)
 
     def entry_list(self, section, group):
+        """Return a list of entries for the given section and group of the mapping file.
+
+        Correctly handles instances where the group is a List or a Dict.
+        """
         entries = []
         audit_group = self.nv_json[section][group]
         if isinstance(audit_group, list):
@@ -541,6 +621,7 @@ class ParseNVRAM(object):
 
     # section should be 'high_scores' or 'mode_champions'
     def high_scores(self, section='high_scores', short_labels=False):
+        """Return a list of formatted High Scores (or Mode Champions is section='mode_champions')."""
         scores = []
         for entry in self.mapping:
             if entry.group == section:
@@ -552,6 +633,10 @@ class ParseNVRAM(object):
         return scores
 
     def dump(self, checksums=True):
+        """Print out formatted values for all entries for this map/nvram data.
+
+        Skips checksum verification if checksums=False.
+        """
         last_group = None
         for map_entry in self.mapping:
             if map_entry.group != last_group:
@@ -573,48 +658,45 @@ class ParseNVRAM(object):
             self.verify_all_checksum8(verbose=True)
 
 
-def find_map(nvfile):
-    """Find a map that will work with the ROM of the given nvram file."""
-    basename = os.path.basename(nvfile)
-    (name, extension) = os.path.splitext(basename)
-    # remove anything after the first hyphen
-    (rom, _, _) = name.partition('-')
-
-    # search the index for an appropriate map
-    maps_root = os.path.join(os.path.dirname(__file__), 'maps')
-    with open(os.path.join(maps_root, 'index.json')) as f:
-        map_file = json.load(f).get(rom)
-        if map_file:
-            with open(os.path.join(maps_root, map_file), 'r') as m:
-                print("Using map %s for %s" %
-                      (os.path.relpath(map_file), basename))
-                return json.load(m)
-
-    print("Couldn't find a map for %s" % basename)
-
-
 def main():
     parser = argparse.ArgumentParser(description='PinMAME nvram Parser')
-    parser.add_argument('--map', help='map file (typically ending in .nv.json)')
-    parser.add_argument('--nvram', help='nvram file to parse')
-    parser.add_argument('--dump', help='dump the contents of <nvram> using <map>', action='store_true')
+    parser.add_argument('--map',
+                        help='use this map (typically ending in .nv.json)')
+    parser.add_argument('--rom',
+                        help='use default map for <rom> instead of one based on <nvram> filename')
+    parser.add_argument('--nvram',
+                        help='nvram file to parse')
+    parser.add_argument('--dump',
+                        help='dump the contents of <nvram> using <map>', action='store_true')
     args = parser.parse_args()
 
     if args.dump:
         nvpath = args.nvram
+        basename = os.path.basename(nvpath)
+
         if nvpath.find('.nv', 0) == -1:
             parser.print_help()
             return
         with open(nvpath, 'rb') as f:
             nvram = bytearray(f.read())
 
-        if args.map:
-            with open(args.map, 'r') as f:
-                nv_json = json.load(f)
-        else:
+        if not args.map:
             # find a JSON file for the given nvram file
-            nv_json = find_map(nvpath)
+            if not args.rom:
+                args.rom = rom_for_nvpath(nvpath)
+            args.map = map_for_rom(args.rom)
 
+            if args.map:
+                print("Using map %s for %s" %
+                      (os.path.relpath(args.map), basename))
+            else:
+                print("Couldn't find a map for %s" % basename)
+                return
+
+        with open(args.map, 'r') as f:
+            nv_json = json.load(f)
+
+        print("Dumping known entries for %s [%s]..." % (basename, rom_name(rom_for_nvpath(nvpath))))
         p = ParseNVRAM(nv_json, nvram)
         p.dump()
 

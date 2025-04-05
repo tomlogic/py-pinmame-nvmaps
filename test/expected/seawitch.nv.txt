@@ -1,4 +1,5 @@
-Using map maps/stern/m200/seawitch.nv.json for seawitch.nv
+Using map ../maps/maps/stern/m200/seawitch.nv.json for seawitch.nv
+Dumping known entries for seawitch.nv [Seawitch]...
 
 high_scores
 -----------

@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/ts_lx5.nv.json for ts_lx5.nv
+Using map ../maps/maps/williams/wpc/ts_lx5.nv.json for ts_lx5.nv
+Dumping known entries for ts_lx5.nv [Shadow, The (LX-5)]...
 
 Game State
 ----------

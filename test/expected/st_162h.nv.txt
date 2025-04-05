@@ -1,4 +1,5 @@
-Using map maps/stern/sam/st_162h.nv.json for st_162h.nv
+Using map ../maps/maps/stern/sam/st_162h.nv.json for st_162h.nv
+Dumping known entries for st_162h.nv [Star Trek (Stern) Limited Edition (V1.62)]...
 
 Player Scores
 -------------

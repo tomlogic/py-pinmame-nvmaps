@@ -1,4 +1,5 @@
-Using map maps/williams/williams.system7.nv.json for hypbl_l6.nv
+Using map ../maps/maps/williams/williams.system7.nv.json for hypbl_l6.nv
+Dumping known entries for hypbl_l6.nv [HyperBall (L-6 MOD High score save)]...
 
 Game State
 ----------
