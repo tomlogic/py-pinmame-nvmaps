@@ -1,4 +1,5 @@
-Using map maps/stern/sam/st_162.nv.json for st_162.nv
+Using map ../maps/maps/stern/sam/st_162.nv.json for st_162.nv
+Dumping known entries for st_162.nv [Star Trek (Stern) (V1.62)]...
 
 Player Scores
 -------------

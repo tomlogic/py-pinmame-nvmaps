@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/ss_15.nv.json for ss_15.nv
+Using map ../maps/maps/williams/wpc/ss_15.nv.json for ss_15.nv
+Dumping known entries for ss_15.nv [Scared Stiff (1.5)]...
 
 Game State
 ----------

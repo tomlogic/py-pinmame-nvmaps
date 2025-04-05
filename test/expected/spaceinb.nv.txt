@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/spaceinb.nv.json for spaceinb.nv
+Using map ../maps/maps/bally/as-2518-35/spaceinb.nv.json for spaceinb.nv
+Dumping known entries for spaceinb.nv [Space Invaders (7-digit conversion)]...
 
 Bookkeeping functions
 ---------------------

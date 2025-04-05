@@ -1,4 +1,5 @@
-Using map maps/williams/system11/rvrbt_l3.nv.json for rvrbt_l3.nv
+Using map ../maps/maps/williams/system11/rvrbt_l3.nv.json for rvrbt_l3.nv
+Dumping known entries for rvrbt_l3.nv [Riverboat Gambler (L-3)]...
 
 Audits
 ------

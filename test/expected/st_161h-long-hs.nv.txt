@@ -1,4 +1,5 @@
-Using map maps/stern/sam/st_161h.nv.json for st_161h-long-hs.nv
+Using map ../maps/maps/stern/sam/st_161h.nv.json for st_161h-long-hs.nv
+Dumping known entries for st_161h-long-hs.nv [Star Trek (Stern) Limited Edition (V1.61)]...
 
 Player Scores
 -------------

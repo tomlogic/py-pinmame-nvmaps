@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/taf_l7.nv.json for taf_l7.nv
+Using map ../maps/maps/williams/wpc/taf_l7.nv.json for taf_l7.nv
+Dumping known entries for taf_l7.nv [Addams Family, The (L-5 Prototype L-7)]...
 
 Game State
 ----------

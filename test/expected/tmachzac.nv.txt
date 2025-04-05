@@ -1,4 +1,5 @@
-Using map maps/zaccaria/gen2/tmachzac.nv.json for tmachzac.nv
+Using map ../maps/maps/zaccaria/gen2/tmachzac.nv.json for tmachzac.nv
+Dumping known entries for tmachzac.nv [Time Machine (Zaccaria)]...
 
 Game State
 ----------

@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/rs_l6.nv.json for rs_l6.nv
+Using map ../maps/maps/williams/wpc/rs_l6.nv.json for rs_l6.nv
+Dumping known entries for rs_l6.nv [Red and Ted's Road Show (L-6)]...
 
 Game State
 ----------

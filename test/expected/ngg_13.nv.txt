@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/ngg_13.nv.json for ngg_13.nv
+Using map ../maps/maps/williams/wpc/ngg_13.nv.json for ngg_13.nv
+Dumping known entries for ngg_13.nv [No Good Gofers (1.3)]...
 
 Game State
 ----------

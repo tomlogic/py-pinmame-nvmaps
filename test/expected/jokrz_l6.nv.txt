@@ -1,4 +1,5 @@
-Using map maps/williams/system11/jokrz_l6.nv.json for jokrz_l6.nv
+Using map ../maps/maps/williams/system11/jokrz_l6.nv.json for jokrz_l6.nv
+Dumping known entries for jokrz_l6.nv [Jokerz (L-6)]...
 
 Audits
 ------

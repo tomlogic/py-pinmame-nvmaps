@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/bop_l7.nv.json for bop_l7.nv
+Using map ../maps/maps/williams/wpc/bop_l7.nv.json for bop_l7.nv
+Dumping known entries for bop_l7.nv [Machine: Bride of Pinbot, The (L-7)]...
 
 Game State
 ----------

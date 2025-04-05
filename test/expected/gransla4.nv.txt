@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/gransla4.nv.json for gransla4.nv
+Using map ../maps/maps/bally/as-2518-35/gransla4.nv.json for gransla4.nv
+Dumping known entries for gransla4.nv [Grand Slam (4 Players)]...
 
 Game State
 ----------

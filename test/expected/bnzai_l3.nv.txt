@@ -1,4 +1,5 @@
-Using map maps/williams/system11/bnzai_l3.nv.json for bnzai_l3.nv
+Using map ../maps/maps/williams/system11/bnzai_l3.nv.json for bnzai_l3.nv
+Dumping known entries for bnzai_l3.nv [Banzai Run (L-3)]...
 
 Audits
 ------

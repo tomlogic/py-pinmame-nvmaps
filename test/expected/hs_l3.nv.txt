@@ -1,4 +1,5 @@
-Using map maps/williams/system11/hs_l4.nv.json for hs_l3.nv
+Using map ../maps/maps/williams/system11/hs_l4.nv.json for hs_l3.nv
+Dumping known entries for hs_l3.nv [High Speed (L-3)]...
 
 Audits
 ------

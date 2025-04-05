@@ -1,4 +1,5 @@
-Using map maps/williams/system9.nv.json for sorcr_l1.nv
+Using map ../maps/maps/williams/system9.nv.json for sorcr_l1.nv
+Dumping known entries for sorcr_l1.nv [Sorcerer (L-1)]...
 
 high_scores
 -----------

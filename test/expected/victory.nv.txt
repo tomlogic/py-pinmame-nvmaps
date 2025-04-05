@@ -1,4 +1,5 @@
-Using map maps/gottlieb/victory.nv.json for victory.nv
+Using map ../maps/maps/gottlieb/victory.nv.json for victory.nv
+Dumping known entries for victory.nv [Victory]...
 
 Bookkeeping
 -----------

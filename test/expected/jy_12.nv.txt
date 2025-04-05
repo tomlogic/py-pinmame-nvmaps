@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/jy_12.nv.json for jy_12.nv
+Using map ../maps/maps/williams/wpc/jy_12.nv.json for jy_12.nv
+Dumping known entries for jy_12.nv [Junk Yard (1.2)]...
 
 Game State
 ----------

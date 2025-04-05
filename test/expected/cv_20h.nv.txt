@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/cv_20h.nv.json for cv_20h.nv
+Using map ../maps/maps/williams/wpc/cv_20h.nv.json for cv_20h.nv
+Dumping known entries for cv_20h.nv [Cirqus Voltaire (2.0H)]...
 
 Game State
 ----------

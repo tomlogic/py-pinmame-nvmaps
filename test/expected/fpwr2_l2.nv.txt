@@ -1,4 +1,5 @@
-Using map maps/williams/williams.system7.nv.json for fpwr2_l2.nv
+Using map ../maps/maps/williams/williams.system7.nv.json for fpwr2_l2.nv
+Dumping known entries for fpwr2_l2.nv [Firepower II (L-2)]...
 
 Game State
 ----------

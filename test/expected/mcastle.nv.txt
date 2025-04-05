@@ -1,4 +1,5 @@
-Using map maps/zaccaria/gen2/mcastle.nv.json for mcastle.nv
+Using map ../maps/maps/zaccaria/gen2/mcastle.nv.json for mcastle.nv
+Dumping known entries for mcastle.nv [Magic Castle]...
 
 Game State
 ----------

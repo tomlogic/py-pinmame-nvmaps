@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/ft_l5.nv.json for ft_l5.nv
+Using map ../maps/maps/williams/wpc/ft_l5.nv.json for ft_l5.nv
+Dumping known entries for ft_l5.nv [Fish Tales (L-5)]...
 
 Game State
 ----------

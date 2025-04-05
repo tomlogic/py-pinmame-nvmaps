@@ -1,4 +1,5 @@
-Using map maps/williams/system11/bbnny_l2.nv.json for bbnny_l2.nv
+Using map ../maps/maps/williams/system11/bbnny_l2.nv.json for bbnny_l2.nv
+Dumping known entries for bbnny_l2.nv [Bugs Bunny's Birthday Ball (L-2)]...
 
 Audits
 ------

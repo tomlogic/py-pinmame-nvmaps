@@ -1,4 +1,5 @@
-Using map maps/williams/system11/spstn_l5.nv.json for spstn_l5.nv
+Using map ../maps/maps/williams/system11/spstn_l5.nv.json for spstn_l5.nv
+Dumping known entries for spstn_l5.nv [Space Station (L-5)]...
 
 Audits
 ------

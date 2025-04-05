@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/cp_16.nv.json for cp_16.nv
+Using map ../maps/maps/williams/wpc/cp_16.nv.json for cp_16.nv
+Dumping known entries for cp_16.nv [Champion Pub, The (1.6)]...
 
 Game State
 ----------

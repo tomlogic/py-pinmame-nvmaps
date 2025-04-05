@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/jb_10r.nv.json for jb_10r.nv
+Using map ../maps/maps/williams/wpc/jb_10r.nv.json for jb_10r.nv
+Dumping known entries for jb_10r.nv [Jack*Bot (1.0R)]...
 
 Game State
 ----------

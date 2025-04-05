@@ -1,4 +1,5 @@
-Using map maps/williams/system11/whirl_l3.nv.json for whirl_l3.nv
+Using map ../maps/maps/williams/system11/whirl_l3.nv.json for whirl_l3.nv
+Dumping known entries for whirl_l3.nv [Whirlwind (LA-3)]...
 
 Audits
 ------

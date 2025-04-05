@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/m_mpac.nv.json for m_mpac.nv
+Using map ../maps/maps/bally/as-2518-35/m_mpac.nv.json for m_mpac.nv
+Dumping known entries for m_mpac.nv [Mr. & Mrs. Pac-Man Pinball]...
 
 Game State
 ----------

@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/kosteel.nv.json for kosteel.nv
+Using map ../maps/maps/bally/as-2518-35/kosteel.nv.json for kosteel.nv
+Dumping known entries for kosteel.nv [Kings of Steel]...
 
 Game State
 ----------

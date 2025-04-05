@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/sttng_l7.nv.json for sttng_l7.nv
+Using map ../maps/maps/williams/wpc/sttng_l7.nv.json for sttng_l7.nv
+Dumping known entries for sttng_l7.nv [Star Trek: The Next Generation (LX-7, Sound L-1)]...
 
 Game State
 ----------

@@ -1,4 +1,5 @@
-Using map maps/sega/whitestar/gldneye.nv.json for gldneye.nv
+Using map ../maps/maps/sega/whitestar/gldneye.nv.json for gldneye.nv
+Dumping known entries for gldneye.nv [Goldeneye]...
 
 high_scores
 -----------

@@ -1,4 +1,5 @@
-Using map maps/dataeast/version3/swtril43.nv.json for swtril43.nv
+Using map ../maps/maps/dataeast/version3/swtril43.nv.json for swtril43.nv
+Dumping known entries for swtril43.nv [Star Wars Trilogy Special Edition, The (4.03)]...
 
 Player Scores
 -------------

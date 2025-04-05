@@ -1,4 +1,5 @@
-Using map maps/sega/whitestar/sprk_103.nv.json for sprk_103.nv
+Using map ../maps/maps/sega/whitestar/sprk_103.nv.json for sprk_103.nv
+Dumping known entries for sprk_103.nv [South Park (1.03)]...
 
 high_scores
 -----------

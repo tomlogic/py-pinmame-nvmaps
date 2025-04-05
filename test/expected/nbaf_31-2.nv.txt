@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/nbaf_31.nv.json for nbaf_31-2.nv
+Using map ../maps/maps/williams/wpc/nbaf_31.nv.json for nbaf_31-2.nv
+Dumping known entries for nbaf_31-2.nv [NBA Fastbreak (3.1 / S3.0 English/German)]...
 
 A.1 Standard Adjustments
 ------------------------

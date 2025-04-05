@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/totan_14.nv.json for totan_14.nv
+Using map ../maps/maps/williams/wpc/totan_14.nv.json for totan_14.nv
+Dumping known entries for totan_14.nv [Tales of the Arabian Nights (1.4 / S1.1)]...
 
 Game State
 ----------

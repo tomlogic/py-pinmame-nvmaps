@@ -1,4 +1,5 @@
-Using map maps/williams/system11/milln_l3.nv.json for milln_l3.nv
+Using map ../maps/maps/williams/system11/milln_l3.nv.json for milln_l3.nv
+Dumping known entries for milln_l3.nv [Millionaire (L-3)]...
 
 Audits
 ------

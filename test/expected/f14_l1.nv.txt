@@ -1,4 +1,5 @@
-Using map maps/williams/system11/f14_l1.nv.json for f14_l1.nv
+Using map ../maps/maps/williams/system11/f14_l1.nv.json for f14_l1.nv
+Dumping known entries for f14_l1.nv [F-14 Tomcat (L-1)]...
 
 Audits
 ------

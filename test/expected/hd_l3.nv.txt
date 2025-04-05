@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/hd_l3.nv.json for hd_l3.nv
+Using map ../maps/maps/williams/wpc/hd_l3.nv.json for hd_l3.nv
+Dumping known entries for hd_l3.nv [Harley-Davidson (L-3)]...
 
 Game State
 ----------

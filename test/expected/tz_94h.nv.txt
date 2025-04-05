@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/tz_94h.nv.json for tz_94h.nv
+Using map ../maps/maps/williams/wpc/tz_94h.nv.json for tz_94h.nv
+Dumping known entries for tz_94h.nv [Twilight Zone (9.4H)]...
 
 Game State
 ----------

@@ -1,4 +1,5 @@
-Using map maps/bally/as-2518-35/bmx.nv.json for bmx.nv
+Using map ../maps/maps/bally/as-2518-35/bmx.nv.json for bmx.nv
+Dumping known entries for bmx.nv [BMX]...
 
 Game State
 ----------

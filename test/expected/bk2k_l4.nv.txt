@@ -1,4 +1,5 @@
-Using map maps/williams/system11/bk2k_l4.nv.json for bk2k_l4.nv
+Using map ../maps/maps/williams/system11/bk2k_l4.nv.json for bk2k_l4.nv
+Dumping known entries for bk2k_l4.nv [Black Knight 2000 (L-4)]...
 
 Audits
 ------

@@ -1,4 +1,5 @@
-Using map maps/williams/wpc/fh_l9.nv.json for fh_l9.nv
+Using map ../maps/maps/williams/wpc/fh_l9.nv.json for fh_l9.nv
+Dumping known entries for fh_l9.nv [Funhouse (L-9, SL-3)]...
 
 B.2 Earnings Audits
 -------------------
