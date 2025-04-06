@@ -19,7 +19,7 @@ trap 'RC=1' ERR
   done
   diff --unified --recursive --ignore-matching-lines '^Using map ' expected results | more
 
-  python3 missing-test.py
+  python3 check-coverage.py
 )
 
 exit $RC
