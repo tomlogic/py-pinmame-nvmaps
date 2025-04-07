@@ -482,12 +482,12 @@ class ParseNVRAM(object):
                                            'Player Scores'))
             player_num += 1
 
-        for section in ['high_scores', 'mode_champions']:
-            for entry in self.nv_json.get(section, []):
+        for group in ['high_scores', 'mode_champions']:
+            for entry in self.nv_json.get(group, []):
                 self.mapping.append(RamMapping(entry,
                                                self.metadata,
                                                'score_record',
-                                               section))
+                                               group))
 
     def load_nvram(self, nvram_path):
         """Set the nvram property of the ParseNVRAM object to the contents of an nvram file."""
