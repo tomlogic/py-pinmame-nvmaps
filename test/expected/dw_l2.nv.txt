@@ -41,9 +41,9 @@ B.3 Standard Audits
 30 2 Player Games: 0
 31 3 Player Games: 0
 32 4 Player Games: 0
-33 H.S.T.D. Reset Count: 0
+33 H.S.T.D. Reset Count: 2,999
 34 Burn-in Time: 0:00:00
-35 1st Replay Level: 707M
+35 1st Replay Level: 200M
 36 Left Flipper: 178
 37 Right Flipper: 170
 
