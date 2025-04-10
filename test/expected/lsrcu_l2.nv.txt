@@ -1,5 +1,67 @@
-Using map ../maps/maps/williams/williams.system7.nv.json for lsrcu_l2.nv
+Using map ../maps/maps/williams/system7/lsrcu_l2.nv.json for lsrcu_l2.nv
 Dumping known entries for lsrcu_l2.nv [Laser Cue (L-2)]...
+
+Game Audits
+-----------
+48 Unused: 0
+49 Burn-In Cycles?: 0
+99 CMOS Checksum: 45,733
+
+Standard Audits
+---------------
+01 Coins, left chute: 0
+02 Coins, center chute: 0
+03 Coins, right chute: 11
+04 Total Paid Credits: 40
+05 Special Credits: 0
+06 Replay Score Credits: 0
+07 Match Credits: 0
+08 Total Credits: 5
+09 Total Extra Balls: 0
+10 Ball Time: 0:00:00
+11 Total Balls Played: 2
+12 Current HSTD: 2,500,000
+13 HSTD Credits: 0
+14 Replay 1 Awarded: 0
+15 Replay 2 Awarded: 0
+16 Replay 3 Awarded: 0
+17 Replay 4 Awarded: 0
+
+Game Adjustments
+----------------
+31 Reset Multiplier on Next Ball: X5
+32a Double Ball: enabled
+32b Special: award on X10 only
+33 Extra Ball Time: 0:00:25
+34 Reset Back Drop-Targets: up to #3, #11 ball-target
+35 Special/Extra Ball lamp memory: extra ball
+36 Background Sound: yes
+37 2nd Backup HSTD: 2,100,000
+38 3rd Backup HSTD: 1,700,000
+39 4th Backup HSTD: 1,300,000
+
+Standard Adjustments
+--------------------
+13 Backup HSTD: 2,500,000
+14 Replay 1 Score: 800,000
+15 Replay 2 Score: 0
+16 Replay 3 Score: 0
+17 Replay 4 Score: 0
+18 Maximum Credits: 30
+19 Pricing Control: 1/1DM, 3/2DM, 10/5DM
+20 Left Coin Slot Multiplier: 9
+21 Center Coin Slot Multiplier: 45
+22 Right Coin Slot Multiplier: 18
+23 Coin Units Required for Credit: 5
+24 Coin Units Bonus Point: 45
+25 Minimum Coin Units: 0
+26 Match: On
+27 Special Awards: Credit
+28 Replay Award: Credit
+29 Tilt Warnings: 3
+30 Number of Balls: 3
+40 HSTD Credits: 4
+41 Maximum Extra Balls: 7
 
 Game State
 ----------
