@@ -1,0 +1,56 @@
+Using map ../maps/maps/williams/system6/flash_l1.nv.json for flash_l1.nv
+Dumping known entries for flash_l1.nv [Flash (Sys.6 L-1)]...
+
+Standard Audits
+---------------
+01 Coins, left chute: 0
+02 Coins, center chute: 0
+03 Coins, right chute: 0
+04 Total Paid Credits: 0
+05 Special Credits: 0
+06 Replay Score Credits: 0
+07 Match Credits: 0
+08 Total Credits: 0
+09 Total Extra Balls: 0
+10 Total Ball Time: 0:00:00
+11 Total Balls Played: 0
+12 Current HSTD: 550,000
+99 Check Byte: valid
+
+Game Adjustments
+----------------
+31 Background Sound: off
+32 SUPER FLASH Scoring: awards 50,000 points
+33 SUPER FLASH Restore: restores
+34 Extra Ball Control: extra ball allowed
+35A Eject Hole Lamps: not restored
+35B 5,000 Lamp: lit initially
+
+Standard Adjustments
+--------------------
+13 Backup HSTD: 550,000
+14 Replay 1 Score: 270,000
+15 Replay 2 Score: 370,000
+16 Replay 3 Score: 470,000
+17 Replay 4 Score: 0
+18 Maximum Credits: 20
+19 Pricing Control: 1/$0.25, 3/$0.50
+20 Left Coin Slot Multiplier: 1
+21 Center Coin Slot Multiplier: 1
+22 Right Coin Slot Multiplier: 1
+23 Coin Units Required for Credit: 1
+24 Coin Units Bonus Point: 2
+25 HSTD Credits: 3
+26 Match: On
+27 Special Awards: Credit
+28 Replay Award: Credit
+29 Tilt Warnings: 3
+30 Number of Balls: 3
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+First Place: 550,000

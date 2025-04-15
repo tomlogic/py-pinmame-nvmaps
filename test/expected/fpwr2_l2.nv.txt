@@ -11,7 +11,7 @@ Game Audits
 47 Game Audit 6: 0
 48 Game Audit 7: 0
 49 Burn-In Cycles: 0
-99 CMOS Checksum: 45,733
+99 CMOS Checksum: valid
 
 Standard Audits
 ---------------

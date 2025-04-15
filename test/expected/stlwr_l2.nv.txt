@@ -1,0 +1,54 @@
+Using map ../maps/maps/williams/system4/stlwr_l2.nv.json for stlwr_l2.nv
+Dumping known entries for stlwr_l2.nv [Stellar Wars (L-2)]...
+
+Standard Audits
+---------------
+01 Coins, left chute: 0
+02 Coins, center chute: 0
+03 Coins, right chute: 0
+04 Total Paid Credits: 0
+05 Special Credits: 0
+06 Replay Score Credits: 0
+07 Match Credits: 0
+08 Total Credits: 0
+09 Total Extra Balls: 0
+10 Total Ball Time: 0:00:00
+11 Total Balls Played: 0
+12 Current HSTD: 550,000
+99 Check Byte: valid
+
+Game Adjustments
+----------------
+27 Play: eject 2000/5000 lit together, captive ball & bottom jet bumpers lit separately
+33 Playfield Restore: bonus X/eject hole lamps restore
+34 Extra Ball: allowed
+35 Sweep Sound Select: disabled
+
+Standard Adjustments
+--------------------
+13 Backup HSTD: 550,000
+14 Replay 1 Score: 300,000
+15 Replay 2 Score: 400,000
+16 Replay 3 Score: 500,000
+17 Replay 4 Score: 0
+18 Maximum Credits: 20
+19 Pricing Control: 1/$0.25
+20 Left Coin Slot Multiplier: 1
+21 Center Coin Slot Multiplier: 1
+22 Right Coin Slot Multiplier: 1
+23 Coin Units Required for Credit: 1
+24 Coin Units Bonus Point: 0
+26 HSTD Credits: 3
+28 Match: On
+29 Special Awards: Credit
+30 Replay Award: Credit
+31 Number of Balls: 3
+32 Tilt Warnings: 3
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+First Place: 550,000

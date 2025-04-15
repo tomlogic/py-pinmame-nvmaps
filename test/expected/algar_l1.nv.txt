@@ -1,0 +1,59 @@
+Using map ../maps/maps/williams/system6/algar.nv.json for algar_l1.nv
+Dumping known entries for algar_l1.nv [Algar (L-1)]...
+
+Standard Audits
+---------------
+01 Coins, left chute: 0
+02 Coins, center chute: 0
+03 Coins, right chute: 0
+04 Total Paid Credits: 0
+05 Special Credits: 0
+06 Replay Score Credits: 0
+07 Match Credits: 0
+08 Total Credits: 0
+09 Total Extra Balls: 0
+10 Total Ball Time: 0:00:00
+11 Total Balls Played: 0
+12 Current HSTD: 1,000,000
+99 Check Byte: valid
+
+Game Adjustments
+----------------
+31A 3-Banks '10' Lamp: lit initially
+31B 3-Banks Target Bonus: target bonus memory
+32A Loop Shot '10' Lamp: lit initially
+32B Loop Shot Lane Lamp Memory: lane lamp memory
+33 Extra Ball: lit once per ball on 3-bank 100K collect
+34A Background Sounds?: on
+34B Background Sounds?: on
+35 Bonus Multiplier: memory on for lamps below 5X
+
+Standard Adjustments
+--------------------
+13 Backup HSTD: 1,000,000
+14 Replay 1 Score: 800,000
+15 Replay 2 Score: 1,300,000
+16 Replay 3 Score: 0
+17 Replay 4 Score: 0
+18 Maximum Credits: 20
+19 Pricing Control: 1/$0.25
+20 Left Coin Slot Multiplier: 1
+21 Center Coin Slot Multiplier: 4
+22 Right Coin Slot Multiplier: 1
+23 Coin Units Required for Credit: 1
+24 Coin Units Bonus Point: 0
+25 HSTD Credits: 3
+26A Extra Balls: 1 EB/Ball
+26B Match: On
+27 Special Awards: Credit
+28 Replay Award: Credit
+29 Tilt Warnings: 3
+30 Number of Balls: 3
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+First Place: 1,000,000

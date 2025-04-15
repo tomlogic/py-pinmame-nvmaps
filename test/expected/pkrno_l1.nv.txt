@@ -1,0 +1,40 @@
+Using map ../maps/maps/williams/system4/pkrno_l1.nv.json for pkrno_l1.nv
+Dumping known entries for pkrno_l1.nv [Pokerino (L-1)]...
+
+Standard Audits
+---------------
+18 Current HSTD: 450,000
+19 Coins, left chute: 0
+20 Coins, center chute: 0
+21 Coins, right chute: 0
+22 Total Paid Credits: 0
+23 Special Credits: 0
+99 Check Byte: valid
+
+Standard Adjustments
+--------------------
+01 Replay 1 Score: 290,000
+02 Replay 2 Score: 430,000
+03 Replay 3 Score: 540,000
+04 Replay 4 Score: 0
+05 Maximum Credits: 20
+06 Match/Credit/Extra Ball: match on, replay awards credit
+07 Play: normal ('P' and 'O' together)
+08 HSTD Credits: 3
+09 Left Coin Slot Multiplier: 1
+10 Center Coin Slot Multiplier: 1
+11 Right Coin Slot Multiplier: 1
+12 Coin Units Required for Credit: 0
+13 Coin Units Bonus Point: 0
+14 Coin Units Per Credit: 1
+15A Special Awards: credit
+15B Number of Balls: 3
+16 Tilt Warnings: 3
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+First Place: 450,000

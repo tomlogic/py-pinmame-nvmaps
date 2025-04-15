@@ -1,0 +1,59 @@
+Using map ../maps/maps/williams/system6/alien_poker.nv.json for alpok_l2.nv
+Dumping known entries for alpok_l2.nv [Alien Poker (L-2)]...
+
+Standard Audits
+---------------
+01 Coins, left chute: 0
+02 Coins, center chute: 0
+03 Coins, right chute: 0
+04 Total Paid Credits: 0
+05 Special Credits: 0
+06 Replay Score Credits: 0
+07 Match Credits: 0
+08 Total Credits: 0
+09 Total Extra Balls: 0
+10 Total Ball Time: 0:00:00
+11 Total Balls Played: 0
+12 Current HSTD: 1,000,000
+99 Check Byte: valid
+
+Game Adjustments
+----------------
+31A POKER lamp memory: lamps on memory
+31B POKER 'P' lamp: not lit initially
+32 Extra Ball Control: lites with 'K' lamp
+33A Background Sound: on
+33B Ace Eject Hole Memory: lamps on memory
+34 Extra Ball Lamp Memory: no lamp memory
+35A Attract Mode Sounds: on
+35B Royal Flush Value Memory: lamps reset to 100K
+
+Standard Adjustments
+--------------------
+13 Backup HSTD: 1,000,000
+14 Replay 1 Score: 700,000
+15 Replay 2 Score: 1,100,000
+16 Replay 3 Score: 0
+17 Replay 4 Score: 0
+18 Maximum Credits: 20
+19 Pricing Control: 1/$0.25
+20 Left Coin Slot Multiplier: 1
+21 Center Coin Slot Multiplier: 4
+22 Right Coin Slot Multiplier: 1
+23 Coin Units Required for Credit: 1
+24 Coin Units Bonus Point: 0
+25 HSTD Credits: 3
+26A Extra Balls: 1 EB/Ball
+26B Match: On
+27 Special Awards: Credit
+28 Replay Award: Credit
+29 Tilt Warnings: 3
+30 Number of Balls: 3
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+First Place: 1,000,000
