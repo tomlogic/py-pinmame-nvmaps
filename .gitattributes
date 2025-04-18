@@ -1,2 +1,8 @@
+* text auto
+
 *.nv binary
+
+*.txt text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
 
