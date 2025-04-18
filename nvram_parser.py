@@ -313,6 +313,16 @@ class RamMapping(object):
             return "%d:%02d:00" % divmod(value, 60)
         return self.format_number(value) + self.entry.get('suffix', '')
 
+    def entry_values(self):
+        """Return a list of values for an entry with enum or dipsw encoding."""
+        if self.entry['encoding'] not in ['enum', 'dipsw']:
+            raise ValueError("Entry doesn't use enum/dipsw encoding.")
+        values = self.entry['values']
+        if isinstance(values, str):
+            # look up a shared list of values
+            values = self.metadata['values'].get(values, [])
+        return values
+
     def format_entry(self, nvram):
         """Format bytes from 'nvram' for this entry."""
         if self.entry is None:
@@ -336,10 +346,7 @@ class RamMapping(object):
                 mask <<= 1
             return self.format_value(bits_value)
         elif encoding in ['enum', 'dipsw']:
-            values = self.entry['values']
-            if isinstance(values, str):
-                # look up a shared list of values
-                values = self.metadata['values'].get(values, [])
+            values = self.entry_values()
             if value >= len(values):
                 return '?' + str(value)
             return values[value]
