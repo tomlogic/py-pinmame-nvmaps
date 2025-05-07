@@ -11,19 +11,6 @@ Edit UI:
 - blank line keeps existing option
 - blank line at top level prompts to save/exit/continue editing
 
-TODO: add --md for markdown format
-Title
-=====
-|     | SW01 |SW02 |SW03|SW04|SW05| Left Coin Chute              |
-|-----|:----:|:---:|:--:|:--:|:--:|------------------------------|
-|  0 | off  | off |off |off |off | 1 credit/coin                |
-
-- remove colon after option/value
-- add pipe to start and end
-- use pipe instead of + on dividing line
-- use ':--:' to center columns
-- leave out initial column?
-- identify current selection when nvram file specified?
 """
 import argparse
 import json
@@ -38,6 +25,8 @@ def main():
     parser.add_argument('--rom',
                         help='use default map for <rom> instead of one based on <nvram> filename')
     parser.add_argument('--nvram', help='nvram file to dump')
+    parser.add_argument('--md', action='store_true',
+                        help='output documentation in Markdown format')
     args = parser.parse_args()
 
     if not args.map:
@@ -60,35 +49,57 @@ def main():
         nv = None
 
     if args.rom:
-        print('DIP Switches for %s' % nvram_parser.rom_name(args.rom))
+        title = 'DIP Switches for %s' % nvram_parser.rom_name(args.rom)
+    else:
+        title = 'DIP Switches from %s' % args.map
+    print(title)
+    if args.md:
+        print('=' * len(title))
     if args.nvram:
-        print('(with current values from %s)' % args.nvram)
+        subtitle = '(with current values from %s)' % args.nvram
+        print(subtitle)
+        if args.md:
+            print('-' * len(subtitle))
     print()
 
     parser = nvram_parser.ParseNVRAM(nv_map, nv)
+
     off_on = ['off ', ' ON ']
     for m in parser.mapping:
         if m.section != 'dip_switches':
             continue
         columns = len(list(m.offsets()))
-        header = '|'.join(map((lambda x: 'SW%02u' % x), m.offsets()))
-        divider = '+'.join(map((lambda x: '----'), m.offsets()))
-        print("    |%s| %s" % (header, m.format_label()))
-        print("----+%s+-------------------------------" % divider)
+
+        # calculate maximum width for grouping name and descriptions
+        max_width = len(m.format_label())
+        for index, description in enumerate(m.entry_values()):
+            if len(str(description)) > max_width:
+                max_width = len(str(description))
+        dashes = '-' * max_width
+        if args.md:
+            header = '|'.join(map((lambda x: ' SW%02u ' % x), m.offsets()))
+            divider = '|'.join(map((lambda x: ':----:'), m.offsets()))
+            print("|%s| %s |" % (header, m.format_label().ljust(max_width)))
+            print("|%s|:%s-|" % (divider, dashes))
+        else:
+            header = '|'.join(map((lambda x: 'SW%02u' % x), m.offsets()))
+            divider = '+'.join(map((lambda x: '----'), m.offsets()))
+            print("    |%s| %s" % (header, m.format_label()))
+            print("----+%s+-%s-" % (divider, dashes))
         if nv:
             current = m.get_value(nv)
         else:
             current = None
-        values = m.entry_values()
-        for index, audit in enumerate(values):
-            if current == index:
-                marker = '>'
-            else:
-                marker = ' '
+        for index, description in enumerate(m.entry_values()):
             switches = []
             for i in reversed(range(columns)):
                 switches.append(off_on[(index & (1 << i)) != 0])
-            print('%c%2u:|%s| %s' % (marker, index, '|'.join(switches), audit))
+            if args.md:
+                description = str(description).ljust(max_width)
+                print('| %s | %s |' % (' | '.join(switches), description))
+            else:
+                marker = '>' if current == index else ' '
+                print('%c%2u:|%s| %s' % (marker, index, '|'.join(switches), description))
         print()
 
 if __name__ == '__main__':
