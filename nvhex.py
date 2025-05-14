@@ -57,7 +57,7 @@ def hex_line(offset, count, text=None):
             if nibble == NIBBLE_LOW:
                 b.append(' %1X' % (nv[offset] & 0x0F))
             elif nibble == NIBBLE_HIGH:
-                b.append('%1X ' % (nv[offset] >> 8))
+                b.append('%1X ' % (nv[offset] >> 4))
             else:
                 b.append('%02X' % nv[offset])
 
