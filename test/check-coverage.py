@@ -70,7 +70,7 @@ if map_files:
             print("%s: %s" % (file, ', '.join(roms)))
     if no_coverage:
         print("\nError: no map coverage; missing .nv files for:")
-        for file in map_files:
+        for file in no_coverage:
             print("%s: %s" % (file, ', '.join(map_files.get(file))))
 
         # partial coverage is just a warning, no coverage is failure
