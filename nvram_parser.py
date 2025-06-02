@@ -63,6 +63,40 @@ def find_map(nvpath):
     return map_for_rom(rom_for_nvpath(nvpath))
 
 
+def dipsw_get(nvram, index):
+    """
+    Return state of a game's DIP switch.
+
+    :param nvram: contents of .nv file
+    :param index: DIP switch number (1 to n)
+    :return: True if DIP switch is configured as "ON"
+    """
+    index -= 1  # switches start at 1 in file, 0 in memory
+    bank = index // 8
+    mask = 1 << (index % 8)
+    # dip switches are last 6 bytes of file
+    byte_value = nvram[-6 + bank]
+    return (byte_value & mask) != 0
+
+
+def dipsw_set(nvram, index, state):
+    """
+    Set the state of a game's DIP switch.
+    :param nvram: contents of .nv file
+    :param index: DIP switch number (1 to n)
+    :param state: True to set the switch to ON, False to set it to OFF.
+    :return:
+    """
+    index -= 1  # switches start at 1 in file, 0 in memory
+    bank = index // 8
+    mask = 1 << (index % 8)
+    # dip switches are last 6 bytes of file
+    if state:
+        nvram[-6 + bank] |= mask
+    else:
+        nvram[-6 + bank] &= ~mask
+
+
 class RamMapping(object):
     """Object representing a single entry from a nvram mapping file."""
     def __init__(self, entry, metadata, section=None, group=None, key=None):
@@ -111,8 +145,8 @@ class RamMapping(object):
             return o
 
         if 'offsets' in self.entry:
-            return map((lambda offset: self.to_int(offset)),
-                       self.entry['offsets'])
+            return list(map((lambda offset: self.to_int(offset)),
+                            self.entry['offsets']))
 
         start = self.to_int(self.entry.get('start', 0))
         end = start
@@ -154,13 +188,8 @@ class RamMapping(object):
         if encoding == 'dipsw':
             value = 0
             for bit in self.offsets():
-                bit -= 1        # switches start at 1 in file, 0 in memory
-                value <<= 1     # shift current value one bit left
-                bank = bit // 8
-                # dip switches are last 6 bytes of file
-                byte_value = nvram[-6 + bank]
-                if byte_value & (1 << (bit % 8)):
-                    value += 1
+                # shift current value one bit left and set LSB
+                value = (value << 1) + dipsw_get(nvram, bit)
             # might need to split into multiple list entries if value > 255
             return [value]
             
@@ -262,6 +291,14 @@ class RamMapping(object):
     def set_value(self, nvram, value):
         """Undocumented and incomplete method to replace the entry's value stored in `nvram`."""
         encoding = self.entry['encoding']
+
+        if encoding == 'dipsw':
+            # use reversed() to start with LSB in list of offsets
+            for bit in reversed(self.offsets()):
+                dipsw_set(nvram, bit, value & 1)
+                value >>= 1
+            return
+
         old_bytes = self.get_bytes(nvram)
         start = self.to_int(self.entry['start'])
         end = start + len(old_bytes)

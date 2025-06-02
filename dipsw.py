@@ -3,19 +3,107 @@
 Tool for displaying DIP switch settings from a map, and editing the
 settings stored in a .nv file.
 
-TODO: make a list of sections to use for a top-level menu to select switches to change
-TODO: add --edit command-line option to show menus and allow editing
-Edit UI:
-- use number to select section or option
-- use q/x to quit/exit, s/w to save/write and exit, ? to print top menu again
-- blank line keeps existing option
-- blank line at top level prompts to save/exit/continue editing
-
+TODO: Modify command-line handling to allow for --on/--off for .nv files without a map.
 """
 import argparse
 import json
 
 import nvram_parser
+
+
+def parse_switch_list(switches) -> list:
+    """
+    Helper for --on and --off command-line options.
+    :param switches: comma-separated list of switch numbers and ranges (e.g., "1,2,3-5")
+    :return: list of individual switch numbers as integers
+    """
+    switch_list = []
+    if switches:
+        for item in switches.split(','):
+            if '-' in item:
+                (start, end) = item.split('-')
+                for i in range(int(start), int(end) + 1):
+                    switch_list.append(i)
+            else:
+                switch_list.append(int(item))
+    return switch_list
+
+
+def edit_item(mapping: nvram_parser.RamMapping, nv) -> bool:
+    """
+    Interactive editor for changing a DIP switch entry.
+    :param mapping: RamMapping object for a DIP switch group
+    :param nv: contents of .nv file
+    :return: True if user entered a new value
+    """
+    label = mapping.format_label()
+    current_value = mapping.get_value(nv)
+    while True:
+        print('\n%s\n%s' % (label, '-' * len(label)))
+        for index, label in enumerate(mapping.entry_values()):
+            print('%c%2u: %s' % (' *'[index == current_value], index, label))
+        try:
+            new = input('\nNew setting [%u]: ' % current_value)
+        except EOFError:
+            exit(0)
+        if not new:
+            # blank entry -- no change to current setting
+            return False
+        else:
+            try:
+                new_value = int(new)
+                if new_value != current_value:
+                    mapping.set_value(nv, new_value)
+                    return True
+                else:
+                    return False
+            except ValueError:
+                if new != '?':
+                    print('Invalid option')
+
+
+def switch_editor(parser: nvram_parser.ParseNVRAM) -> bool:
+    """
+    Interactive DIP switch editor.
+    :param parser: ParseNVRAM object to use with DIP switch editor.
+    :return: True if user wants to save changes
+    """
+    groups = []
+    for m in parser.mapping:
+        if m.section == 'dip_switches':
+            groups.append(m)
+
+    print_menu = True
+    while True:
+        if print_menu:
+            print_menu = False
+            print()
+            for index, mapping in enumerate(groups):
+                print('%2u: %s = %s' % (index + 1, mapping.format_label(),
+                                        mapping.format_entry(parser.nvram)))
+
+        print()
+        try:
+            command = input('Entry to edit, "?" for list, "s" to save, or "q" to quit: ')
+        except EOFError:
+            exit(0)
+        try:
+            index = int(command)
+            if index < 1 or index > len(groups):
+                print("Invalid option")
+            else:
+                edit_item(groups[index - 1], parser.nvram)
+                print_menu = True
+        except ValueError:
+            if command.startswith('s'):
+                return True
+            elif command.startswith('q'):
+                return False
+            elif command.startswith('?'):
+                print_menu = True
+            else:
+                print_menu = True
+                print("Invalid option")
 
 
 def main():
@@ -27,7 +115,16 @@ def main():
     parser.add_argument('--nvram', help='nvram file to dump')
     parser.add_argument('--md', action='store_true',
                         help='output documentation in Markdown format')
+    parser.add_argument('--edit', action='store_true',
+                        help='run interactive switch editor')
+    parser.add_argument('--on', metavar='DIPSW_LIST',
+                        help='comma-separated list of switches to turn on')
+    parser.add_argument('--off', metavar='DIPSW_LIST',
+                        help='comma-separated list of switches to turn off')
     args = parser.parse_args()
+
+    if (args.edit or args.on or args.off) and not args.nvram:
+        parser.error('--edit, --on, and --off require the --nvram option')
 
     if not args.map:
         # find a JSON file for the given nvram file
@@ -62,7 +159,29 @@ def main():
             print('-' * len(subtitle))
     print()
 
+    save_changes = False
+    if nv:
+        if args.on or args.off:
+            save_changes = True
+            for sw in parse_switch_list(args.on):
+                nvram_parser.dipsw_set(nv, sw, True)
+            for sw in parse_switch_list(args.off):
+                nvram_parser.dipsw_set(nv, sw, False)
+
     parser = nvram_parser.ParseNVRAM(nv_map, nv)
+
+    if args.edit:
+        save_changes = switch_editor(parser)
+
+    if save_changes:
+        print('Saving changes to %s...' % args.nvram)
+        with open(args.nvram, 'wb') as f:
+            f.write(nv)
+        exit(0)
+
+    if args.edit:
+        # don't show settings after editing
+        exit(0)
 
     off_on = ['off ', ' ON ']
     for m in parser.mapping:
