@@ -1,0 +1,29 @@
+Using map ../maps/maps/bally/as-2518-35/smmanc.nv.json for smmanc.nv
+Dumping known entries for smmanc.nv [Six Million Dollar Man, The (Free Play rev. 3)]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 0
+06 Total Plays (Payed and Free Games): 0
+07 Total Replays (Free Games): 0
+08 Total times 'High Game to Date' is beat: 0
+09 Coins Dropped thru Coin Chute #1: 0
+10 Coins Dropped thru Coin Chute #2: 0
+11 Coins Dropped thru Coin Chute #3: 0
+
+Game State
+----------
+Credits: 0
+
+Player Scores
+-------------
+Player 1: 3
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+
+high_scores
+-----------
+High Score: 0

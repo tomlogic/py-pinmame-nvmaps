@@ -1,0 +1,38 @@
+Using map ../maps/maps/bally/as-2518-35/newwave.nv.json for newwave.nv
+Dumping known entries for newwave.nv [New Wave]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 0
+06 Total Plays (Payed and Free Games): 0
+07 Total Replays (Free Games): 0
+08 Game Percentage: 0
+09 Total times 'High Score To Date' is beat: 0
+10 Coins Dropped thru Coin Chute #1: 0
+11 Coins Dropped thru Coin Chute #2: 0
+12 Coins Dropped thru Coin Chute #3: 0
+13 Number of Specials awarded from Panel Specials Only: 0
+14 Number of minutes of Game Play: 0
+15 Number of Service Credits: 0
+
+High score functions
+--------------------
+01 Extra ball / Free game score level 1: OFF
+02 Extra ball / Free game score level 2: OFF
+03 Extra ball / Free game score level 3: OFF
+04 High score to date: 0
+
+Game State
+----------
+Credits: 0
+
+Player Scores
+-------------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 0
