@@ -20,7 +20,7 @@ Adjustments
 
 Game State
 ----------
-Match: 2
+Match: n/a
 Ball: 2
 Credits: 10
 P1: 41,440

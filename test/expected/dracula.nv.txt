@@ -21,7 +21,7 @@ Adjustments
 Game State
 ----------
 Match: 70
-Ball: 70
+Ball: n/a
 Credits: 0
 P1: 32,520
 P2: 22,510
