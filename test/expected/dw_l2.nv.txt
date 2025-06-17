@@ -1,5 +1,5 @@
 Using map ../maps/maps/williams/wpc/dw_l2.nv.json for dw_l2.nv
-Dumping known entries for dw_l2.nv [Dr. Who (L-2)]...
+Dumping known entries for dw_l2.nv [Doctor Who (L-2)]...
 
 B.2 Earnings Audits
 -------------------

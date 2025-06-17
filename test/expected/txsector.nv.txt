@@ -1,5 +1,5 @@
-Using map ../maps/maps/gottlieb/system80b/victory.nv.json for victory.nv
-Dumping known entries for victory.nv [Victory]...
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for txsector.nv
+Dumping known entries for txsector.nv [TX-Sector]...
 
 Bookkeeping
 -----------
@@ -44,9 +44,9 @@ Match: on
 Replay Limit: 1
 Novelty: score 500K instead of extra ball/special
 Game Mode: extra ball
-3rd Coin Chute Credits: add 9 credits (enables Free Play on competition ROMs)
-Extra Ball Control: liberal: hole value held between balls; both EB lamps lit
-Outlane Special: liberal: outlane lit after first race (qualifying heat) completed
+3rd Coin Chute Credits: add 9 credits
+Game Setting #1: on
+Game Setting #2: on
 
 high_scores
 -----------

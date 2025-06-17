@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/gottlieb_80b-2.nv.json for robowars.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for robowars.nv
 Dumping known entries for robowars.nv [Robo-War]...
 
 Bookkeeping
@@ -26,6 +26,27 @@ Standard Adjustments
 Game State
 ----------
 Credits: 7
+
+DIP Switches
+------------
+Left Coin Chute: 9 credits/coin
+High Games To Date: no effect
+Attract Mode Sound: off
+Auto-Percentage Control: Disabled (normal high score mode)
+Right Coin Chute: 1 credits/5 coins
+Left/Right Coin Chute Control: separate
+Maximum Credits: 10
+Center Coin Chute: incentive: 1@2, 2@4
+Playfield Special: special
+High Score Awards: 3 replays
+Balls/Game: 3
+Match: on
+Replay Limit: 1
+Novelty: score 500K instead of extra ball/special
+Game Mode: extra ball
+3rd Coin Chute Credits: add 9 credits
+Game Setting #1: on
+Game Setting #2: on
 
 high_scores
 -----------

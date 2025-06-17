@@ -1,5 +1,5 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for robowars-default.nv
-Dumping known entries for robowars-default.nv [Robo-War]...
+Using map ../maps/maps/gottlieb/system80b/80b-7digit.nv.json for triplay.nv
+Dumping known entries for triplay.nv [Chicago Cubs Triple Play]...
 
 Bookkeeping
 -----------
@@ -18,7 +18,6 @@ Bookkeeping
 
 Standard Adjustments
 --------------------
-06 Replay Percentage: 0%
 11 First High Score: 0
 12 Second High Score: 0
 13 Third High Score: 0
