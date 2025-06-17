@@ -4,7 +4,7 @@ Dumping known entries for smmanc.nv [Six Million Dollar Man, The (Free Play rev.
 Bookkeeping functions
 ---------------------
 05 Current Credits: 0
-06 Total Plays (Payed and Free Games): 0
+06 Total Plays (Paid and Free Games): 0
 07 Total Replays (Free Games): 0
 08 Total times 'High Game to Date' is beat: 0
 09 Coins Dropped thru Coin Chute #1: 0

@@ -4,7 +4,7 @@ Dumping known entries for skatebll.nv [Skateball]...
 Bookkeeping functions
 ---------------------
 05 Current Credits: 0
-06 Total Plays (Played and Free Games): 0
+06 Total Plays (Paid and Free Games): 0
 
 Game State
 ----------

@@ -1,26 +1,26 @@
-Using map ../maps/maps/bally/as-2518-35/newwave.nv.json for newwave.nv
-Dumping known entries for newwave.nv [New Wave]...
+Using map ../maps/maps/bally/as-2518-35/suprbowl.nv.json for suprbowl.nv
+Dumping known entries for suprbowl.nv [Super Bowl]...
 
 Bookkeeping functions
 ---------------------
-05 Current Credits: 0
-06 Total Plays (Paid and Free Games): 0
+05 Current Credits: 1
+06 Total Plays (Paid and Free Games): 4
 07 Total Replays (Free Games): 0
 08 Game Percentage: 0
 09 Total times 'High Score To Date' is beat: 0
-10 Coins Dropped thru Coin Chute #1: 0
+10 Coins Dropped thru Coin Chute #1: 2
 11 Coins Dropped thru Coin Chute #2: 0
-12 Coins Dropped thru Coin Chute #3: 0
+12 Coins Dropped thru Coin Chute #3: 3
 13 Number of Specials awarded from Panel Specials Only: 0
 14 Number of minutes of Game Play: 0
 15 Number of Service Credits: 0
 
 High score functions
 --------------------
-01 Extra ball / Free game score level 1: OFF
-02 Extra ball / Free game score level 2: OFF
-03 Extra ball / Free game score level 3: OFF
-04 High score to date: 0
+01 Extra ball / Free game score level 1: 40,000
+02 Extra ball / Free game score level 2: 100,000
+03 Extra ball / Free game score level 3: 130,000
+04 High score to date: 250,000
 
 Game State
 ----------
@@ -35,4 +35,4 @@ Player 4: 0
 
 high_scores
 -----------
-High Score: 0
+High Score: 250,000

@@ -4,7 +4,7 @@ Dumping known entries for centaur-2.nv [Centaur]...
 Bookkeeping functions
 ---------------------
 05 Current Credits: 0
-06 Total Plays (Played and Free Games): 35
+06 Total Plays (Paid and Free Games): 35
 07 Total Replays (Free Games): 2
 08 Game Percentage: 6
 09 Total times 'High Score To Date' is beat: 1
@@ -15,7 +15,7 @@ Bookkeeping functions
 14 Number of minutes of Game Play: 4
 15 Number of Service Credits: 0
 
-Game adjustments
+Game Adjustments
 ----------------
 16 High Score award #1: No Award
 17 High Score award #2: No Award

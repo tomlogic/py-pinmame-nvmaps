@@ -4,7 +4,7 @@ Dumping known entries for eballdlx.nv [Eight Ball Deluxe (rev. 15)]...
 Bookkeeping functions
 ---------------------
 05 Current Credits: 0
-06 Total Plays (Played and Free Games): 0
+06 Total Plays (Paid and Free Games): 0
 07 Total Replays (Free Games): 0
 08 Game Percentage: 0
 09 Total times 'High Score To Date' is beat: 0
@@ -15,7 +15,7 @@ Bookkeeping functions
 14 Number of minutes of Game Play: 0
 15 Number of Service Credits: 0
 
-Game adjustments
+Game Adjustments
 ----------------
 16 High Score award #1: No Award
 17 High Score award #2: No Award
