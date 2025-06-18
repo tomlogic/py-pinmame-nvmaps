@@ -16,7 +16,7 @@ import json
 from curses.ascii import isprint
 
 import nvram_parser
-from nvram_parser import NIBBLE_LOW, NIBBLE_HIGH, NIBBLE_BOTH
+from nvram_parser import Nibble
 
 BYTES_PER_LINE = 16
 
@@ -54,14 +54,14 @@ def hex_line(offset, count, text=None):
     ch = []
     while len(b) < BYTES_PER_LINE:
         if offset < len(nv) and len(b) < count:
-            if nibble == NIBBLE_LOW:
+            if nibble == Nibble.LOW:
                 b.append(' %1X' % (nv[offset] & 0x0F))
-            elif nibble == NIBBLE_HIGH:
+            elif nibble == Nibble.HIGH:
                 b.append('%1X ' % (nv[offset] >> 4))
             else:
                 b.append('%02X' % nv[offset])
 
-            if nibble == NIBBLE_BOTH:
+            if nibble == Nibble.BOTH:
                 # we can potentially have printable text
                 if isprint(nv[offset]):
                     ch.append(chr(nv[offset]))
@@ -112,11 +112,11 @@ def main():
     print('dumping %s' % args.filename)
     nibble = parser.metadata.get('nibble')
     if nibble == 'low':
-        nibble = NIBBLE_LOW
+        nibble = Nibble.LOW
     elif nibble == 'high':
-        nibble = NIBBLE_HIGH
+        nibble = Nibble.HIGH
     else:
-        nibble = NIBBLE_BOTH
+        nibble = Nibble.BOTH
 
     # Create a dictionary of RamMapping objects using offset as the key.
     entry = {}
