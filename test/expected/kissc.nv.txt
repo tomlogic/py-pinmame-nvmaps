@@ -4,9 +4,6 @@ Dumping known entries for kissc.nv [Kiss (Free Play rev. 3)]...
 Game State
 ----------
 Credits: 3
-
-Player Scores
--------------
 Player 1: 6,550
 Player 2: 10,520
 Player 3: 0

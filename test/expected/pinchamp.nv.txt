@@ -4,9 +4,6 @@ Dumping known entries for pinchamp.nv [Pinball Champ]...
 Game State
 ----------
 Credits: 39
-
-Player Scores
--------------
 Player 1: 342,010
 Player 2: 1,521,110
 Player 3: 0

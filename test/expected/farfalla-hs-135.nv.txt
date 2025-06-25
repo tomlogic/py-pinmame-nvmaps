@@ -4,9 +4,6 @@ Dumping known entries for farfalla-hs-135.nv [Farfalla]...
 Game State
 ----------
 Credits: 0
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0
 Player 3: 0

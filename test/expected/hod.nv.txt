@@ -4,9 +4,6 @@ Dumping known entries for hod.nv [House of Diamonds]...
 Game State
 ----------
 Credits: 8
-
-Player Scores
--------------
 Player 1: 57,290
 Player 2: 10,000
 Player 3: 0

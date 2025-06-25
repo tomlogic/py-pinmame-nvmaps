@@ -4,8 +4,5 @@ Dumping known entries for rapidfir.nv [Rapid Fire]...
 Game State
 ----------
 Credits: 0
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0

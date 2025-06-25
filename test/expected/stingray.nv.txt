@@ -23,13 +23,6 @@ Game State
 Match: n/a
 Ball: 2
 Credits: 10
-P1: 41,440
-P2: 0
-P3: 0
-P4: 0
-
-Player Scores
--------------
 Player 1: 301,300
 Player 2: 0
 Player 3: 0

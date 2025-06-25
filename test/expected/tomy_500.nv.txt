@@ -1,8 +1,8 @@
 Using map ../maps/maps/dataeast/version3/tomy_400.nv.json for tomy_500.nv
 Dumping known entries for tomy_500.nv [Tommy Pinball Wizard, The Who's (5.00 unofficial MOD)]...
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 4,702,109,630
 Player 2: 4,349,414,040
 Player 3: 4,152,202,031

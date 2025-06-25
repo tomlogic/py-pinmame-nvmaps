@@ -1,8 +1,8 @@
 Using map ../maps/maps/williams/wpc/dm_dt101.nv.json for dm_dt101.nv
 Dumping known entries for dm_dt101.nv [Demolition Man (FreeWPC/Demolition Time 1.01)]...
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 0
 Player 2: 0
 Player 3: 0

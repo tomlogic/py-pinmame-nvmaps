@@ -4,9 +4,6 @@ Dumping known entries for dvlrider.nv [Devil Riders]...
 Game State
 ----------
 Credits: 37
-
-Player Scores
--------------
 Player 1: 200,430
 Player 2: 129,760
 Player 3: 0

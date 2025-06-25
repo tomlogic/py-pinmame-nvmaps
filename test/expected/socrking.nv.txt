@@ -4,9 +4,6 @@ Dumping known entries for socrking.nv [Soccer Kings]...
 Game State
 ----------
 Credits: 71
-
-Player Scores
--------------
 Player 1: 137,680
 Player 2: 414,950
 Player 3: 0

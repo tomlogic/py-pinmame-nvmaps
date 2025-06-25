@@ -1,8 +1,8 @@
 Using map ../maps/maps/sega/whitestar/jplstw22.nv.json for jplstw22.nv
 Dumping known entries for jplstw22.nv [Lost World: Jurassic Park, The (2.02)]...
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 267,920
 Player 2: 0
 Player 3: 0

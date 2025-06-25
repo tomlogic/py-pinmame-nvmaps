@@ -4,9 +4,6 @@ Dumping known entries for mcastle.nv [Magic Castle]...
 Game State
 ----------
 Credits: 93
-
-Player Scores
--------------
 Player 1: 131,430
 Player 2: 113,210
 Player 3: 0

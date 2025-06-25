@@ -4,9 +4,6 @@ Dumping known entries for tmachzac.nv [Time Machine (Zaccaria)]...
 Game State
 ----------
 Credits: 47
-
-Player Scores
--------------
 Player 1: 580,340
 Player 2: 43,100
 Player 3: 66,500

@@ -4,9 +4,6 @@ Dumping known entries for strapids.nv [Shooting the Rapids]...
 Game State
 ----------
 Credits: 17
-
-Player Scores
--------------
 Player 1: 114,490
 Player 2: 65,920
 Player 3: 53,440

@@ -34,9 +34,6 @@ High score functions
 Game State
 ----------
 Credits: 0
-
-Player Scores
--------------
 Player 1: 9,999,998
 Player 2: 9,999,980
 Player 3: 9

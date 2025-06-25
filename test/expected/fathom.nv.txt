@@ -4,9 +4,6 @@ Dumping known entries for fathom.nv [Fathom]...
 Game State
 ----------
 Credits: 7
-
-Player Scores
--------------
 Player 1: 39,130
 Player 2: 25,110
 Player 3: 0

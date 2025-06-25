@@ -23,13 +23,6 @@ Game State
 Match: 70
 Ball: n/a
 Credits: 0
-P1: 32,520
-P2: 22,510
-P3: 0
-P4: 0
-
-Player Scores
--------------
 Player 1: 32,520
 Player 2: 22,510
 Player 3: 0

@@ -52,8 +52,8 @@ Feature Adjustments
 54 Scanning Extra Ball: 25
 55 Factory Restore: OFF
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 130,240
 Player 2: 0
 Player 3: 0

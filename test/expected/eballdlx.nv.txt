@@ -36,9 +36,6 @@ Game State
 ----------
 Ball in play display: 0
 Credits display: 0
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0
 Player 3: 0

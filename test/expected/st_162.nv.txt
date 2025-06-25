@@ -1,8 +1,8 @@
 Using map ../maps/maps/stern/sam/st_162.nv.json for st_162.nv
 Dumping known entries for st_162.nv [Star Trek (Stern) (V1.62)]...
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 0
 Player 2: 0
 Player 3: 0

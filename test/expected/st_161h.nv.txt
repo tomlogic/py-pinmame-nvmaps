@@ -1,8 +1,8 @@
 Using map ../maps/maps/stern/sam/st_161h.nv.json for st_161h.nv
 Dumping known entries for st_161h.nv [Star Trek (Stern) Limited Edition (V1.61)]...
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 691,690
 Player 2: 0
 Player 3: 0

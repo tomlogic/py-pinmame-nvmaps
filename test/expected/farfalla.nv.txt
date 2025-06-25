@@ -4,9 +4,6 @@ Dumping known entries for farfalla.nv [Farfalla]...
 Game State
 ----------
 Credits: 48
-
-Player Scores
--------------
 Player 1: 94,220
 Player 2: 122,970
 Player 3: 166,030

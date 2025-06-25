@@ -4,9 +4,6 @@ Dumping known entries for robot.nv [Robot]...
 Game State
 ----------
 Credits: 22
-
-Player Scores
--------------
 Player 1: 166,350
 Player 2: 65,830
 Player 3: 105,190

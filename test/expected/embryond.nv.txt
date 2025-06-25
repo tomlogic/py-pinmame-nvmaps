@@ -4,9 +4,6 @@ Dumping known entries for embryond.nv [Embryon (7-digit conversion rev. 9)]...
 Game State
 ----------
 Credits: 10
-
-Player Scores
--------------
 Player 1: 43,380
 Player 2: 49,840
 Player 3: 0

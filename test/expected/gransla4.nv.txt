@@ -4,9 +4,6 @@ Dumping known entries for gransla4.nv [Grand Slam (4 Players)]...
 Game State
 ----------
 Credits: 0
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0
 Player 3: 0

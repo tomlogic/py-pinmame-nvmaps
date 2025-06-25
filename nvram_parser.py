@@ -510,11 +510,19 @@ class ParseNVRAM(object):
         """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
         self.mapping, a normalized list of JSON entries as RamMapping objects.
         """
-        self.metadata['big_endian'] = self.nv_json.get('_endian') != 'little'
-        # save all metadata keys starting with "_"
-        for key in self.nv_json:
-            if key.startswith('_'):
-                self.metadata[key[1:]] = self.nv_json[key]
+        json_metadata = self.nv_json.get('_metadata')
+        if json_metadata:
+            # processing fileformat 0.6 or later
+            for key, value in json_metadata.items():
+                self.metadata[key] = value
+            self.metadata['big_endian'] = self.metadata['endian'] != 'little'
+        else:
+            # older file format with separate top-level properties with metadata
+            self.metadata['big_endian'] = self.nv_json.get('_endian') != 'little'
+            # save all metadata keys starting with "_"
+            for key in self.nv_json:
+                if key.startswith('_'):
+                    self.metadata[key[1:]] = self.nv_json[key]
         self.mapping = []
         for section in ['audits', 'adjustments']:
             for group in sorted(self.nv_json.get(section, {}).keys()):

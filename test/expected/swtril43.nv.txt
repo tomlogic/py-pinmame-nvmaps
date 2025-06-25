@@ -1,8 +1,8 @@
 Using map ../maps/maps/dataeast/version3/swtril43.nv.json for swtril43.nv
 Dumping known entries for swtril43.nv [Star Wars Trilogy Special Edition, The (4.03)]...
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 0
 Player 2: 0
 Player 3: 0

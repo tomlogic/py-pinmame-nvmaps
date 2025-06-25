@@ -1,8 +1,8 @@
 Using map ../maps/maps/stern/whitestar/ripleys.nv.json for ripleys.nv
 Dumping known entries for ripleys.nv [Ripley's Believe It or Not! (3.20)]...
 
-Player Scores
--------------
+Game State
+----------
 Player 1: 30,030
 Player 2: 0
 Player 3: 0

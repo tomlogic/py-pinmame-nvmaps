@@ -4,9 +4,6 @@ Dumping known entries for bmx.nv [BMX]...
 Game State
 ----------
 Credits: 7
-
-Player Scores
--------------
 Player 1: 115,620
 Player 2: 10,240
 Player 3: 0

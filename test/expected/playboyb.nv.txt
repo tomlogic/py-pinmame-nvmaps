@@ -4,9 +4,6 @@ Dumping known entries for playboyb.nv [Playboy (7-digit conversion rev. 20)]...
 Game State
 ----------
 Credits: 0
-
-Player Scores
--------------
 Player 1: 0
 Player 2: 0
 Player 3: 0
