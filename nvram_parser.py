@@ -36,6 +36,34 @@ class Nibble(Enum):
     HIGH = 2
 
 
+def get_nibble(value: Optional[str]) -> Nibble:
+    if value is None or value == 'both':
+        return Nibble.BOTH
+    elif value == 'low':
+        return Nibble.LOW
+    elif value == 'high':
+        return Nibble.HIGH
+    else:
+        raise ValueError("invalid `nibble` value")
+
+
+def to_int(v: Union[int, str]) -> int:
+    """Returns 'v' if already an int, otherwise assume a string and convert
+    with a base of '0' (which handles leading 0 as octal and 0x as hex).
+    """
+    if type(v) is int:
+        return v
+    return int(v, 0)
+
+
+def format_number(number: int) -> str:
+    """
+    Format large numbers with thousands separators based on the locale setting
+    (i.e., ',' or '.').
+    """
+    return '{0:,}'.format(number)
+
+
 def rom_name(rom: str) -> str:
     """Return the descriptive ROM name for a given ROM (e.g., fh_l9)."""
     with open(os.path.join(MAPS_ROOT, 'romnames.json')) as f:
@@ -108,6 +136,55 @@ def dipsw_set(nvram: bytes, index: int, state: bool) -> None:
         nvram[-6 + bank] &= ~mask
 
 
+class SparseMemory(object):
+    """
+    Object representing memory contents for a portion of the full address space.
+    """
+    def __init__(self):
+        self.memory = []
+
+    def find_region(self, address: int) -> Optional[dict]:
+        for region in self.memory:
+            region_base = region['base_address']
+            region_size = len(region['data'])
+            if region_base <= address < region_base + region_size:
+                return region
+        return None
+
+    def update_memory(self, address: int, data: Union[bytearray, list]) -> None:
+        if type(data) is list:
+            data = bytearray(data)
+        region = self.find_region(address)
+        if region:
+            # updating an existing region
+            region_base = region['base_address']
+            region_size = len(region['data'])
+            offset = address - region_base
+            data_size = len(data)
+            if address + data_size > region_base + region_size:
+                raise ValueError('Update of %u bytes to 0x%X overflows region' % (data_size, address))
+            region['data'][offset:offset + data_size] = data
+        else:
+            # new memory region
+            self.memory.append({
+                'base_address': address,
+                'data': data
+            })
+
+    def get_byte(self, address: int) -> Optional[int]:
+        """
+        Return the byte at a given memory location, or None if it isn't represented.
+        :param address: address for lookup
+        :return: value of byte at address or None
+        """
+        for region in self.memory:
+            region_base = region['base_address']
+            region_size = len(region['data'])
+            if region_base <= address < region_base + region_size:
+                return region['data'][address - region_base]
+        return None
+
+
 class RamMapping(object):
     """Object representing a single entry from a nvram mapping file."""
     def __init__(self,
@@ -117,7 +194,6 @@ class RamMapping(object):
                  group: str = None,
                  key: str = None):
         """
-
         :param entry: A dictionary, typically from a JSON file.
         :param metadata: Metadata from the ParseNVRAM object.
         :param section: Section of the file (e.g., 'audits', 'adjustments', 'game_state').
@@ -134,22 +210,16 @@ class RamMapping(object):
             if sub in entry:
                 self.sub_entry[sub] = RamMapping(entry[sub], metadata)
 
-    @staticmethod
-    def format_number(number: int) -> str:
+    def nvram_base_address(self) -> int:
         """
-        Format large numbers with thousands separators based on the locale setting
-        (i.e., ',' or '.').
+        Walk the memory_layout from metadata['platform'] to find the first
+        nvram memory area and return its base address.
+        :return: base address for NVRAM on this map's platform
         """
-        return '{0:,}'.format(number)
-
-    @staticmethod
-    def to_int(v: Union[int, str]) -> int:
-        """Returns 'v' if already an int, otherwise assume a string and convert
-        with a base of '0' (which handles leading 0 as octal and 0x as hex).
-        """
-        if type(v) is int:
-            return v
-        return int(v, 0)
+        for region in self.metadata['platform']['memory_layout']:
+            if region['type'] == 'nvram':
+                return region['address']
+        return 0
 
     def offsets(self) -> List[int]:
         """Return a list of byte offsets based on the start/end/length/offsets attributes."""
@@ -161,26 +231,26 @@ class RamMapping(object):
             return o
 
         if 'offsets' in self.entry:
-            return list(map((lambda offset: self.to_int(offset)),
+            return list(map((lambda offset: to_int(offset)),
                             self.entry['offsets']))
 
-        start = self.to_int(self.entry.get('start', 0))
+        start = to_int(self.entry.get('start', 0))
         end = start
         if 'length' in self.entry:
-            length = self.to_int(self.entry['length'])
+            length = to_int(self.entry['length'])
             if length <= 0:
                 raise AssertionError('invalid length (%s); must be > 0'
                                      % (self.entry['length']))
             end = start + length - 1
         elif 'end' in self.entry:
-            end = self.to_int(self.entry['end'])
+            end = to_int(self.entry['end'])
             if end < start:
                 raise AssertionError('end (%s) is less than start (%s)'
                                      % (self.entry['end'], self.entry['start']))
 
         return list(range(start, end + 1))
 
-    def get_bytes_unmasked(self, nvram: bytes) -> bytearray:
+    def get_bytes_unmasked(self, memory: SparseMemory) -> bytearray:
         """Return the bytes from an nvram file for a given RamMapping.
 
         - 'start' to 'end' bytes (inclusive) from 'nvram', or
@@ -188,10 +258,10 @@ class RamMapping(object):
         - the single byte at 'start' if 'end' and 'length' are not specified
         - bytes from offsets in a list called 'offsets'
         """
-        return bytearray(map((lambda offset: nvram[offset]),
+        return bytearray(map((lambda offset: memory.get_byte(offset)),
                              self.offsets()))
 
-    def get_bytes(self, nvram: bytes) -> bytearray:
+    def get_bytes(self, memory: SparseMemory) -> bytearray:
         """Same as get_bytes_unmasked() but:
 
         - reverses little-endian sequences for integer encodings (bcd, int, bits)
@@ -203,17 +273,20 @@ class RamMapping(object):
         # special case handling for dip switches
         if encoding == 'dipsw':
             value = 0
+            nvram_base = self.nvram_base_address()
+            nvram = memory.find_region(nvram_base)['data']
             for bit in self.offsets():
                 # shift current value one bit left and set LSB
                 value = (value << 1) + dipsw_get(nvram, bit)
             # might need to split into multiple list entries if value > 255
             return bytearray([value])
             
-        ba = self.get_bytes_unmasked(nvram)
+        ba = self.get_bytes_unmasked(memory)
         # convert certain byte sequences from little_endian to big endian
         if self.little_endian() and encoding in ['bcd', 'int', 'bits']:
             ba.reverse()
 
+        # find the nibble setting for the first address of this entry
         nibble = self.nibble()
         if nibble != Nibble.BOTH:
             # combine nibbles of ba
@@ -233,7 +306,7 @@ class RamMapping(object):
             ba = new_ba
 
         if 'mask' in self.entry:
-            mask = self.to_int(self.entry['mask'])
+            mask = to_int(self.entry['mask'])
             ba = bytearray(map((lambda b: b & mask), ba))
 
         return ba
@@ -252,26 +325,29 @@ class RamMapping(object):
         """
         if not self.entry.get('packed', True):
             # if entry has 'packed=false', replace file's default with 'nibble=low'
-            nibble = 'low'
-        else:
-            # use the file's `nibble` setting if the entry doesn't override it
-            nibble = self.entry.get('nibble', self.metadata['nibble'])
-
-        if nibble == 'both':
-            return Nibble.BOTH
-        elif nibble == 'low':
             return Nibble.LOW
-        elif nibble == 'high':
-            return Nibble.HIGH
-        else:
-            raise ValueError("invalid `nibble` value")
+
+        entry_nibble = self.entry.get('nibble')
+        if entry_nibble:
+            return get_nibble(entry_nibble)
+
+        # use the memory region's `nibble` setting
+        address = self.offsets()[0]
+        for region in self.metadata['platform']['memory_layout']:
+            region_start = region['address']
+            region_end = region_start + region['size'] - 1
+            if region_start <= address <= region_end:
+                return region['nibble']
+
+        # fall back on Nibble.BOTH
+        return Nibble.BOTH
 
     def little_endian(self) -> bool:
         """Return True if this entry is little endian (LSB first)."""
         default = 'big' if self.metadata['big_endian'] else 'little'
         return self.entry.get('endian', default) == 'little'
 
-    def get_value(self, nvram: bytes) -> Optional[int]:
+    def get_value(self, memory: SparseMemory) -> Optional[int]:
         """Return the integer value for this entry using the provided nvram data.
 
         Handles multibyte integers (int), binary coded decimal (bcd) and
@@ -281,7 +357,7 @@ class RamMapping(object):
         value = None
         if 'encoding' in self.entry:
             encoding = self.entry['encoding']
-            ba = self.get_bytes(nvram)
+            ba = self.get_bytes(memory)
 
             if encoding == 'bcd':
                 value = 0
@@ -299,17 +375,18 @@ class RamMapping(object):
                 if type(scale) is float:
                     value *= scale
                 else:
-                    value *= self.to_int(scale)
-                value += self.to_int(self.entry.get('offset', 0))
+                    value *= to_int(scale)
+                value += to_int(self.entry.get('offset', 0))
 
         return value
 
-    def set_value(self, nvram: bytearray,
+    def set_value(self, memory: SparseMemory,
                   value: Union[int, str, datetime]) -> None:
         """
         Undocumented and incomplete method to replace the entry's value stored in
         `nvram`.  Currently only works for sequential memory ranges.
-        :param nvram: bytearray with contents of nvram
+
+        :param memory: SparseMemory object with contents of nvram
         :param value: replacement value with the appropriate type based on encoding:
             dipsw, bcd, int, enum: int
             ch: str
@@ -320,14 +397,16 @@ class RamMapping(object):
 
         if encoding == 'dipsw':
             assert type(value) is int
+            nvram_base = self.nvram_base_address()
+            nvram = memory.find_region(nvram_base)['data']
             # use reversed() to start with LSB in list of offsets
             for bit in reversed(self.offsets()):
                 dipsw_set(nvram, bit, value & 1)
                 value >>= 1
             return
 
-        old_bytes = self.get_bytes(nvram)
-        start = self.to_int(self.entry['start'])
+        old_bytes = self.get_bytes(memory)
+        start = to_int(self.entry['start'])
         end = start + len(old_bytes)
         # can now replace nvram[start:end]
         new_bytes = []
@@ -361,7 +440,7 @@ class RamMapping(object):
         else:
             raise ValueError('Unsupported encoding %s' % encoding)
 
-        nvram[start:end] = bytearray(new_bytes)
+        memory.update_memory(start, bytearray(new_bytes))
 
     def format_value(self, value: int) -> str:
         """Format a multibyte integer using options in 'entry'."""
@@ -378,7 +457,7 @@ class RamMapping(object):
             return "%d:%02d:%02d" % (h, m, s)
         elif units == 'minutes':
             return "%d:%02d:00" % divmod(value, 60)
-        return self.format_number(value) + self.entry.get('suffix', '')
+        return format_number(value) + self.entry.get('suffix', '')
 
     def entry_values(self) -> List[str]:
         """Return a list of values for an entry with enum or dipsw encoding."""
@@ -390,17 +469,17 @@ class RamMapping(object):
             values = self.metadata['values'].get(values, [])
         return values
 
-    def format_entry(self, nvram: bytes) -> Optional[str]:
-        """Format bytes from 'nvram' for this entry."""
+    def format_entry(self, memory: SparseMemory) -> Optional[str]:
+        """Format bytes from 'memory' for this entry."""
         if self.entry is None:
             return None
         if 'initials' in self.sub_entry or 'score' in self.sub_entry:
-            return self.format_high_score(nvram)
+            return self.format_high_score(memory)
         if 'encoding' not in self.entry:
             return None
 
         encoding = self.entry['encoding']
-        value = self.get_value(nvram)
+        value = self.get_value(memory)
         if encoding in ['bcd', 'int']:
             return self.format_value(value)
         elif encoding == 'bits':
@@ -418,7 +497,7 @@ class RamMapping(object):
                 return '?' + str(value)
             return values[value]
 
-        ba = self.get_bytes(nvram)
+        ba = self.get_bytes(memory)
         if encoding == 'ch':
             result = ''
             char_map = self.metadata.get('char_map')
@@ -460,7 +539,7 @@ class RamMapping(object):
             label = key + ' ' + label
         return label
 
-    def format_high_score(self, nvram: bytes) -> Optional[str]:
+    def format_high_score(self, memory: SparseMemory) -> Optional[str]:
         """Special method for formatting a High Score entry which might include one or
         more sub-elements of `initials`, `score`, and `timestamp`.
         """
@@ -468,20 +547,20 @@ class RamMapping(object):
         for sub in ['initials', 'score', 'timestamp']:
             if sub in self.sub_entry:
                 # during high score entry on High Speed, `initials` returns None
-                formatted = self.sub_entry[sub].format_entry(nvram)
+                formatted = self.sub_entry[sub].format_entry(memory)
                 if formatted:
                     elements.append(formatted)
         if elements:
             return ' '.join(elements)
         return None
 
-    def format_mapping(self, nvram: bytes) -> Tuple[str, str]:
+    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
         """Return a tuple of (label, value) for this entry for the given nvram data.
 
         Only works for certain sections of the file:
             audits, adjustments, dip_switches, game_state, score_record
         """
-        value = self.format_entry(nvram)
+        value = self.format_entry(memory)
         if self.section in ['audits', 'adjustments']:
             if value is None:
                 value = self.entry.get('default', '')
@@ -495,16 +574,88 @@ class RamMapping(object):
 class ParseNVRAM(object):
     def __init__(self, nv_json: dict, nvram: bytearray) -> None:
         self.nv_json = nv_json
-        self.nvram = nvram
         self.metadata = {'big_endian': True, 'nibble': 'both'}
         self.mapping = []
+        self.platform = {}
         if nv_json is not None:
             self.process_json()
+        self.memory = SparseMemory()
+        self.set_nvram(nvram)
 
     def load_json(self, json_path: str) -> None:
         with open(json_path, 'r') as json_fh:
             self.nv_json = json.load(json_fh)
         self.process_json()
+
+    def set_nvram(self, nvram: bytearray):
+        nvram_base = self.get_memory_area(mem_type='nvram').get('address', 0)
+        self.memory.update_memory(nvram_base, nvram)
+
+    def get_memory_area(self, address: int = None, mem_type: str = None) -> Optional[dict]:
+        """
+        Return the matching memory_area dictionary for a given CPU address.  Dictionary
+        has the following values:
+            - label: string describing area
+            - address: base address of area
+            - size: number of bytes in area
+            - type: 'ram', 'nvram', 'rom'
+            - nibble: Nibble.BOTH, .HIGH, or .LOW
+        :param address: address appropriate for the platform's configuration
+        :param mem_type: type to match on
+        :return: None if the address doesn't match an entry in the platform's configuration
+        """
+        for region in self.platform['memory_layout']:
+            if address is not None:
+                start = region['address']
+                end = start + region['size'] - 1
+                if not (start <= address <= end):
+                    continue
+            if mem_type and mem_type != region['type']:
+                continue
+            return region
+        return None
+
+    def load_platform(self, platform_name) -> None:
+        """
+        Load self.platform with the contents of the platform's JSON file.
+        """
+        if platform_name:
+            with open(os.path.join(MAPS_ROOT, 'platforms', platform_name + '.json')) as platform_file:
+                platform_json = json.load(platform_file)
+                self.platform = {
+                    'memory_layout': []
+                }
+                for attribute in ['cpu', 'endian']:
+                    self.platform[attribute] = platform_json.get(attribute)
+
+                for region_json in platform_json['memory_layout']:
+                    region = {}
+                    for key, value in region_json.items():
+                        if key in ['address', 'size']:
+                            region[key] = to_int(value)
+                        elif key == 'nibble':
+                            region[key] = get_nibble(value)
+                        else:
+                            region[key] = value
+                    self.platform['memory_layout'].append(region)
+        else:
+            # create a fake platform for files that lack one
+            self.platform = {
+                'cpu': 'unknown',
+                'endian': self.metadata['endian'],
+                'memory_layout': [
+                    {
+                        'label': 'undefined',
+                        'address': 0,
+                        'size': to_int(self.metadata.get('ramsize', 0xFFFF)),
+                        'type': 'nvram',
+                        'nibble': get_nibble(self.metadata.get('nibble'))
+                    }
+                ]
+            }
+        # TODO: should we have a separate platform property for RamMapping objects?
+        self.metadata['platform'] = self.platform
+        self.metadata['big_endian'] = self.platform.get('endian') != 'little'
 
     def process_json(self) -> None:
         """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
@@ -515,14 +666,10 @@ class ParseNVRAM(object):
             # processing fileformat 0.6 or later
             for key, value in json_metadata.items():
                 self.metadata[key] = value
-            self.metadata['big_endian'] = self.metadata['endian'] != 'little'
+            self.load_platform(json_metadata.get('platform'))
         else:
-            # older file format with separate top-level properties with metadata
-            self.metadata['big_endian'] = self.nv_json.get('_endian') != 'little'
-            # save all metadata keys starting with "_"
-            for key in self.nv_json:
-                if key.startswith('_'):
-                    self.metadata[key[1:]] = self.nv_json[key]
+            raise ValueError('Unsupported map file format -- update to v0.6 or later')
+
         self.mapping = []
         for section in ['audits', 'adjustments']:
             for group in sorted(self.nv_json.get(section, {}).keys()):
@@ -572,7 +719,7 @@ class ParseNVRAM(object):
     def load_nvram(self, nvram_path: str) -> None:
         """Set the nvram property of the ParseNVRAM object to the contents of an nvram file."""
         with open(nvram_path, 'rb') as nv_fh:
-            self.nvram = bytearray(nv_fh.read())
+            self.set_nvram(bytearray(nv_fh.read()))
 
     def ram_mapping(self, entry: dict):
         """Legacy "glue" method to create RamMapping object on-demand."""
@@ -595,8 +742,8 @@ class ParseNVRAM(object):
         valid = True
         label = entry.get('label', '(unlabeled)')
         m = self.ram_mapping(entry)
-        ba = m.get_bytes(self.nvram)
-        offset = m.to_int(entry['start'])
+        ba = m.get_bytes(self.memory)
+        offset = to_int(entry['start'])
         grouping = entry.get('groupings', len(ba))
         if len(ba) % grouping:
             print("Error: checksum8 '%s' size not evenly divisible by groupings" % label)
@@ -611,7 +758,7 @@ class ParseNVRAM(object):
                         print("Error: %u bytes at 0x%04X '%s' checksum8 0x%02X != 0x%02X"
                               % (grouping, offset - count, label, checksum, b))
                     if fix:
-                        self.nvram[offset] = checksum
+                        self.memory.update_memory(offset, checksum)
                 count = calc_sum = 0
             else:
                 calc_sum += b
@@ -643,17 +790,17 @@ class ParseNVRAM(object):
 
         :param entry: dict from the JSON file (*not* a RamMapping object)
         :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.nvram.
+        :param fix: Set to True to fix any invalid checksums in self.memory.
         :return: True if checksummed area was valid
         """
         m = self.ram_mapping(entry)
-        ba = m.get_bytes(self.nvram)
+        ba = m.get_bytes(self.memory)
         # pop last two bytes as stored checksum16
         if self.metadata['big_endian']:
             stored_sum = ba.pop() + ba.pop() * 256
         else:
             stored_sum = ba.pop() * 256 + ba.pop()
-        checksum_offset = m.to_int(entry['start']) + len(ba)
+        checksum_offset = to_int(entry['start']) + len(ba)
         calc_sum = 0xFFFF - (sum(ba) & 0xFFFF)
         if calc_sum != stored_sum:
             if verbose:
@@ -661,11 +808,9 @@ class ParseNVRAM(object):
                                                                  calc_sum, stored_sum, entry.get('label', '')))
             if fix:
                 if self.metadata['big_endian']:
-                    self.nvram[checksum_offset:checksum_offset + 2] = [
-                        calc_sum / 256, calc_sum % 256]
+                    self.memory.update_memory(checksum_offset, [calc_sum // 256, calc_sum % 256])
                 else:
-                    self.nvram[checksum_offset:checksum_offset + 2] = [
-                        calc_sum % 256, calc_sum / 256]
+                    self.memory.update_memory(checksum_offset, [calc_sum % 256, calc_sum // 256])
         return calc_sum == stored_sum
 
     def verify_all_checksum16(self, verbose: bool = False, fix: bool = False) -> bool:
@@ -689,7 +834,7 @@ class ParseNVRAM(object):
         """
         scores = []
         for p in self.nv_json.get('last_game', []):
-            s = self.ram_mapping(p).format_entry(self.nvram)
+            s = self.ram_mapping(p).format_entry(self.memory)
             if s != '0' or not scores:
                 scores.append(s)
         return scores
@@ -699,7 +844,7 @@ class ParseNVRAM(object):
         lp = self.nv_json.get('last_played')
         if not lp:
             return None
-        return self.ram_mapping(lp).format_entry(self.nvram)
+        return self.ram_mapping(lp).format_entry(self.memory)
 
     def entry_list(self, section: str, group: str) -> List[Tuple[str, dict]]:
         """Return a list of entries for the given section and group of the mapping file.
@@ -735,7 +880,7 @@ class ParseNVRAM(object):
         scores = []
         for entry in self.mapping:
             if entry.group == section:
-                score = entry.format_high_score(self.nvram)
+                score = entry.format_high_score(self.memory)
                 if score is not None:
                     scores.append('%s: %s' %
                                   (entry.format_label(short_label=short_labels),
@@ -757,7 +902,7 @@ class ParseNVRAM(object):
                     print(map_entry.group)
                     print('-' * len(map_entry.group))
                 last_group = map_entry.group
-            print('%s: %s' % map_entry.format_mapping(self.nvram))
+            print('%s: %s' % map_entry.format_mapping(self.memory))
 
         last_played = self.last_played()
         if last_played is not None:
