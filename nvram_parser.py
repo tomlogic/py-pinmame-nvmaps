@@ -629,7 +629,10 @@ class ParseNVRAM(object):
                     self.platform[attribute] = platform_json.get(attribute)
 
                 for region_json in platform_json['memory_layout']:
-                    region = {}
+                    # use default nibble of BOTH
+                    region = {
+                        'nibble': Nibble.BOTH
+                    }
                     for key, value in region_json.items():
                         if key in ['address', 'size']:
                             region[key] = to_int(value)
