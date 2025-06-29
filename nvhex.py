@@ -13,35 +13,37 @@ TODO:
 """
 import argparse
 import json
+from typing import List, Optional, Tuple
 from curses.ascii import isprint
 
 import nvram_parser
-from nvram_parser import Nibble
+from nvram_parser import Nibble, SparseMemory
 
 BYTES_PER_LINE = 16
 
 class ChecksumMapping(object):
     """Simplified RamMapping object used for checksum values."""
-    def __init__(self, start, end, label, checksum16=False):
+    def __init__(self, start: int, end: int, label: str, checksum16: bool = False):
         self.start = start
         self.end = end
         self.label = label
         self.checksum16 = checksum16
 
-    def offsets(self):
+    def offsets(self) -> List[int]:
         if self.checksum16:
             return [self.end - 1, self.end]
         return [self.end]
 
-    def format_mapping(self, nvram):
+    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
         """Return a tuple of (label, value) for this entry for the given nvram data."""
         # TODO: update to take endian into consideration
         if self.checksum16:
             label = 'checksum16[%u:%u]' % (self.start, self.end - 1)
-            value = '0x%04X' % (nvram[self.end - 1] * 256 + nvram[self.end])
+            value = '0x%04X' % (memory.get_byte(self.end - 1) * 256
+                                + memory.get_byte(self.end))
         else:
             label = 'checksum8[%u:%u]' % (self.start, self.end)
-            value = '0x%02X' % nvram[self.end]
+            value = '0x%02X' % memory.get_byte(self.end)
 
         if self.label:
             value += ' (%s)' % self.label
@@ -49,7 +51,7 @@ class ChecksumMapping(object):
 
 global nibble, nv
 
-def hex_line(offset, count, text=None):
+def hex_line(offset: int, count: int, text: Optional[str] = None) -> str:
     b = []
     ch = []
     while len(b) < BYTES_PER_LINE:
@@ -110,13 +112,10 @@ def main():
     parser = nvram_parser.ParseNVRAM(nv_map, nv)
 
     print('dumping %s' % args.filename)
-    nibble = parser.metadata.get('nibble')
-    if nibble == 'low':
-        nibble = Nibble.LOW
-    elif nibble == 'high':
-        nibble = Nibble.HIGH
-    else:
-        nibble = Nibble.BOTH
+
+    memory_area = parser.get_memory_area(mem_type='nvram')
+    nvram_start = memory_area['address']
+    nibble = memory_area['nibble']
 
     # Create a dictionary of RamMapping objects using offset as the key.
     entry = {}
@@ -142,12 +141,12 @@ def main():
                 start = end + 1
 
     offset = 0
-    while offset < len(nv):
+    while offset < len(nv) and offset < memory_area['size']:
         # If this offset is in entry[], display it with its formatted value.
-        mapping = entry.get(offset)
+        mapping = entry.get(nvram_start + offset)
         if mapping:
             count = len(list(mapping.offsets()))
-            (label, value) = mapping.format_mapping(nv)
+            (label, value) = mapping.format_mapping(parser.memory)
             if label:
                 text = '%s: %s' % (label, value)
             else:
@@ -158,10 +157,28 @@ def main():
 
             # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
             count = 1
-            while count < BYTES_PER_LINE and not entry.get(offset + count):
+            while count < BYTES_PER_LINE and not entry.get(nvram_start + offset + count):
                 count += 1
+        if offset + count > len(nv):
+            count = len(nv) - offset
+        if offset + count > memory_area['size']:
+            count = memory_area['size'] - offset
 
-        print("%6u: %s" % (offset, hex_line(offset, count, text)))
+        print("%04X: %s" % (nvram_start + offset, hex_line(offset, count, text)))
+        offset += count
+
+    # print hex dump of last bytes in file
+    print("\nPinMAME data in .nv file:")
+    nibble = Nibble.BOTH
+    while offset < len(nv):
+        # show printable ASCII characters for conversion
+        text = None
+
+        # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
+        count = 1
+        while count < BYTES_PER_LINE and offset + count < len(nv):
+            count += 1
+        print("%04X: %s" % (offset, hex_line(offset, count, text)))
         offset += count
 
 

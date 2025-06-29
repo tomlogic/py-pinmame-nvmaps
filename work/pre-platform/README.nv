@@ -1,0 +1,6 @@
+These tools existed before adding the "platform" metadata and should be
+reviewed before attempting to use them.
+
+They also expect to run from the `work` directory, so pathnames are
+probably incorrect.
+
