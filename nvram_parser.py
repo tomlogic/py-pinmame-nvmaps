@@ -250,18 +250,28 @@ class RamMapping(object):
 
         return list(range(start, end + 1))
 
-    def get_bytes_unmasked(self, memory: SparseMemory) -> bytearray:
-        """Return the bytes from an nvram file for a given RamMapping.
-
-        - 'start' to 'end' bytes (inclusive) from 'nvram', or
-        - 'start' to 'start + length - 1' bytes (inclusive)
-        - the single byte at 'start' if 'end' and 'length' are not specified
-        - bytes from offsets in a list called 'offsets'
+    def get_bytes_unmasked(self, memory: SparseMemory) -> Optional[bytearray]:
         """
-        return bytearray(map((lambda offset: memory.get_byte(offset)),
-                             self.offsets()))
+        Return the bytes from memory for a given RamMapping.
 
-    def get_bytes(self, memory: SparseMemory) -> bytearray:
+        :param memory: source of bytes
+        :return: Returns None if <memory> doesn't include the byte range.
+        Otherwise:
+            - 'start' to 'end' bytes (inclusive), or
+            - 'start' to 'start + length - 1' bytes (inclusive)
+            - the single byte at 'start' if 'end' and 'length' are not specified
+            - bytes from offsets in a list called 'offsets'
+        """
+        result = bytearray()
+        for offset in self.offsets():
+            byte = memory.get_byte(offset)
+            if byte is None:
+                return None
+            result.append(byte)
+
+        return result
+
+    def get_bytes(self, memory: SparseMemory) -> Optional[bytearray]:
         """Same as get_bytes_unmasked() but:
 
         - reverses little-endian sequences for integer encodings (bcd, int, bits)
@@ -282,6 +292,9 @@ class RamMapping(object):
             return bytearray([value])
             
         ba = self.get_bytes_unmasked(memory)
+        if ba is None:
+            return None
+
         # convert certain byte sequences from little_endian to big endian
         if self.little_endian() and encoding in ['bcd', 'int', 'bits']:
             ba.reverse()
@@ -352,12 +365,14 @@ class RamMapping(object):
 
         Handles multibyte integers (int), binary coded decimal (bcd) and
         single-byte enumerated (enum) values.  Returns None for unsupported
-        encodings.
+        encodings or mappings that aren't covered by <memory>.
         """
         value = None
         if 'encoding' in self.entry:
             encoding = self.entry['encoding']
             ba = self.get_bytes(memory)
+            if ba is None:
+                return None
 
             if encoding == 'bcd':
                 value = 0
@@ -406,9 +421,11 @@ class RamMapping(object):
             return
 
         old_bytes = self.get_bytes(memory)
+        if old_bytes is None:
+            return
+
         start = to_int(self.entry['start'])
-        end = start + len(old_bytes)
-        # can now replace nvram[start:end]
+        # can now replace nvram[start:(start + len(old_bytes)]
         new_bytes = []
 
         # TODO: update to use char_map if present
@@ -442,8 +459,11 @@ class RamMapping(object):
 
         memory.update_memory(start, bytearray(new_bytes))
 
-    def format_value(self, value: int) -> str:
+    def format_value(self, value: int) -> Optional[str]:
         """Format a multibyte integer using options in 'entry'."""
+
+        if value is None:
+            return None
 
         # `special_values` contains strings to use in place of `value`
         # commonly used at the low end of a range for off/disabled
@@ -498,6 +518,9 @@ class RamMapping(object):
             return values[value]
 
         ba = self.get_bytes(memory)
+        if ba is None:
+            return None
+
         if encoding == 'ch':
             result = ''
             char_map = self.metadata.get('char_map')
@@ -746,6 +769,8 @@ class ParseNVRAM(object):
         label = entry.get('label', '(unlabeled)')
         m = self.ram_mapping(entry)
         ba = m.get_bytes(self.memory)
+        if ba is None:
+            return True
         offset = to_int(entry['start'])
         grouping = entry.get('groupings', len(ba))
         if len(ba) % grouping:
@@ -798,6 +823,9 @@ class ParseNVRAM(object):
         """
         m = self.ram_mapping(entry)
         ba = m.get_bytes(self.memory)
+        if ba is None:
+            return True
+
         # pop last two bytes as stored checksum16
         if self.metadata['big_endian']:
             stored_sum = ba.pop() + ba.pop() * 256
