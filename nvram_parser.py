@@ -595,7 +595,7 @@ class RamMapping(object):
 
 
 class ParseNVRAM(object):
-    def __init__(self, nv_json: dict, nvram: bytearray) -> None:
+    def __init__(self, nv_json: dict, nvram: Optional[bytearray] = None) -> None:
         self.nv_json = nv_json
         self.metadata = {'big_endian': True, 'nibble': 'both'}
         self.mapping = []
@@ -603,7 +603,8 @@ class ParseNVRAM(object):
         if nv_json is not None:
             self.process_json()
         self.memory = SparseMemory()
-        self.set_nvram(nvram)
+        if nvram:
+            self.set_nvram(nvram)
 
     def load_json(self, json_path: str) -> None:
         with open(json_path, 'r') as json_fh:
@@ -918,7 +919,7 @@ class ParseNVRAM(object):
                                    score))
         return scores
 
-    def dump(self, verify_checksums: bool = True) -> None:
+    def dump(self, group: str = None, verify_checksums: bool = True) -> None:
         """
         Print out formatted values for all entries for this map/nvram data.
 
@@ -927,13 +928,15 @@ class ParseNVRAM(object):
         """
         last_group = None
         for map_entry in self.mapping:
-            if map_entry.group != last_group:
-                print('')
-                if map_entry.group is not None:
-                    print(map_entry.group)
-                    print('-' * len(map_entry.group))
-                last_group = map_entry.group
-            print('%s: %s' % map_entry.format_mapping(self.memory))
+            if group is None or map_entry.group == group:
+                if map_entry.group != last_group:
+                    print('')
+                    if map_entry.group is not None:
+                        print(map_entry.group)
+                        print('-' * len(map_entry.group))
+                    last_group = map_entry.group
+
+                print('%s: %s' % map_entry.format_mapping(self.memory))
 
         last_played = self.last_played()
         if last_played is not None:
