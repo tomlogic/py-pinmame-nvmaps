@@ -136,6 +136,11 @@ def dipsw_set(nvram: bytes, index: int, state: bool) -> None:
         nvram[-6 + bank] &= ~mask
 
 
+# A fake address to use with SparseMemory to reference data (including dip
+# switch values) that PinMAME appends to nvram in the .nv file.
+PINMAME_DATA_ADDR = -10000
+
+
 class SparseMemory(object):
     """
     Object representing memory contents for a portion of the full address space.
@@ -283,11 +288,13 @@ class RamMapping(object):
         # special case handling for dip switches
         if encoding == 'dipsw':
             value = 0
-            nvram_base = self.nvram_base_address()
-            nvram = memory.find_region(nvram_base)['data']
+            pinmame_data = memory.find_region(PINMAME_DATA_ADDR)
+            if not pinmame_data:
+                # didn't load from a PinMAME .nv file
+                return None
             for bit in self.offsets():
                 # shift current value one bit left and set LSB
-                value = (value << 1) + dipsw_get(nvram, bit)
+                value = (value << 1) + dipsw_get(pinmame_data['data'], bit)
             # might need to split into multiple list entries if value > 255
             return bytearray([value])
             
@@ -412,12 +419,12 @@ class RamMapping(object):
 
         if encoding == 'dipsw':
             assert type(value) is int
-            nvram_base = self.nvram_base_address()
-            nvram = memory.find_region(nvram_base)['data']
-            # use reversed() to start with LSB in list of offsets
-            for bit in reversed(self.offsets()):
-                dipsw_set(nvram, bit, value & 1)
-                value >>= 1
+            pinmame_data = memory.find_region(PINMAME_DATA_ADDR)
+            if pinmame_data:
+                # use reversed() to start with LSB in list of offsets
+                for bit in reversed(self.offsets()):
+                    dipsw_set(pinmame_data['data'], bit, bool(value & 1))
+                    value >>= 1
             return
 
         old_bytes = self.get_bytes(memory)
@@ -611,9 +618,31 @@ class ParseNVRAM(object):
             self.nv_json = json.load(json_fh)
         self.process_json()
 
+    def get_dot_nv(self):
+        """
+        Reconstruct contents of .nv file loaded with set_nvram() or ParseNVRAM
+        constructor.
+        """
+        nvram_area = self.get_memory_area(mem_type='nvram')
+        nvram_mem = self.memory.find_region(nvram_area['address'])
+        dotnv = bytearray(nvram_mem['data'])
+        pinmame_mem = self.memory.find_region(PINMAME_DATA_ADDR)
+        dotnv.extend(pinmame_mem['data'])
+
+        return dotnv
+
     def set_nvram(self, nvram: bytearray):
-        nvram_base = self.get_memory_area(mem_type='nvram').get('address', 0)
-        self.memory.update_memory(nvram_base, nvram)
+        """
+        Set nvram contents from contents of PinMAME .nv file.
+        """
+        nvram_mem = self.get_memory_area(mem_type='nvram')
+        base = nvram_mem.get('address', 0)
+        length = nvram_mem.get('size', len(nvram))
+        if length > len(nvram):
+            length = len(nvram)
+        self.memory.update_memory(base, nvram[:length])
+        if length < len(nvram):
+            self.memory.update_memory(PINMAME_DATA_ADDR, nvram[length:])
 
     def get_memory_area(self, address: int = None, mem_type: str = None) -> Optional[dict]:
         """
@@ -787,7 +816,7 @@ class ParseNVRAM(object):
                         print("Error: %u bytes at 0x%04X '%s' checksum8 0x%02X != 0x%02X"
                               % (grouping, offset - count, label, checksum, b))
                     if fix:
-                        self.memory.update_memory(offset, checksum)
+                        self.memory.update_memory(offset, [checksum])
                 count = calc_sum = 0
             else:
                 calc_sum += b
@@ -809,8 +838,8 @@ class ParseNVRAM(object):
         return valid
 
     def verify_checksum16(self, entry: dict,
-                         verbose: bool = False,
-                         fix: bool = False) -> bool:
+                          verbose: bool = False,
+                          fix: bool = False) -> bool:
         """
         Verify an entry from the checksum16 attribute of the map file.
 
@@ -857,19 +886,6 @@ class ParseNVRAM(object):
         for c in self.nv_json.get('checksum16', []):
             valid &= self.verify_checksum16(c, verbose, fix)
         return valid
-
-    def last_game_scores(self) -> List[int]:
-        """Return a list of scores from the last_game attribute.
-
-        TODO: Update this to fall back on game_state.scores.
-        TODO: Update to use RamMapping entries from parsed JSON.
-        """
-        scores = []
-        for p in self.nv_json.get('last_game', []):
-            s = self.ram_mapping(p).format_entry(self.memory)
-            if s != '0' or not scores:
-                scores.append(s)
-        return scores
 
     def last_played(self) -> Optional[str]:
         """Return a timestamp if this map has a last_played entry, otherwise returns None."""
@@ -923,12 +939,17 @@ class ParseNVRAM(object):
         """
         Print out formatted values for all entries for this map/nvram data.
 
+        :param group: Limit dump to a single group, based on it's formatted name
+                      (e.g., "Game State" instead of "game_state").
         :param verify_checksums: If True (default) verify checksums in nvram data.
         :return: None
         """
         last_group = None
         for map_entry in self.mapping:
             if group is None or map_entry.group == group:
+                if map_entry.group == 'DIP Switches' \
+                        and not self.memory.find_region(PINMAME_DATA_ADDR):
+                    continue
                 if map_entry.group != last_group:
                     print('')
                     if map_entry.group is not None:
