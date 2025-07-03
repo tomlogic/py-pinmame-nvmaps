@@ -549,13 +549,26 @@ class RamMapping(object):
             return self.format_value(value)
         elif encoding == 'bits':
             values = self.entry.get('values', [])
-            mask = 1
-            bits_value = 0
-            for b in values:
-                if value & mask:
-                    bits_value += b
-                mask <<= 1
-            return self.format_value(bits_value)
+            if values is None:
+                return '0'
+            if type(values[0]) is int:
+                mask = 1
+                bits_value = 0
+                for b in values:
+                    if value & mask:
+                        bits_value += b
+                    mask <<= 1
+                return self.format_value(bits_value)
+            elif type(values[0]) is str:
+                mask = 1
+                set_values = []
+                for b in values:
+                    if value & mask:
+                        set_values.append(b)
+                    mask <<= 1
+                return ', '.join(set_values)
+            else:
+                raise ValueError('invalid value list', values)
         elif encoding in ['enum', 'dipsw']:
             values = self.entry_values()
             if value >= len(values):
