@@ -80,7 +80,7 @@ def switch_editor(parser: nvram_parser.ParseNVRAM) -> bool:
             print()
             for index, mapping in enumerate(groups):
                 print('%2u: %s = %s' % (index + 1, mapping.format_label(),
-                                        mapping.format_entry(parser.nvram)))
+                                        mapping.format_entry(parser.memory)))
 
         print()
         try:
@@ -92,7 +92,7 @@ def switch_editor(parser: nvram_parser.ParseNVRAM) -> bool:
             if index < 1 or index > len(groups):
                 print("Invalid option")
             else:
-                edit_item(groups[index - 1], parser.nvram)
+                edit_item(groups[index - 1], parser.memory)
                 print_menu = True
         except ValueError:
             if command.startswith('s'):
@@ -176,7 +176,7 @@ def main():
     if save_changes:
         print('Saving changes to %s...' % args.nvram)
         with open(args.nvram, 'wb') as f:
-            f.write(nv)
+            f.write(parser.get_dot_nv())
         exit(0)
 
     if args.edit:
@@ -206,7 +206,7 @@ def main():
             print("    |%s| %s" % (header, m.format_label()))
             print("----+%s+-%s-" % (divider, dashes))
         if nv:
-            current = m.get_value(nv)
+            current = m.get_value(parser.memory)
         else:
             current = None
         for index, description in enumerate(m.entry_values()):
@@ -220,6 +220,7 @@ def main():
                 marker = '>' if current == index else ' '
                 print('%c%2u:|%s| %s' % (marker, index, '|'.join(switches), description))
         print()
+
 
 if __name__ == '__main__':
     main()
