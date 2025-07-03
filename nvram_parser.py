@@ -23,12 +23,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import argparse
 import json
 import os
+
+from curses.ascii import isprint
 from datetime import datetime
 from enum import Enum
-from typing import List, Optional, Tuple, Union
+from typing import Any, List, Optional, Tuple, Union
 
 MAPS_ROOT = os.path.join(os.path.dirname(__file__), 'maps')
-
+HEX_DUMP_BYTES_PER_LINE = 16
 
 class Nibble(Enum):
     BOTH = 0
@@ -136,16 +138,12 @@ def dipsw_set(nvram: bytes, index: int, state: bool) -> None:
         nvram[-6 + bank] &= ~mask
 
 
-# A fake address to use with SparseMemory to reference data (including dip
-# switch values) that PinMAME appends to nvram in the .nv file.
-PINMAME_DATA_ADDR = -10000
-
-
 class SparseMemory(object):
     """
     Object representing memory contents for a portion of the full address space.
     """
     def __init__(self):
+        self.pinmame_data = None
         self.memory = []
 
     def find_region(self, address: int) -> Optional[dict]:
@@ -188,6 +186,46 @@ class SparseMemory(object):
             if region_base <= address < region_base + region_size:
                 return region['data'][address - region_base]
         return None
+
+    def set_pinmame_data(self, data: bytearray = None):
+        self.pinmame_data = data
+
+    def get_pinmame_data(self) -> Optional[bytearray]:
+        return self.pinmame_data
+
+
+class ChecksumMapping(object):
+    """Simplified RamMapping object used for checksum values."""
+    def __init__(self, start: int, end: int, label: str, checksum16: bool,
+                 big_endian: bool):
+        self.start = start
+        self.end = end
+        self.label = label
+        self.big_endian = big_endian
+        self.checksum16 = checksum16
+
+    def offsets(self) -> List[int]:
+        if self.checksum16:
+            return [self.end - 1, self.end]
+        return [self.end]
+
+    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
+        """Return a tuple of (label, value) for this entry for the given nvram data."""
+        checksum = memory.get_byte(self.end)
+        if self.checksum16:
+            if self.big_endian:
+                checksum += memory.get_byte(self.end - 1) << 8
+            else:
+                checksum = (checksum << 8) + memory.get_byte(self.end - 1)
+            label = 'checksum16[%X:%X]' % (self.start, self.end - 1)
+            value = '0x%04X' % checksum
+        else:
+            label = 'checksum8[%X:%X]' % (self.start, self.end)
+            value = '0x%02X' % checksum
+
+        if self.label:
+            value += ' (%s)' % self.label
+        return label, value
 
 
 class RamMapping(object):
@@ -288,13 +326,13 @@ class RamMapping(object):
         # special case handling for dip switches
         if encoding == 'dipsw':
             value = 0
-            pinmame_data = memory.find_region(PINMAME_DATA_ADDR)
+            pinmame_data = memory.get_pinmame_data()
             if not pinmame_data:
                 # didn't load from a PinMAME .nv file
                 return None
             for bit in self.offsets():
                 # shift current value one bit left and set LSB
-                value = (value << 1) + dipsw_get(pinmame_data['data'], bit)
+                value = (value << 1) + dipsw_get(pinmame_data, bit)
             # might need to split into multiple list entries if value > 255
             return bytearray([value])
             
@@ -327,7 +365,7 @@ class RamMapping(object):
 
         if 'mask' in self.entry:
             mask = to_int(self.entry['mask'])
-            ba = bytearray(map((lambda b: b & mask), ba))
+            ba = bytearray(map((lambda x: x & mask), ba))
 
         return ba
 
@@ -419,11 +457,11 @@ class RamMapping(object):
 
         if encoding == 'dipsw':
             assert type(value) is int
-            pinmame_data = memory.find_region(PINMAME_DATA_ADDR)
+            pinmame_data = memory.get_pinmame_data()
             if pinmame_data:
                 # use reversed() to start with LSB in list of offsets
                 for bit in reversed(self.offsets()):
-                    dipsw_set(pinmame_data['data'], bit, bool(value & 1))
+                    dipsw_set(pinmame_data, bit, bool(value & 1))
                     value >>= 1
             return
 
@@ -604,7 +642,7 @@ class RamMapping(object):
 class ParseNVRAM(object):
     def __init__(self, nv_json: dict, nvram: Optional[bytearray] = None) -> None:
         self.nv_json = nv_json
-        self.metadata = {'big_endian': True, 'nibble': 'both'}
+        self.metadata: dict[str, Any] = {'big_endian': True, 'nibble': 'both'}
         self.mapping = []
         self.platform = {}
         if nv_json is not None:
@@ -621,28 +659,29 @@ class ParseNVRAM(object):
     def get_dot_nv(self):
         """
         Reconstruct contents of .nv file loaded with set_nvram() or ParseNVRAM
-        constructor.
+        constructor.  Combines nvram area and extra PinMAME data at end of file.
         """
         nvram_area = self.get_memory_area(mem_type='nvram')
         nvram_mem = self.memory.find_region(nvram_area['address'])
         dotnv = bytearray(nvram_mem['data'])
-        pinmame_mem = self.memory.find_region(PINMAME_DATA_ADDR)
-        dotnv.extend(pinmame_mem['data'])
+        pinmame_data = self.memory.get_pinmame_data()
+        if pinmame_data:
+            dotnv.extend(pinmame_data)
 
         return dotnv
 
-    def set_nvram(self, nvram: bytearray):
+    def set_nvram(self, nv_data: bytearray):
         """
         Set nvram contents from contents of PinMAME .nv file.
         """
         nvram_mem = self.get_memory_area(mem_type='nvram')
         base = nvram_mem.get('address', 0)
-        length = nvram_mem.get('size', len(nvram))
-        if length > len(nvram):
-            length = len(nvram)
-        self.memory.update_memory(base, nvram[:length])
-        if length < len(nvram):
-            self.memory.update_memory(PINMAME_DATA_ADDR, nvram[length:])
+        length = nvram_mem.get('size', len(nv_data))
+        if length > len(nv_data):
+            length = len(nv_data)
+        self.memory.update_memory(base, nv_data[:length])
+        if length < len(nv_data):
+            self.memory.set_pinmame_data(nv_data[length:])
 
     def get_memory_area(self, address: int = None, mem_type: str = None) -> Optional[dict]:
         """
@@ -683,7 +722,7 @@ class ParseNVRAM(object):
 
                 for region_json in platform_json['memory_layout']:
                     # use default nibble of BOTH
-                    region = {
+                    region: dict[str, Union[Nibble, int, str]] = {
                         'nibble': Nibble.BOTH
                     }
                     for key, value in region_json.items():
@@ -948,7 +987,8 @@ class ParseNVRAM(object):
         for map_entry in self.mapping:
             if group is None or map_entry.group == group:
                 if map_entry.group == 'DIP Switches' \
-                        and not self.memory.find_region(PINMAME_DATA_ADDR):
+                        and not self.memory.get_pinmame_data():
+                    # DIP switch values only available from loaded .nv file
                     continue
                 if map_entry.group != last_group:
                     print('')
@@ -968,6 +1008,121 @@ class ParseNVRAM(object):
             # that part of the memory map to update checksums if modifying nvram values.
             self.verify_all_checksum16(verbose=True)
             self.verify_all_checksum8(verbose=True)
+
+    @staticmethod
+    def hex_line(data: bytearray, nibble: Nibble, text: Optional[str] = None) -> str:
+        b = []
+        ch = []
+        for value in data:
+            if nibble == Nibble.LOW:
+                b.append(' %1X' % (value & 0x0F))
+            elif nibble == Nibble.HIGH:
+                b.append('%1X ' % (value >> 4))
+            else:
+                b.append('%02X' % value)
+
+            if nibble == Nibble.BOTH:
+                # we can potentially have printable text
+                if isprint(value):
+                    ch.append(chr(value))
+                else:
+                    ch.append('.')
+            else:
+                ch.append(' ')
+
+            if len(b) == HEX_DUMP_BYTES_PER_LINE:
+                break
+
+        while len(b) < HEX_DUMP_BYTES_PER_LINE:
+            # padding
+            b.append('  ')
+            ch.append(' ')
+
+        if not text:
+            text = ''.join(ch)
+        return "%s | %s" % (' '.join(b), text)
+
+    def hex_dump(self):
+        """
+        Output a hex dump of the nvram section of the parser object.
+
+        TODO: allow caller to specify an address range
+        TODO: option to include/exclude PinMAME Data if present
+        TODO: iterate over ALL memory areas and dump each separately
+        """
+        memory_area = self.get_memory_area(mem_type='nvram')
+        nvram_start = memory_area['address']
+        nv_data = self.memory.find_region(nvram_start)['data']
+        nvram_size = memory_area['size']
+        nibble = memory_area['nibble']
+
+        # Create a dictionary of RamMapping objects using offset as the key.
+        entry = {}
+        for m in self.mapping:
+            if m.section == 'dip_switches':
+                # skip over dip_switches -- their offsets aren't memory addresses
+                continue
+
+            # sometimes offsets is a map(?) so convert it to a list
+            offsets = list(m.offsets())
+            entry[offsets[0]] = m
+
+        # add fake entries for checksum8 and checksum16 values
+        for checksum in ['checksum8', 'checksum16']:
+            is_16 = (checksum == 'checksum16')
+            for c in self.nv_json.get(checksum, []):
+                start = to_int(c['start'])
+                if 'end' in c:
+                    end = to_int(c['end'])
+                else:
+                    end = start + to_int(c['length']) - 1
+                grouping = c.get('groupings', end - start + 1)
+                while start < end:
+                    entry_end = start + grouping - 1
+                    entry[entry_end - is_16] = ChecksumMapping(start, entry_end,
+                                                               c.get('label'), is_16,
+                                                               self.metadata['big_endian'])
+                    start = entry_end + 1
+
+        offset = 0
+        while offset < nvram_size:
+            # If this offset is in entry[], display it with its formatted value.
+            mapping = entry.get(nvram_start + offset)
+            if mapping:
+                count = len(list(mapping.offsets()))
+                (label, value) = mapping.format_mapping(self.memory)
+                if label:
+                    text = '%s: %s' % (label, value)
+                else:
+                    text = value
+            else:
+                # show printable ASCII characters for conversion
+                text = None
+
+                # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
+                count = 1
+                while count < HEX_DUMP_BYTES_PER_LINE and not entry.get(nvram_start + offset + count):
+                    count += 1
+            if offset + count > nvram_size:
+                count = nvram_size - offset
+
+            print("%04X: %s" % (nvram_start + offset,
+                                self.hex_line(nv_data[offset:offset + count], nibble, text)))
+            offset += count
+
+        # print hex dump of last bytes in file
+        pinmame_data = self.memory.get_pinmame_data()
+        if pinmame_data:
+            print("\nPinMAME data in .nv file:")
+            offset = 0
+            while offset < len(pinmame_data):
+                # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
+                count = 1
+                while count < HEX_DUMP_BYTES_PER_LINE and offset + count < len(pinmame_data):
+                    count += 1
+                print("%04X: %s" % (offset, self.hex_line(pinmame_data[offset:offset + count],
+                                                          Nibble.BOTH)))
+                offset += count
 
 
 def main() -> None:

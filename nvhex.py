@@ -13,78 +13,11 @@ TODO:
 """
 import argparse
 import json
-from typing import List, Optional, Tuple
-from curses.ascii import isprint
 
-import nvram_parser
-from nvram_parser import Nibble, SparseMemory
-
-BYTES_PER_LINE = 16
-
-class ChecksumMapping(object):
-    """Simplified RamMapping object used for checksum values."""
-    def __init__(self, start: int, end: int, label: str, checksum16: bool = False):
-        self.start = start
-        self.end = end
-        self.label = label
-        self.checksum16 = checksum16
-
-    def offsets(self) -> List[int]:
-        if self.checksum16:
-            return [self.end - 1, self.end]
-        return [self.end]
-
-    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
-        """Return a tuple of (label, value) for this entry for the given nvram data."""
-        # TODO: update to take endian into consideration
-        if self.checksum16:
-            label = 'checksum16[%u:%u]' % (self.start, self.end - 1)
-            value = '0x%04X' % (memory.get_byte(self.end - 1) * 256
-                                + memory.get_byte(self.end))
-        else:
-            label = 'checksum8[%u:%u]' % (self.start, self.end)
-            value = '0x%02X' % memory.get_byte(self.end)
-
-        if self.label:
-            value += ' (%s)' % self.label
-        return label, value
-
-global nibble, nv
-
-def hex_line(offset: int, count: int, text: Optional[str] = None) -> str:
-    b = []
-    ch = []
-    while len(b) < BYTES_PER_LINE:
-        if offset < len(nv) and len(b) < count:
-            if nibble == Nibble.LOW:
-                b.append(' %1X' % (nv[offset] & 0x0F))
-            elif nibble == Nibble.HIGH:
-                b.append('%1X ' % (nv[offset] >> 4))
-            else:
-                b.append('%02X' % nv[offset])
-
-            if nibble == Nibble.BOTH:
-                # we can potentially have printable text
-                if isprint(nv[offset]):
-                    ch.append(chr(nv[offset]))
-                else:
-                    ch.append('.')
-            else:
-                ch.append(' ')
-        else:
-            # padding
-            b.append('  ')
-            ch.append(' ')
-        offset += 1
-
-    if not text:
-        text = ''.join(ch)
-    return "%s | %s" % (' '.join(b), text)
+from nvram_parser import ParseNVRAM, rom_for_nvpath, map_for_rom
 
 
 def main():
-    global nibble, nv
-
     parser = argparse.ArgumentParser(description='PinMAME nvram hex dumper')
     parser.add_argument('--map',
                         help='use this map (typically ending in .nv.json)')
@@ -96,8 +29,8 @@ def main():
     if not args.map:
         # find a JSON file for the given nvram file
         if not args.rom:
-            args.rom = nvram_parser.rom_for_nvpath(args.filename)
-        args.map = nvram_parser.map_for_rom(args.rom)
+            args.rom = rom_for_nvpath(args.filename)
+        args.map = map_for_rom(args.rom)
 
         if not args.map:
             print("Couldn't find a map for %s" % args.filename)
@@ -109,77 +42,11 @@ def main():
     with open(args.filename, 'rb') as f:
         nv = bytearray(f.read())
 
-    parser = nvram_parser.ParseNVRAM(nv_map, nv)
+    parser = ParseNVRAM(nv_map, nv)
 
     print('dumping %s' % args.filename)
 
-    memory_area = parser.get_memory_area(mem_type='nvram')
-    nvram_start = memory_area['address']
-    nibble = memory_area['nibble']
-
-    # Create a dictionary of RamMapping objects using offset as the key.
-    entry = {}
-    for m in parser.mapping:
-        if m.section == 'dip_switches':
-            # skip over dip_switches -- their offsets aren't memory addresses
-            continue
-
-        # sometimes offsets is a map(?) so convert it to a list
-        offsets = list(m.offsets())
-        entry[offsets[0]] = m
-
-    # add fake entries for checksum8 and checksum16 values
-    for checksum in ['checksum8', 'checksum16']:
-        is_16 = (checksum == 'checksum16')
-        for c in nv_map.get(checksum, []):
-            start = c['start']
-            end = c['end']
-            grouping = c.get('groupings', end - start + 1)
-            while start < c['end']:
-                end = start + grouping - 1
-                entry[end - is_16] = ChecksumMapping(start, end, c.get('label'), is_16)
-                start = end + 1
-
-    offset = 0
-    while offset < len(nv) and offset < memory_area['size']:
-        # If this offset is in entry[], display it with its formatted value.
-        mapping = entry.get(nvram_start + offset)
-        if mapping:
-            count = len(list(mapping.offsets()))
-            (label, value) = mapping.format_mapping(parser.memory)
-            if label:
-                text = '%s: %s' % (label, value)
-            else:
-                text = value
-        else:
-            # show printable ASCII characters for conversion
-            text = None
-
-            # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
-            count = 1
-            while count < BYTES_PER_LINE and not entry.get(nvram_start + offset + count):
-                count += 1
-        if offset + count > len(nv):
-            count = len(nv) - offset
-        if offset + count > memory_area['size']:
-            count = memory_area['size'] - offset
-
-        print("%04X: %s" % (nvram_start + offset, hex_line(offset, count, text)))
-        offset += count
-
-    # print hex dump of last bytes in file
-    print("\nPinMAME data in .nv file:")
-    nibble = Nibble.BOTH
-    while offset < len(nv):
-        # show printable ASCII characters for conversion
-        text = None
-
-        # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
-        count = 1
-        while count < BYTES_PER_LINE and offset + count < len(nv):
-            count += 1
-        print("%04X: %s" % (offset, hex_line(offset, count, text)))
-        offset += count
+    parser.hex_dump()
 
 
 if __name__ == '__main__':
