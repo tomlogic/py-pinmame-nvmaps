@@ -26,7 +26,7 @@ B.3 Standard Audits
 09 Match Awards: 0
 11 H.S.T.D. Credits: 0
 13 Extra Balls: 0
-15 ?Tickets Awarded: 0
+15 Tickets Awarded: 0
 17 Left Drains: 0
 18 Right Drains: 0
 21 Play Time: 0:00:00

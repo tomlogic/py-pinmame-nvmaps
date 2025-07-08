@@ -71,6 +71,21 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
+Player 1: None
+Player 2: None
+Player 3: None
+Player 4: None
+Tilt: None
+Tilt Warnings: None
+Game Over: None
+Playfield Valid: None
+Self Test: None
+Players: None
+Current Player: None
+Ball: None
+Ball Count: 3
+Extra Balls: None
+Bonus Time: None
 
 high_scores
 -----------
