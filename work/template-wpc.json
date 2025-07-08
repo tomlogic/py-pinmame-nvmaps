@@ -3,14 +3,15 @@
     "Compiled by Tom Collins using template-wpc.json.",
     "WPC"
   ],
-  "_copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
-  "_license": "GNU Lesser General Public License v3.0",
-  "_endian": "big",
-  "_ramsize": 0,
-  "_roms": [
-  ],
-  "_fileformat": 0.1,
-  "_version": 0.1,
+  "_fileformat": 0.7,
+  "_metadata": {
+    "version": 0.3,
+    "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
+    "license": "GNU Lesser General Public License v3.0",
+    "platform": "williams-wpc-12K",
+    "roms": [
+    ]
+  },
   "last_played": {
     "start": 6144,
     "encoding": "wpc_rtc",

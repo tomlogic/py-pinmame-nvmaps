@@ -7,6 +7,8 @@ Tool to automate adding maps for WPC games.
 - Add CSV file to mode_champ with entries for Mode Champions and related
   checksum16 entries.
 - Note that Replay score location may be off by a byte or two.
+
+2025-07-08: updated for fileformat 0.7 (_metadata and platform properties)
 """
 
 import argparse
@@ -17,7 +19,7 @@ import os
 
 
 MY_DIR = os.path.dirname(__file__)
-NVRAM_DIR = '../../pinmame/release/nvram'
+NVRAM_DIR = '../../../pinmame/release/nvram'
 HS_LONG = ['First Place', 'Second Place', 'Third Place', 'Fourth Place']
 HS_SHORT = ['1st', '2nd', '3rd', '4th']
 
@@ -67,8 +69,11 @@ def load_nv(rom):
     print(gamestr)
     with open(os.path.join(MY_DIR, 'template-wpc.json')) as f:
         map_data = json.load(f)
-    map_data['_ramsize'] = len(data) & 0xFF00
-    map_data['_roms'].append(rom)
+    if (len(data) & 0xFF00) == 8192:
+        map_data['_metadata']['platform'] = "williams-wpc-8K"
+    else:
+        map_data['_metadata']['platform'] = "williams-wpc-12K"
+    map_data['_metadata']['roms'].append(rom)
     map_data['_notes'][1] = gamestr
     initials = hs(data)
     audits_end = find_audits_end(data)
@@ -117,7 +122,7 @@ def load_nv(rom):
         map_data['checksum16'].append(record)
         if i == 1:
             map_data['game_state']['credits'] = {
-                "_note": "1-byte credits followed by 6 bytes encoding partial/bonus credits",
+                "_notes": "1-byte credits followed by 6 bytes encoding partial/bonus credits",
                 'label': 'Credits', 'start': offset, 'encoding': 'int'}
         elif i == 2:
             map_data['game_state']['volume'] = {'label': 'Volume',
