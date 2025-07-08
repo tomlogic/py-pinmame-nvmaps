@@ -543,6 +543,10 @@ class RamMapping(object):
         if 'encoding' not in self.entry:
             return None
 
+        ba = self.get_bytes(memory)
+        if ba is None:
+            return None
+
         encoding = self.entry['encoding']
         value = self.get_value(memory)
         if encoding in ['bcd', 'int']:
@@ -574,10 +578,6 @@ class RamMapping(object):
             if value >= len(values):
                 return '?' + str(value)
             return values[value]
-
-        ba = self.get_bytes(memory)
-        if ba is None:
-            return None
 
         if encoding == 'ch':
             result = ''
