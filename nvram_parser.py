@@ -481,7 +481,7 @@ class RamMapping(object):
             assert type(value) is datetime
             # for day of week 1=Sunday, 7=Saturday
             # isoweekday() returns 1=Monday 7=Sunday
-            new_bytes = [value.year / 256, value.year % 256,
+            new_bytes = [value.year // 256, value.year % 256,
                          value.month, value.day, value.isoweekday() % 7 + 1,
                          value.hour, value.minute]
         elif encoding in ['bcd', 'int', 'enum']:
@@ -489,13 +489,13 @@ class RamMapping(object):
             if encoding == 'bcd':
                 for _ in old_bytes:
                     b = value % 100
-                    new_bytes.append(b % 10 + 16 * (b / 10))
-                    value /= 100
+                    new_bytes.append(b % 10 + 16 * (b // 10))
+                    value //= 100
             else:
                 for _ in old_bytes:
                     b = value % 256
                     new_bytes.append(b)
-                    value /= 256
+                    value //= 256
 
             if not self.little_endian():
                 new_bytes = reversed(new_bytes)
