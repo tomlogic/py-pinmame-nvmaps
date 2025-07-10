@@ -1,6 +1,141 @@
 Using map ../maps/maps/williams/wpc/drac_l1.nv.json for drac_l1.nv
 Dumping known entries for drac_l1.nv [Bram Stoker's Dracula (L-1)]...
 
+B.2 EARNINGS AUDS.
+------------------
+02 RECENT LEFT SLOT: 0
+03 RECENT CENT. SLOT: 35
+04 RECENT RGHT. SLOT: 22
+05 RECENT 4TH SLOT: 0
+06 RECENT PAID CRED: 28
+07 RECENT SERV. CRED: 0
+09 TOTAL LEFT SLOT: 0
+10 TOTAL CENTR. SLOT: 35
+11 TOTAL RIGHT SLOT: 22
+12 TOTAL 4TH SLOT: 0
+13 TOTAL PAID CRED.: 28
+14 TOTAL SERV. CRED.: 0
+
+B.3 STANDARD AUDS.
+------------------
+01 GAMES STARTED: 18
+02 TOTAL PLAYS: 6
+03 TOTAL FREE PLAYS: 0
+05 REPLAY AWARDS: 0
+07 SPECIAL AWARDS: 0
+09 MATCH AWARDS: 0
+11 H.S.T.D. CREDITS: 0
+13 EXTRA BALLS: 0
+15 TICKETS AWARDED: 0
+17 LEFT DRAINS: 3
+18 RIGHT DRAINS: 2
+21 PLAY TIME: 0:05:00
+22 MINUTES ON: 30
+23 BALLS PLAYED: 18
+24 TILTS: 0
+25 REPLAY 1 AWARDS: 0
+26 REPLAY 2 AWARDS: 0
+27 REPLAY 3 AWARDS: 0
+28 REPLAY 4 AWARDS: 0
+29 1 PLAYER GAMES: 1
+30 2 PLAYER GAMES: 0
+31 3 PLAYER GAMES: 0
+32 4 PLAYER GAMES: 0
+33 H.S.T.D. RESET COUNT: 2,994
+34 BURN-IN TIME: 0:00:00
+36 LEFT FLIPPER: 238
+37 RIGHT FLIPPER: 242
+
+B.4 FEATURE AUDS.
+-----------------
+01 Outlane Lit: 0
+02 Outlane Special: 0
+03 Outlane Ex.Ball: 0
+04 Loop Ex.Ball Lit: 0
+05 V.Mode Ex. Ball: 0
+06 Mystery Ex. Ball: 1
+07 All Locks: 0
+08 All Multiballs: 0
+09 Mist M.Ball, Tot.: 0
+10 Mist M.Ball, 1st: 0
+11 Castle M.Ball, Tot.: 0
+12 Castle M.Ball, 1st: 0
+13 Coffin M.Ball, Tot.: 0
+14 Coffin M.Ball, 1st: 0
+15 Bonus X's: 5
+16 Altars, Total: 5
+17 Altars, 1st: 2
+18 Altars, 2nd: 1
+19 Altars, 3rd: 1
+20 Altars, 4th: 1
+21 Altars, 5th: 0
+22 Rat mode, Total: 1
+23 Rat mode, 1st: 1
+24 Loops, Total: 1
+25 Loops, 1st: 1
+26 Loops, 2nd: 0
+27 Loops, 3rd: 0
+28 Loops, 4th: 0
+29 Loops, 5th: 0
+30 Bat mode, Total: 0
+31 Bat mode, 1st: 0
+32 Mystery, Total: 5
+33 Mystery, 1st: 5
+34 Video Mode, Total: 0
+35 Video Mode, 1st: 0
+36 Video Modes, Won: 0
+37 Video Modes, Lost: 0
+38 Balls Saved: 4
+39 Magnet Faults: 0
+40 T.R. Ramp Faults: 0
+41 Other Sw. Faults: 0
+42 2X Multi-M.Balls: 0
+43 3X Multi-M.Balls: 0
+44 Mist M.B. Attempts: 1
+
+B.5 HISTOGRAMS
+--------------
+01 0-1.9 M. SCORE: 0
+02 2-4.9 M. SCORE: 0
+03 5-9.9 M. SCORE: 1
+04 10-19 M. SCORE: 0
+05 20-29 M. SCORE: 0
+06 30-39 M. SCORE: 0
+07 40-49 M. SCORE: 0
+08 50-69 M. SCORE: 0
+09 70-99 M. SCORE: 0
+10 100-149 M. SCORE: 0
+11 150-199 M. SCORE: 0
+12 200-299 M. SCORE: 0
+13 OVER 300 MILLION: 0
+14 GAME TIME 0.0-1.0M: 0
+15 GAME TIME 1.0-1.5M: 1
+16 GAME TIME 1.5-2.0M: 0
+17 GAME TIME 2.0-2.5M: 0
+18 GAME TIME 2.5-3.0M: 0
+19 GAME TIME 3.0-3.5M: 0
+20 GAME TIME 3.5-4.0M: 0
+21 GAME TIME 4-5 M.: 0
+22 GAME TIME 5-6 M.: 0
+23 GAME TIME 6-8 M.: 0
+24 GAME TIME 8-10 M: 0
+25 GAME TIME 10-15M: 0
+26 GAME TIME > 15M: 0
+
+B.6 TIME-STAMPS
+---------------
+02 TOTALS CLEARED: 2024-01-11 12:13
+03 CLOCK LAST SET: 2024-01-11 12:13
+04 AUDITS CLEARED: 2024-01-11 12:13
+05 COINS CLEARED: 2024-01-11 12:13
+06 FACTORY SETTING: 2024-01-11 12:13
+07 LAST GAME START: 2024-11-12 18:29
+08 LAST REPLAY: 2024-01-11 12:13
+09 LAST HSTD RESET: 2024-01-11 12:13
+10 CHAMPION RESET: 2024-01-11 12:13
+11 LAST PRINTOUT: 2024-01-11 12:13
+12 LAST SERV. CRED: 2024-01-11 12:13
+
 A.1 Standard Adjustments
 ------------------------
 01 Balls Per Game: 3

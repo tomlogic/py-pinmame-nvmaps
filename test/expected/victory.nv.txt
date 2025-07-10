@@ -26,6 +26,15 @@ Standard Adjustments
 Game State
 ----------
 Credits: 5
+Player 1: None
+Player 2: None
+Player 3: None
+Player 4: None
+Player Count: None
+Current Player: None
+Ball: None
+Balls Per Game: None
+Extra Balls: None
 
 DIP Switches
 ------------

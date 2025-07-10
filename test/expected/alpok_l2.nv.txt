@@ -53,6 +53,16 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
+Game Status: None
+Player 1: None
+Player 2: None
+Player 3: None
+Player 4: None
+Player: None
+Player Count: None
+Ball: None
+Number of Balls: 3
+Extra Balls: None
 
 high_scores
 -----------

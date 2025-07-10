@@ -3,6 +3,10 @@ Dumping known entries for strike.nv [Strike]...
 
 Game State
 ----------
-Credits: 0
+Credits: 2.0
 Score: 0
 Ball to Play: 0
+
+high_scores
+-----------
+High Score: 0
