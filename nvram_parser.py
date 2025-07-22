@@ -728,6 +728,7 @@ class ParseNVRAM(object):
             with open(os.path.join(MAPS_ROOT, 'platforms', platform_name + '.json')) as platform_file:
                 platform_json = json.load(platform_file)
                 self.platform = {
+                    'name': platform_name,
                     'memory_layout': []
                 }
                 for attribute in ['cpu', 'endian']:
@@ -749,6 +750,7 @@ class ParseNVRAM(object):
         else:
             # create a fake platform for files that lack one
             self.platform = {
+                'name': 'auto-generated',
                 'cpu': 'unknown',
                 'endian': self.metadata['endian'],
                 'memory_layout': [
