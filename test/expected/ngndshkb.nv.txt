@@ -1,5 +1,5 @@
 Using map ../maps/maps/bally/as-2518-35/ngndshkb.nv.json for ngndshkb.nv
-Dumping known entries for ngndshkb.nv [Nitro Groundshaker (7-digit conversion)]...
+Dumping known entries for ngndshkb.nv [Nitro Ground Shaker (7-digit conversion)]...
 
 Game State
 ----------

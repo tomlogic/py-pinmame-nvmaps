@@ -150,6 +150,7 @@ Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
 Attract: IN GAME
+Ball Count: 3
 
 high_scores
 -----------

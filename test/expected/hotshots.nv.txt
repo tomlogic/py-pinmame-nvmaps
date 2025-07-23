@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for hotshots.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-12KB.nv.json for hotshots.nv
 Dumping known entries for hotshots.nv [Hot Shots]...
 
 Bookkeeping

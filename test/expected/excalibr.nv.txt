@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for excalibr.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-12KB.nv.json for excalibr.nv
 Dumping known entries for excalibr.nv [Excalibur (French)]...
 
 Bookkeeping

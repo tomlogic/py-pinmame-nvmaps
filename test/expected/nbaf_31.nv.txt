@@ -184,6 +184,7 @@ Current Player: 1
 Ball: 2
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
 
 high_scores
 -----------

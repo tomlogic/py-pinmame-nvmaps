@@ -1,5 +1,5 @@
 Using map ../maps/maps/bally/as-2518-35/hotdoggn.nv.json for hotdoggn.nv
-Dumping known entries for hotdoggn.nv [Hot Doggin]...
+Dumping known entries for hotdoggn.nv [Hotdoggin']...
 
 Game State
 ----------

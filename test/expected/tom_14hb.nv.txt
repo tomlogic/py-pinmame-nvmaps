@@ -197,6 +197,7 @@ Replay: 600,000,000
 Extra Balls: 0
 EBs this Ball: 0
 Attract: ATTRACT
+Ball Count: 3
 
 high_scores
 -----------

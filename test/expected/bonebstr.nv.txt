@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for bonebstr.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-12KB.nv.json for bonebstr.nv
 Dumping known entries for bonebstr.nv [Bone Busters Inc.]...
 
 Bookkeeping

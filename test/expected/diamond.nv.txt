@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for diamond.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-10KB.nv.json for diamond.nv
 Dumping known entries for diamond.nv [Diamond Lady]...
 
 Bookkeeping

@@ -1,5 +1,5 @@
 Using map ../maps/maps/williams/wpc/t2_l8.nv.json for t2_l8.nv
-Dumping known entries for t2_l8.nv [Terminator 2: Judgement Day (L-8)]...
+Dumping known entries for t2_l8.nv [Terminator 2: Judgment Day (L-8)]...
 
 B.2 EARNINGS AUDS.
 ------------------
@@ -146,6 +146,7 @@ Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
 Attract: ATTRACT
+Ball Count: 3
 
 high_scores
 -----------
