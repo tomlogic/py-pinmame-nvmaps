@@ -21,13 +21,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import argparse
+import glob
 import json
 import os
 
 from curses.ascii import isprint
 from datetime import datetime
 from enum import Enum
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 MAPS_ROOT = os.path.join(os.path.dirname(__file__), 'maps')
 HEX_DUMP_BYTES_PER_LINE = 16
@@ -136,6 +137,44 @@ def dipsw_set(nvram: bytes, index: int, state: bool) -> None:
         nvram[-6 + bank] |= mask
     else:
         nvram[-6 + bank] &= ~mask
+
+
+def load_platform(name: str) -> Dict:
+    with open(os.path.join(MAPS_ROOT, 'platforms', name + '.json')) as platform_file:
+        platform_json = json.load(platform_file)
+    platform = {
+        'name': name,
+        'memory_layout': []
+    }
+    for attribute in ['cpu', 'endian']:
+        platform[attribute] = platform_json.get(attribute)
+
+    for region_json in platform_json['memory_layout']:
+        # use default nibble of BOTH
+        region: dict[str, Union[Nibble, int, str]] = {
+            'nibble': Nibble.BOTH
+        }
+        for key, value in region_json.items():
+            if key in ['address', 'size']:
+                region[key] = to_int(value)
+            elif key == 'nibble':
+                region[key] = get_nibble(value)
+            else:
+                region[key] = value
+        platform['memory_layout'].append(region)
+
+    return platform
+
+
+def platform_list() -> List[str]:
+    """
+    Return a list of known platforms.
+    """
+    platforms = []
+    for filename in glob.glob(os.path.join(MAPS_ROOT, 'platforms', '*.json')):
+        filename = os.path.basename(filename)
+        platforms.append(filename.replace('.json', ''))
+    return platforms
 
 
 class SparseMemory(object):
@@ -653,7 +692,7 @@ class RamMapping(object):
 
 
 class ParseNVRAM(object):
-    def __init__(self, nv_json: dict, nvram: Optional[bytearray] = None) -> None:
+    def __init__(self, nv_json: dict = None, nvram: Optional[bytearray] = None) -> None:
         self.nv_json = nv_json
         self.metadata: dict[str, Any] = {'big_endian': True, 'nibble': 'both'}
         self.mapping = []
@@ -725,28 +764,7 @@ class ParseNVRAM(object):
         Load self.platform with the contents of the platform's JSON file.
         """
         if platform_name:
-            with open(os.path.join(MAPS_ROOT, 'platforms', platform_name + '.json')) as platform_file:
-                platform_json = json.load(platform_file)
-                self.platform = {
-                    'name': platform_name,
-                    'memory_layout': []
-                }
-                for attribute in ['cpu', 'endian']:
-                    self.platform[attribute] = platform_json.get(attribute)
-
-                for region_json in platform_json['memory_layout']:
-                    # use default nibble of BOTH
-                    region: dict[str, Union[Nibble, int, str]] = {
-                        'nibble': Nibble.BOTH
-                    }
-                    for key, value in region_json.items():
-                        if key in ['address', 'size']:
-                            region[key] = to_int(value)
-                        elif key == 'nibble':
-                            region[key] = get_nibble(value)
-                        else:
-                            region[key] = value
-                    self.platform['memory_layout'].append(region)
+            self.platform = load_platform(platform_name)
         else:
             # create a fake platform for files that lack one
             self.platform = {

@@ -1,1 +1,1 @@
-from .nvram_parser import ParseNVRAM
+from .nvram_parser import *
