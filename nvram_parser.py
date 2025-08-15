@@ -462,12 +462,10 @@ class RamMapping(object):
                 value = 0
                 for b in ba:
                     value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
-            elif encoding in ['int', 'bits', 'dipsw']:
+            elif encoding in ['int', 'bits', 'dipsw', 'enum']:
                 value = 0
                 for b in ba:
                     value = value * 256 + b
-            elif encoding == 'enum':
-                value = ba[0]
 
             if value is not None:
                 scale = self.entry.get('scale', 1)
@@ -967,7 +965,10 @@ class ParseNVRAM(object):
         return self.ram_mapping(lp).format_entry(self.memory)
 
     def entry_list(self, section: str, group: str) -> List[Tuple[str, dict]]:
-        """Return a list of entries for the given section and group of the mapping file.
+        """
+        Return a list of entries for the given section and group of the mapping file.
+
+        List is of tuples with the key of the dict (or None for a list) and the entry.
 
         Correctly handles instances where the group is a List or a Dict.
         """
