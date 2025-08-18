@@ -67,6 +67,32 @@ def format_number(number: int) -> str:
     return '{0:,}'.format(number)
 
 
+def bcd_nibble_to_int(bcd_value: int) -> int:
+    """
+    Returns valid BCD value for a nibble, converting 0xA to 0xF to 0.
+    Multiple machines display a space for 0xF, but this routine doesn't support that.
+    """
+    if bcd_value < 0x0 or bcd_value > 0xF:
+        raise ValueError('value 0x%X exceeds 4 bits' % bcd_value)
+    return 0 if bcd_value > 9 else bcd_value
+
+def bcd_byte_to_int(bcd_value: int) -> int:
+    """
+    Convert a BCD-encoded byte (e.g., 0x42) to an integer value (e.g., 42).
+    """
+    if bcd_value < 0x0 or bcd_value > 0xFF:
+        raise ValueError('value 0x%X exceeds 8 bits' % bcd_value)
+    return bcd_nibble_to_int(bcd_value >> 4) * 10 + bcd_nibble_to_int(bcd_value & 0x0F)
+
+def int_byte_to_bcd(int_value: int) -> int:
+    """
+    Convert an integer (e.g., 42) to a BCD-encoded byte (e.g., 0x42).
+    """
+    if int_value < 0 or int_value > 99:
+        raise ValueError('cannot convert %u to BCD byte' % int_value)
+    return (int_value // 10) * 16 + (int_value % 10)
+
+
 def rom_name(rom: str) -> str:
     """Return the descriptive ROM name for a given ROM (e.g., fh_l9)."""
     with open(os.path.join(MAPS_ROOT, 'romnames.json')) as f:
@@ -408,14 +434,6 @@ class RamMapping(object):
 
         return ba
 
-    @staticmethod
-    def bcd(value: int) -> int:
-        """Returns valid BCD value for a nibble, converting 0xA to 0xF to 0.
-
-        Multiple machines display a space for 0xF, but this routine doesn't support that.
-        """
-        return 0 if value > 9 else value
-
     def nibble(self) -> Nibble:
         """Return Nibble.BOTH, Nibble.LOW, or Nibble.HIGH based on `nibble`
         attribute or the deprecated `packed` attribute.
@@ -461,7 +479,7 @@ class RamMapping(object):
             if encoding == 'bcd':
                 value = 0
                 for b in ba:
-                    value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
+                    value = value * 100 + bcd_byte_to_int(b)
             elif encoding in ['int', 'bits', 'dipsw', 'enum']:
                 value = 0
                 for b in ba:
@@ -525,13 +543,11 @@ class RamMapping(object):
             # all formats where byte order applies
             if encoding == 'bcd':
                 for _ in old_bytes:
-                    b = value % 100
-                    new_bytes.append(b % 10 + 16 * (b // 10))
+                    new_bytes.append(int_byte_to_bcd(value % 100))
                     value //= 100
             else:
                 for _ in old_bytes:
-                    b = value % 256
-                    new_bytes.append(b)
+                    new_bytes.append(value % 256)
                     value //= 256
 
             if not self.little_endian():
