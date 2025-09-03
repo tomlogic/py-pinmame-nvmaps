@@ -219,8 +219,9 @@ class SparseMemory(object):
                 return region
         return None
 
-    def update_memory(self, address: int, data: Union[bytearray, list]) -> None:
-        if type(data) is list:
+    def update_memory(self, address: int, data: Union[bytearray, bytes, list]) -> None:
+        if type(data) in [list, bytes]:
+            # convert to bytearray so we can modify it in the future
             data = bytearray(data)
         region = self.find_region(address)
         if region:
@@ -252,6 +253,12 @@ class SparseMemory(object):
                 return region['data'][address - region_base]
         return None
 
+    def get_range(self, start: int, length: int) -> List[int]:
+        data = []
+        for i in range(length):
+            data.append(self.get_byte(start + i))
+        return data
+
     def set_pinmame_data(self, data: bytearray = None):
         self.pinmame_data = data
 
@@ -274,19 +281,63 @@ class ChecksumMapping(object):
             return [self.end - 1, self.end]
         return [self.end]
 
-    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
-        """Return a tuple of (label, value) for this entry for the given nvram data."""
+    def length(self) -> int:
+        return 1 + self.checksum16
+
+    def coverage(self) -> List[int]:
+        """
+        Return a list of addresses covered by the checksum.
+        """
+        return list(range(self.start, self.end - self.checksum16))
+
+    def calculate(self, memory: SparseMemory) -> int:
+        checksum = -1
+        for address in self.coverage():
+            checksum -= memory.get_byte(address)
+        if self.checksum16:
+            return checksum & 0xFFFF
+        return checksum & 0xFF
+
+    def update(self, memory: SparseMemory) -> None:
+        """
+        Re-calculate the checksum.
+        :param memory: SparseMemory object to update
+        """
+        checksum = self.calculate(memory)
+        if self.checksum16:
+            # create little-endian version of checksum
+            checksum = [checksum & 0xFF, (checksum >> 8)]
+            if self.big_endian:
+                checksum.reverse()
+            memory.update_memory(self.end - 1, checksum)
+        else:
+            memory.update_memory(self.end, [checksum])
+
+    def get_value(self, memory: SparseMemory) -> int:
         checksum = memory.get_byte(self.end)
         if self.checksum16:
             if self.big_endian:
                 checksum += memory.get_byte(self.end - 1) << 8
             else:
                 checksum = (checksum << 8) + memory.get_byte(self.end - 1)
-            label = 'checksum16[%X:%X]' % (self.start, self.end - 1)
-            value = '0x%04X' % checksum
+        return checksum
+
+    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
+        """
+        Return a tuple of (label, value) for this entry for the given nvram data.
+        """
+        stored = self.get_value(memory)
+        calculated = self.calculate(memory)
+        if self.checksum16:
+            label = 'checksum16[%X:%X]' % (self.start, self.end - 2)
+            formatting = '0x%04X'
         else:
-            label = 'checksum8[%X:%X]' % (self.start, self.end)
-            value = '0x%02X' % checksum
+            label = 'checksum8[%X:%X]' % (self.start, self.end - 1)
+            formatting = '0x%02X'
+
+        value = formatting % stored
+        if stored != calculated:
+            value += (' != ' + formatting) % calculated
 
         if self.label:
             value += ' (%s)' % self.label
@@ -313,6 +364,7 @@ class RamMapping(object):
         self.section = section
         self.group = group
         self.key = key
+        self.checksum_entry = None
         self.sub_entry = {}
         for sub in ['initials', 'score', 'timestamp']:
             if sub in entry:
@@ -501,6 +553,8 @@ class RamMapping(object):
         Undocumented and incomplete method to replace the entry's value stored in
         `nvram`.  Currently only works for sequential memory ranges.
 
+        Automatically updates self.checksum_entry if present.
+
         :param memory: SparseMemory object with contents of nvram
         :param value: replacement value with the appropriate type based on encoding:
             dipsw, bcd, int, enum: int
@@ -556,6 +610,8 @@ class RamMapping(object):
             raise ValueError('Unsupported encoding %s' % encoding)
 
         memory.update_memory(start, bytearray(new_bytes))
+        if self.checksum_entry:
+            self.checksum_entry.update(memory)
 
     def format_value(self, value: int) -> Optional[str]:
         """Format a multibyte integer using options in 'entry'."""
@@ -709,7 +765,8 @@ class ParseNVRAM(object):
     def __init__(self, nv_json: dict = None, nvram: Optional[bytearray] = None) -> None:
         self.nv_json = nv_json
         self.metadata: dict[str, Any] = {'big_endian': True, 'nibble': 'both'}
-        self.mapping = []
+        self.mapping: List[RamMapping] = []
+        self.checksum_entries: List[ChecksumMapping] = []
         self.platform = {}
         if nv_json is not None:
             self.process_json()
@@ -824,22 +881,23 @@ class ParseNVRAM(object):
                                                    group,
                                                    entry[0]))
 
-        groups = {
+        sections = {
             'game_state': 'Game State',
             'dip_switches': 'DIP Switches'
         }
-        for group, label in groups.items():
-            if group in self.nv_json:
-                for key, entries in self.nv_json[group].items():
+        for section, label in sections.items():
+            if section in self.nv_json:
+                for key, entries in self.nv_json[section].items():
                     if not isinstance(entries, list):
                         entries = [entries]
                     for entry in entries:
                         self.mapping.append(RamMapping(entry,
                                                        self.metadata,
-                                                       group,
+                                                       section,
                                                        label,
                                                        key))
-        
+
+        # TODO: remove this last_game support at some point.  Deprecated in fileformat v0.6.
         player_num = 1
         for p in self.nv_json.get('last_game', []):
             entry = p.copy()
@@ -848,7 +906,8 @@ class ParseNVRAM(object):
             self.mapping.append(RamMapping(entry,
                                            self.metadata,
                                            'game_state',
-                                           'Player Scores'))
+                                           'Player Scores',
+                                           str(player_num)))
             player_num += 1
 
         for group in ['high_scores', 'mode_champions']:
@@ -857,6 +916,65 @@ class ParseNVRAM(object):
                                                self.metadata,
                                                'score_record',
                                                group))
+
+        # add ChecksumMapping objects for checksum8 and checksum16 entries
+        self.checksum_entries = []
+        for checksum in ['checksum8', 'checksum16']:
+            is_16 = (checksum == 'checksum16')
+            for c in self.nv_json.get(checksum, []):
+                start = to_int(c['start'])
+                if 'end' in c:
+                    end = to_int(c['end'])
+                else:
+                    length = c.get('length', 1)
+                    end = start + to_int(length) - 1
+                grouping = c.get('groupings', end - start + 1)
+                while start < end:
+                    entry_end = start + grouping - 1
+                    self.checksum_entries.append(ChecksumMapping(start, entry_end,
+                                                                 c.get('label'), is_16,
+                                                                 self.metadata['big_endian']))
+                    start = entry_end + 1
+
+    def get_entry(self, *, section: Optional[str] = None,
+                  subsection: Optional[str] = None, key: Optional[str] = None) -> Optional[RamMapping]:
+        """
+        Search the map for RamMapping() objects matching a specific section/subsection/key.  Pass
+        None (or leave out) parameters for wildcard matching.
+
+        :param section: section of the file (e.g., 'game_state', 'audits', 'adjustments', 'score_record')
+        :param subsection: subgrouping (e.g., 'high_scores', 'mode_champions')
+        :param key: unique key to identify the entry
+
+        :return: returns the first match, or None if not found
+        """
+        for entry in self.mapping:
+            match = True
+            if section:
+                match = entry.section == section
+            if match and subsection:
+                match = entry.group == subsection
+            if match and key:
+                match = entry.key == key
+            if match:
+                return entry
+        return None
+
+    def add_checksum(self, entry: RamMapping) -> None:
+        """
+        Add a checksum entry that covers the given RamMapping object.
+        :param entry: RamMapping object to add coverage to
+        """
+        if not entry or entry.checksum_entry:
+            # entry is None, or we already looked up its checksum
+            return
+
+        offsets = set(entry.offsets())
+        for checksum_entry in self.checksum_entries:
+            if not offsets.isdisjoint(set(checksum_entry.coverage())):
+                entry.checksum_entry = checksum_entry
+                return
+
 
     def load_nvram(self, nvram_path: str) -> None:
         """Set the nvram property of the ParseNVRAM object to the contents of an nvram file."""
@@ -873,7 +991,7 @@ class ParseNVRAM(object):
         """
         Verify an entry from the checksum8 attribute of the map file.
 
-        TODO: Update this to use RamMapping objects instead.  Requires
+        TODO: Update this to use ChecksumMapping objects instead.  Requires
         updating verify_all_checksum8() as well.
 
         :param entry: dict from the JSON file (*not* a RamMapping object)
@@ -929,7 +1047,7 @@ class ParseNVRAM(object):
         """
         Verify an entry from the checksum16 attribute of the map file.
 
-        TODO: Update this to use RamMapping objects instead.  Requires
+        TODO: Update this to use ChecksumMapping objects instead.  Requires
         updating verify_all_checksum16() as well.
 
         :param entry: dict from the JSON file (*not* a RamMapping object)
@@ -1118,21 +1236,8 @@ class ParseNVRAM(object):
             entry[offsets[0]] = m
 
         # add fake entries for checksum8 and checksum16 values
-        for checksum in ['checksum8', 'checksum16']:
-            is_16 = (checksum == 'checksum16')
-            for c in self.nv_json.get(checksum, []):
-                start = to_int(c['start'])
-                if 'end' in c:
-                    end = to_int(c['end'])
-                else:
-                    end = start + to_int(c['length']) - 1
-                grouping = c.get('groupings', end - start + 1)
-                while start < end:
-                    entry_end = start + grouping - 1
-                    entry[entry_end - is_16] = ChecksumMapping(start, entry_end,
-                                                               c.get('label'), is_16,
-                                                               self.metadata['big_endian'])
-                    start = entry_end + 1
+        for checksum in self.checksum_entries:
+            entry[checksum.end - checksum.checksum16] = checksum
 
         offset = 0
         while offset < nvram_size:
