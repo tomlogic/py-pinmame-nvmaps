@@ -122,6 +122,7 @@ Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
 Ball Count: 3
+Maximum Credits: 10
 
 high_scores
 -----------
