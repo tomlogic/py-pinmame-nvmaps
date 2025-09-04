@@ -604,6 +604,18 @@ class RamMapping(object):
                     new_bytes.append(value % 256)
                     value //= 256
 
+            # TODO: if self.nibble isn't BOTH, split out into a new array
+            if self.nibble() != Nibble.BOTH:
+                nibbles = []
+                for b in new_bytes:
+                    if self.nibble() == Nibble.LOW:
+                        nibbles.append(b & 0x0F)
+                        nibbles.append(b >> 4)
+                    else:   # Nibble.HIGH
+                        nibbles.append((b << 4) & 0xF0)
+                        nibbles.append(b & 0xF0)
+                new_bytes = nibbles
+
             if not self.little_endian():
                 new_bytes = reversed(new_bytes)
         else:
