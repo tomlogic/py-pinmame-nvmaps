@@ -322,6 +322,14 @@ class ChecksumMapping(object):
                 checksum = (checksum << 8) + memory.get_byte(self.end - 1)
         return checksum
 
+    def is_valid(self, memory: SparseMemory) -> bool:
+        """
+        Returns True if checksum is valid for the passed SparseMemory object.
+        :param memory: memory to use for comparison of calculated to stored checksum
+        :return:
+        """
+        return self.get_value(memory) == self.calculate(memory)
+
     def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
         """
         Return a tuple of (label, value) for this entry for the given nvram data.
@@ -997,112 +1005,6 @@ class ParseNVRAM(object):
         """Legacy "glue" method to create RamMapping object on-demand."""
         return RamMapping(entry, self.metadata)
 
-    def verify_checksum8(self, entry: dict,
-                         verbose: bool = False,
-                         fix: bool = False) -> bool:
-        """
-        Verify an entry from the checksum8 attribute of the map file.
-
-        TODO: Update this to use ChecksumMapping objects instead.  Requires
-        updating verify_all_checksum8() as well.
-
-        :param entry: dict from the JSON file (*not* a RamMapping object)
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.nvram.
-        :return: True if checksummed area(s) was/were valid
-        """
-        valid = True
-        label = entry.get('label', '(unlabeled)')
-        m = self.ram_mapping(entry)
-        ba = m.get_bytes(self.memory)
-        if ba is None:
-            return True
-        offset = to_int(entry['start'])
-        grouping = entry.get('groupings', len(ba))
-        if len(ba) % grouping:
-            print("Error: checksum8 '%s' size not evenly divisible by groupings" % label)
-        count = 0
-        calc_sum = 0
-        for b in ba:
-            if count == grouping - 1:
-                checksum = 0xFF - (calc_sum & 0xFF)
-                if checksum != b:
-                    valid = False
-                    if verbose:
-                        print("Error: %u bytes at 0x%04X '%s' checksum8 0x%02X != 0x%02X"
-                              % (grouping, offset - count, label, checksum, b))
-                    if fix:
-                        self.memory.update_memory(offset, [checksum])
-                count = calc_sum = 0
-            else:
-                calc_sum += b
-                count += 1
-            offset += 1
-        return valid
-
-    def verify_all_checksum8(self, verbose: bool = False, fix: bool = False) -> bool:
-        """
-        Verify all checksum8 entries from the map file.
-
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.nvram.
-        :return: True if checksummed areas were valid
-        """
-        valid = True
-        for c in self.nv_json.get('checksum8', []):
-            valid &= self.verify_checksum8(c, verbose, fix)
-        return valid
-
-    def verify_checksum16(self, entry: dict,
-                          verbose: bool = False,
-                          fix: bool = False) -> bool:
-        """
-        Verify an entry from the checksum16 attribute of the map file.
-
-        TODO: Update this to use ChecksumMapping objects instead.  Requires
-        updating verify_all_checksum16() as well.
-
-        :param entry: dict from the JSON file (*not* a RamMapping object)
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.memory.
-        :return: True if checksummed area was valid
-        """
-        m = self.ram_mapping(entry)
-        ba = m.get_bytes(self.memory)
-        if ba is None:
-            return True
-
-        # pop last two bytes as stored checksum16
-        if self.metadata['big_endian']:
-            stored_sum = ba.pop() + ba.pop() * 256
-        else:
-            stored_sum = ba.pop() * 256 + ba.pop()
-        checksum_offset = to_int(entry['start']) + len(ba)
-        calc_sum = 0xFFFF - (sum(ba) & 0xFFFF)
-        if calc_sum != stored_sum:
-            if verbose:
-                print("checksum16 at %s: 0x%04X != 0x%04X %s" % (entry['start'],
-                                                                 calc_sum, stored_sum, entry.get('label', '')))
-            if fix:
-                if self.metadata['big_endian']:
-                    self.memory.update_memory(checksum_offset, [calc_sum // 256, calc_sum % 256])
-                else:
-                    self.memory.update_memory(checksum_offset, [calc_sum % 256, calc_sum // 256])
-        return calc_sum == stored_sum
-
-    def verify_all_checksum16(self, verbose: bool = False, fix: bool = False) -> bool:
-        """
-        Verify all checksum16 entries from the map file.
-
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.nvram.
-        :return: True if checksummed areas were valid
-        """
-        valid = True
-        for c in self.nv_json.get('checksum16', []):
-            valid &= self.verify_checksum16(c, verbose, fix)
-        return valid
-
     def last_played(self) -> Optional[str]:
         """Return a timestamp if this map has a last_played entry, otherwise returns None."""
         lp = self.nv_json.get('last_played')
@@ -1184,10 +1086,12 @@ class ParseNVRAM(object):
             print('Last Played:', last_played)
 
         if verify_checksums:
-            # Verify all checksums in the file.  Note that we can eventually re-use
-            # that part of the memory map to update checksums if modifying nvram values.
-            self.verify_all_checksum16(verbose=True)
-            self.verify_all_checksum8(verbose=True)
+            for checksum in self.checksum_entries:
+                calc_sum = checksum.calculate(self.memory)
+                stored_sum = checksum.get_value(self.memory)
+                if calc_sum != stored_sum:
+                    print("checksum at %s: 0x%04X != 0x%04X %s" % (checksum.start,
+                                                                   calc_sum, stored_sum, checksum.label))
 
     @staticmethod
     def hex_line(data: bytearray, nibble: Nibble, text: Optional[str] = None) -> str:
