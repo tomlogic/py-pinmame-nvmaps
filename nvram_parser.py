@@ -268,18 +268,37 @@ class SparseMemory(object):
 
 class ChecksumMapping(object):
     """Simplified RamMapping object used for checksum values."""
-    def __init__(self, start: int, end: int, label: str, checksum16: bool,
-                 big_endian: bool):
-        self.start = start
-        self.end = end
+    def __init__(self, start: int, end: int, checksum: Optional[int], label: str,
+                 checksum16: bool, big_endian: bool):
+        """
+        Create a ChecksumMapping object, to represent an 8-bit or 16-bit checksum stored in
+        a game's memory.
+        :param start: Starting address of the memory range checksummed
+        :param end: Ending address of the memory range checksummed.  If checksum = None, this
+                    address actually includes the checksum itself.
+        :param checksum: Address for the checksum, if not included in the start-end range.
+        :param label: Label describing checksum.
+        :param checksum16: This is a 2-byte (16-bit) checksum.
+        :param big_endian: The checksum is stored big-endian (MSB first).
+        """
         self.label = label
         self.big_endian = big_endian
         self.checksum16 = checksum16
+        self.formatting = '0x%04X' if checksum16 else '0x%02X'
+        self.start = start
+        self.end = end
+        if checksum:
+            self.checksum = checksum
+        else:
+            # checksum included in start-end range
+            self.end = end - self.length()
+            self.checksum = self.end + 1
 
     def offsets(self) -> List[int]:
+        offsets = [self.checksum]
         if self.checksum16:
-            return [self.end - 1, self.end]
-        return [self.end]
+            offsets.append(self.checksum + 1)
+        return offsets
 
     def length(self) -> int:
         return 1 + self.checksum16
@@ -287,8 +306,9 @@ class ChecksumMapping(object):
     def coverage(self) -> List[int]:
         """
         Return a list of addresses covered by the checksum.
+        (Address self.end is covered, so add 1 to the range().)
         """
-        return list(range(self.start, self.end - self.checksum16))
+        return list(range(self.start, self.end + 1))
 
     def calculate(self, memory: SparseMemory) -> int:
         checksum = -1
@@ -309,17 +329,17 @@ class ChecksumMapping(object):
             checksum = [checksum & 0xFF, (checksum >> 8)]
             if self.big_endian:
                 checksum.reverse()
-            memory.update_memory(self.end - 1, checksum)
+            memory.update_memory(self.checksum, checksum)
         else:
-            memory.update_memory(self.end, [checksum])
+            memory.update_memory(self.checksum, [checksum])
 
     def get_value(self, memory: SparseMemory) -> int:
-        checksum = memory.get_byte(self.end)
+        checksum = memory.get_byte(self.checksum)
         if self.checksum16:
             if self.big_endian:
-                checksum += memory.get_byte(self.end - 1) << 8
+                checksum = (checksum << 8) + memory.get_byte(self.checksum + 1)
             else:
-                checksum = (checksum << 8) + memory.get_byte(self.end - 1)
+                checksum += memory.get_byte(self.checksum + 1) << 8
         return checksum
 
     def is_valid(self, memory: SparseMemory) -> bool:
@@ -338,14 +358,12 @@ class ChecksumMapping(object):
         calculated = self.calculate(memory)
         if self.checksum16:
             label = 'checksum16[%X:%X]' % (self.start, self.end - 2)
-            formatting = '0x%04X'
         else:
             label = 'checksum8[%X:%X]' % (self.start, self.end - 1)
-            formatting = '0x%02X'
 
-        value = formatting % stored
+        value = self.formatting % stored
         if stored != calculated:
-            value += (' != ' + formatting) % calculated
+            value += (' != ' + self.formatting) % calculated
 
         if self.label:
             value += ' (%s)' % self.label
@@ -949,9 +967,9 @@ class ParseNVRAM(object):
                     length = c.get('length', 1)
                     end = start + to_int(length) - 1
                 grouping = c.get('groupings', end - start + 1)
-                while start < end:
+                while start <= end:
                     entry_end = start + grouping - 1
-                    self.checksum_entries.append(ChecksumMapping(start, entry_end,
+                    self.checksum_entries.append(ChecksumMapping(start, entry_end, c.get('checksum'),
                                                                  c.get('label'), is_16,
                                                                  self.metadata['big_endian']))
                     start = entry_end + 1
@@ -1087,11 +1105,12 @@ class ParseNVRAM(object):
 
         if verify_checksums:
             for checksum in self.checksum_entries:
-                calc_sum = checksum.calculate(self.memory)
-                stored_sum = checksum.get_value(self.memory)
+                # create formatted strings for each checksum (either 2 or 4 hexits)
+                calc_sum = checksum.formatting % checksum.calculate(self.memory)
+                stored_sum = checksum.formatting % checksum.get_value(self.memory)
                 if calc_sum != stored_sum:
-                    print("checksum at %s: 0x%04X != 0x%04X %s" % (checksum.start,
-                                                                   calc_sum, stored_sum, checksum.label))
+                    print("checksum at 0x%X: %s != %s %s" % (checksum.start, calc_sum,
+                                                             stored_sum, checksum.label))
 
     @staticmethod
     def hex_line(data: bytearray, nibble: Nibble, text: Optional[str] = None) -> str:
