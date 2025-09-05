@@ -59,6 +59,8 @@ for map_filename in glob.glob(MAP_DIR + '*.nv.json'):
 
     if not nv_data:
         print("Error: missing .nv file for (%s)" % ', '.join(nv_map['_metadata']['roms']))
+    elif nv_map['game_state'].get('max_credits'):
+        print("already has max_credits")
     else:
         update(nv_map, nv_data)
         with open(map_filename, 'w') as f:
