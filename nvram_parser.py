@@ -1151,7 +1151,7 @@ class ParseNVRAM(object):
 
         TODO: allow caller to specify an address range
         TODO: option to include/exclude PinMAME Data if present
-        TODO: iterate over ALL memory areas and dump each separately
+        TODO: iterate over ALL ram/nvram memory areas and dump each separately
         """
         memory_area = self.get_memory_area(mem_type='nvram')
         nvram_start = memory_area['address']
@@ -1172,7 +1172,7 @@ class ParseNVRAM(object):
 
         # add fake entries for checksum8 and checksum16 values
         for checksum in self.checksum_entries:
-            entry[checksum.end - checksum.checksum16] = checksum
+            entry[checksum.offsets()[0]] = checksum
 
         offset = 0
         while offset < nvram_size:
