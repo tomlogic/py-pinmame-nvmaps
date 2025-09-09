@@ -58,6 +58,8 @@ Player 2: 0
 Player 3: 0
 Player 4: 0
 Ball: n/a
+Ball Count: 3
+Maximum Credits: 10
 
 high_scores
 -----------
