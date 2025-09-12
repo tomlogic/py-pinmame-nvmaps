@@ -109,6 +109,19 @@ def map_for_rom(rom: str) -> Optional[str]:
     return None
 
 
+def platform_for_rom(rom: str) -> Optional[str]:
+    """
+    Look up the map for a given ROM and return the platform's name.
+    :param rom:
+    :return:
+    """
+    map_file = map_for_rom(rom)
+    if map_file:
+        with open(os.path.join(MAPS_ROOT, map_file), 'r') as f:
+            return json.load(f).get('_metadata', {}).get('platform')
+    return None
+
+
 def rom_for_nvpath(nvpath: str) -> str:
     """
     Return the ROM name (e.g., fh_l9) from a full path to a .nv file.  Strips
