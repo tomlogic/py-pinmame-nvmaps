@@ -9,7 +9,7 @@ Written 2025-01-06 by Tom Collins <tom@tomlogic.com>
 
 import json
 
-MAP_FILE = 'new_maps/ss_15.nv.json'
+MAP_FILE = 'new_maps/ss_15.map.json'
 with open(MAP_FILE) as f:
     map = json.load(f)
 

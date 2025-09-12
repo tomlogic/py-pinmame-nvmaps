@@ -236,8 +236,8 @@ def update(map_data, data):
             map_data.move_to_end(entry)
 
 
-for map_filename in glob.glob(MAP_DIR + '*.nv.json'):
-    if 'dm_dt101.nv.json' in map_filename:
+for map_filename in glob.glob(MAP_DIR + '*.map.json'):
+    if 'dm_dt101' in map_filename:
         continue  # not a Williams WPC game
 
     with open(map_filename, 'r') as f:

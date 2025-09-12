@@ -16,7 +16,7 @@ address = int(sys.argv[2], 0)
 attract = int(sys.argv[3], 0)
 print("current_player to %u for %s" % (address, rom))
 
-map_filename = MAP_DIR + rom + '.nv.json'
+map_filename = MAP_DIR + rom + '.map.json'
 with open(map_filename, 'r') as f:
     map_data = json.load(f)
 

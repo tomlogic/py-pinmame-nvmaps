@@ -149,7 +149,7 @@ def update(map_data, data):
             map_data.move_to_end(entry)
 
 
-for map_filename in glob.glob(MAP_DIR + '*.nv.json'):
+for map_filename in glob.glob(MAP_DIR + '*.map.json'):
     if 'gmine_l2' in map_filename:
         continue  # non-standard System 11 game (e.g., no checksum8 audits)
 

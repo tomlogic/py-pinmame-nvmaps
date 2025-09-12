@@ -13,9 +13,9 @@ def item_count(entry, grouping):
     return (entry['end'] - entry['start'] - 1) // grouping
 
 
-for map_filename in glob.glob(MAP_DIR + '*.nv.json'):
+for map_filename in glob.glob(MAP_DIR + '*.map.json'):
     basename = os.path.basename(map_filename)
-    if 'dm_dt101.nv.json' in map_filename:
+    if 'dm_dt101' in map_filename:
         continue  # not a Williams WPC game
 
     with open(map_filename, 'r') as f:

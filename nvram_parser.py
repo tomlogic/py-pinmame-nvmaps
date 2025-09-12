@@ -126,7 +126,7 @@ def find_map(nvpath: str) -> Optional[str]:
     """
     Find a map that will work with the ROM of the given nvram file.
     :param nvpath: Full pathname of a .nv file.
-    :return: Path of .nv.json file or None if nothing matches <nvpath>.
+    :return: Path of .map.json file or None if nothing matches <nvpath>.
     """
     return map_for_rom(rom_for_nvpath(nvpath))
 
@@ -800,13 +800,13 @@ class RamMapping(object):
 
 
 class ParseNVRAM(object):
-    def __init__(self, nv_json: dict = None, nvram: Optional[bytearray] = None) -> None:
-        self.nv_json = nv_json
+    def __init__(self, map_json: dict = None, nvram: Optional[bytearray] = None) -> None:
+        self.map_json = map_json
         self.metadata: dict[str, Any] = {'big_endian': True, 'nibble': 'both'}
         self.mapping: List[RamMapping] = []
         self.checksum_entries: List[ChecksumMapping] = []
         self.platform = {}
-        if nv_json is not None:
+        if map_json is not None:
             self.process_json()
         self.memory = SparseMemory()
         if nvram:
@@ -814,7 +814,7 @@ class ParseNVRAM(object):
 
     def load_json(self, json_path: str) -> None:
         with open(json_path, 'r') as json_fh:
-            self.nv_json = json.load(json_fh)
+            self.map_json = json.load(json_fh)
         self.process_json()
 
     def get_dot_nv(self):
@@ -895,10 +895,10 @@ class ParseNVRAM(object):
         self.metadata['big_endian'] = self.platform.get('endian') != 'little'
 
     def process_json(self) -> None:
-        """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
+        """Process JSON file loaded into self.map_json.  Sets self.big_endian and
         self.mapping, a normalized list of JSON entries as RamMapping objects.
         """
-        json_metadata = self.nv_json.get('_metadata')
+        json_metadata = self.map_json.get('_metadata')
         if json_metadata:
             # processing fileformat 0.6 or later
             for key, value in json_metadata.items():
@@ -909,7 +909,7 @@ class ParseNVRAM(object):
 
         self.mapping = []
         for section in ['audits', 'adjustments']:
-            for group in sorted(self.nv_json.get(section, {}).keys()):
+            for group in sorted(self.map_json.get(section, {}).keys()):
                 if group.startswith('_'):
                     continue
                 for entry in self.entry_list(section, group):
@@ -924,8 +924,8 @@ class ParseNVRAM(object):
             'dip_switches': 'DIP Switches'
         }
         for section, label in sections.items():
-            if section in self.nv_json:
-                for key, entries in self.nv_json[section].items():
+            if section in self.map_json:
+                for key, entries in self.map_json[section].items():
                     if not isinstance(entries, list):
                         entries = [entries]
                     for entry in entries:
@@ -937,7 +937,7 @@ class ParseNVRAM(object):
 
         # TODO: remove this last_game support at some point.  Deprecated in fileformat v0.6.
         player_num = 1
-        for p in self.nv_json.get('last_game', []):
+        for p in self.map_json.get('last_game', []):
             entry = p.copy()
             entry['label'] = 'Player %u' % player_num
             entry['short_label'] = 'P%u' % player_num
@@ -949,7 +949,7 @@ class ParseNVRAM(object):
             player_num += 1
 
         for group in ['high_scores', 'mode_champions']:
-            for entry in self.nv_json.get(group, []):
+            for entry in self.map_json.get(group, []):
                 self.mapping.append(RamMapping(entry,
                                                self.metadata,
                                                'score_record',
@@ -959,7 +959,7 @@ class ParseNVRAM(object):
         self.checksum_entries = []
         for checksum in ['checksum8', 'checksum16']:
             is_16 = (checksum == 'checksum16')
-            for c in self.nv_json.get(checksum, []):
+            for c in self.map_json.get(checksum, []):
                 start = to_int(c['start'])
                 if 'end' in c:
                     end = to_int(c['end'])
@@ -1025,7 +1025,7 @@ class ParseNVRAM(object):
 
     def last_played(self) -> Optional[str]:
         """Return a timestamp if this map has a last_played entry, otherwise returns None."""
-        lp = self.nv_json.get('last_played')
+        lp = self.map_json.get('last_played')
         if not lp:
             return None
         return self.ram_mapping(lp).format_entry(self.memory)
@@ -1039,7 +1039,7 @@ class ParseNVRAM(object):
         Correctly handles instances where the group is a List or a Dict.
         """
         entries = []
-        audit_group = self.nv_json[section][group]
+        audit_group = self.map_json[section][group]
         if isinstance(audit_group, list):
             for audit in audit_group:
                 entries.append((None, audit))
@@ -1218,7 +1218,7 @@ class ParseNVRAM(object):
 def main() -> None:
     parser = argparse.ArgumentParser(description='PinMAME nvram Parser')
     parser.add_argument('--map',
-                        help='use this map (typically ending in .nv.json)')
+                        help='use this map (typically ending in .map.json)')
     parser.add_argument('--rom',
                         help='use default map for <rom> instead of one based on <nvram> filename')
     parser.add_argument('--nvram',
@@ -1251,10 +1251,10 @@ def main() -> None:
                 return
 
         with open(args.map, 'r') as f:
-            nv_json = json.load(f)
+            map_json = json.load(f)
 
         print("Dumping known entries for %s [%s]..." % (basename, rom_name(rom_for_nvpath(nvpath))))
-        p = ParseNVRAM(nv_json, nvram)
+        p = ParseNVRAM(map_json, nvram)
         p.dump()
 
     else:
