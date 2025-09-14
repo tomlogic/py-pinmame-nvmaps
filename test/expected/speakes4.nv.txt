@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/speakes4.nv.json for speakes4.nv
+Using map ../maps/maps/bally/as-2518-35/speakes4.map.json for speakes4.nv
 Dumping known entries for speakes4.nv [Speakeasy (4 Players)]...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/tz_92.nv.json for tz_92.nv
+Using map ../maps/maps/williams/wpc/tz_92.map.json for tz_92.nv
 Dumping known entries for tz_92.nv [Twilight Zone (9.2)]...
 
 B.2 EARNINGS AUDS.

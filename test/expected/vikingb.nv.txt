@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/vikingb.nv.json for vikingb.nv
+Using map ../maps/maps/bally/as-2518-35/vikingb.map.json for vikingb.nv
 Dumping known entries for vikingb.nv [Viking (7-digit conversion)]...
 
 Bookkeeping functions

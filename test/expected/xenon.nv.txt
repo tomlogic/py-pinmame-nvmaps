@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/xenon.nv.json for xenon.nv
+Using map ../maps/maps/bally/as-2518-35/xenon.map.json for xenon.nv
 Dumping known entries for xenon.nv [Xenon]...
 
 Bookkeeping functions

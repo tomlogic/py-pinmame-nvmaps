@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/frontier.nv.json for frontier.nv
+Using map ../maps/maps/bally/as-2518-35/frontier.map.json for frontier.nv
 Dumping known entries for frontier.nv [Frontier]...
 
 Game State

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/br_l4.nv.json for br_l4.nv
+Using map ../maps/maps/williams/wpc/br_l4.map.json for br_l4.nv
 Dumping known entries for br_l4.nv [Black Rose (L-4)]...
 
 B.2 EARNINGS AUDS.

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/flash_l1.nv.json for flash_l1.nv
+Using map ../maps/maps/williams/system6/flash_l1.map.json for flash_l1.nv
 Dumping known entries for flash_l1.nv [Flash (Sys.6 L-1)]...
 
 Standard Audits
@@ -50,16 +50,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
-Game Status: None
-Player 1: None
-Player 2: None
-Player 3: None
-Player 4: None
-Player: None
-Player Count: None
-Ball: None
 Number of Balls: 3
-Extra Balls: None
 
 high_scores
 -----------

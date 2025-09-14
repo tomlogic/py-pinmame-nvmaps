@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/fh_l3.nv.json for fh_l3.nv
+Using map ../maps/maps/williams/wpc/fh_l3.map.json for fh_l3.nv
 Dumping known entries for fh_l3.nv [Funhouse (L-3)]...
 
 B.2 EARNINGS AUDS.

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/mystic.nv.json for mystic.nv
+Using map ../maps/maps/bally/as-2518-35/mystic.map.json for mystic.nv
 Dumping known entries for mystic.nv [Mystic]...
 
 Game State

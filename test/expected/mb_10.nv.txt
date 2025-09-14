@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/mb_10.nv.json for mb_10.nv
+Using map ../maps/maps/williams/wpc/mb_10.map.json for mb_10.nv
 Dumping known entries for mb_10.nv [Monster Bash (1.0)]...
 
 B.2 EARNINGS AUDS.

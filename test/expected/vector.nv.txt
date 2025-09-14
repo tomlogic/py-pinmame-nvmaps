@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/vector.nv.json for vector.nv
+Using map ../maps/maps/bally/as-2518-35/vector.map.json for vector.nv
 Dumping known entries for vector.nv [Vector]...
 
 Bookkeeping functions

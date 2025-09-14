@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/generic.nv.json for blkou_l1.nv
+Using map ../maps/maps/williams/system6/generic.map.json for blkou_l1.nv
 Dumping known entries for blkou_l1.nv [Blackout (L-1)]...
 
 Standard Audits
@@ -49,16 +49,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
-Game Status: None
-Player 1: None
-Player 2: None
-Player 3: None
-Player 4: None
-Player: None
-Player Count: None
-Ball: None
 Number of Balls: 3
-Extra Balls: None
 
 high_scores
 -----------

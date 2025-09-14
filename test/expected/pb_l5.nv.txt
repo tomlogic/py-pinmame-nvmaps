@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/pb_l5.nv.json for pb_l5.nv
+Using map ../maps/maps/williams/system11/pb_l5.map.json for pb_l5.nv
 Dumping known entries for pb_l5.nv [Pin-Bot (L-5)]...
 
 Audits

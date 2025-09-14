@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/gi_l9.nv.json for gi_l9.nv
+Using map ../maps/maps/williams/wpc/gi_l9.map.json for gi_l9.nv
 Dumping known entries for gi_l9.nv [Gilligan's Island (L-9)]...
 
 B.2 EARNINGS AUDS.

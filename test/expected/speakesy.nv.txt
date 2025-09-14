@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/speakesy.nv.json for speakesy.nv
+Using map ../maps/maps/bally/as-2518-35/speakesy.map.json for speakesy.nv
 Dumping known entries for speakesy.nv [Speakeasy]...
 
 Bookkeeping functions

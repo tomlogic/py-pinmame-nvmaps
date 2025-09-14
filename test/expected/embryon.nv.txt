@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/embryond.nv.json for embryon.nv
+Using map ../maps/maps/bally/as-2518-35/embryond.map.json for embryon.nv
 Dumping known entries for embryon.nv [Embryon]...
 
 Game State

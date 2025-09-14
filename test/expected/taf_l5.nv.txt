@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/taf_l5.nv.json for taf_l5.nv
+Using map ../maps/maps/williams/wpc/taf_l5.map.json for taf_l5.nv
 Dumping known entries for taf_l5.nv [Addams Family, The (L-5)]...
 
 B.2 EARNINGS AUDS.

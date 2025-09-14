@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/jb_10r.nv.json for jb_10r.nv
+Using map ../maps/maps/williams/wpc/jb_10r.map.json for jb_10r.nv
 Dumping known entries for jb_10r.nv [Jack*Bot (1.0R)]...
 
 B.2 EARNINGS AUDS.

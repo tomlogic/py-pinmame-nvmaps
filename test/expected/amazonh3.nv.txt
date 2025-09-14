@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-8KB.nv.json for amazonh3.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-8KB.map.json for amazonh3.nv
 Dumping known entries for amazonh3.nv [Amazon Hunt III (French)]...
 
 Bookkeeping
@@ -26,6 +26,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
+Maximum Credits: 10
 
 DIP Switches
 ------------

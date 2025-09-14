@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-10KB.nv.json for txsector.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-10KB.map.json for txsector.nv
 Dumping known entries for txsector.nv [TX-Sector]...
 
 Bookkeeping
@@ -26,6 +26,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 5
+Maximum Credits: 10
 
 DIP Switches
 ------------

@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-7digit-8KB.nv.json for bountyh.nv
+Using map ../maps/maps/gottlieb/system80b/80b-7digit-8KB.map.json for bountyh.nv
 Dumping known entries for bountyh.nv [Bounty Hunter]...
 
 Bookkeeping
@@ -25,6 +25,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
+Maximum Credits: 10
 
 DIP Switches
 ------------

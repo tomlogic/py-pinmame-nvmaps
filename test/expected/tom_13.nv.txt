@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/tom_13.nv.json for tom_13.nv
+Using map ../maps/maps/williams/wpc/tom_13.map.json for tom_13.nv
 Dumping known entries for tom_13.nv [Theatre of Magic (1.3X)]...
 
 B.2 EARNINGS AUDS.

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/sstb.nv.json for sstb.nv
+Using map ../maps/maps/bally/as-2518-35/sstb.map.json for sstb.nv
 Dumping known entries for sstb.nv [Supersonic (7-digit conversion rev. 20)]...
 
 Bookkeeping functions

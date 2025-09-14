@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/wcs_l2.nv.json for wcs_l2.nv
+Using map ../maps/maps/williams/wpc/wcs_l2.map.json for wcs_l2.nv
 Dumping known entries for wcs_l2.nv [World Cup Soccer (LX-2)]...
 
 B.2 EARNINGS AUDS.
