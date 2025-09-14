@@ -1110,7 +1110,9 @@ class ParseNVRAM(object):
                         print('-' * len(map_entry.group))
                     last_group = map_entry.group
 
-                print('%s: %s' % map_entry.format_mapping(self.memory))
+                label, value = map_entry.format_mapping(self.memory)
+                if value is not None:
+                    print('%s: %s' % (label, value))
 
         last_played = self.last_played()
         if last_played is not None:
