@@ -144,38 +144,39 @@ def find_map(nvpath: str) -> Optional[str]:
     return map_for_rom(rom_for_nvpath(nvpath))
 
 
-def dipsw_get(nvram: bytes, index: int) -> bool:
+def dipsw_get(dip_switches: bytearray, index: int) -> bool:
     """
     Return state of a game's DIP switch.
 
-    :param nvram: contents of .nv file
+    :param dip_switches: bytearray with DIP switches stored in the last six bytes,
+                         possibly from SparseMemory.get_dipsw_data().
     :param index: DIP switch number (1 to n)
     :return: True if DIP switch is configured as "ON"
     """
-    index -= 1  # switches start at 1 in file, 0 in memory
+    index -= 1  # switch numbering starts at 1 in map, 0 in memory
     bank = index // 8
     mask = 1 << (index % 8)
-    # dip switches are last 6 bytes of file
-    byte_value = nvram[-6 + bank]
-    return (byte_value & mask) != 0
+    # dip switches are stored in last 6 bytes
+    return (dip_switches[-6 + bank] & mask) != 0
 
 
-def dipsw_set(nvram: bytes, index: int, state: bool) -> None:
+def dipsw_set(dip_switches: bytearray, index: int, state: bool) -> None:
     """
     Set the state of a game's DIP switch.
-    :param nvram: contents of .nv file
+    :param dip_switches: bytearray with DIP switches stored in the last six bytes,
+                         possibly from SparseMemory.get_dipsw_data().
     :param index: DIP switch number (1 to n)
     :param state: True to set the switch to ON, False to set it to OFF.
     :return:
     """
-    index -= 1  # switches start at 1 in file, 0 in memory
+    index -= 1  # switch numbering starts at 1 in file, 0 in memory
     bank = index // 8
     mask = 1 << (index % 8)
     # dip switches are last 6 bytes of file
     if state:
-        nvram[-6 + bank] |= mask
+        dip_switches[-6 + bank] |= mask
     else:
-        nvram[-6 + bank] &= ~mask
+        dip_switches[-6 + bank] &= ~mask
 
 
 def load_platform(name: str) -> Dict:
@@ -221,8 +222,14 @@ class SparseMemory(object):
     Object representing memory contents for a portion of the full address space.
     """
     def __init__(self):
-        self.pinmame_data = None
-        self.memory = []
+        # Portion of PinMAME .nv file beyond in-game memory area, ends with 6 bytes of DIP switch data.
+        self.pinmame_data: Optional[bytearray] = None
+
+        # 6-byte, little-endian bytearray with DIP switch settings
+        self.dipsw_data: Optional[bytearray] = None
+
+        # Memory areas loaded from PinMAME .nv file or otherwise.
+        self.memory: List[dict] = []
 
     def find_region(self, address: int) -> Optional[dict]:
         for region in self.memory:
@@ -278,6 +285,31 @@ class SparseMemory(object):
     def get_pinmame_data(self) -> Optional[bytearray]:
         return self.pinmame_data
 
+    def set_dipsw_data(self, data: bytearray) -> None:
+        """
+        Save DIP switch values to the SparseMemory object.  Automatically extends
+        bytearray to 6 bytes if shorter.
+        :param data: Up to 6 bytes of DIP switches in little-endian byte order.
+        :return: None
+        """
+        # DIP switches take up 6 bytes, so pad out to that length.
+        padding = 6 - len(data)
+        if padding > 0:
+            data.extend([0] * padding)
+        self.dipsw_data = data
+
+    def get_dipsw_data(self) -> Optional[bytearray]:
+        """
+        Loads DIP Switch values previously stored with set_dipsw_data() or the
+        last six bytes of self.pinmame_data (if available).
+        :return: 6 bytes or None if DIP switches weren't loaded.
+        """
+        if self.dipsw_data:
+            return self.dipsw_data
+        if self.pinmame_data:
+            # just DIP switch section (last six bytes) of PinMAME data
+            return self.pinmame_data[-6:]
+        return None
 
 class ChecksumMapping(object):
     """Simplified RamMapping object used for checksum values."""
@@ -482,13 +514,12 @@ class RamMapping(object):
         # special case handling for dip switches
         if encoding == 'dipsw':
             value = 0
-            pinmame_data = memory.get_pinmame_data()
-            if not pinmame_data:
-                # didn't load from a PinMAME .nv file
+            dipsw_data = memory.get_dipsw_data()
+            if not dipsw_data:
                 return None
             for bit in self.offsets():
                 # shift current value one bit left and set LSB
-                value = (value << 1) + dipsw_get(pinmame_data, bit)
+                value = (value << 1) + dipsw_get(dipsw_data, bit)
             # might need to split into multiple list entries if value > 255
             return bytearray([value])
             
@@ -605,11 +636,11 @@ class RamMapping(object):
 
         if encoding == 'dipsw':
             assert type(value) is int
-            pinmame_data = memory.get_pinmame_data()
-            if pinmame_data:
+            dipsw_data = memory.get_dipsw_data()
+            if dipsw_data:
                 # use reversed() to start with LSB in list of offsets
                 for bit in reversed(self.offsets()):
-                    dipsw_set(pinmame_data, bit, bool(value & 1))
+                    dipsw_set(dipsw_data, bit, bool(value & 1))
                     value >>= 1
             return
 
@@ -1100,7 +1131,7 @@ class ParseNVRAM(object):
         for map_entry in self.mapping:
             if group is None or map_entry.group == group:
                 if map_entry.group == 'DIP Switches' \
-                        and not self.memory.get_pinmame_data():
+                        and not self.memory.get_dipsw_data():
                     # DIP switch values only available from loaded .nv file
                     continue
                 if map_entry.group != last_group:
