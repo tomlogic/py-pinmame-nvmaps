@@ -1,6 +1,30 @@
 Using map ../maps/maps/bally/as-2518-35/flashgdn.map.json for flashgdn.nv
 Dumping known entries for flashgdn.nv [Flash Gordon]...
 
+Audits
+------
+05 Current Credits: 0
+06 Total Plays: 0
+07 Total Replays: 0
+08 Game Percentage: 0
+09 HSTD Achieved: 0
+10 Coin Chute #1: 0
+11 Coin Chute #2: 0
+12 Coin Chute #3: 0
+13 Specials Awarded: 0
+14 Minutes of Game Play: 0
+15 Service Credits: 0
+
+Adjustments
+-----------
+01 Replay Level 1: 0
+02 Replay Level 2: 0
+03 Replay Level 3: 0
+16 Special/Extra Ball Awards: ?15
+17 Replay Awards: ?15
+18 Sound Option: ?15
+19 HSTD Award: 0 credits
+
 Game State
 ----------
 Credits: 0
@@ -8,6 +32,8 @@ Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Ball Count: 3
+Max Credits: 10
 
 high_scores
 -----------
