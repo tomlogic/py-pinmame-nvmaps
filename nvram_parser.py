@@ -970,6 +970,8 @@ class ParseNVRAM(object):
         for section, label in sections.items():
             if section in self.map_json:
                 for key, entries in self.map_json[section].items():
+                    if key.startswith('_'):
+                        continue
                     if not isinstance(entries, list):
                         entries = [entries]
                     for entry in entries:
