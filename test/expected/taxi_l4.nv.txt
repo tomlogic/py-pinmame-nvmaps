@@ -55,6 +55,8 @@ Player 4: 0
 Ball: n/a
 Ball Count: 3
 Maximum Credits: 10
+Player Count: 2
+Current Player: 2
 
 high_scores
 -----------
