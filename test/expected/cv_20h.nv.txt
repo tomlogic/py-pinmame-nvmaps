@@ -170,7 +170,7 @@ Player 4: 0
 WPC Game ID: 50062
 Replay: 25,000,000
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0

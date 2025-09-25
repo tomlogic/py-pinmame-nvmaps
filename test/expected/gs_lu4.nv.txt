@@ -62,6 +62,10 @@ Ball Count: 3
 Maximum Credits: 30
 Player Count: 1
 Current Player: 1
+Tilted: false
+Game Over: true
+Extra Balls: 0
+Tilt Warnings: 0
 
 high_scores
 -----------

@@ -137,7 +137,7 @@ Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
-Attract: ATTRACT
+Game Over: true
 Ball Count: 3
 Maximum Credits: 10
 

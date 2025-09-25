@@ -158,7 +158,7 @@ WPC Game ID: 50066
 Replay: 32,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0

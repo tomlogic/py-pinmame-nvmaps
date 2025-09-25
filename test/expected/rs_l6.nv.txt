@@ -137,7 +137,7 @@ WPC Game ID: 50024
 Credits: 0
 Volume: 12
 Replay: 500,000,000
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 0
 Extra Balls: 0

@@ -129,6 +129,10 @@ Player 3: 0
 Player 4: 0
 Ball Count: 3
 Maximum Credits: 10
+Tilted: false
+Game Over: true
+Extra Balls: 0
+Tilt Warnings: 0
 
 high_scores
 -----------

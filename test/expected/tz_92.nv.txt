@@ -147,7 +147,7 @@ WPC Game ID: 50020
 Credits: 0
 Volume: 12
 Replay: 250,000,000
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0

@@ -225,7 +225,7 @@ Player 4: 0
 Credits: 10
 Volume: 27
 Replay: 200,000,000
-Attract: IN GAME
+Game Over: false
 Current Player: 1
 Ball: 1
 Extra Balls: 0

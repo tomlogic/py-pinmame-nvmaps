@@ -129,7 +129,7 @@ Credits: 0
 Volume: 12
 Replay: 30,000,000
 Big Bang: 20,000,000
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 0
 Extra Balls: 0
