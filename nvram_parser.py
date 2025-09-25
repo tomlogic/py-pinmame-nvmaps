@@ -528,7 +528,7 @@ class RamMapping(object):
             return None
 
         # convert certain byte sequences from little_endian to big endian
-        if self.little_endian() and encoding in ['bcd', 'int', 'bits']:
+        if self.little_endian() and encoding in ['bcd', 'int', 'bits', 'bool']:
             ba.reverse()
 
         # find the nibble setting for the first address of this entry
@@ -602,7 +602,7 @@ class RamMapping(object):
                 value = 0
                 for b in ba:
                     value = value * 100 + bcd_byte_to_int(b)
-            elif encoding in ['int', 'bits', 'dipsw', 'enum']:
+            elif encoding in ['int', 'bits', 'bool', 'dipsw', 'enum']:
                 value = 0
                 for b in ba:
                     value = value * 256 + b
@@ -663,7 +663,7 @@ class RamMapping(object):
             new_bytes = [value.year // 256, value.year % 256,
                          value.month, value.day, value.isoweekday() % 7 + 1,
                          value.hour, value.minute]
-        elif encoding in ['bcd', 'int', 'enum']:
+        elif encoding in ['bcd', 'int', 'bool', 'enum']:
             # all formats where byte order applies
             if encoding == 'bcd':
                 for _ in old_bytes:
@@ -742,6 +742,8 @@ class RamMapping(object):
         value = self.get_value(memory)
         if encoding in ['bcd', 'int']:
             return self.format_value(value)
+        elif encoding == 'bool':
+            return 'true' if value else 'false'
         elif encoding == 'bits':
             values = self.entry.get('values', [])
             if values is None:
