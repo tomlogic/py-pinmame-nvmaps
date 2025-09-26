@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system7/generic.map.json for wrlok_l3.nv
+Using map ../maps/maps/williams/system7/generic-10KB.map.json for wrlok_l3.nv
 Dumping known entries for wrlok_l3.nv [Warlok (L-3)]...
 
 Game Audits

@@ -34,10 +34,18 @@ High score functions
 Game State
 ----------
 Credits: 0
-Player 1: 9,999,998
-Player 2: 9,999,980
-Player 3: 9
-Player 4: 6,000
+Player 1: 140,000
+Player 2: 140,000
+Player 3: 140,000
+Player 4: 140,000
+Final Score P1: 9,999,998
+Final Score P2: 9,999,980
+Final Score P3: 9
+Final Score P4: 6,000
+Ball Count: 3
+Max Credits: 10
+Game Over: false
+Tilted: false
 
 high_scores
 -----------

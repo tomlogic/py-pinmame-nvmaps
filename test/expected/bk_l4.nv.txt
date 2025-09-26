@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system7/generic.map.json for bk_l4.nv
+Using map ../maps/maps/williams/system7/generic-10KB.map.json for bk_l4.nv
 Dumping known entries for bk_l4.nv [Black Knight (L-4)]...
 
 Game Audits

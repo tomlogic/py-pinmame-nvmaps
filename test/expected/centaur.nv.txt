@@ -38,6 +38,14 @@ Player 1: 52,500
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Final Score P1: 52,500
+Final Score P2: 0
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 5
+Max Credits: 10
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

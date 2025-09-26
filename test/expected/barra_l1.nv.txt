@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system7/generic.map.json for barra_l1.nv
+Using map ../maps/maps/williams/system7/generic-10KB.map.json for barra_l1.nv
 Dumping known entries for barra_l1.nv [Barracora (L-1)]...
 
 Game Audits

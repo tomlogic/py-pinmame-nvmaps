@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system7/generic.map.json for dfndr_l4.nv
+Using map ../maps/maps/williams/system7/generic-12KB.map.json for dfndr_l4.nv
 Dumping known entries for dfndr_l4.nv [Defender (L-4)]...
 
 Game Audits
