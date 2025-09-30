@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system3/generic.map.json for lucky_l1.nv
+Using map ../maps/maps/williams/system3/lucky_l1.map.json for lucky_l1.nv
 Dumping known entries for lucky_l1.nv [Lucky Seven (L-1)]...
 
 Standard Audits
@@ -19,7 +19,6 @@ Standard Adjustments
 04 Replay 4 Score: 0
 05 Maximum Credits: 20
 06 Match/Credit/Extra Ball: 0
-07 Play: n/a
 08 HSTD Credits: 3
 09 Left Coin Slot Multiplier: 1
 10 Center Coin Slot Multiplier: 1
@@ -27,8 +26,9 @@ Standard Adjustments
 12 Coin Units Required for Credit: 0
 13 Coin Units Bonus Point: 2
 14 Coin Units Per Credit: 1
-15A Special Awards: n/a
+15A Special Awards: normal play
 15B Number of Balls: 3
+16 Tilt Warnings: 3
 
 Game State
 ----------

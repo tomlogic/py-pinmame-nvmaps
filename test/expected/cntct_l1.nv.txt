@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system3/generic.map.json for cntct_l1.nv
+Using map ../maps/maps/williams/system3/cntct_l1.map.json for cntct_l1.nv
 Dumping known entries for cntct_l1.nv [Contact (L-1)]...
 
 Standard Audits
@@ -19,7 +19,7 @@ Standard Adjustments
 04 Replay 4 Score: 0
 05 Maximum Credits: 20
 06 Match/Credit/Extra Ball: match on, replay awards credit
-07 Play: normal
+07 Play: normal (Star 1 & 2 together)
 08 HSTD Credits: 3
 09 Left Coin Slot Multiplier: 1
 10 Center Coin Slot Multiplier: 1
