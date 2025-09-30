@@ -50,7 +50,8 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
-Number of Balls: 3
+Ball Count: 3
+Maximum Credits: 20
 
 high_scores
 -----------

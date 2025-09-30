@@ -1,25 +1,25 @@
-Using map ../maps/maps/williams/system4/pkrno_l1.map.json for pkrno_l1.nv
-Dumping known entries for pkrno_l1.nv [Pokerino (L-1)]...
+Using map ../maps/maps/williams/system3/generic.map.json for cntct_l1.nv
+Dumping known entries for cntct_l1.nv [Contact (L-1)]...
 
 Standard Audits
 ---------------
-18 Current HSTD: 450,000
+18 Current HSTD: 350,000
 19 Coins, left chute: 0
 20 Coins, center chute: 0
-21 Coins, right chute: 0
-22 Total Paid Credits: 0
+21 Coins, right chute: 5
+22 Total Paid Credits: 5
 23 Special Credits: 0
 99 Check Byte: valid
 
 Standard Adjustments
 --------------------
-01 Replay 1 Score: 290,000
-02 Replay 2 Score: 430,000
-03 Replay 3 Score: 540,000
+01 Replay 1 Score: 200,000
+02 Replay 2 Score: 330,000
+03 Replay 3 Score: 430,000
 04 Replay 4 Score: 0
 05 Maximum Credits: 20
 06 Match/Credit/Extra Ball: match on, replay awards credit
-07 Play: normal ('P' and 'O' together)
+07 Play: normal
 08 HSTD Credits: 3
 09 Left Coin Slot Multiplier: 1
 10 Center Coin Slot Multiplier: 1
@@ -29,14 +29,13 @@ Standard Adjustments
 14 Coin Units Per Credit: 1
 15A Special Awards: credit
 15B Number of Balls: 3
-16 Tilt Warnings: 3
 
 Game State
 ----------
-Credits: 0
+Credits: 4
 Ball Count: 3
 Maximum Credits: 20
 
 high_scores
 -----------
-First Place: 450,000
+First Place: 350,000

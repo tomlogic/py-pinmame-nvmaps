@@ -67,6 +67,7 @@ Game State
 ----------
 Credits: 31
 Ball Count: 3
+Maximum Credits: 30
 
 high_scores
 -----------
