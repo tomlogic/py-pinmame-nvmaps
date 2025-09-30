@@ -743,6 +743,8 @@ class RamMapping(object):
         if encoding in ['bcd', 'int']:
             return self.format_value(value)
         elif encoding == 'bool':
+            if self.entry.get('invert'):
+                value = not value
             return 'true' if value else 'false'
         elif encoding == 'bits':
             values = self.entry.get('values', [])
