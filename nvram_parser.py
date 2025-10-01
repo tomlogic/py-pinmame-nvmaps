@@ -1197,18 +1197,24 @@ class ParseNVRAM(object):
             text = ''.join(ch)
         return "%s | %s" % (' '.join(b), text)
 
-    def hex_dump(self):
+    def hex_dump(self) -> None:
         """
-        Output a hex dump of the nvram section of the parser object.
+        Original routine to just hexdump contents of a .nv file.
+        :return: None
+        """
+        self.hex_dump_memory(self.get_memory_area(mem_type='nvram'))
+        self.hex_dump_pinmame_data()
 
-        TODO: allow caller to specify an address range
-        TODO: option to include/exclude PinMAME Data if present
-        TODO: iterate over ALL ram/nvram memory areas and dump each separately
+    def hex_dump_memory(self, memory_area: dict) -> None:
         """
-        memory_area = self.get_memory_area(mem_type='nvram')
-        nvram_start = memory_area['address']
-        nv_data = self.memory.find_region(nvram_start)['data']
-        nvram_size = memory_area['size']
+        Output a hex dump of a section of memory in the parser object.
+        TODO: allow caller to specify an address range
+        :param memory_area: memory_area dictionary from the platform's memory_layout section.
+        :return: None
+        """
+        start_addr = memory_area['address']
+        data = self.memory.find_region(start_addr)['data']
+        size = memory_area['size']
         nibble = memory_area['nibble']
 
         # Create a dictionary of RamMapping objects using offset as the key.
@@ -1227,9 +1233,9 @@ class ParseNVRAM(object):
             entry[checksum.offsets()[0]] = checksum
 
         offset = 0
-        while offset < nvram_size:
+        while offset < size:
             # If this offset is in entry[], display it with its formatted value.
-            mapping = entry.get(nvram_start + offset)
+            mapping = entry.get(start_addr + offset)
             if mapping:
                 count = len(list(mapping.offsets()))
                 (label, value) = mapping.format_mapping(self.memory)
@@ -1243,28 +1249,33 @@ class ParseNVRAM(object):
 
                 # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
                 count = 1
-                while count < HEX_DUMP_BYTES_PER_LINE and not entry.get(nvram_start + offset + count):
+                while count < HEX_DUMP_BYTES_PER_LINE and not entry.get(start_addr + offset + count):
                     count += 1
-            if offset + count > nvram_size:
-                count = nvram_size - offset
+            if offset + count > size:
+                count = size - offset
 
-            print("%04X: %s" % (nvram_start + offset,
-                                self.hex_line(nv_data[offset:offset + count], nibble, text)))
+            print("%04X: %s" % (start_addr + offset,
+                                self.hex_line(data[offset:offset + count], nibble, text)))
             offset += count
 
+    def hex_dump_pinmame_data(self):
         # print hex dump of last bytes in file
         pinmame_data = self.memory.get_pinmame_data()
         if pinmame_data:
             print("\nPinMAME data in .nv file:")
             offset = 0
-            while offset < len(pinmame_data):
+            # dump everything except DIP switches
+            length = len(pinmame_data) - 6
+            while offset < length:
                 # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
                 count = 1
-                while count < HEX_DUMP_BYTES_PER_LINE and offset + count < len(pinmame_data):
+                while count < HEX_DUMP_BYTES_PER_LINE and offset + count < length:
                     count += 1
                 print("%04X: %s" % (offset, self.hex_line(pinmame_data[offset:offset + count],
                                                           Nibble.BOTH)))
                 offset += count
+            print("%04X: %s" % (offset, self.hex_line(pinmame_data[offset:offset + 6],
+                                                      Nibble.BOTH, 'DIP Switches')))
 
 
 def main() -> None:
