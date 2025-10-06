@@ -1220,7 +1220,7 @@ class ParseNVRAM(object):
         # Create a dictionary of RamMapping objects using offset as the key.
         entry = {}
         for m in self.mapping:
-            if m.section == 'dip_switches':
+            if m.section == 'dip_switches' or m.entry.get('encoding') == 'dipsw':
                 # skip over dip_switches -- their offsets aren't memory addresses
                 continue
 
