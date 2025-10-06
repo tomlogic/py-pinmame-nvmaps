@@ -4,10 +4,18 @@ Dumping known entries for bmx.nv [BMX]...
 Game State
 ----------
 Credits: 7
-Player 1: 115,620
-Player 2: 10,240
+Player 1: 0
+Player 2: 0
 Player 3: 0
 Player 4: 0
+Final Score P1: 115,620
+Final Score P2: 10,240
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

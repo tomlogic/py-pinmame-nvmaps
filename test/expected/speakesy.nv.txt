@@ -7,19 +7,25 @@ Bookkeeping functions
 06 Total Plays (Paid and Free Games): 0
 07 Total Replays (Free Games): 0
 08 Game Percentage: 0
-09 Total times 'High Score to Date' is beat: 0
-10 Coins Dropped thru Coin Chute #1: 0
-11 Coins Dropped thru Coin Chute #2: 0
-12 Coins Dropped thru Coin Chute #3: 0
-13 Number of Specials awarded from Panel Specials Only: 0
-14 Number of minutes of Game Play: 0
-15 Number of Service Credits: 0
+09 HSTD Achieved: 0
+10 Coin Chute #1: 0
+11 Coin Chute #2: 0
+12 Coin Chute #3: 0
+13 Specials Awarded: 0
+14 Minutes of Game Play: 0
+15 Service Credits: 0
 
 Game State
 ----------
 Credits: 0
 Player 1: 0
 Player 2: 0
+Final Score P1: 0
+Final Score P2: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

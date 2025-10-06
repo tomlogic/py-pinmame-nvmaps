@@ -1,13 +1,21 @@
-Using map ../maps/maps/bally/as-2518-35/embryond.map.json for embryon.nv
+Using map ../maps/maps/bally/as-2518-35/embryon.map.json for embryon.nv
 Dumping known entries for embryon.nv [Embryon]...
 
 Game State
 ----------
-Credits: 0
+Credits: 8
 Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Final Score P1: 0
+Final Score P2: 0
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
 
 high_scores
 -----------
