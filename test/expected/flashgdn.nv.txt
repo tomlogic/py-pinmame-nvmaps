@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/flashgdn.map.json for flashgdn.nv
+Using map ../maps/maps/bally/as-2518-35/system-rom-52.map.json for flashgdn.nv
 Dumping known entries for flashgdn.nv [Flash Gordon]...
 
 Bookkeeping functions

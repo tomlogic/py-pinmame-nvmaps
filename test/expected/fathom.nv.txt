@@ -1,6 +1,20 @@
 Using map ../maps/maps/bally/as-2518-35/fathom.map.json for fathom.nv
 Dumping known entries for fathom.nv [Fathom]...
 
+Bookkeeping functions
+---------------------
+05 Current Credits: 7
+06 Total Plays (Paid and Free Games): 18
+07 Total Replays (Free Games): 3
+08 Game Percentage: 0
+09 HSTD Achieved: 1
+10 Coin Chute #1: 14
+11 Coin Chute #2: 0
+12 Coin Chute #3: 13
+13 Specials Awarded: 0
+14 Minutes of Game Play: 3
+15 Service Credits: 0
+
 Game State
 ----------
 Credits: 7

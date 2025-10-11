@@ -1,6 +1,16 @@
 Using map ../maps/maps/bally/as-2518-35/kissc.map.json for kissc.nv
 Dumping known entries for kissc.nv [Kiss (Free Play rev. 3)]...
 
+Bookkeeping functions
+---------------------
+05 Current Credits: 3
+06 Total Plays (Paid and Free Games): 13
+07 Total Replays (Free Games): 0
+08 HSTD Achieved: 3
+09 Coin Chute #1: 9
+10 Coin Chute #2: 0
+11 Coin Chute #3: 10
+
 Game State
 ----------
 Credits: 3
@@ -8,6 +18,14 @@ Player 1: 6,550
 Player 2: 10,520
 Player 3: 0
 Player 4: 0
+Final P1: 6,550
+Final P2: 10,520
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 5
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

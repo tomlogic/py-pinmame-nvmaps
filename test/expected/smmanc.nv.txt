@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/smman.map.json for smmanc.nv
+Using map ../maps/maps/bally/as-2518-35/smmanc.map.json for smmanc.nv
 Dumping known entries for smmanc.nv [Six Million Dollar Man, The (Free Play rev. 3)]...
 
 Bookkeeping functions

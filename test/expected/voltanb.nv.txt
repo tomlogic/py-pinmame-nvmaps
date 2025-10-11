@@ -1,15 +1,15 @@
-Using map ../maps/maps/bally/as-2518-35/voltanb.map.json for voltanb.nv
+Using map ../maps/maps/bally/as-2518-35/system-rom-30-7digit.map.json for voltanb.nv
 Dumping known entries for voltanb.nv [Voltan Escapes Cosmic Doom (7-digit conversion rev. 20)]...
 
 Bookkeeping functions
 ---------------------
 05 Current Credits: 0
-06 Total Plays (Paid & Free Games): 0
+06 Total Plays (Paid and Free Games): 0
 07 Total Replays (Free Games): 0
-08 Total times 'High Game to Date' is beat: 0
-09 Coins Dropped thru Coin Chute #1: 0
-10 Coins Dropped thru Coin Chute #2: 0
-11 Coins Dropped thru Coin Chute #3: 0
+08 HSTD Achieved: 0
+09 Coin Chute #1: 0
+10 Coin Chute #2: 0
+11 Coin Chute #3: 0
 
 Game State
 ----------
@@ -18,6 +18,14 @@ Player 1: 20
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Final P1: 20
+Final P2: 0
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 5
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

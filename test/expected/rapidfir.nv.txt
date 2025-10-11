@@ -6,3 +6,5 @@ Game State
 Credits: 0
 Player 1: 0
 Player 2: 0
+Final P1: 0
+Final P2: 0

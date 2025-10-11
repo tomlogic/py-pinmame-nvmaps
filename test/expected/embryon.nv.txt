@@ -1,6 +1,30 @@
 Using map ../maps/maps/bally/as-2518-35/embryon.map.json for embryon.nv
 Dumping known entries for embryon.nv [Embryon]...
 
+Bookkeeping functions
+---------------------
+05 Current Credits: 8
+06 Total Plays (Paid and Free Games): 8
+07 Total Replays (Free Games): 2
+08 Game Percentage: 0
+09 HSTD Achieved: 1
+10 Coin Chute #1: 0
+11 Coin Chute #2: 3
+12 Coin Chute #3: 8
+13 Specials Awarded: 0
+14 Minutes of Game Play: 0
+15 Service Credits: 0
+
+Adjustments
+-----------
+01 Replay Level 1: OFF
+02 Replay Level 2: OFF
+03 Replay Level 3: OFF
+16 Special/Extra Ball Awards: ?15
+17 Replay Award: ?15
+18 Sound Option: ?15
+19 HSTD Award: 0 credits
+
 Game State
 ----------
 Credits: 8
