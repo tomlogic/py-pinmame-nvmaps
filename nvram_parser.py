@@ -963,7 +963,7 @@ class ParseNVRAM(object):
         else:
             raise ValueError('Unsupported map file format -- update to v0.6 or later')
 
-        self.mapping = []
+        self.mapping: List[RamMapping] = []
         for section in ['audits', 'adjustments']:
             for group in sorted(self.map_json.get(section, {}).keys()):
                 if group.startswith('_'):
