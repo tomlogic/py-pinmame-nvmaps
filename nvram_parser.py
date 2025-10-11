@@ -654,6 +654,7 @@ class RamMapping(object):
             return
 
         start = to_int(self.entry['start'])
+        length = self.entry.get('length', 1)
         # can now replace nvram[start:(start + len(old_bytes)]
         new_bytes = []
 
@@ -689,7 +690,11 @@ class RamMapping(object):
                     else:   # Nibble.HIGH
                         nibbles.append((b << 4) & 0xF0)
                         nibbles.append(b & 0xF0)
-                new_bytes = nibbles
+                if len(nibbles) > length:
+                    # this can happen for an odd length -- remove last nibble
+                    new_bytes = nibbles[:-1]
+                else:
+                    new_bytes = nibbles
 
             if not self.little_endian():
                 new_bytes = reversed(new_bytes)
