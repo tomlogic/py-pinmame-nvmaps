@@ -615,6 +615,11 @@ class RamMapping(object):
                     value *= to_int(scale)
                 value += to_int(self.entry.get('offset', 0))
 
+            if encoding == 'bool':
+                value = 1 if value else 0
+                if self.entry.get('invert'):
+                    value = not value
+
         return value
 
     def set_value(self, memory: SparseMemory,
@@ -743,8 +748,6 @@ class RamMapping(object):
         if encoding in ['bcd', 'int']:
             return self.format_value(value)
         elif encoding == 'bool':
-            if self.entry.get('invert'):
-                value = not value
             return 'true' if value else 'false'
         elif encoding == 'bits':
             values = self.entry.get('values', [])
