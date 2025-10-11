@@ -197,6 +197,7 @@ Fourth Place: MAS 70
 
 mode_champions
 --------------
+* MVP: WAG 10,042
 BLAZERS: TMK 51
 BUCKS: CJS 48
 BULLETS: III 71
