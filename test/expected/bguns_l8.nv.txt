@@ -58,6 +58,7 @@ Tilted: false
 Game Over: true
 Extra Balls: 3
 Tilt Warnings: 0
+Free Play: false
 
 high_scores
 -----------

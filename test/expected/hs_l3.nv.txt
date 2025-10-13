@@ -123,6 +123,7 @@ Ball Count: 3
 Maximum Credits: 30
 Tilted: false
 Game Over: true
+Free Play: false
 
 high_scores
 -----------
