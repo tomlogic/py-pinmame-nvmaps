@@ -199,6 +199,7 @@ EBs this Ball: 0
 Game Over: true
 Ball Count: 3
 Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

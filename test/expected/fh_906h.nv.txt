@@ -141,6 +141,7 @@ Extra Balls: 0
 EBs this Ball: 0
 Ball Count: 5
 Maximum Credits: 10
+Free Play: true
 
 high_scores
 -----------

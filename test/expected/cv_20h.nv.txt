@@ -169,6 +169,7 @@ Player 3: 0
 Player 4: 0
 WPC Game ID: 50062
 Replay: 25,000,000
+Credits: FREE ONLY
 Volume: 12
 Game Over: true
 Current Player: 1
@@ -177,6 +178,7 @@ Extra Balls: 0
 EBs this Ball: 0
 Ball Count: 3
 Maximum Credits: 10
+Free Play: true
 
 high_scores
 -----------
@@ -191,3 +193,4 @@ mode_champions
 Cannon Ball Champ: TEX 50
 Party Champ: PAB 20,000,000
 Last Played: 2025-01-02 00:01
+checksum at 0x1DC5: 0xF807 != 0xFFFF Credits
