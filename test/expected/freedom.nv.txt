@@ -1,0 +1,38 @@
+Using map ../maps/maps/bally/as-2518-17/freedom.map.json for freedom.nv
+Dumping known entries for freedom.nv [Freedom]...
+
+Bookkeeping functions
+---------------------
+01 Coin Chute #1: 100,011
+02 Coin Chute #2: 100,021
+03 Coin Chute #3: 100,031
+04 Total Plays: 100,047
+05 Unknown Audit: 100,005
+06 Current Credits: 100,002
+
+High score functions
+--------------------
+07 Replay Level 1: 100,007
+08 Replay Level 2: 100,008
+09 Replay Level 3: 100,009
+10 High score to date: 100,010
+
+Game State
+----------
+Credits: 2
+Player 1: 10
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Final P1: 0
+Final P2: 0
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 5
+Game Over: false
+Tilted: false
+
+high_scores
+-----------
+High Score: 100,010

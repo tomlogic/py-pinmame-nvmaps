@@ -1,0 +1,40 @@
+Using map ../maps/maps/stern/stern-m100.map.json for princess.nv
+Dumping known entries for princess.nv [Cosmic Princess]...
+
+Audits
+------
+05 Credits: 15
+06 Total Plays: 100,006
+07 Total Replays: 100,007
+08 HSTD Beaten: 100,008
+09 Coin Chute 2: 100,009
+10 Coin Chute 1: 100,010
+11 Coin Chute 3: 100,011
+
+Adjustments
+-----------
+01 Replay 1: 100,010
+02 Replay 2: 100,020
+03 Replay 3: 100,030
+04 High Score: 100,040
+
+Game State
+----------
+Match: 11
+Credits: 15
+Player 1: 100,011
+Player 2: 100,011
+Player 3: 100,011
+Player 4: 100,011
+Final P1: 0
+Final P2: 0
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 5
+Game Over: false
+Tilted: false
+
+high_scores
+-----------
+High Score: 100,040
