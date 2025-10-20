@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/tsptr_l3.nv.json for tsptr_l3.nv
+Using map ../maps/maps/williams/system11/tsptr_l3.map.json for tsptr_l3.nv
 Dumping known entries for tsptr_l3.nv [Transporter the Rescue (L-3)]...
 
 Audits
@@ -127,6 +127,13 @@ Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Ball Count: 3
+Maximum Credits: 10
+Tilted: false
+Game Over: true
+Extra Balls: 0
+Tilt Warnings: 0
+Free Play: false
 
 high_scores
 -----------

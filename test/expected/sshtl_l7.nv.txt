@@ -1,9 +1,91 @@
-Using map ../maps/maps/williams/system9.nv.json for sshtl_l7.nv
+Using map ../maps/maps/williams/system9/generic.map.json for sshtl_l7.nv
 Dumping known entries for sshtl_l7.nv [Space Shuttle (L-7)]...
+
+Game Audits
+-----------
+42 Game Audit #1: 0
+43 Game Audit #2: 0
+44 Game Audit #3: 0
+45 Game Audit #4: 0
+46 Game Audit #5: 0
+47 Game Audit #6: 0
+48 Game Audit #7: 0
+49 Game Audit #8: 0
+
+Standard Audits
+---------------
+01 Coins, Left Chute: 0
+02 Coins, Center Chute: 0
+03 Coins, Right Chute: 0
+04 Total Paid Credits: 0
+05 Special Credits: 0
+06 Replay Credits: 0
+07 Match Credits: 0
+08 Total Credits: 0
+09 Extra Balls: 0
+10 Ball Time: 0:00:00
+11 Balls Played: 0
+14 Reached Replay 1: 0
+15 Reached Replay 2: 0
+16 Reached Replay 3: 0
+17 Reached Replay 4: 0
+
+Game Adjustments
+----------------
+31 Game Adjustment #1: 10
+32 Game Adjustment #2: 14
+33 Game Adjustment #3: 1
+34 Game Adjustment #4: 1
+35 Game Adjustment #5: 1
+36 Game Adjustment #6: 0
+37 Game Adjustment #7: 0
+38 Game Adjustment #8: 0
+39 Game Adjustment #9: 1
+
+Standard Adjustments
+--------------------
+13a Backup High Score 1: 4,500,000
+13b Backup High Score 2: 4,000,000
+13c Backup High Score 3: 3,500,000
+13d Backup High Score 4: 3,000,000
+14 First Replay Level: 1,200,000
+15 Second Replay Level: 0
+16 Third Replay Level: 0
+17 Fourth Replay Level: 0
+18 Maximum Credits: 30
+19 Standard/Custom Pricing: 1/$0.25, 4/$1
+20 Left Coin-Slot Multiplier: 1
+21 Center Coin-Slot Multiplier: 4
+22 Right Coin-Slot Multiplier: 1
+23 Coin Units/Credit: 1
+24 Units for Bonus Credit: 0
+25 Minimum Coin Units: 0
+26 Match: ?2
+27 Special Awards: CREDIT
+28 Replay Awards: CREDIT
+29 Tilt Warnings: 3
+30 Number of Balls: 3
+40 Max High Score Credits: 4
+41 Max Extra Balls: 4
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Game Over: true
+Players: 1
+Current Player: 1
+Credits: 0
+Ball Count: 3
+Max Credits: 30
+Ball: n/a
+Match: 0
 
 high_scores
 -----------
-?: 4,500,000
-?: 4,000,000
-?: 3,500,000
-?: 3,000,000
+High Score #1: 4,500,000
+High Score #2: 4,000,000
+High Score #3: 3,500,000
+High Score #4: 3,000,000

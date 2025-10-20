@@ -1,0 +1,36 @@
+Using map ../maps/maps/bally/as-2518-35/smman.map.json for smman.nv
+Dumping known entries for smman.nv [Six Million Dollar Man, The]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 100,005
+06 Total Plays (Paid and Free Games): 100,006
+07 Total Replays (Free Games): 100,007
+08 HSTD Achieved: 100,008
+09 Coin Chute #1: 100,009
+10 Coin Chute #2: 100,010
+11 Coin Chute #3: 100,011
+
+Game State
+----------
+Credits: 5
+Player 1: 100,011
+Player 2: 100,011
+Player 3: 100,011
+Player 4: 100,011
+Player 5: 0
+Player 6: 0
+Final Score P1: 0
+Final Score P2: 0
+Final Score P3: 0
+Final Score P4: 0
+Final Score P5: 0
+Final Score P6: 0
+Ball Count: 3
+Max Credits: 5
+Game Over: false
+Tilted: false
+
+high_scores
+-----------
+High Score: 29,590

@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B.nv.json for sprbreak.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-10KB.map.json for sprbreak.nv
 Dumping known entries for sprbreak.nv [Spring Break]...
 
 Bookkeeping
@@ -26,6 +26,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 5
+Maximum Credits: 10
 
 DIP Switches
 ------------

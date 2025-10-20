@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/eatpm_l4.nv.json for eatpm_l4.nv
+Using map ../maps/maps/williams/system11/eatpm_l4.map.json for eatpm_l4.nv
 Dumping known entries for eatpm_l4.nv [Elvira and the Party Monsters (LA-4)]...
 
 Audits
@@ -57,6 +57,15 @@ Player 2: 0
 Player 3: 0
 Player 4: 0
 Ball: 1
+Ball Count: 3
+Maximum Credits: 10
+Player Count: 1
+Current Player: 1
+Tilted: false
+Game Over: false
+Extra Balls: 0
+Tilt Warnings: 0
+Free Play: false
 
 high_scores
 -----------

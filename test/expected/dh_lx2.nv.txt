@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/dh_lx2.nv.json for dh_lx2.nv
+Using map ../maps/maps/williams/wpc/dh_lx2.map.json for dh_lx2.nv
 Dumping known entries for dh_lx2.nv [Dirty Harry (LX-2)]...
 
 B.2 EARNINGS AUDS.
@@ -141,11 +141,14 @@ Player 4: 0
 Credits: 9
 Volume: 12
 Replay: 500,000,000
-Attract: IN GAME
+Game Over: false
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

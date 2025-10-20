@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/drac_l1.nv.json for drac_l1.nv
+Using map ../maps/maps/williams/wpc/drac_l1.map.json for drac_l1.nv
 Dumping known entries for drac_l1.nv [Bram Stoker's Dracula (L-1)]...
 
 B.2 EARNINGS AUDS.
@@ -225,11 +225,14 @@ Player 4: 0
 Credits: 10
 Volume: 27
 Replay: 200,000,000
-Attract: IN GAME
+Game Over: false
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

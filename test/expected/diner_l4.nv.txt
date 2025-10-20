@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/diner_l4.nv.json for diner_l4.nv
+Using map ../maps/maps/williams/system11/diner_l4.map.json for diner_l4.nv
 Dumping known entries for diner_l4.nv [Diner (LA-4)]...
 
 Audits
@@ -59,6 +59,15 @@ Player 2: 0
 Player 3: 0
 Player 4: 0
 Ball: 2
+Ball Count: 3
+Maximum Credits: 10
+Player Count: 1
+Current Player: 1
+Tilted: false
+Game Over: false
+Extra Balls: 0
+Tilt Warnings: 0
+Free Play: false
 
 high_scores
 -----------

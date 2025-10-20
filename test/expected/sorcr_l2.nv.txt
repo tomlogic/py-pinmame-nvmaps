@@ -1,9 +1,91 @@
-Using map ../maps/maps/williams/system9.nv.json for sorcr_l2.nv
+Using map ../maps/maps/williams/system9/sorcr_l2.map.json for sorcr_l2.nv
 Dumping known entries for sorcr_l2.nv [Sorcerer (L-2)]...
+
+Game Audits
+-----------
+42 Multiball Achieved: 0
+43 3X's in Multiball: 0
+44 5X's in Multiball: 0
+45 Ramps over 5X: 0
+46 Bonus Holdovers: 0
+47 Playfield Specials: 0
+48 A-B-C-D Completed: 1
+49 Game Audit #8 (unused): 0
+
+Standard Audits
+---------------
+01 Coins, Left Chute: 0
+02 Coins, Center Chute: 11
+03 Coins, Right Chute: 11
+04 Total Paid Credits: 55
+05 Special Credits: 0
+06 Replay Credits: 0
+07 Match Credits: 1
+08 Total Credits: 2
+09 Extra Balls: 0
+10 Ball Time: 0:01:00
+11 Balls Played: 4
+14 Reached Replay 1: 0
+15 Reached Replay 2: 0
+16 Reached Replay 3: 0
+17 Reached Replay 4: 0
+
+Game Adjustments
+----------------
+31 Extra Ball Lamp Memory: conservative (no)
+32 Drop Target Reset: 5
+33 Bell: ON
+34 Drop Target Blink Interval: 5
+35 Background Sounds: ON
+36 Attract Mode Sounds: OFF
+37 Bonus Holdover in Memory: ON
+38 S-O-R-C-E-R-E-R Target Memory: liberal (yes)
+39 Game Adjustment (unused): 0
+
+Standard Adjustments
+--------------------
+13a Backup High Score 1: 2,500,000
+13b Backup High Score 2: 2,000,000
+13c Backup High Score 3: 1,500,000
+13d Backup High Score 4: 1,100,000
+14 First Replay Level: 1,000,000
+15 Second Replay Level: 0
+16 Third Replay Level: 0
+17 Fourth Replay Level: 0
+18 Maximum Credits: 30
+19 Standard/Custom Pricing: 1/$0.25, 4/$1
+20 Left Coin-Slot Multiplier: 1
+21 Center Coin-Slot Multiplier: 4
+22 Right Coin-Slot Multiplier: 1
+23 Coin Units/Credit: 1
+24 Units for Bonus Credit: 0
+25 Minimum Coin Units: 0
+26 Match: ON
+27 Special Awards: CREDIT
+28 Replay Awards: CREDIT
+29 Tilt Warnings: 3
+30 Number of Balls: 3
+40 Max High Score Credits: 3
+41 Max Extra Balls: 4
+
+Game State
+----------
+Player 1: 70,330
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Game Over: true
+Players: n/a
+Current Player: 1
+Credits: 30
+Ball Count: 3
+Max Credits: 30
+Ball: n/a
+Match: 30
 
 high_scores
 -----------
-?: 2,500,000
-?: 2,000,000
-?: 1,500,000
-?: 1,100,000
+High Score #1: 2,500,000
+High Score #2: 2,000,000
+High Score #3: 1,500,000
+High Score #4: 1,100,000

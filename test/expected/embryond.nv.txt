@@ -1,5 +1,29 @@
-Using map ../maps/maps/bally/as-2518-35/embryond.nv.json for embryond.nv
+Using map ../maps/maps/bally/as-2518-35/system-rom-52.map.json for embryond.nv
 Dumping known entries for embryond.nv [Embryon (7-digit conversion rev. 9)]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 10
+06 Total Plays (Paid and Free Games): 3
+07 Total Replays (Free Games): 0
+08 Game Percentage: 0
+09 HSTD Achieved: 2
+10 Coin Chute #1: 0
+11 Coin Chute #2: 0
+12 Coin Chute #3: 5
+13 Specials Awarded: 0
+14 Minutes of Game Play: 1
+15 Service Credits: 0
+
+Adjustments
+-----------
+01 Replay Level 1: OFF
+02 Replay Level 2: OFF
+03 Replay Level 3: OFF
+16 Special/Extra Ball Awards: ?15
+17 Replay Award: ?15
+18 Sound Option: ?15
+19 HSTD Award: 0 credits
 
 Game State
 ----------
@@ -8,6 +32,14 @@ Player 1: 43,380
 Player 2: 49,840
 Player 3: 0
 Player 4: 0
+Final Score P1: 43,380
+Final Score P2: 49,840
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

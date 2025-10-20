@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-7digit.nv.json for raven.nv
+Using map ../maps/maps/gottlieb/system80b/80b-7digit-10KB.map.json for raven.nv
 Dumping known entries for raven.nv [Raven]...
 
 Bookkeeping
@@ -24,7 +24,8 @@ Standard Adjustments
 
 Game State
 ----------
-Credits: 41
+Credits: 0
+Maximum Credits: 10
 
 DIP Switches
 ------------

@@ -21,13 +21,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import argparse
+import glob
 import json
 import os
 
 from curses.ascii import isprint
 from datetime import datetime
 from enum import Enum
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 MAPS_ROOT = os.path.join(os.path.dirname(__file__), 'maps')
 HEX_DUMP_BYTES_PER_LINE = 16
@@ -66,6 +67,32 @@ def format_number(number: int) -> str:
     return '{0:,}'.format(number)
 
 
+def bcd_nibble_to_int(bcd_value: int) -> int:
+    """
+    Returns valid BCD value for a nibble, converting 0xA to 0xF to 0.
+    Multiple machines display a space for 0xF, but this routine doesn't support that.
+    """
+    if bcd_value < 0x0 or bcd_value > 0xF:
+        raise ValueError('value 0x%X exceeds 4 bits' % bcd_value)
+    return 0 if bcd_value > 9 else bcd_value
+
+def bcd_byte_to_int(bcd_value: int) -> int:
+    """
+    Convert a BCD-encoded byte (e.g., 0x42) to an integer value (e.g., 42).
+    """
+    if bcd_value < 0x0 or bcd_value > 0xFF:
+        raise ValueError('value 0x%X exceeds 8 bits' % bcd_value)
+    return bcd_nibble_to_int(bcd_value >> 4) * 10 + bcd_nibble_to_int(bcd_value & 0x0F)
+
+def int_byte_to_bcd(int_value: int) -> int:
+    """
+    Convert an integer (e.g., 42) to a BCD-encoded byte (e.g., 0x42).
+    """
+    if int_value < 0 or int_value > 99:
+        raise ValueError('cannot convert %u to BCD byte' % int_value)
+    return (int_value // 10) * 16 + (int_value % 10)
+
+
 def rom_name(rom: str) -> str:
     """Return the descriptive ROM name for a given ROM (e.g., fh_l9)."""
     with open(os.path.join(MAPS_ROOT, 'romnames.json')) as f:
@@ -79,6 +106,19 @@ def map_for_rom(rom: str) -> Optional[str]:
         if map_file:
             return os.path.join(MAPS_ROOT, map_file)
 
+    return None
+
+
+def platform_for_rom(rom: str) -> Optional[str]:
+    """
+    Look up the map for a given ROM and return the platform's name.
+    :param rom:
+    :return:
+    """
+    map_file = map_for_rom(rom)
+    if map_file:
+        with open(os.path.join(MAPS_ROOT, map_file), 'r') as f:
+            return json.load(f).get('_metadata', {}).get('platform')
     return None
 
 
@@ -99,43 +139,82 @@ def find_map(nvpath: str) -> Optional[str]:
     """
     Find a map that will work with the ROM of the given nvram file.
     :param nvpath: Full pathname of a .nv file.
-    :return: Path of .nv.json file or None if nothing matches <nvpath>.
+    :return: Path of .map.json file or None if nothing matches <nvpath>.
     """
     return map_for_rom(rom_for_nvpath(nvpath))
 
 
-def dipsw_get(nvram: bytes, index: int) -> bool:
+def dipsw_get(dip_switches: bytearray, index: int) -> bool:
     """
     Return state of a game's DIP switch.
 
-    :param nvram: contents of .nv file
+    :param dip_switches: bytearray with DIP switches stored in the last six bytes,
+                         possibly from SparseMemory.get_dipsw_data().
     :param index: DIP switch number (1 to n)
     :return: True if DIP switch is configured as "ON"
     """
-    index -= 1  # switches start at 1 in file, 0 in memory
+    index -= 1  # switch numbering starts at 1 in map, 0 in memory
     bank = index // 8
     mask = 1 << (index % 8)
-    # dip switches are last 6 bytes of file
-    byte_value = nvram[-6 + bank]
-    return (byte_value & mask) != 0
+    # dip switches are stored in last 6 bytes
+    return (dip_switches[-6 + bank] & mask) != 0
 
 
-def dipsw_set(nvram: bytes, index: int, state: bool) -> None:
+def dipsw_set(dip_switches: bytearray, index: int, state: bool) -> None:
     """
     Set the state of a game's DIP switch.
-    :param nvram: contents of .nv file
+    :param dip_switches: bytearray with DIP switches stored in the last six bytes,
+                         possibly from SparseMemory.get_dipsw_data().
     :param index: DIP switch number (1 to n)
     :param state: True to set the switch to ON, False to set it to OFF.
     :return:
     """
-    index -= 1  # switches start at 1 in file, 0 in memory
+    index -= 1  # switch numbering starts at 1 in file, 0 in memory
     bank = index // 8
     mask = 1 << (index % 8)
     # dip switches are last 6 bytes of file
     if state:
-        nvram[-6 + bank] |= mask
+        dip_switches[-6 + bank] |= mask
     else:
-        nvram[-6 + bank] &= ~mask
+        dip_switches[-6 + bank] &= ~mask
+
+
+def load_platform(name: str) -> Dict:
+    with open(os.path.join(MAPS_ROOT, 'platforms', name + '.json')) as platform_file:
+        platform_json = json.load(platform_file)
+    platform = {
+        'name': name,
+        'memory_layout': []
+    }
+    for attribute in ['cpu', 'endian']:
+        platform[attribute] = platform_json.get(attribute)
+
+    for region_json in platform_json['memory_layout']:
+        # use default nibble of BOTH
+        region: dict[str, Union[Nibble, int, str]] = {
+            'nibble': Nibble.BOTH
+        }
+        for key, value in region_json.items():
+            if key in ['address', 'size']:
+                region[key] = to_int(value)
+            elif key == 'nibble':
+                region[key] = get_nibble(value)
+            else:
+                region[key] = value
+        platform['memory_layout'].append(region)
+
+    return platform
+
+
+def platform_list() -> List[str]:
+    """
+    Return a list of known platforms.
+    """
+    platforms = []
+    for filename in glob.glob(os.path.join(MAPS_ROOT, 'platforms', '*.json')):
+        filename = os.path.basename(filename)
+        platforms.append(filename.replace('.json', ''))
+    return platforms
 
 
 class SparseMemory(object):
@@ -143,8 +222,14 @@ class SparseMemory(object):
     Object representing memory contents for a portion of the full address space.
     """
     def __init__(self):
-        self.pinmame_data = None
-        self.memory = []
+        # Portion of PinMAME .nv file beyond in-game memory area, ends with 6 bytes of DIP switch data.
+        self.pinmame_data: Optional[bytearray] = None
+
+        # 6-byte, little-endian bytearray with DIP switch settings
+        self.dipsw_data: Optional[bytearray] = None
+
+        # Memory areas loaded from PinMAME .nv file or otherwise.
+        self.memory: List[dict] = []
 
     def find_region(self, address: int) -> Optional[dict]:
         for region in self.memory:
@@ -154,8 +239,9 @@ class SparseMemory(object):
                 return region
         return None
 
-    def update_memory(self, address: int, data: Union[bytearray, list]) -> None:
-        if type(data) is list:
+    def update_memory(self, address: int, data: Union[bytearray, bytes, list]) -> None:
+        if type(data) in [list, bytes]:
+            # convert to bytearray so we can modify it in the future
             data = bytearray(data)
         region = self.find_region(address)
         if region:
@@ -187,41 +273,142 @@ class SparseMemory(object):
                 return region['data'][address - region_base]
         return None
 
+    def get_range(self, start: int, length: int) -> List[int]:
+        data = []
+        for i in range(length):
+            data.append(self.get_byte(start + i))
+        return data
+
     def set_pinmame_data(self, data: bytearray = None):
         self.pinmame_data = data
 
     def get_pinmame_data(self) -> Optional[bytearray]:
         return self.pinmame_data
 
+    def set_dipsw_data(self, data: bytearray) -> None:
+        """
+        Save DIP switch values to the SparseMemory object.  Automatically extends
+        bytearray to 6 bytes if shorter.
+        :param data: Up to 6 bytes of DIP switches in little-endian byte order.
+        :return: None
+        """
+        # DIP switches take up 6 bytes, so pad out to that length.
+        padding = 6 - len(data)
+        if padding > 0:
+            data.extend([0] * padding)
+        self.dipsw_data = data
+
+    def get_dipsw_data(self) -> Optional[bytearray]:
+        """
+        Loads DIP Switch values previously stored with set_dipsw_data() or the
+        last six bytes of self.pinmame_data (if available).
+        :return: 6 bytes or None if DIP switches weren't loaded.
+        """
+        if self.dipsw_data:
+            return self.dipsw_data
+        if self.pinmame_data:
+            # just DIP switch section (last six bytes) of PinMAME data
+            return self.pinmame_data[-6:]
+        return None
 
 class ChecksumMapping(object):
     """Simplified RamMapping object used for checksum values."""
-    def __init__(self, start: int, end: int, label: str, checksum16: bool,
-                 big_endian: bool):
-        self.start = start
-        self.end = end
+    def __init__(self, start: int, end: int, checksum: Optional[int], label: str,
+                 checksum16: bool, big_endian: bool):
+        """
+        Create a ChecksumMapping object, to represent an 8-bit or 16-bit checksum stored in
+        a game's memory.
+        :param start: Starting address of the memory range checksummed
+        :param end: Ending address of the memory range checksummed.  If checksum = None, this
+                    address actually includes the checksum itself.
+        :param checksum: Address for the checksum, if not included in the start-end range.
+        :param label: Label describing checksum.
+        :param checksum16: This is a 2-byte (16-bit) checksum.
+        :param big_endian: The checksum is stored big-endian (MSB first).
+        """
         self.label = label
         self.big_endian = big_endian
         self.checksum16 = checksum16
+        self.formatting = '0x%04X' if checksum16 else '0x%02X'
+        self.start = start
+        self.end = end
+        if checksum:
+            self.checksum = checksum
+        else:
+            # checksum included in start-end range
+            self.end = end - self.length()
+            self.checksum = self.end + 1
 
     def offsets(self) -> List[int]:
+        offsets = [self.checksum]
         if self.checksum16:
-            return [self.end - 1, self.end]
-        return [self.end]
+            offsets.append(self.checksum + 1)
+        return offsets
 
-    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
-        """Return a tuple of (label, value) for this entry for the given nvram data."""
-        checksum = memory.get_byte(self.end)
+    def length(self) -> int:
+        return 1 + self.checksum16
+
+    def coverage(self) -> List[int]:
+        """
+        Return a list of addresses covered by the checksum.
+        (Address self.end is covered, so add 1 to the range().)
+        """
+        return list(range(self.start, self.end + 1))
+
+    def calculate(self, memory: SparseMemory) -> int:
+        checksum = -1
+        for address in self.coverage():
+            checksum -= memory.get_byte(address)
+        if self.checksum16:
+            return checksum & 0xFFFF
+        return checksum & 0xFF
+
+    def update(self, memory: SparseMemory) -> None:
+        """
+        Re-calculate the checksum.
+        :param memory: SparseMemory object to update
+        """
+        checksum = self.calculate(memory)
+        if self.checksum16:
+            # create little-endian version of checksum
+            checksum = [checksum & 0xFF, (checksum >> 8)]
+            if self.big_endian:
+                checksum.reverse()
+            memory.update_memory(self.checksum, checksum)
+        else:
+            memory.update_memory(self.checksum, [checksum])
+
+    def get_value(self, memory: SparseMemory) -> int:
+        checksum = memory.get_byte(self.checksum)
         if self.checksum16:
             if self.big_endian:
-                checksum += memory.get_byte(self.end - 1) << 8
+                checksum = (checksum << 8) + memory.get_byte(self.checksum + 1)
             else:
-                checksum = (checksum << 8) + memory.get_byte(self.end - 1)
-            label = 'checksum16[%X:%X]' % (self.start, self.end - 1)
-            value = '0x%04X' % checksum
+                checksum += memory.get_byte(self.checksum + 1) << 8
+        return checksum
+
+    def is_valid(self, memory: SparseMemory) -> bool:
+        """
+        Returns True if checksum is valid for the passed SparseMemory object.
+        :param memory: memory to use for comparison of calculated to stored checksum
+        :return:
+        """
+        return self.get_value(memory) == self.calculate(memory)
+
+    def format_mapping(self, memory: SparseMemory) -> Tuple[str, str]:
+        """
+        Return a tuple of (label, value) for this entry for the given nvram data.
+        """
+        stored = self.get_value(memory)
+        calculated = self.calculate(memory)
+        if self.checksum16:
+            label = 'checksum16[%X:%X]' % (self.start, self.end - 2)
         else:
-            label = 'checksum8[%X:%X]' % (self.start, self.end)
-            value = '0x%02X' % checksum
+            label = 'checksum8[%X:%X]' % (self.start, self.end - 1)
+
+        value = self.formatting % stored
+        if stored != calculated:
+            value += (' != ' + self.formatting) % calculated
 
         if self.label:
             value += ' (%s)' % self.label
@@ -248,6 +435,7 @@ class RamMapping(object):
         self.section = section
         self.group = group
         self.key = key
+        self.checksum_entry = None
         self.sub_entry = {}
         for sub in ['initials', 'score', 'timestamp']:
             if sub in entry:
@@ -326,13 +514,12 @@ class RamMapping(object):
         # special case handling for dip switches
         if encoding == 'dipsw':
             value = 0
-            pinmame_data = memory.get_pinmame_data()
-            if not pinmame_data:
-                # didn't load from a PinMAME .nv file
+            dipsw_data = memory.get_dipsw_data()
+            if not dipsw_data:
                 return None
             for bit in self.offsets():
                 # shift current value one bit left and set LSB
-                value = (value << 1) + dipsw_get(pinmame_data, bit)
+                value = (value << 1) + dipsw_get(dipsw_data, bit)
             # might need to split into multiple list entries if value > 255
             return bytearray([value])
             
@@ -341,7 +528,7 @@ class RamMapping(object):
             return None
 
         # convert certain byte sequences from little_endian to big endian
-        if self.little_endian() and encoding in ['bcd', 'int', 'bits']:
+        if self.little_endian() and encoding in ['bcd', 'int', 'bits', 'bool']:
             ba.reverse()
 
         # find the nibble setting for the first address of this entry
@@ -368,14 +555,6 @@ class RamMapping(object):
             ba = bytearray(map((lambda x: x & mask), ba))
 
         return ba
-
-    @staticmethod
-    def bcd(value: int) -> int:
-        """Returns valid BCD value for a nibble, converting 0xA to 0xF to 0.
-
-        Multiple machines display a space for 0xF, but this routine doesn't support that.
-        """
-        return 0 if value > 9 else value
 
     def nibble(self) -> Nibble:
         """Return Nibble.BOTH, Nibble.LOW, or Nibble.HIGH based on `nibble`
@@ -422,13 +601,11 @@ class RamMapping(object):
             if encoding == 'bcd':
                 value = 0
                 for b in ba:
-                    value = value * 100 + self.bcd(b >> 4) * 10 + self.bcd(b & 0x0F)
-            elif encoding in ['int', 'bits', 'dipsw']:
+                    value = value * 100 + bcd_byte_to_int(b)
+            elif encoding in ['int', 'bits', 'bool', 'dipsw', 'enum']:
                 value = 0
                 for b in ba:
                     value = value * 256 + b
-            elif encoding == 'enum':
-                value = ba[0]
 
             if value is not None:
                 scale = self.entry.get('scale', 1)
@@ -438,6 +615,11 @@ class RamMapping(object):
                     value *= to_int(scale)
                 value += to_int(self.entry.get('offset', 0))
 
+            if encoding == 'bool':
+                value = 1 if value else 0
+                if self.entry.get('invert'):
+                    value = not value
+
         return value
 
     def set_value(self, memory: SparseMemory,
@@ -445,6 +627,8 @@ class RamMapping(object):
         """
         Undocumented and incomplete method to replace the entry's value stored in
         `nvram`.  Currently only works for sequential memory ranges.
+
+        Automatically updates self.checksum_entry if present.
 
         :param memory: SparseMemory object with contents of nvram
         :param value: replacement value with the appropriate type based on encoding:
@@ -457,11 +641,11 @@ class RamMapping(object):
 
         if encoding == 'dipsw':
             assert type(value) is int
-            pinmame_data = memory.get_pinmame_data()
-            if pinmame_data:
+            dipsw_data = memory.get_dipsw_data()
+            if dipsw_data:
                 # use reversed() to start with LSB in list of offsets
                 for bit in reversed(self.offsets()):
-                    dipsw_set(pinmame_data, bit, bool(value & 1))
+                    dipsw_set(dipsw_data, bit, bool(value & 1))
                     value >>= 1
             return
 
@@ -470,6 +654,7 @@ class RamMapping(object):
             return
 
         start = to_int(self.entry['start'])
+        length = self.entry.get('length', 1)
         # can now replace nvram[start:(start + len(old_bytes)]
         new_bytes = []
 
@@ -484,18 +669,32 @@ class RamMapping(object):
             new_bytes = [value.year // 256, value.year % 256,
                          value.month, value.day, value.isoweekday() % 7 + 1,
                          value.hour, value.minute]
-        elif encoding in ['bcd', 'int', 'enum']:
+        elif encoding in ['bcd', 'int', 'bool', 'enum']:
             # all formats where byte order applies
             if encoding == 'bcd':
                 for _ in old_bytes:
-                    b = value % 100
-                    new_bytes.append(b % 10 + 16 * (b // 10))
+                    new_bytes.append(int_byte_to_bcd(value % 100))
                     value //= 100
             else:
                 for _ in old_bytes:
-                    b = value % 256
-                    new_bytes.append(b)
+                    new_bytes.append(value % 256)
                     value //= 256
+
+            # TODO: if self.nibble isn't BOTH, split out into a new array
+            if self.nibble() != Nibble.BOTH:
+                nibbles = []
+                for b in new_bytes:
+                    if self.nibble() == Nibble.LOW:
+                        nibbles.append(b & 0x0F)
+                        nibbles.append(b >> 4)
+                    else:   # Nibble.HIGH
+                        nibbles.append((b << 4) & 0xF0)
+                        nibbles.append(b & 0xF0)
+                if len(nibbles) > length:
+                    # this can happen for an odd length -- remove last nibble
+                    new_bytes = nibbles[:-1]
+                else:
+                    new_bytes = nibbles
 
             if not self.little_endian():
                 new_bytes = reversed(new_bytes)
@@ -503,6 +702,8 @@ class RamMapping(object):
             raise ValueError('Unsupported encoding %s' % encoding)
 
         memory.update_memory(start, bytearray(new_bytes))
+        if self.checksum_entry:
+            self.checksum_entry.update(memory)
 
     def format_value(self, value: int) -> Optional[str]:
         """Format a multibyte integer using options in 'entry'."""
@@ -551,6 +752,8 @@ class RamMapping(object):
         value = self.get_value(memory)
         if encoding in ['bcd', 'int']:
             return self.format_value(value)
+        elif encoding == 'bool':
+            return 'true' if value else 'false'
         elif encoding == 'bits':
             values = self.entry.get('values', [])
             if values is None:
@@ -653,12 +856,13 @@ class RamMapping(object):
 
 
 class ParseNVRAM(object):
-    def __init__(self, nv_json: dict, nvram: Optional[bytearray] = None) -> None:
-        self.nv_json = nv_json
+    def __init__(self, map_json: dict = None, nvram: Optional[bytearray] = None) -> None:
+        self.map_json = map_json
         self.metadata: dict[str, Any] = {'big_endian': True, 'nibble': 'both'}
-        self.mapping = []
+        self.mapping: List[RamMapping] = []
+        self.checksum_entries: List[ChecksumMapping] = []
         self.platform = {}
-        if nv_json is not None:
+        if map_json is not None:
             self.process_json()
         self.memory = SparseMemory()
         if nvram:
@@ -666,7 +870,7 @@ class ParseNVRAM(object):
 
     def load_json(self, json_path: str) -> None:
         with open(json_path, 'r') as json_fh:
-            self.nv_json = json.load(json_fh)
+            self.map_json = json.load(json_fh)
         self.process_json()
 
     def get_dot_nv(self):
@@ -725,30 +929,11 @@ class ParseNVRAM(object):
         Load self.platform with the contents of the platform's JSON file.
         """
         if platform_name:
-            with open(os.path.join(MAPS_ROOT, 'platforms', platform_name + '.json')) as platform_file:
-                platform_json = json.load(platform_file)
-                self.platform = {
-                    'memory_layout': []
-                }
-                for attribute in ['cpu', 'endian']:
-                    self.platform[attribute] = platform_json.get(attribute)
-
-                for region_json in platform_json['memory_layout']:
-                    # use default nibble of BOTH
-                    region: dict[str, Union[Nibble, int, str]] = {
-                        'nibble': Nibble.BOTH
-                    }
-                    for key, value in region_json.items():
-                        if key in ['address', 'size']:
-                            region[key] = to_int(value)
-                        elif key == 'nibble':
-                            region[key] = get_nibble(value)
-                        else:
-                            region[key] = value
-                    self.platform['memory_layout'].append(region)
+            self.platform = load_platform(platform_name)
         else:
             # create a fake platform for files that lack one
             self.platform = {
+                'name': 'auto-generated',
                 'cpu': 'unknown',
                 'endian': self.metadata['endian'],
                 'memory_layout': [
@@ -766,10 +951,10 @@ class ParseNVRAM(object):
         self.metadata['big_endian'] = self.platform.get('endian') != 'little'
 
     def process_json(self) -> None:
-        """Process JSON file loaded into self.nv_json.  Sets self.big_endian and
+        """Process JSON file loaded into self.map_json.  Sets self.big_endian and
         self.mapping, a normalized list of JSON entries as RamMapping objects.
         """
-        json_metadata = self.nv_json.get('_metadata')
+        json_metadata = self.map_json.get('_metadata')
         if json_metadata:
             # processing fileformat 0.6 or later
             for key, value in json_metadata.items():
@@ -778,9 +963,9 @@ class ParseNVRAM(object):
         else:
             raise ValueError('Unsupported map file format -- update to v0.6 or later')
 
-        self.mapping = []
+        self.mapping: List[RamMapping] = []
         for section in ['audits', 'adjustments']:
-            for group in sorted(self.nv_json.get(section, {}).keys()):
+            for group in sorted(self.map_json.get(section, {}).keys()):
                 if group.startswith('_'):
                     continue
                 for entry in self.entry_list(section, group):
@@ -790,39 +975,102 @@ class ParseNVRAM(object):
                                                    group,
                                                    entry[0]))
 
-        groups = {
+        sections = {
             'game_state': 'Game State',
             'dip_switches': 'DIP Switches'
         }
-        for group, label in groups.items():
-            if group in self.nv_json:
-                for key, entries in self.nv_json[group].items():
+        for section, label in sections.items():
+            if section in self.map_json:
+                for key, entries in self.map_json[section].items():
+                    if key.startswith('_'):
+                        continue
                     if not isinstance(entries, list):
                         entries = [entries]
                     for entry in entries:
                         self.mapping.append(RamMapping(entry,
                                                        self.metadata,
-                                                       group,
+                                                       section,
                                                        label,
                                                        key))
-        
+
+        # TODO: remove this last_game support at some point.  Deprecated in fileformat v0.6.
         player_num = 1
-        for p in self.nv_json.get('last_game', []):
+        for p in self.map_json.get('last_game', []):
             entry = p.copy()
             entry['label'] = 'Player %u' % player_num
             entry['short_label'] = 'P%u' % player_num
             self.mapping.append(RamMapping(entry,
                                            self.metadata,
                                            'game_state',
-                                           'Player Scores'))
+                                           'Player Scores',
+                                           str(player_num)))
             player_num += 1
 
         for group in ['high_scores', 'mode_champions']:
-            for entry in self.nv_json.get(group, []):
+            for entry in self.map_json.get(group, []):
                 self.mapping.append(RamMapping(entry,
                                                self.metadata,
                                                'score_record',
                                                group))
+
+        # add ChecksumMapping objects for checksum8 and checksum16 entries
+        self.checksum_entries = []
+        for checksum in ['checksum8', 'checksum16']:
+            is_16 = (checksum == 'checksum16')
+            for c in self.map_json.get(checksum, []):
+                start = to_int(c['start'])
+                if 'end' in c:
+                    end = to_int(c['end'])
+                else:
+                    length = c.get('length', 1)
+                    end = start + to_int(length) - 1
+                grouping = c.get('groupings', end - start + 1)
+                while start <= end:
+                    entry_end = start + grouping - 1
+                    self.checksum_entries.append(ChecksumMapping(start, entry_end, c.get('checksum'),
+                                                                 c.get('label'), is_16,
+                                                                 self.metadata['big_endian']))
+                    start = entry_end + 1
+
+    def get_entry(self, *, section: Optional[str] = None,
+                  subsection: Optional[str] = None, key: Optional[str] = None) -> Optional[RamMapping]:
+        """
+        Search the map for RamMapping() objects matching a specific section/subsection/key.  Pass
+        None (or leave out) parameters for wildcard matching.
+
+        :param section: section of the file (e.g., 'game_state', 'audits', 'adjustments', 'score_record')
+        :param subsection: subgrouping (e.g., 'high_scores', 'mode_champions')
+        :param key: unique key to identify the entry
+
+        :return: returns the first match, or None if not found
+        """
+        for entry in self.mapping:
+            match = True
+            if section:
+                match = entry.section == section
+            if match and subsection:
+                match = entry.group == subsection
+            if match and key:
+                match = entry.key == key
+            if match:
+                return entry
+        return None
+
+    def add_checksum(self, entry: RamMapping) -> None:
+        """
+        Add a checksum entry that covers the given RamMapping object.
+        :param entry: RamMapping object to add coverage to
+        """
+        if not entry or entry.checksum_entry:
+            # entry is None, or we already looked up its checksum
+            return
+
+        offsets = set(entry.offsets())
+        for checksum_entry in self.checksum_entries:
+            if not offsets.isdisjoint(set(checksum_entry.coverage())):
+                entry.checksum_entry = checksum_entry
+                return
+
 
     def load_nvram(self, nvram_path: str) -> None:
         """Set the nvram property of the ParseNVRAM object to the contents of an nvram file."""
@@ -833,126 +1081,23 @@ class ParseNVRAM(object):
         """Legacy "glue" method to create RamMapping object on-demand."""
         return RamMapping(entry, self.metadata)
 
-    def verify_checksum8(self, entry: dict,
-                         verbose: bool = False,
-                         fix: bool = False) -> bool:
-        """
-        Verify an entry from the checksum8 attribute of the map file.
-
-        TODO: Update this to use RamMapping objects instead.  Requires
-        updating verify_all_checksum8() as well.
-
-        :param entry: dict from the JSON file (*not* a RamMapping object)
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.nvram.
-        :return: True if checksummed area(s) was/were valid
-        """
-        valid = True
-        label = entry.get('label', '(unlabeled)')
-        m = self.ram_mapping(entry)
-        ba = m.get_bytes(self.memory)
-        if ba is None:
-            return True
-        offset = to_int(entry['start'])
-        grouping = entry.get('groupings', len(ba))
-        if len(ba) % grouping:
-            print("Error: checksum8 '%s' size not evenly divisible by groupings" % label)
-        count = 0
-        calc_sum = 0
-        for b in ba:
-            if count == grouping - 1:
-                checksum = 0xFF - (calc_sum & 0xFF)
-                if checksum != b:
-                    valid = False
-                    if verbose:
-                        print("Error: %u bytes at 0x%04X '%s' checksum8 0x%02X != 0x%02X"
-                              % (grouping, offset - count, label, checksum, b))
-                    if fix:
-                        self.memory.update_memory(offset, [checksum])
-                count = calc_sum = 0
-            else:
-                calc_sum += b
-                count += 1
-            offset += 1
-        return valid
-
-    def verify_all_checksum8(self, verbose: bool = False, fix: bool = False) -> bool:
-        """
-        Verify all checksum8 entries from the map file.
-
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.nvram.
-        :return: True if checksummed areas were valid
-        """
-        valid = True
-        for c in self.nv_json.get('checksum8', []):
-            valid &= self.verify_checksum8(c, verbose, fix)
-        return valid
-
-    def verify_checksum16(self, entry: dict,
-                          verbose: bool = False,
-                          fix: bool = False) -> bool:
-        """
-        Verify an entry from the checksum16 attribute of the map file.
-
-        TODO: Update this to use RamMapping objects instead.  Requires
-        updating verify_all_checksum16() as well.
-
-        :param entry: dict from the JSON file (*not* a RamMapping object)
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.memory.
-        :return: True if checksummed area was valid
-        """
-        m = self.ram_mapping(entry)
-        ba = m.get_bytes(self.memory)
-        if ba is None:
-            return True
-
-        # pop last two bytes as stored checksum16
-        if self.metadata['big_endian']:
-            stored_sum = ba.pop() + ba.pop() * 256
-        else:
-            stored_sum = ba.pop() * 256 + ba.pop()
-        checksum_offset = to_int(entry['start']) + len(ba)
-        calc_sum = 0xFFFF - (sum(ba) & 0xFFFF)
-        if calc_sum != stored_sum:
-            if verbose:
-                print("checksum16 at %s: 0x%04X != 0x%04X %s" % (entry['start'],
-                                                                 calc_sum, stored_sum, entry.get('label', '')))
-            if fix:
-                if self.metadata['big_endian']:
-                    self.memory.update_memory(checksum_offset, [calc_sum // 256, calc_sum % 256])
-                else:
-                    self.memory.update_memory(checksum_offset, [calc_sum % 256, calc_sum // 256])
-        return calc_sum == stored_sum
-
-    def verify_all_checksum16(self, verbose: bool = False, fix: bool = False) -> bool:
-        """
-        Verify all checksum16 entries from the map file.
-
-        :param verbose: Set to True to print errors for invalid checksums.
-        :param fix: Set to True to fix any invalid checksums in self.nvram.
-        :return: True if checksummed areas were valid
-        """
-        valid = True
-        for c in self.nv_json.get('checksum16', []):
-            valid &= self.verify_checksum16(c, verbose, fix)
-        return valid
-
     def last_played(self) -> Optional[str]:
         """Return a timestamp if this map has a last_played entry, otherwise returns None."""
-        lp = self.nv_json.get('last_played')
+        lp = self.map_json.get('last_played')
         if not lp:
             return None
         return self.ram_mapping(lp).format_entry(self.memory)
 
     def entry_list(self, section: str, group: str) -> List[Tuple[str, dict]]:
-        """Return a list of entries for the given section and group of the mapping file.
+        """
+        Return a list of entries for the given section and group of the mapping file.
+
+        List is of tuples with the key of the dict (or None for a list) and the entry.
 
         Correctly handles instances where the group is a List or a Dict.
         """
         entries = []
-        audit_group = self.nv_json[section][group]
+        audit_group = self.map_json[section][group]
         if isinstance(audit_group, list):
             for audit in audit_group:
                 entries.append((None, audit))
@@ -1000,7 +1145,7 @@ class ParseNVRAM(object):
         for map_entry in self.mapping:
             if group is None or map_entry.group == group:
                 if map_entry.group == 'DIP Switches' \
-                        and not self.memory.get_pinmame_data():
+                        and not self.memory.get_dipsw_data():
                     # DIP switch values only available from loaded .nv file
                     continue
                 if map_entry.group != last_group:
@@ -1010,17 +1155,22 @@ class ParseNVRAM(object):
                         print('-' * len(map_entry.group))
                     last_group = map_entry.group
 
-                print('%s: %s' % map_entry.format_mapping(self.memory))
+                label, value = map_entry.format_mapping(self.memory)
+                if value is not None:
+                    print('%s: %s' % (label, value))
 
         last_played = self.last_played()
         if last_played is not None:
             print('Last Played:', last_played)
 
         if verify_checksums:
-            # Verify all checksums in the file.  Note that we can eventually re-use
-            # that part of the memory map to update checksums if modifying nvram values.
-            self.verify_all_checksum16(verbose=True)
-            self.verify_all_checksum8(verbose=True)
+            for checksum in self.checksum_entries:
+                # create formatted strings for each checksum (either 2 or 4 hexits)
+                calc_sum = checksum.formatting % checksum.calculate(self.memory)
+                stored_sum = checksum.formatting % checksum.get_value(self.memory)
+                if calc_sum != stored_sum:
+                    print("checksum at 0x%X: %s != %s %s" % (checksum.start, calc_sum,
+                                                             stored_sum, checksum.label))
 
     @staticmethod
     def hex_line(data: bytearray, nibble: Nibble, text: Optional[str] = None) -> str:
@@ -1055,24 +1205,30 @@ class ParseNVRAM(object):
             text = ''.join(ch)
         return "%s | %s" % (' '.join(b), text)
 
-    def hex_dump(self):
+    def hex_dump(self) -> None:
         """
-        Output a hex dump of the nvram section of the parser object.
+        Original routine to just hexdump contents of a .nv file.
+        :return: None
+        """
+        self.hex_dump_memory(self.get_memory_area(mem_type='nvram'))
+        self.hex_dump_pinmame_data()
 
-        TODO: allow caller to specify an address range
-        TODO: option to include/exclude PinMAME Data if present
-        TODO: iterate over ALL memory areas and dump each separately
+    def hex_dump_memory(self, memory_area: dict) -> None:
         """
-        memory_area = self.get_memory_area(mem_type='nvram')
-        nvram_start = memory_area['address']
-        nv_data = self.memory.find_region(nvram_start)['data']
-        nvram_size = memory_area['size']
+        Output a hex dump of a section of memory in the parser object.
+        TODO: allow caller to specify an address range
+        :param memory_area: memory_area dictionary from the platform's memory_layout section.
+        :return: None
+        """
+        start_addr = memory_area['address']
+        data = self.memory.find_region(start_addr)['data']
+        size = memory_area['size']
         nibble = memory_area['nibble']
 
         # Create a dictionary of RamMapping objects using offset as the key.
         entry = {}
         for m in self.mapping:
-            if m.section == 'dip_switches':
+            if m.section == 'dip_switches' or m.entry.get('encoding') == 'dipsw':
                 # skip over dip_switches -- their offsets aren't memory addresses
                 continue
 
@@ -1081,26 +1237,13 @@ class ParseNVRAM(object):
             entry[offsets[0]] = m
 
         # add fake entries for checksum8 and checksum16 values
-        for checksum in ['checksum8', 'checksum16']:
-            is_16 = (checksum == 'checksum16')
-            for c in self.nv_json.get(checksum, []):
-                start = to_int(c['start'])
-                if 'end' in c:
-                    end = to_int(c['end'])
-                else:
-                    end = start + to_int(c['length']) - 1
-                grouping = c.get('groupings', end - start + 1)
-                while start < end:
-                    entry_end = start + grouping - 1
-                    entry[entry_end - is_16] = ChecksumMapping(start, entry_end,
-                                                               c.get('label'), is_16,
-                                                               self.metadata['big_endian'])
-                    start = entry_end + 1
+        for checksum in self.checksum_entries:
+            entry[checksum.offsets()[0]] = checksum
 
         offset = 0
-        while offset < nvram_size:
+        while offset < size:
             # If this offset is in entry[], display it with its formatted value.
-            mapping = entry.get(nvram_start + offset)
+            mapping = entry.get(start_addr + offset)
             if mapping:
                 count = len(list(mapping.offsets()))
                 (label, value) = mapping.format_mapping(self.memory)
@@ -1114,34 +1257,39 @@ class ParseNVRAM(object):
 
                 # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
                 count = 1
-                while count < HEX_DUMP_BYTES_PER_LINE and not entry.get(nvram_start + offset + count):
+                while count < HEX_DUMP_BYTES_PER_LINE and not entry.get(start_addr + offset + count):
                     count += 1
-            if offset + count > nvram_size:
-                count = nvram_size - offset
+            if offset + count > size:
+                count = size - offset
 
-            print("%04X: %s" % (nvram_start + offset,
-                                self.hex_line(nv_data[offset:offset + count], nibble, text)))
+            print("%04X: %s" % (start_addr + offset,
+                                self.hex_line(data[offset:offset + count], nibble, text)))
             offset += count
 
+    def hex_dump_pinmame_data(self):
         # print hex dump of last bytes in file
         pinmame_data = self.memory.get_pinmame_data()
         if pinmame_data:
             print("\nPinMAME data in .nv file:")
             offset = 0
-            while offset < len(pinmame_data):
+            # dump everything except DIP switches
+            length = len(pinmame_data) - 6
+            while offset < length:
                 # Display up to BYTES_PER_LINE bytes, avoiding the next known entry
                 count = 1
-                while count < HEX_DUMP_BYTES_PER_LINE and offset + count < len(pinmame_data):
+                while count < HEX_DUMP_BYTES_PER_LINE and offset + count < length:
                     count += 1
                 print("%04X: %s" % (offset, self.hex_line(pinmame_data[offset:offset + count],
                                                           Nibble.BOTH)))
                 offset += count
+            print("%04X: %s" % (offset, self.hex_line(pinmame_data[offset:offset + 6],
+                                                      Nibble.BOTH, 'DIP Switches')))
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='PinMAME nvram Parser')
     parser.add_argument('--map',
-                        help='use this map (typically ending in .nv.json)')
+                        help='use this map (typically ending in .map.json)')
     parser.add_argument('--rom',
                         help='use default map for <rom> instead of one based on <nvram> filename')
     parser.add_argument('--nvram',
@@ -1174,10 +1322,10 @@ def main() -> None:
                 return
 
         with open(args.map, 'r') as f:
-            nv_json = json.load(f)
+            map_json = json.load(f)
 
         print("Dumping known entries for %s [%s]..." % (basename, rom_name(rom_for_nvpath(nvpath))))
-        p = ParseNVRAM(nv_json, nvram)
+        p = ParseNVRAM(map_json, nvram)
         p.dump()
 
     else:

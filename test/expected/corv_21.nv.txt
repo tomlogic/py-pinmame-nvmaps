@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/corv_21.nv.json for corv_21.nv
+Using map ../maps/maps/williams/wpc/corv_21.map.json for corv_21.nv
 Dumping known entries for corv_21.nv [Corvette (2.1)]...
 
 B.2 EARNINGS AUDS.
@@ -143,11 +143,14 @@ WPC Game ID: 50036
 Replay: 850,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

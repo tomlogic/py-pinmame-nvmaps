@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/cv_14.nv.json for cv_14.nv
+Using map ../maps/maps/williams/wpc/cv_14.map.json for cv_14.nv
 Dumping known entries for cv_14.nv [Cirqus Voltaire (1.4)]...
 
 B.2 EARNINGS AUDS.
@@ -164,11 +164,14 @@ WPC Game ID: 50062
 Replay: 25,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system4/flash_l2.nv.json for flash_l2.nv
+Using map ../maps/maps/williams/system4/flash_l2.map.json for flash_l2.nv
 Dumping known entries for flash_l2.nv [Flash (Sys.4 L-2)]...
 
 Standard Audits
@@ -49,14 +49,8 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
-Player 1: None
-Player 2: None
-Player 3: None
-Player 4: None
-Player: None
-Player Count: None
-Ball: None
-Number of Balls: 3
+Ball Count: 3
+Maximum Credits: 20
 
 high_scores
 -----------

@@ -109,7 +109,7 @@ def switch_editor(parser: nvram_parser.ParseNVRAM) -> bool:
 def main():
     parser = argparse.ArgumentParser(description='PinMAME nvram hex dumper')
     parser.add_argument('--map',
-                        help='use this map (typically ending in .nv.json)')
+                        help='use this map (typically ending in .map.json)')
     parser.add_argument('--rom',
                         help='use default map for <rom> instead of one based on <nvram> filename')
     parser.add_argument('--nvram', help='nvram file to dump')

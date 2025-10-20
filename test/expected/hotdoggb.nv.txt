@@ -1,5 +1,25 @@
-Using map ../maps/maps/bally/as-2518-35/hotdoggb.nv.json for hotdoggb.nv
-Dumping known entries for hotdoggb.nv [Hot Doggin (7-digit conversion)]...
+Using map ../maps/maps/bally/as-2518-35/system-rom-35-7digit.map.json for hotdoggb.nv
+Dumping known entries for hotdoggb.nv [Hotdoggin' (7-digit conversion)]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 0
+06 Total Plays (Paid and Free Games): 0
+07 Total Replays (Free Games): 0
+08 HSTD Achieved: 0
+09 Coin Chute #1: 0
+10 Coin Chute #2: 0
+11 Coin Chute #3: 0
+12 Specials Awarded: 0
+13 Minutes of Game Play: 0
+14 Service Credits: 10
+
+High score functions
+--------------------
+01 Replay Level 1: OFF
+02 Replay Level 2: OFF
+03 Replay Level 3: OFF
+04 High score to date: 0
 
 Game State
 ----------
@@ -8,6 +28,14 @@ Player 1: 90
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Final P1: 90
+Final P2: 0
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

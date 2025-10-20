@@ -1,5 +1,29 @@
-Using map ../maps/maps/bally/as-2518-35/fball_ii.nv.json for fball_ii.nv
+Using map ../maps/maps/bally/as-2518-35/system-rom-52.map.json for fball_ii.nv
 Dumping known entries for fball_ii.nv [Fireball II]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 0
+06 Total Plays (Paid and Free Games): 0
+07 Total Replays (Free Games): 0
+08 Game Percentage: 0
+09 HSTD Achieved: 0
+10 Coin Chute #1: 0
+11 Coin Chute #2: 0
+12 Coin Chute #3: 0
+13 Specials Awarded: 0
+14 Minutes of Game Play: 0
+15 Service Credits: 0
+
+Adjustments
+-----------
+01 Replay Level 1: OFF
+02 Replay Level 2: OFF
+03 Replay Level 3: OFF
+16 Special/Extra Ball Awards: ?15
+17 Replay Award: ?15
+18 Sound Option: ?15
+19 HSTD Award: 0 credits
 
 Game State
 ----------
@@ -7,7 +31,15 @@ Credits: 0
 Player 1: 0
 Player 2: 0
 Player 3: 0
-Player 4: 500,000
+Player 4: 0
+Final Score P1: 0
+Final Score P2: 0
+Final Score P3: 0
+Final Score P4: 500,000
+Ball Count: 3
+Max Credits: 10
+Game Over: false
+Tilted: false
 
 high_scores
 -----------

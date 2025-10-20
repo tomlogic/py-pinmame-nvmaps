@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system4/phnix_l1.nv.json for phnix_l1.nv
+Using map ../maps/maps/williams/system4/phnix_l1.map.json for phnix_l1.nv
 Dumping known entries for phnix_l1.nv [Phoenix (L-1)]...
 
 Standard Audits
@@ -34,14 +34,8 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
-Player 1: None
-Player 2: None
-Player 3: None
-Player 4: None
-Player: None
-Player Count: None
-Ball: None
-Number of Balls: 0
+Ball Count: 3
+Maximum Credits: 20
 
 high_scores
 -----------

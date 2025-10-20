@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/jy_12.nv.json for jy_12.nv
+Using map ../maps/maps/williams/wpc/jy_12.map.json for jy_12.nv
 Dumping known entries for jy_12.nv [Junk Yard (1.2)]...
 
 B.2 EARNINGS AUDS.
@@ -156,11 +156,14 @@ WPC Game ID: 50052
 Replay: 20,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

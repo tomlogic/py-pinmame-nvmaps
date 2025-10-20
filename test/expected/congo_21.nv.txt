@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/congo_21.nv.json for congo_21.nv
+Using map ../maps/maps/williams/wpc/congo_21.map.json for congo_21.nv
 Dumping known entries for congo_21.nv [Congo (2.1, DCS95 S1.1)]...
 
 B.2 EARNINGS AUDS.
@@ -139,7 +139,10 @@ Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
-Attract: ATTRACT
+Game Over: true
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ij_l7.nv.json for ij_l7.nv
+Using map ../maps/maps/williams/wpc/ij_l7.map.json for ij_l7.nv
 Dumping known entries for ij_l7.nv [Indiana Jones: The Pinball Adventure (L-7)]...
 
 B.2 EARNINGS AUDS.
@@ -192,11 +192,14 @@ WPC Game ID: 50017
 Replay: 351,000,000
 Credits: 0
 Volume: 28
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 5
+Maximum Credits: 10
+Free Play: true
 
 high_scores
 -----------

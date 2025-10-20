@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/jd_l1.nv.json for jd_l1.nv
+Using map ../maps/maps/williams/wpc/jd_l1.map.json for jd_l1.nv
 Dumping known entries for jd_l1.nv [Judge Dredd (L-1)]...
 
 B.2 EARNINGS AUDS.
@@ -116,11 +116,14 @@ WPC Game ID: 20020
 Replay: 150,000,000
 Credits: 1
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

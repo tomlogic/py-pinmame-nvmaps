@@ -106,8 +106,8 @@ run_all = open(PINMAME + 'run_all_wpc.bat', 'w', newline='\r\n')
 test_all = open('test_all_wpc.sh', 'w')
 test_all.write('#!/bin/sh\n\n')
 
-for map_filename in glob.glob(MAP_DIR + '*.nv.json'):
-    if 'dm_dt101.nv.json' in map_filename:
+for map_filename in glob.glob(MAP_DIR + '*.map.json'):
+    if 'dm_dt101' in map_filename:
         continue  # not a Williams WPC game
 
     with open(map_filename, 'r') as f:

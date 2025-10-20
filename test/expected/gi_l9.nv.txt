@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/gi_l9.nv.json for gi_l9.nv
+Using map ../maps/maps/williams/wpc/gi_l9.map.json for gi_l9.nv
 Dumping known entries for gi_l9.nv [Gilligan's Island (L-9)]...
 
 B.2 EARNINGS AUDS.
@@ -130,11 +130,14 @@ WPC Game ID: 20003
 Replay: 25,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

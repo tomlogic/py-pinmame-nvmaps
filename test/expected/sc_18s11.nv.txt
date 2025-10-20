@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/sc_18.nv.json for sc_18s11.nv
+Using map ../maps/maps/williams/wpc/sc_18.map.json for sc_18s11.nv
 Dumping known entries for sc_18s11.nv [Safe Cracker (1.8 / S1.1)]...
 
 B.2 EARNINGS AUDS.
@@ -144,11 +144,13 @@ WPC Game ID: 90003
 Credits: 0
 Volume: 12
 Replay: 2,500,000
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

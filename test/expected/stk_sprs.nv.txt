@@ -1,0 +1,39 @@
+Using map ../maps/maps/bally/as-2518-17/system-rom-20.map.json for stk_sprs.nv
+Dumping known entries for stk_sprs.nv [Strikes and Spares]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 100,005
+06 Total Plays (Paid and Free Games): 100,006
+07 Total Replays (Free Games): 100,007
+08 HSTD Achieved: 100,008
+09 Coin Chute #1: 100,009
+10 Coin Chute #2: 100,010
+11 Coin Chute #3: 100,011
+
+High score functions
+--------------------
+01 Replay Level 1: 100,010
+02 Replay Level 2: 100,020
+03 Replay Level 3: 100,030
+04 High score to date: 100,040
+
+Game State
+----------
+Credits: 5
+Player 1: 100,011
+Player 2: 100,011
+Player 3: 100,011
+Player 4: 100,011
+Final P1: 0
+Final P2: 0
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 5
+Game Over: false
+Tilted: false
+
+high_scores
+-----------
+High Score: 100,040

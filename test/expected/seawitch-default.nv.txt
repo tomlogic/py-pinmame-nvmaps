@@ -1,5 +1,13 @@
-Using map ../maps/maps/stern/m200/seawitch.nv.json for seawitch-default.nv
+Using map ../maps/maps/stern/m200/seawitch.map.json for seawitch-default.nv
 Dumping known entries for seawitch-default.nv [Seawitch]...
+
+Game State
+----------
+Player 1: 118,580
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Players: 1
 
 high_scores
 -----------

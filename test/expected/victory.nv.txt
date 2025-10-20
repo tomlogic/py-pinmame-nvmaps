@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/victory.nv.json for victory.nv
+Using map ../maps/maps/gottlieb/system80b/victory.map.json for victory.nv
 Dumping known entries for victory.nv [Victory]...
 
 Bookkeeping
@@ -26,15 +26,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 5
-Player 1: None
-Player 2: None
-Player 3: None
-Player 4: None
-Player Count: None
-Current Player: None
-Ball: None
-Balls Per Game: None
-Extra Balls: None
+Maximum Credits: 10
 
 DIP Switches
 ------------

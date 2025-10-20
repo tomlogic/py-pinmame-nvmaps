@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/bguns_la.nv.json for bguns_la.nv
+Using map ../maps/maps/williams/system11/bguns_la.map.json for bguns_la.nv
 Dumping known entries for bguns_la.nv [Big Guns (L-A)]...
 
 Audits
@@ -50,6 +50,15 @@ Player 2: 0
 Player 3: 0
 Player 4: 0
 Ball: n/a
+Ball Count: 3
+Maximum Credits: 10
+Player Count: 1
+Current Player: 1
+Tilted: false
+Game Over: true
+Extra Balls: 3
+Tilt Warnings: 0
+Free Play: false
 
 high_scores
 -----------

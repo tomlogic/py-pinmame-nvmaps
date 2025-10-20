@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-7digit.nv.json for triplay.nv
+Using map ../maps/maps/gottlieb/system80b/80b-7digit-8KB.map.json for triplay.nv
 Dumping known entries for triplay.nv [Chicago Cubs Triple Play]...
 
 Bookkeeping
@@ -25,6 +25,7 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
+Maximum Credits: 10
 
 DIP Switches
 ------------

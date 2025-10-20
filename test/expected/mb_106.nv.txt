@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/mb_106.nv.json for mb_106.nv
+Using map ../maps/maps/williams/wpc/mb_106.map.json for mb_106.nv
 Dumping known entries for mb_106.nv [Monster Bash (1.06)]...
 
 B.2 EARNINGS AUDS.
@@ -132,11 +132,14 @@ WPC Game ID: 50065
 Replay: 60,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/taxi_l4.nv.json for taxi_l4.nv
+Using map ../maps/maps/williams/system11/taxi_l4.map.json for taxi_l4.nv
 Dumping known entries for taxi_l4.nv [Taxi (Lola) (L-4)]...
 
 Audits
@@ -53,6 +53,15 @@ Player 2: 147,170
 Player 3: 0
 Player 4: 0
 Ball: n/a
+Ball Count: 3
+Maximum Credits: 10
+Player Count: 2
+Current Player: 2
+Tilted: false
+Game Over: true
+Extra Balls: 0
+Tilt Warnings: 0
+Free Play: false
 
 high_scores
 -----------

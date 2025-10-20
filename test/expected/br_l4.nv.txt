@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/br_l4.nv.json for br_l4.nv
+Using map ../maps/maps/williams/wpc/br_l4.map.json for br_l4.nv
 Dumping known entries for br_l4.nv [Black Rose (L-4)]...
 
 B.2 EARNINGS AUDS.
@@ -145,11 +145,14 @@ WPC Game ID: 20013
 Replay: 30,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

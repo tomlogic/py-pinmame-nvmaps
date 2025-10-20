@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/tom_13.nv.json for tom_13.nv
+Using map ../maps/maps/williams/wpc/tom_13.map.json for tom_13.nv
 Dumping known entries for tom_13.nv [Theatre of Magic (1.3X)]...
 
 B.2 EARNINGS AUDS.
@@ -196,7 +196,10 @@ Volume: 31
 Replay: 600,000,000
 Extra Balls: 0
 EBs this Ball: 0
-Attract: IN GAME
+Game Over: false
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

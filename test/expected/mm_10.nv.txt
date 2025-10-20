@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/mm_10.nv.json for mm_10.nv
+Using map ../maps/maps/williams/wpc/mm_10.map.json for mm_10.nv
 Dumping known entries for mm_10.nv [Medieval Madness (1.0)]...
 
 B.2 Earnings Audits
@@ -160,11 +160,14 @@ Player 4: 0
 Credits: 0
 Volume: 12
 Replay: 28,000,000
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

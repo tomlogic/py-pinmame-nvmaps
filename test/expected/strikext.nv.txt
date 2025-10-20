@@ -1,0 +1,36 @@
+Using map ../maps/maps/stern/whitestar/strikext.map.json for strikext.nv
+Dumping known entries for strikext.nv [Striker Xtreme (1.02)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 4
+Max Credits: 32
+Tilted: false
+Current Player: 0
+Current Ball: 0
+Player Count: 0
+Ball Count: 3
+Game Over: true
+
+high_scores
+-----------
+#1: JOE BALCER 400,000,000
+#2: LONOLA     375,000,000
+#3: LOBSTER    350,000,000
+#4: GOAT BOY   325,000,000
+#5: J DOMINIAK 300,000,000
+#6: K JOHNSON  275,000,000
+#7: RAY TANZER 250,000,000
+#8: JOHN BORG  225,000,000
+#9: D SULLIVAN 200,000,000
+#10: KEEFER     175,000,000
+
+mode_champions
+--------------
+Goal Champ: LON 25 goals

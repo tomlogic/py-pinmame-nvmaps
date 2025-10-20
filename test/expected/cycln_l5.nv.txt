@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/cycln_l5.nv.json for cycln_l5.nv
+Using map ../maps/maps/williams/system11/cycln_l5.map.json for cycln_l5.nv
 Dumping known entries for cycln_l5.nv [Cyclone (L-5)]...
 
 Audits
@@ -51,6 +51,15 @@ Player 2: 0
 Player 3: 0
 Player 4: 0
 Ball: 2
+Ball Count: 3
+Maximum Credits: 10
+Player Count: 1
+Current Player: 1
+Tilted: false
+Game Over: false
+Extra Balls: 0
+Tilt Warnings: 0
+Free Play: false
 
 high_scores
 -----------

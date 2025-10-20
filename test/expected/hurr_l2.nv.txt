@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/hurr_l2.nv.json for hurr_l2.nv
+Using map ../maps/maps/williams/wpc/hurr_l2.map.json for hurr_l2.nv
 Dumping known entries for hurr_l2.nv [Hurricane (L-2)]...
 
 B.2 EARNINGS AUDS.
@@ -29,8 +29,8 @@ B.3 STANDARD AUDS.
 15 TICKETS AWARDED: 0
 17 LEFT DRAINS: 5
 18 RIGHT DRAINS: 7
-21 MINUTES OF PLAY: 150
-22 MINUTES ON: 120
+21 MINUTES OF PLAY: 0:25:00
+22 MINUTES ON: 2:00:00
 23 BALLS PLAYED: 46
 24 TILTS: 0
 25 REPLAY 1 AWARDS: 0
@@ -129,7 +129,10 @@ Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
-Attract: ATTRACT
+Game Over: true
+Ball Count: 5
+Maximum Credits: 10
+Free Play: true
 
 high_scores
 -----------

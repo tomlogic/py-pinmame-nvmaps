@@ -1,0 +1,42 @@
+Using map ../maps/maps/williams/system3/disco_l1.map.json for disco_l1.nv
+Dumping known entries for disco_l1.nv [Disco Fever (L-1)]...
+
+Standard Audits
+---------------
+18 Current HSTD: 350,000
+19 Coins, left chute: 0
+20 Coins, center chute: 0
+21 Coins, right chute: 0
+22 Total Paid Credits: 0
+23 Special Credits: 0
+99 Check Byte: valid
+
+Standard Adjustments
+--------------------
+01 Replay 1 Score: 250,000
+02 Replay 2 Score: 370,000
+03 Replay 3 Score: 490,000
+04 Replay 4 Score: 0
+05 Maximum Credits: 20
+06 Match/Credit/Extra Ball: match on, replay awards credit
+07 Play: normal (1 & 2 together)
+08 HSTD Credits: 3
+09 Left Coin Slot Multiplier: 1
+10 Center Coin Slot Multiplier: 1
+11 Right Coin Slot Multiplier: 1
+12 Coin Units Required for Credit: 0
+13 Coin Units Bonus Point: 2
+14 Coin Units Per Credit: 1
+15A Special Awards: credit
+15B Number of Balls: 3
+16 Tilt Warnings: 1
+
+Game State
+----------
+Credits: 0
+Ball Count: 3
+Maximum Credits: 20
+
+high_scores
+-----------
+First Place: 350,000

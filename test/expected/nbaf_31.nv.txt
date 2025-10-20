@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/nbaf_31.nv.json for nbaf_31.nv
+Using map ../maps/maps/williams/wpc/nbaf_31.map.json for nbaf_31.nv
 Dumping known entries for nbaf_31.nv [NBA Fastbreak (3.1 / S3.0 English/German)]...
 
 B.2 EARNINGS AUDS.
@@ -179,11 +179,14 @@ Player 4: 0
 Credits: 9
 Volume: 27
 Replay: 100
-Attract: IN GAME
+Game Over: false
 Current Player: 1
 Ball: 2
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------
@@ -195,6 +198,7 @@ Fourth Place: MAS 70
 
 mode_champions
 --------------
+* MVP: WAG 10,042
 BLAZERS: TMK 51
 BUCKS: CJS 48
 BULLETS: ZAB 34

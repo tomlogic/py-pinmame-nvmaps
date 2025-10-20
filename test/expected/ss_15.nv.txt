@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ss_15.nv.json for ss_15.nv
+Using map ../maps/maps/williams/wpc/ss_15.map.json for ss_15.nv
 Dumping known entries for ss_15.nv [Scared Stiff (1.5)]...
 
 B.2 EARNINGS AUDS.
@@ -181,11 +181,14 @@ WPC Game ID: 50048
 Credits: 0
 Volume: 12
 Replay: 6,000,000
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------
@@ -204,9 +207,4 @@ Favorite Stiff #2: CJS
 Favorite Stiff #3: ASR
 Favorite Stiff #4: BCM
 Favorite Stiff #5: MAB
-Favorite Stiff #6: None
-Favorite Stiff #7: None
-Favorite Stiff #8: None
-Favorite Stiff #9: None
-Favorite Stiff #10: None
 Last Played: 2025-01-06 00:01

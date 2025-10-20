@@ -169,7 +169,7 @@ def load_nv(rom):
     map_data['checksum16'][0]['start'] = adj_start
     map_data['checksum16'][0]['end'] = adj_end
 
-    with open(os.path.join(MY_DIR, rom + '.nv.json'), 'w') as output:
+    with open(os.path.join(MY_DIR, rom + '.map.json'), 'w') as output:
         output.write(json.dumps(map_data, indent=2))
         output.write('\n')      # end with newline
 

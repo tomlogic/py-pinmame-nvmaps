@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/pz_f4.nv.json for pz_f4.nv
+Using map ../maps/maps/williams/wpc/pz_f4.map.json for pz_f4.nv
 Dumping known entries for pz_f4.nv [Party Zone, The (F-4 Fliptronic)]...
 
 B.2 EARNINGS AUDS.
@@ -29,8 +29,8 @@ B.3 STANDARD AUDS.
 15 TICKETS AWARDED: 0
 17 LEFT DRAINS: 0
 18 RIGHT DRAINS: 0
-21 MINUTES OF PLAY: 0
-22 MINUTES ON: 1
+21 MINUTES OF PLAY: 0:00:00
+22 MINUTES ON: 0:01:00
 23 BALLS PLAYED: 0
 24 TILTS: 0
 25 REPLAY 1 AWARDS: 0
@@ -129,11 +129,14 @@ Credits: 0
 Volume: 12
 Replay: 30,000,000
 Big Bang: 20,000,000
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

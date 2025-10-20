@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/jb_10r.nv.json for jb_10r.nv
+Using map ../maps/maps/williams/wpc/jb_10r.map.json for jb_10r.nv
 Dumping known entries for jb_10r.nv [Jack*Bot (1.0R)]...
 
 B.2 EARNINGS AUDS.
@@ -164,11 +164,14 @@ WPC Game ID: 50051
 Replay: 3,800,000,000
 Credits: 0
 Volume: 12
-Attract: IN GAME
+Game Over: false
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

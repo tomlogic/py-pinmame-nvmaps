@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/stern-m100.nv.json for stingray.nv
+Using map ../maps/maps/stern/stern-m100.map.json for stingray.nv
 Dumping known entries for stingray.nv [Stingray]...
 
 Audits
@@ -21,12 +21,19 @@ Adjustments
 Game State
 ----------
 Match: n/a
-Ball: 2
 Credits: 10
-Player 1: 301,300
+Player 1: 41,440
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Final P1: 301,300
+Final P2: 0
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: false
+Tilted: false
 
 high_scores
 -----------

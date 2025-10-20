@@ -1,13 +1,35 @@
-Using map ../maps/maps/bally/as-2518-35/bmx.nv.json for bmx.nv
+Using map ../maps/maps/bally/as-2518-35/bmx.map.json for bmx.nv
 Dumping known entries for bmx.nv [BMX]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 7
+06 Total Plays (Paid and Free Games): 4
+07 Total Replays (Free Games): 6
+08 Game Percentage: 0
+09 HSTD Achieved: 2
+10 Coin Chute #1: 2
+11 Coin Chute #2: 0
+12 Coin Chute #3: 3
+13 Specials Awarded: 0
+14 Minutes of Game Play: 0
+15 Service Credits: 0
 
 Game State
 ----------
 Credits: 7
-Player 1: 115,620
-Player 2: 10,240
+Player 1: 0
+Player 2: 0
 Player 3: 0
 Player 4: 0
+Final Score P1: 115,620
+Final Score P2: 10,240
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
 
 high_scores
 -----------

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/gw_l5.nv.json for gw_l5.nv
+Using map ../maps/maps/williams/wpc/gw_l5.map.json for gw_l5.nv
 Dumping known entries for gw_l5.nv [Getaway: High Speed II, The (L-5)]...
 
 B.2 EARNINGS AUDS.
@@ -144,11 +144,14 @@ WPC Game ID: 50004
 Replay: 75,000,000
 Credits: 0
 Volume: 12
-Attract: ATTRACT
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ww_lh6.nv.json for ww_lh6.nv
+Using map ../maps/maps/williams/wpc/ww_lh6.map.json for ww_lh6.nv
 Dumping known entries for ww_lh6.nv [White Water (LH-6)]...
 
 B.2 EARNINGS AUDS.
@@ -145,11 +145,15 @@ Player 3: 835,020
 Player 4: 600,220
 Volume: 24
 Replay: 90,000,000
-Attract: IN GAME
+Credits: FREE ONLY
+Game Over: false
 Current Player: 1
 Ball: 2
 Extra Balls: 0
 EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
 
 high_scores
 -----------
@@ -162,3 +166,4 @@ Fourth Place: EJB 80,000,000
 mode_champions
 --------------
 Insanity Record: RSM 12 Water Falls
+checksum at 0x1CCF: 0xF906 != 0xFFFF Credits

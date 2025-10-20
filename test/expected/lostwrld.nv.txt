@@ -1,5 +1,15 @@
-Using map ../maps/maps/bally/as-2518-35/lostwrld.nv.json for lostwrld.nv
+Using map ../maps/maps/bally/as-2518-35/lostwrld.map.json for lostwrld.nv
 Dumping known entries for lostwrld.nv [Lost World]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 0
+06 Total Plays (Paid and Free Games): 0
+07 Total Replays (Free Games): 0
+08 HSTD Achieved: 0
+09 Coin Chute #1: 0
+10 Coin Chute #2: 0
+11 Coin Chute #3: 0
 
 Game State
 ----------
@@ -8,6 +18,14 @@ Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Final P1: 0
+Final P2: 0
+Final P3: 0
+Final P4: 0
+Ball Count: 3
+Max Credits: 5
+Game Over: true
+Tilted: false
 
 high_scores
 -----------
