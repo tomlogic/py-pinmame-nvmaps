@@ -1,0 +1,47 @@
+Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for fbclass.nv
+Dumping known entries for fbclass.nv [Fireball Classic]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 1,100,005
+06 Total Plays (Paid and Free Games): 1,100,006
+07 Total Replays (Free Games): 1,100,007
+08 Game Percentage: 100
+09 HSTD Achieved: 1,100,009
+10 Coin Chute #1: 1,100,010
+11 Coin Chute #2: 1,100,011
+12 Coin Chute #3: 1,100,012
+13 Specials Awarded: 1,100,013
+14 Minutes of Game Play: 1,100,014
+15 Service Credits: 1,100,015
+
+Game Adjustments
+----------------
+19 HSTD Award: 0 credits
+
+High score functions
+--------------------
+01 Replay Level 1: 1,100,010
+02 Replay Level 2: 1,100,020
+03 Replay Level 3: 1,100,030
+04 High score to date: 1,100,040
+
+Game State
+----------
+Credits: 5
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Final Score P1: 0
+Final Score P2: 0
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
+
+high_scores
+-----------
+High Score: 1,100,040

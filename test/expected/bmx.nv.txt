@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/bmx.map.json for bmx.nv
+Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for bmx.nv
 Dumping known entries for bmx.nv [BMX]...
 
 Bookkeeping functions
@@ -14,6 +14,17 @@ Bookkeeping functions
 13 Specials Awarded: 0
 14 Minutes of Game Play: 0
 15 Service Credits: 0
+
+Game Adjustments
+----------------
+19 HSTD Award: 0 credits
+
+High score functions
+--------------------
+01 Replay Level 1: OFF
+02 Replay Level 2: OFF
+03 Replay Level 3: OFF
+04 High score to date: 115,620
 
 Game State
 ----------

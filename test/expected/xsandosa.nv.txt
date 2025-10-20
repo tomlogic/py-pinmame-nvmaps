@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/xsandos.map.json for xsandosa.nv
+Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for xsandosa.nv
 Dumping known entries for xsandosa.nv [X's & O's (Free Play)]...
 
 Bookkeeping functions
@@ -14,6 +14,10 @@ Bookkeeping functions
 13 Specials Awarded: 0
 14 Minutes of Game Play: 0
 15 Service Credits: 0
+
+Game Adjustments
+----------------
+19 HSTD Award: 0 credits
 
 High score functions
 --------------------

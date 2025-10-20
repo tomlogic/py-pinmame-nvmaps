@@ -1,0 +1,45 @@
+Using map ../maps/maps/bally/as-2518-35/goldball.map.json for goldball.nv
+Dumping known entries for goldball.nv [Gold Ball]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 100,005
+06 Total Plays (Paid and Free Games): 100,006
+07 Total Replays (Free Games): 100,007
+08 Game Percentage: 100
+09 HSTD Achieved: 100,009
+10 Coin Chute #1: 100,010
+11 Coin Chute #2: 100,011
+12 Coin Chute #3: 100,012
+13 Specials Awarded: 100,013
+14 Minutes of Game Play: 100,014
+15 Service Credits: 100,015
+
+Adjustments
+-----------
+01 Replay Level 1: 100,010
+02 Replay Level 2: 100,020
+03 Replay Level 3: 100,030
+16 Special/Extra Ball Awards: ?6
+17 Replay Award: ?7
+19 HSTD Award: 9 credits
+
+Game State
+----------
+Credits: 5
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Final Score P1: 0
+Final Score P2: 0
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 3
+Max Credits: 10
+Game Over: true
+Tilted: false
+
+high_scores
+-----------
+High Score: 0
