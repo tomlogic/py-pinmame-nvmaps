@@ -1,0 +1,25 @@
+Using map ../maps/maps/dataeast/version3/gnr_300.map.json for gnr_300.nv
+Dumping known entries for gnr_300.nv [Guns N' Roses (3.00)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 15
+Max Credits: 30
+Player Count: 4
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+#1 Producer: MDS 2,400,000,000
+#2 Promoter: BTA 2,100,000,000
+#3 Security: MDT 1,950,000,000
+#4 Roadie: MPE 1,800,000,000
+#5 Groupie: GTC 1,650,000,000
+#6 Fan: GSC 1,500,000,000
