@@ -9,7 +9,7 @@ Player 3: 0
 Player 4: 0
 Credits: 15
 Max Credits: 30
-Player Count: 4
+Player Count: 0
 Ball Count: 3
 Player: 0
 Ball: 0
