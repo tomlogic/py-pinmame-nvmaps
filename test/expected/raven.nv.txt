@@ -25,7 +25,6 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
-Maximum Credits: 10
 
 DIP Switches
 ------------

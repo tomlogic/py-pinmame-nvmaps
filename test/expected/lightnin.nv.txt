@@ -1,22 +1,21 @@
-Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for seawitch.nv
-Dumping known entries for seawitch.nv [Seawitch]...
+Using map ../maps/maps/stern/m200/m200-7digit-B.map.json for lightnin.nv
+Dumping known entries for lightnin.nv [Lightning]...
 
 Audits
 ------
 05 Current Credits: 0
 06 Total Plays: 100,008
-07 Total Replays: 100,007
-08 HSTD Achieved: 1,008
+07 Total Replays: 1,007
+08 HSTD Achieved: 18
 09 Coin Chute #2: 100,009
 10 Coin Chute #1: 100,010
 11 Coin Chute #3: 100,011
-12 Balls Played: 1,013
+12 Balls Played: 100,013
 13 Extra Balls Awarded: 1,013
 14 Specials Awarded: 1,014
-15 (unused): 1,015
-16 Replay 1 Passed: 1,016
-17 Replay 2 Passed: 1,017
-18 Replay 3 Passed: 1,018
+15 Replay 1 Passed: 1,015
+16 Replay 2 Passed: 1,016
+17 Replay 3 Passed: 1,017
 
 Adjustments
 -----------

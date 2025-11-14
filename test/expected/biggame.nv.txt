@@ -1,16 +1,16 @@
-Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for seawitch.nv
-Dumping known entries for seawitch.nv [Seawitch]...
+Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for biggame.nv
+Dumping known entries for biggame.nv [Big Game]...
 
 Audits
 ------
 05 Current Credits: 0
-06 Total Plays: 100,008
+06 Total Plays: 100,010
 07 Total Replays: 100,007
 08 HSTD Achieved: 1,008
 09 Coin Chute #2: 100,009
 10 Coin Chute #1: 100,010
 11 Coin Chute #3: 100,011
-12 Balls Played: 1,013
+12 Balls Played: 1,014
 13 Extra Balls Awarded: 1,013
 14 Specials Awarded: 1,014
 15 (unused): 1,015
