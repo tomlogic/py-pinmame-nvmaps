@@ -1,0 +1,24 @@
+Using map ../maps/maps/dataeast/version2/generic.map.json for torp_a16.nv
+Dumping known entries for torp_a16.nv [Torpedo Alley (1.6)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Maximum Credits: 30
+Free Play: false
+Current Player: 1
+Player Count: 0
+Current Ball: 0
+Ball Count: 3
+Game Over: true
+
+high_scores
+-----------
+1st Place: LON 5,054,910
+2nd Place: RAD 4,027,200
+3rd Place: DDT 3,096,170
+4th Place: KLJ 2,537,330

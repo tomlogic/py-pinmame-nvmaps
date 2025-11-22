@@ -1,0 +1,28 @@
+Using map ../maps/maps/dataeast/version2/mnfb_c27.map.json for mnfb_c27.nv
+Dumping known entries for mnfb_c27.nv [Monday Night Football (2.7, 50cts)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 8
+Maximum Credits: 32
+Free Play: false
+Current Player: 1
+Player Count: 1
+Current Ball: 1
+Ball Count: 4
+Game Over: false
+
+high_scores
+-----------
+1st Place: LON 5,054,910
+2nd Place: DDT 4,027,200
+3rd Place: RAD 3,096,170
+4th Place: JJK 2,537,330
+
+mode_champions
+--------------
+Loop Record: KKK
