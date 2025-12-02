@@ -849,7 +849,7 @@ class RamMapping(object):
             if value is None:
                 value = self.entry.get('default', '')
             return self.format_label(self.key), value
-        elif self.section in ['game_state', 'score_record', 'dip_switches']:
+        elif self.section in ['game_state', 'score_record', 'dip_switches', None]:
             return self.format_label(), value
         else:
             raise ValueError('Unrecognized section', self.section)
@@ -1227,14 +1227,20 @@ class ParseNVRAM(object):
 
         # Create a dictionary of RamMapping objects using offset as the key.
         entry = {}
-        for m in self.mapping:
-            if m.section == 'dip_switches' or m.entry.get('encoding') == 'dipsw':
-                # skip over dip_switches -- their offsets aren't memory addresses
-                continue
+        for mapping in self.mapping:
+            # iterate through sub-entries if present, otherwise use this mapping
+            for m in mapping.sub_entry.values() if mapping.sub_entry else [mapping]:
+                if m.section == 'dip_switches' or m.entry.get('encoding') == 'dipsw':
+                    # skip over dip_switches -- their offsets aren't memory addresses
+                    continue
 
-            # sometimes offsets is a map(?) so convert it to a list
-            offsets = list(m.offsets())
-            entry[offsets[0]] = m
+                if not m.entry.get('label') and mapping.entry.get('label'):
+                    # if we're doing sub entries, copy the label from the parent
+                    m.entry['label'] = mapping.entry['label']
+
+                # sometimes offsets is a map(?) so convert it to a list
+                offsets = list(m.offsets())
+                entry[offsets[0]] = m
 
         # add fake entries for checksum8 and checksum16 values
         for checksum in self.checksum_entries:
