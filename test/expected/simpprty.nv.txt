@@ -9,6 +9,7 @@ Player 3: 0
 Player 4: 0
 Credits: 29
 Max Credits: 30
+Free Play: false
 Tilted: false
 Current Player: 0
 Current Ball: 0

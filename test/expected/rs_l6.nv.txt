@@ -139,7 +139,7 @@ Volume: 12
 Replay: 500,000,000
 Game Over: true
 Current Player: 1
-Ball: 0
+Ball: 1
 Extra Balls: 0
 EBs this Ball: 0
 Ball Count: 3
