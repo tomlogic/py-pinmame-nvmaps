@@ -1,0 +1,30 @@
+Using map ../maps/maps/stern/whitestar/lotr.map.json for lotr.nv
+Dumping known entries for lotr.nv [Lord of the Rings, The (10.00)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 19
+Max Credits: 30
+Free Play: false
+Tilted: false
+Current Player: 0
+Current Ball: 0
+Player Count: 0
+Ball Count: 3
+Game Over: true
+
+high_scores
+-----------
+Grand Champ: KEF        75,000,000
+#1: G G        60,000,000
+#2: C G        50,000,000
+#3: XAQ        45,000,000
+#4: M G        40,000,000
+
+mode_champions
+--------------
+Destroy Ring Champion: EYE 0:10:00
