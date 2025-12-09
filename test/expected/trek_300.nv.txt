@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3/trek_201.map.json for trek_300.nv
+Dumping known entries for trek_300.nv [Star Trek 25th Anniversary (3.00 unofficial MOD)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+Admiral: CNH 90,000,000
+Rear Admiral: MSP 85,000,000
+Captain: ZIT 80,000,000
+Commander: ALX 75,000,000
+Lieutenant: RON 70,000,000
+Lieutenant J.G.: MAS 65,000,000

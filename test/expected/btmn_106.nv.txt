@@ -8,6 +8,7 @@ Player 2: 1,868,230
 Player 3: 0
 Player 4: 0
 Credits: 11
+Free Play: false
 Max Credits: 30
 Player Count: 0
 Ball Count: 3
