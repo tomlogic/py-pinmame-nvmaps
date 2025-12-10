@@ -1,5 +1,5 @@
-Using map ../maps/maps/gottlieb/system3/freddy.map.json for freddy.nv
-Dumping known entries for freddy.nv [Freddy: A Nightmare on Elm Street (rev. 3)]...
+Using map ../maps/maps/gottlieb/system3/freddy.map.json for freddy-defaults.nv
+Dumping known entries for freddy-defaults.nv [Freddy: A Nightmare on Elm Street (rev. 3)]...
 
 Game State
 ----------
