@@ -1,0 +1,26 @@
+Using map ../maps/maps/stern/whitestar/sopranos.map.json for sopranos.nv
+Dumping known entries for sopranos.nv [Sopranos, The (5.00)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 17
+Max Credits: 30
+Free Play: false
+Tilted: false
+Current Player: 0
+Current Ball: 0
+Player Count: 0
+Ball Count: 3
+Game Over: true
+
+high_scores
+-----------
+Grand Champ: GG         75,000,000
+#1: LFS        55,000,000
+#2: RAY        45,000,000
+#3: LON        35,000,000
+#4: MG         25,000,000

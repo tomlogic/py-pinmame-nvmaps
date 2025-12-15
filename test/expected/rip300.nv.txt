@@ -1,13 +1,13 @@
-Using map ../maps/maps/stern/whitestar/ripleys.map.json for ripleys.nv
-Dumping known entries for ripleys.nv [Ripley's Believe It or Not! (3.20)]...
+Using map ../maps/maps/stern/whitestar/rip300.map.json for rip300.nv
+Dumping known entries for rip300.nv [Ripley's Believe It or Not! (3.00)]...
 
 Game State
 ----------
-Player 1: 30,030
+Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
-Credits: 2
+Credits: 5
 Max Credits: 30
 Free Play: false
 Tilted: false
