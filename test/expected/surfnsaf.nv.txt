@@ -1,0 +1,29 @@
+Using map ../maps/maps/gottlieb/system3/surfnsaf.map.json for surfnsaf.nv
+Dumping known entries for surfnsaf.nv [Surf 'n Safari]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 9
+Max Credits: 10
+Free Play: false
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: TIM 101,000,000
+High Score #2: RJW 81,000,000
+High Score #3: JON 61,000,000
+High Score #4: DAV 41,000,000
+High Score #5: S K 21,000,000
+
+mode_champions
+--------------
+Rapids Record: CGB 10
