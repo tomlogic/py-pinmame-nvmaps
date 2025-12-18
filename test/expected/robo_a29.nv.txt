@@ -60,6 +60,7 @@ Player 3: 0
 Player 4: 0
 Credits: 1
 Maximum Credits: 30
+Free Play: false
 Current Player: 1
 Player Count: 2
 Current Ball: 1
