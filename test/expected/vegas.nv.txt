@@ -1,0 +1,29 @@
+Using map ../maps/maps/gottlieb/system3/vegas.map.json for vegas.nv
+Dumping known entries for vegas.nv [Vegas]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Free Play: false
+Ball: 1
+Ball Count: 3
+Current Player: 1
+Player Count: 2
+Game Over: false
+
+high_scores
+-----------
+High Score #1: ARF 8,000,000
+High Score #2: PDQ 7,000,000
+High Score #3: RAY 6,000,000
+High Score #4: QED 5,000,000
+High Score #5: JON 4,000,000
+
+mode_champions
+--------------
+Slot King: CGB
