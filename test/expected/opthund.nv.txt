@@ -1,0 +1,29 @@
+Using map ../maps/maps/gottlieb/system3/opthund.map.json for opthund.nv
+Dumping known entries for opthund.nv [Operation Thunder]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 21,000,001
+Credits: 0
+Max Credits: 10
+Free Play: false
+Ball: 1
+Ball Count: 3
+Current Player: 1
+Player Count: 2
+Game Over: false
+
+high_scores
+-----------
+High Score #1: BEV 101,000,000
+High Score #2: BFW 81,000,000
+High Score #3: RAY 61,000,000
+High Score #4: JON 41,000,000
+High Score #5: GIL 21,000,000
+
+mode_champions
+--------------
+Five-Star General: CGB

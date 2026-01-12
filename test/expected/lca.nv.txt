@@ -1,0 +1,29 @@
+Using map ../maps/maps/gottlieb/system3/lca.map.json for lca.nv
+Dumping known entries for lca.nv [Lights, Camera, Action]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 6
+Max Credits: 20
+Free Play: false
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: JDB 5,000,000
+High Score #2: JB  4,000,000
+High Score #3: BJ  3,000,000
+High Score #4: JON 2,000,000
+High Score #5: ZAB 1,000,000
+
+mode_champions
+--------------
+5 of a Kind: RJS
