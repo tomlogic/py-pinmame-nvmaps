@@ -788,12 +788,15 @@ class RamMapping(object):
             while ba:
                 b = ba.pop(0)
                 if char_map:
-                    result += char_map[b]
+                    ch = char_map[b]
                 elif b == 0 and self.entry.get('null', 'ignore') != 'ignore':
                     # treat as null-terminated or truncated string
                     break
                 else:
-                    result += chr(b)
+                    ch = chr(b)
+
+                if ch.isprintable():
+                    result += ch
             if result == self.entry.get('default', '   '):
                 return None
             return result
