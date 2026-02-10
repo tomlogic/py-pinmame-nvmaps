@@ -1,5 +1,5 @@
-Using map ../maps/maps/bally/as-2518-35/smman-freeplay.map.json for smmanc.nv
-Dumping known entries for smmanc.nv [Six Million Dollar Man, The (Free Play rev. 3)]...
+Using map ../maps/maps/bally/as-2518-35/system-rom-30-freeplay.map.json for paragonc.nv
+Dumping known entries for paragonc.nv [Paragon (Free Play rev. 3)]...
 
 Bookkeeping functions
 ---------------------
@@ -11,21 +11,24 @@ Bookkeeping functions
 10 Coin Chute #2: 0
 11 Coin Chute #3: 0
 
+High score functions
+--------------------
+01 Replay Level 1: OFF
+02 Replay Level 2: OFF
+03 Replay Level 3: OFF
+04 High score to date: 0
+
 Game State
 ----------
 Credits: 0
-Player 1: 3
+Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
-Player 5: 0
-Player 6: 0
-Final Score P1: 3
-Final Score P2: 0
-Final Score P3: 0
-Final Score P4: 0
-Final Score P5: 0
-Final Score P6: 0
+Final P1: 3
+Final P2: 0
+Final P3: 0
+Final P4: 0
 Ball Count: 3
 Max Credits: 5
 Free Play: False
