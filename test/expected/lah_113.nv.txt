@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3/lah_113.map.json for lah_113.nv
+Dumping known entries for lah_113.nv [Last Action Hero (1.13 unofficial MOD)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: LFS 200,000,000
+Second: LON 175,000,000
+Third: JEK 150,000,000
+Fourth: JWC 125,000,000
+Fifth: JAK 100,000,000
+Sixth: KRT 75,000,000

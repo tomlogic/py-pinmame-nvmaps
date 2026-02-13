@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3/lw3_208.map.json for lw3_208.nv
+Dumping known entries for lw3_208.nv [Lethal Weapon 3 (2.08)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: JEK 300,000,000
+Second: EDC 275,000,000
+Third: JLL 250,000,000
+Fourth: RJD 225,000,000
+Fifth: JAK 200,000,000
+Sixth: JWC 175,000,000

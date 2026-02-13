@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3/wwfr_106.map.json for wwfr_106.nv
+Dumping known entries for wwfr_106.nv [WWF Royal Rumble (1.06)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: TIM 900,000,000
+Second: AND 800,000,000
+Third: KLY 700,000,000
+Fourth: JST 600,000,000
+Fifth: MAR 500,000,000
+Sixth: IED 400,000,000
