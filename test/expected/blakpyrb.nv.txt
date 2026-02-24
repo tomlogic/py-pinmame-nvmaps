@@ -1,0 +1,51 @@
+Using map ../maps/maps/bally/as-2518-35/blakpyra-freeplay.map.json for blakpyrb.nv
+Dumping known entries for blakpyrb.nv [Black Pyramid (Free Play)]...
+
+Bookkeeping functions
+---------------------
+05 Current Credits: 0
+06 Total Plays (Paid and Free Games): 0
+07 Total Replays (Free Games): 0
+08 Game Percentage: 0
+09 HSTD Achieved: 0
+10 Coin Chute #1: 0
+11 Coin Chute #2: 0
+12 Coin Chute #3: 0
+13 Specials Awarded: 0
+14 Minutes of Game Play: 0
+15 Service Credits: 0
+
+Game Adjustments
+----------------
+16 Special/EB/Novelty: no award
+17 Replay Award: nothing
+18 Unused: 0
+19 HSTD Award: 0 credits
+
+High score functions
+--------------------
+01 Replay Level 1: OFF
+02 Replay Level 2: OFF
+03 Replay Level 3: OFF
+04 High score to date: 0
+
+Game State
+----------
+Credits: 0
+Player 1: 1
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Final Score P1: 0
+Final Score P2: 0
+Final Score P3: 0
+Final Score P4: 0
+Ball Count: 3
+Max Credits: 10
+Free Play: False
+Game Over: true
+Tilted: false
+
+high_scores
+-----------
+High Score: 0
