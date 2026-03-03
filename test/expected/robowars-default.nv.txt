@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-10KB.map.json for robowars-default.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-C-10KB.map.json for robowars-default.nv
 Dumping known entries for robowars-default.nv [Robo-War]...
 
 Bookkeeping
@@ -26,7 +26,6 @@ Standard Adjustments
 Game State
 ----------
 Credits: 0
-Maximum Credits: 10
 
 DIP Switches
 ------------

@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3/rab_130.map.json for rab_130.nv
+Dumping known entries for rab_130.nv [Adventures of Rocky and Bullwinkle and Friends, The (1.30)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: TWS 500,000,000
+Second: KVD 450,000,000
+Third: NRW 400,000,000
+Fourth: JWC 350,000,000
+Fifth: J L 300,000,000
+Sixth: K A 250,000,000

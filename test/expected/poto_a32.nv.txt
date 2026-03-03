@@ -1,0 +1,24 @@
+Using map ../maps/maps/dataeast/version2/poto_a32.map.json for poto_a32.nv
+Dumping known entries for poto_a32.nv [Phantom of the Opera, The (3.2)]...
+
+Game State
+----------
+Player 1: 11,000
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 3
+Maximum Credits: 30
+Free Play: false
+Current Player: 1
+Player Count: 1
+Current Ball: 2
+Ball Count: 3
+Game Over: false
+
+high_scores
+-----------
+1st Place: LON 5,054,910
+2nd Place: KLJ 4,627,200
+3rd Place: JEK 4,196,170
+4th Place: EJC 3,737,330

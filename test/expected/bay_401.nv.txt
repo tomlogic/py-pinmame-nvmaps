@@ -1,0 +1,28 @@
+Using map ../maps/maps/dataeast/version3b/baywatch.map.json for bay_401.nv
+Dumping known entries for bay_401.nv [Baywatch (4.01 unofficial MOD)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: CNH 2,400,000,000
+High Score #2: HMJ 2,100,000,000
+High Score #3: JMS 1,950,000,000
+High Score #4: OZZ 1,800,000,000
+High Score #5: TSS 1,650,000,000
+High Score #6: ALH 1,500,000,000

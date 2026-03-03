@@ -1,0 +1,31 @@
+Using map ../maps/maps/stern/whitestar/monopoly.map.json for monopoly.nv
+Dumping known entries for monopoly.nv [Monopoly (3.20)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 2
+Max Credits: 30
+Free Play: false
+Tilted: false
+Current Player: 0
+Current Ball: 0
+Player Count: 0
+Ball Count: 3
+Game Over: true
+
+high_scores
+-----------
+#1: PML       30,000,000
+#2: KOZ       26,000,000
+#3: JRK       22,000,000
+#4: GDD       20,500,000
+#5: JY        18,000,000
+#6: CG        16,500,000
+#7: CJL       12,000,000
+#8: BRL       10,500,000
+#9: AIG       8,000,000
+#10: PLD       6,500,000

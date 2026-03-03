@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3/ckpt_a17.map.json for ckpt_a17.nv
+Dumping known entries for ckpt_a17.nv [Checkpoint (1.7)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: JEK 12,000,000
+Second: RAY 11,000,000
+Third: KVD 10,000,000
+Fourth: BLS 9,000,000
+Fifth: NBW 8,000,000
+Sixth: P G 7,000,000

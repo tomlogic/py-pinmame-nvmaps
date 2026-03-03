@@ -58,6 +58,14 @@ Player 1: 130,240
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Credits: 4
+Maximum Credits: 30
+Free Play: false
+Current Player: 1
+Player Count: 1
+Current Ball: 1
+Ball Count: 3
+Game Over: false
 
 high_scores
 -----------

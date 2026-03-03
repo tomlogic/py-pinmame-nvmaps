@@ -80,6 +80,7 @@ Current Player: 1
 Credits: 0
 Ball Count: 3
 Max Credits: 30
+Free Play: false
 Ball: n/a
 Match: 0
 

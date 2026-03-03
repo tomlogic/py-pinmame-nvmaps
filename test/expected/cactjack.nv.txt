@@ -1,0 +1,25 @@
+Using map ../maps/maps/gottlieb/system3/cactjack.map.json for cactjack.nv
+Dumping known entries for cactjack.nv [Cactus Jack's]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Free Play: false
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: RB  9,000,000
+High Score #2: JON 8,000,000
+High Score #3: MCV 7,000,000
+High Score #4: SNP 6,000,000
+High Score #5: BFH 5,000,000

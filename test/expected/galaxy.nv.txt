@@ -1,0 +1,41 @@
+Using map ../maps/maps/stern/m200/m200-6digit.map.json for galaxy.nv
+Dumping known entries for galaxy.nv [Galaxy]...
+
+Audits
+------
+05 Current Credits: 100,000
+06 Total Plays: 100,008
+07 Total Replays: 100,007
+08 HSTD Achieved: 100,008
+09 Coin Chute #2: 100,009
+10 Coin Chute #1: 100,010
+11 Coin Chute #3: 100,011
+12 Balls Played: 1,013
+13 Extra Balls Awarded: 1,013
+14 Specials Awarded: 1,014
+15 Game-Specific Audit: 1,015
+16 Replay 1 Passed: 1,016
+17 Replay 2 Passed: 1,017
+18 Replay 3 Passed: 1,018
+
+Adjustments
+-----------
+01 Replay Level 1: 100,001
+02 Replay Level 2: 100,002
+03 Replay Level 3: 100,003
+04 Current HSTD: 100,040
+
+Game State
+----------
+Credits: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Ball Count: 3
+Players: 2
+Max Credits: 10
+
+high_scores
+-----------
+1st: 100,040

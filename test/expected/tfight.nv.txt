@@ -1,0 +1,29 @@
+Using map ../maps/maps/gottlieb/system3/tfight.map.json for tfight.nv
+Dumping known entries for tfight.nv [Title Fight]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Free Play: false
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: RJW 6,000,000
+High Score #2: DAV 0
+High Score #3: OAF 0
+High Score #4: EZY 0
+High Score #5: RAY 0
+
+mode_champions
+--------------
+Highest Punches: JOE 33

@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/stern-m100.map.json for memlane.nv
+Using map ../maps/maps/stern/m100/generic.map.json for memlane.nv
 Dumping known entries for memlane.nv [Memory Lane]...
 
 Audits

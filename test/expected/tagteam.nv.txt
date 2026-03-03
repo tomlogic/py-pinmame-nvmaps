@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-7digit-10KB.map.json for tagteam.nv
+Using map ../maps/maps/gottlieb/system80b/tagteam.map.json for tagteam.nv
 Dumping known entries for tagteam.nv [Tag-Team Pinball]...
 
 Bookkeeping
@@ -10,22 +10,22 @@ Bookkeeping
 05 Total Replays: 0
 07 Extra Balls: 0
 08 Tilts: 0
-09 Specials: 0
+09 Slams: 0
 10 Times HGTD Awarded: 0
 14 Highest Game To Date: 0
 14a HGTD Initials: 
-15 Game Time: 0 seconds
+15 Highest Team To Date: 0
+15a Team Initials: 
+16 Average Game Time: 0 seconds
 
 Standard Adjustments
 --------------------
-11 First High Score: 0
-12 Second High Score: 0
-13 Third High Score: 0
+11 Regular High Score: 0
+12 Team High Score: 0
 
 Game State
 ----------
 Credits: 0
-Maximum Credits: 10
 
 DIP Switches
 ------------
@@ -53,5 +53,8 @@ high_scores
 High Score #1: 0
 High Score #2: 0
 High Score #3: 0
-High Score #4: 0
-High Score #5: 0
+
+mode_champions
+--------------
+Team Score #1: 0
+Team Score #2: 0

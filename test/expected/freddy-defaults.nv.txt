@@ -1,0 +1,28 @@
+Using map ../maps/maps/gottlieb/system3/freddy.map.json for freddy-defaults.nv
+Dumping known entries for freddy-defaults.nv [Freddy: A Nightmare on Elm Street (rev. 3)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+Dream Master: BRI 160,000,000
+Dream Warrior #2: LVS 140,000,000
+Dream Warrior #3: CIN 120,000,000
+Dream Warrior #4: JON 100,000,000
+Dream Warrior #5: GIL 80,000,000
+
+mode_champions
+--------------
+Most Souls Saved: CIN 40

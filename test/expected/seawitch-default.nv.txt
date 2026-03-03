@@ -1,13 +1,40 @@
-Using map ../maps/maps/stern/m200/seawitch.map.json for seawitch-default.nv
+Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for seawitch-default.nv
 Dumping known entries for seawitch-default.nv [Seawitch]...
+
+Audits
+------
+05 Current Credits: 8
+06 Total Plays: 1
+07 Total Replays: 0
+08 HSTD Achieved: 0
+09 Coin Chute #2: 0
+10 Coin Chute #1: 9
+11 Coin Chute #3: 0
+12 Balls Played: 2
+13 Extra Balls Awarded: 0
+14 Specials Awarded: 0
+15 (unused): 0
+16 Replay 1 Passed: 0
+17 Replay 2 Passed: 0
+18 Replay 3 Passed: 0
+
+Adjustments
+-----------
+01 Replay Level 1: 0
+02 Replay Level 2: 0
+03 Replay Level 3: 0
+04 Current HSTD: 0
 
 Game State
 ----------
+Credits: 8
 Player 1: 118,580
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Ball Count: 3
 Players: 1
+Max Credits: 10
 
 high_scores
 -----------

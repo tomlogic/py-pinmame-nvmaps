@@ -1,0 +1,25 @@
+Using map ../maps/maps/gottlieb/system3/ccruise.map.json for ccruise.nv
+Dumping known entries for ccruise.nv [Caribbean Cruise]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 1
+Max Credits: 10
+Free Play: false
+Ball: 0
+Ball Count: 5
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: 35,000,000
+High Score #2: 0
+High Score #3: 0
+High Score #4: 0
+High Score #5: 0

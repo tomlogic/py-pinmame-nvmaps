@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/stern-m100.map.json for magicfp.nv
+Using map ../maps/maps/stern/m100/freeplay.map.json for magicfp.nv
 Dumping known entries for magicfp.nv [Magic (Free Play)]...
 
 Audits
@@ -20,6 +20,7 @@ Adjustments
 
 Game State
 ----------
+Free Play: True
 Match: 0
 Credits: 0
 Player 1: 0

@@ -1,0 +1,28 @@
+Using map ../maps/maps/gottlieb/system3/waterwld.map.json for waterwld.nv
+Dumping known entries for waterwld.nv [Waterworld (rev. 3)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+First: ELG 1,900,000,000
+Second: MEG 1,600,000,000
+Third: RAY 1,300,000,000
+Fourth: JON 1,000,000,000
+Fifth: DAR 700,000,000
+
+mode_champions
+--------------
+Icthy Freak: RPG 20 Jackpots

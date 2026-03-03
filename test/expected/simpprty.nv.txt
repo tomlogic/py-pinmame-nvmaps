@@ -1,0 +1,26 @@
+Using map ../maps/maps/stern/whitestar/simpprty.map.json for simpprty.nv
+Dumping known entries for simpprty.nv [Simpsons Pinball Party, The (5.00)]...
+
+Game State
+----------
+Player 1: 845,900
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 29
+Max Credits: 30
+Free Play: false
+Tilted: false
+Current Player: 0
+Current Ball: 0
+Player Count: 0
+Ball Count: 3
+Game Over: true
+
+high_scores
+-----------
+Grand Champ: KEF        50,000,000
+#1: WES        40,000,000
+#2: XAQ        35,000,000
+#3: M G        30,000,000
+#4: C G        25,000,000

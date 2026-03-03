@@ -1,0 +1,28 @@
+Using map ../maps/maps/dataeast/version3b/batmanf.map.json for bmf_cn.nv
+Dumping known entries for bmf_cn.nv [Batman Forever (4.0 Canadian)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: BTW 2,400,000,000
+High Score #2: JEK 2,100,000,000
+High Score #3: PML 1,950,000,000
+High Score #4: BAR 1,800,000,000
+High Score #5: JWC 1,650,000,000
+High Score #6: ACM 1,500,000,000

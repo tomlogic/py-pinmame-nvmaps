@@ -1,0 +1,29 @@
+Using map ../maps/maps/gottlieb/system3/carhop.map.json for carhop.nv
+Dumping known entries for carhop.nv [Car Hop]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Free Play: false
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+High Score #1: SAM 9,000,000
+High Score #2: GAR 8,000,000
+High Score #3: JON 7,000,000
+High Score #4: OTI 6,000,000
+High Score #5: BOZ 5,000,000
+
+mode_champions
+--------------
+Record Heat Wave: TIF

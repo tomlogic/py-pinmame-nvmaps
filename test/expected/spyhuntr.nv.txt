@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/spyhuntr.map.json for spyhuntr.nv
+Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for spyhuntr.nv
 Dumping known entries for spyhuntr.nv [Spy Hunter]...
 
 Bookkeeping functions
@@ -14,6 +14,10 @@ Bookkeeping functions
 13 Specials Awarded: 0
 14 Minutes of Game Play: 0
 15 Service Credits: 0
+
+Game Adjustments
+----------------
+19 HSTD Award: 0 credits
 
 High score functions
 --------------------

@@ -55,6 +55,7 @@ Game State
 Credits: 0
 Ball Count: 3
 Maximum Credits: 20
+Free Play: false
 
 high_scores
 -----------

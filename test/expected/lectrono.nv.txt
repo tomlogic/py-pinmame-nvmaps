@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/stern-m100.map.json for lectrono.nv
+Using map ../maps/maps/stern/m100/generic.map.json for lectrono.nv
 Dumping known entries for lectrono.nv [Lectronamo]...
 
 Audits

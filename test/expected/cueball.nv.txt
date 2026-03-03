@@ -1,0 +1,24 @@
+Using map ../maps/maps/gottlieb/system3/cueball.map.json for cueball.nv
+Dumping known entries for cueball.nv [Cue Ball Wizard]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 2
+Max Credits: 10
+Ball: 1
+Ball Count: 3
+Current Player: 1
+Player Count: 1
+Game Over: false
+
+high_scores
+-----------
+High Score #1: BFH 320,000,000
+High Score #2: JET 280,000,000
+High Score #3: DAV 240,000,000
+High Score #4: ZAB 200,000,000
+High Score #5: EZY 160,000,000

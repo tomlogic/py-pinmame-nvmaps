@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-A.map.json for mntecrlo.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-10KB.map.json for mntecrlo.nv
 Dumping known entries for mntecrlo.nv [Monte Carlo]...
 
 Bookkeeping
@@ -25,7 +25,6 @@ Standard Adjustments
 Game State
 ----------
 Credits: 10
-Maximum Credits: 10
 
 DIP Switches
 ------------

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/smmanc.map.json for smmanc.nv
+Using map ../maps/maps/bally/as-2518-35/smman-freeplay.map.json for smmanc.nv
 Dumping known entries for smmanc.nv [Six Million Dollar Man, The (Free Play rev. 3)]...
 
 Bookkeeping functions
@@ -28,6 +28,7 @@ Final Score P5: 0
 Final Score P6: 0
 Ball Count: 3
 Max Credits: 5
+Free Play: False
 Game Over: true
 Tilted: false
 

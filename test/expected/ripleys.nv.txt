@@ -7,11 +7,20 @@ Player 1: 30,030
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Credits: 2
+Max Credits: 30
+Free Play: false
+Tilted: false
+Current Player: 0
+Current Ball: 0
+Player Count: 0
+Ball Count: 3
+Game Over: true
 
 high_scores
 -----------
-Grand Champion: PML 50,000,000
-1st: LNK 31,000,000
-2nd: JRK 25,000,000
-3rd: J Y 22,000,000
-4th: C G 18,000,000
+Grand Champ: PML        50,000,000
+#1: LNK        31,000,000
+#2: JRK        25,000,000
+#3: J Y        22,000,000
+#4: C G        18,000,000

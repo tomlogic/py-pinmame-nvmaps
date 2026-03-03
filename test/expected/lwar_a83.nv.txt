@@ -1,0 +1,24 @@
+Using map ../maps/maps/dataeast/version1/lwar_a83.map.json for lwar_a83.nv
+Dumping known entries for lwar_a83.nv [Laser War (8.3)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Maximum Credits: 30
+Free Play: false
+Current Player: 1
+Player Count: 1
+Current Ball: 1
+Ball Count: 3
+Game Over: false
+
+high_scores
+-----------
+1st Place: LON 4,000,000
+2nd Place: RAD 3,000,000
+3rd Place: DDT 2,500,000
+4th Place: EAD 2,000,000

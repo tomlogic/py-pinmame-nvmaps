@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3b/maverick.map.json for mav_400.nv
+Dumping known entries for mav_400.nv [Maverick, The Movie (4.00)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 2
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+High Score #1: TWS 2,400,000,000
+High Score #2: JEK 2,100,000,000
+High Score #3: LON 1,950,000,000
+High Score #4: LFS 1,800,000,000
+High Score #5: SMM 1,650,000,000
+High Score #6: DAY 1,500,000,000

@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-A.map.json for hlywoodh.nv
+Using map ../maps/maps/gottlieb/system80b/80b-8digit-A-10KB.map.json for hlywoodh.nv
 Dumping known entries for hlywoodh.nv [Hollywood Heat]...
 
 Bookkeeping
@@ -25,7 +25,6 @@ Standard Adjustments
 Game State
 ----------
 Credits: 10
-Maximum Credits: 10
 
 DIP Switches
 ------------

@@ -1,0 +1,41 @@
+Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for flight2k.nv
+Dumping known entries for flight2k.nv [Flight 2000]...
+
+Audits
+------
+05 Current Credits: 0
+06 Total Plays: 100,008
+07 Total Replays: 100,007
+08 HSTD Achieved: 1,008
+09 Coin Chute #2: 100,009
+10 Coin Chute #1: 100,010
+11 Coin Chute #3: 100,011
+12 Balls Played: 1,013
+13 Extra Balls Awarded: 1,013
+14 Specials Awarded: 1,014
+15 (unused): 1,015
+16 Replay 1 Passed: 1,016
+17 Replay 2 Passed: 1,017
+18 Replay 3 Passed: 1,018
+
+Adjustments
+-----------
+01 Replay Level 1: 10,010,000
+02 Replay Level 2: 10,020,000
+03 Replay Level 3: 10,030,000
+04 Current HSTD: 1,000,040
+
+Game State
+----------
+Credits: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Ball Count: 3
+Players: 2
+Max Credits: 10
+
+high_scores
+-----------
+1st: 1,000,040
