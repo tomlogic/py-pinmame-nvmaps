@@ -1,0 +1,28 @@
+Using map ../maps/maps/sega/whitestar/lostspc.map.json for lostspc.nv
+Dumping known entries for lostspc.nv [Lost in Space (1.01, Display 1.02)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: JDB        250,000,000
+Second: NF         225,000,000
+Third: DAY        200,000,000
+Fourth: KRT        175,000,000
+Fifth: JIM        150,000,000
+Sixth: JAY        125,000,000

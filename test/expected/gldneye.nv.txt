@@ -1,11 +1,28 @@
 Using map ../maps/maps/sega/whitestar/gldneye.map.json for gldneye.nv
 Dumping known entries for gldneye.nv [Goldeneye]...
 
+Game State
+----------
+Player 1: 104,019,730
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 13
+Free Play: false
+Max Credits: 30
+Player Count: 1
+Ball Count: 3
+Player: 1
+Ball: 2
+Game Over: false
+
 high_scores
 -----------
-First Place: WMT 2,400,000,000
-Second Place: JRP 2,100,000,000
-Third Place: RFH 1,950,000,000
-Fourth Place: BTB 1,800,000,000
-Fifth Place: NF  1,650,000,000
-Sixth Place: DAY 1,500,000,000
+First: WMT 2,400,000,000
+Second: JRP 2,100,000,000
+Third: RFH 1,950,000,000
+Fourth: BTB 1,800,000,000
+Fifth: NF  1,650,000,000
+Sixth: DAY 1,500,000,000

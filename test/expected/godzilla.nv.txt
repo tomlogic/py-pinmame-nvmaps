@@ -1,0 +1,28 @@
+Using map ../maps/maps/sega/whitestar/godzilla.map.json for godzilla.nv
+Dumping known entries for godzilla.nv [Godzilla (2.05)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: JOE        250,000,000
+Second: JEK        225,000,000
+Third: NF         200,000,000
+Fourth: DAY        175,000,000
+Fifth: ION        150,000,000
+Sixth: KRT        125,000,000

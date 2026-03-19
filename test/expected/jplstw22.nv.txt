@@ -7,12 +7,22 @@ Player 1: 267,920
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 8
+Free Play: false
+Max Credits: 30
+Player Count: 1
+Ball Count: 3
+Player: 1
+Ball: 2
+Game Over: false
 
 high_scores
 -----------
-#1: JRB 2,400,000,000
-#2: JEK 2,100,000,000
-#3: NF  1,950,000,000
-#4: DAY 1,800,000,000
-#5: KRT 1,650,000,000
-#6: JIM 1,500,000,000
+First: JRB 24,000,000
+Second: JEK 21,000,000
+Third: NF  19,500,000
+Fourth: DAY 18,000,000
+Fifth: KRT 16,500,000
+Sixth: JIM 15,000,000
