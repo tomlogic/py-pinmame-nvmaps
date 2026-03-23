@@ -1,5 +1,5 @@
 Using map ../maps/maps/bally/as-2518-35/system-rom-35-7digit.map.json for rollstob.nv
-Dumping known entries for rollstob.nv [Rolling Stones (7-digit conversion)]...
+Dumping known entries for rollstob.nv [Rolling Stones (V17, 7-digit conversion)]...
 
 Bookkeeping functions
 ---------------------
