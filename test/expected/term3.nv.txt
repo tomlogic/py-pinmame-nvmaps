@@ -1,0 +1,10 @@
+Using map ../maps/maps/stern/whitestar/term3.map.json for term3.nv
+Dumping known entries for term3.nv [Terminator 3: Rise of the Machines (4.00)]...
+
+high_scores
+-----------
+Grand Champion: SSR        100,000,000
+First Place: JMR        90,000,000
+Second Place: LON        80,000,000
+Third Place: MG         70,000,000
+Fourth Place: CG         60,000,000

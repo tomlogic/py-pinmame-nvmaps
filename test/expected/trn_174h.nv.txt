@@ -1,0 +1,10 @@
+Using map ../maps/maps/stern/sam/trn_174h.map.json for trn_174h.nv
+Dumping known entries for trn_174h.nv [TRON: Legacy Limited Edition (V1.74)]...
+
+high_scores
+-----------
+Grand Champion: G S 75,000,000
+First Place: L R 55,000,000
+Second Place: J R 40,000,000
+Third Place: D T 30,000,000
+Fourth Place: P P 25,000,000
