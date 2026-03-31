@@ -1,0 +1,10 @@
+Using map maps\maps\alving\mystcast.map.json for mystcast.nv
+Dumping known entries for mystcast.nv [Mystery Castle (R02)]...
+
+high_scores
+-----------
+High Score #1: AJG 500,000,000
+High Score #2: DEF 400,000,000
+High Score #3: GHI 300,000,000
+High Score #4: JKL 200,000,000
+High Score #5: MNO 100,000,000

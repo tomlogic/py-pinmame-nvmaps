@@ -1,0 +1,18 @@
+Using map ../maps/maps/capcom/kpb105.map.json for kpv106.nv
+Dumping known entries for kpv106.nv [(Unknown ROM kpv106)]...
+
+high_scores
+-----------
+Kingpin #1: MCH 298,040,500
+Kingpin #2: MCH 33,159,390
+Kingpin #3: MRP 1,000,000
+Kingpin #4: TON 1,000,000
+Kingpin #5: DMW 1,000,000
+
+mode_champions
+--------------
+Buyin Boss #1: TND 2,000,000
+Buyin Boss #2: ASK 2,000,000
+Buyin Boss #3: HOT 2,000,000
+Buyin Boss #4: PFZ 2,000,000
+Buyin Boss #5: XXX 2,000,000

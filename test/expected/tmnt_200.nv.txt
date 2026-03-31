@@ -1,0 +1,26 @@
+Using map ../maps/maps/dataeast/version3/tmnt_104.map.json for tmnt_200.nv
+Dumping known entries for tmnt_200.nv [Teenage Mutant Ninja Turtles (2.00 unofficial MOD)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: CNH 11,000,000
+Second: MSP 10,000,000
+Third: ASV 9,000,000
+Fourth: CRS 8,000,000
+Fifth: WGY 7,000,000
+Sixth: TSS 6,000,000

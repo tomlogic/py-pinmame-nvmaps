@@ -1,0 +1,41 @@
+Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for cheetahb2.nv
+Dumping known entries for cheetahb2.nv [Cheetah (Blue cabinet Bonus shot 1/ball)]...
+
+Audits
+------
+05 Current Credits: 0
+06 Total Plays: 3
+07 Total Replays: 0
+08 HSTD Achieved: 1
+09 Coin Chute #2: 0
+10 Coin Chute #1: 0
+11 Coin Chute #3: 3
+12 Balls Played: 7
+13 Extra Balls Awarded: 0
+14 Specials Awarded: 0
+15 (unused): 0
+16 Replay 1 Passed: 0
+17 Replay 2 Passed: 0
+18 Replay 3 Passed: 0
+
+Adjustments
+-----------
+01 Replay Level 1: 0
+02 Replay Level 2: 0
+03 Replay Level 3: 0
+04 Current HSTD: 447,230
+
+Game State
+----------
+Credits: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Ball Count: 3
+Players: 1
+Max Credits: 10
+
+high_scores
+-----------
+1st: 447,230
