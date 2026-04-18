@@ -1,0 +1,23 @@
+Using map ../maps/maps/stern/sam/mtl_180h.map.json for mtl_180h.nv
+Dumping known entries for mtl_180h.nv [Metallica Limited Edition (V1.80.0)]...
+
+high_scores
+-----------
+Grand Champion: JDB 75,000,000
+First Place: LFS 55,000,000
+Second Place: J R 40,000,000
+Third Place: DDG 30,000,000
+Fourth Place: M G 25,000,000
+
+mode_champions
+--------------
+Combo Champion: VJP
+Lady Justice Champion: ABC 2,500,000
+Fuel Champion: ABC 5,000,000
+Seek & Destroy Champion: ABC 15,000,000
+Blackened Champion: ROB 15,000,000
+For Whom The Bell Tolls Champion: MDK 25,000,000
+Fade To Black Champion: ABC 25,000,000
+Battery Champion: ABC 25,000,000
+Enter Sandman Champion: TEK 25,000,000
+The End Of The Line Champion: ABC 50,000,000

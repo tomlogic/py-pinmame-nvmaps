@@ -1,15 +1,33 @@
 Using map ../maps/maps/sega/whitestar/sprk_103.map.json for sprk_103.nv
 Dumping known entries for sprk_103.nv [South Park (1.03)]...
 
+Game State
+----------
+Player 1: 1,135,780
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 7
+Max Credits: 30
+Free Play: false
+Tilted: false
+Current Player: 0
+Current Ball: 0
+Player Count: 0
+Ball Count: 3
+Game Over: true
+
 high_scores
 -----------
-First Place: JEK 400,000,000
-Second Place: KIM 375,000,000
-Third Place: CMK 350,000,000
-Fourth Place: DLK 325,000,000
-Fifth Place: KLK 300,000,000
-Sixth Place: JOE 275,000,000
-Seventh Place: NF  250,000,000
-Eighth Place: DAY 225,000,000
-Ninth Place: KRT 200,000,000
-Tenth Place: RFH 175,000,000
+#1: JEK        400,000,000
+#2: KIM        375,000,000
+#3: CMK        350,000,000
+#4: DLK        325,000,000
+#5: KLK        300,000,000
+#6: JOE        275,000,000
+#7: NF         250,000,000
+#8: DAY        225,000,000
+#9: KRT        200,000,000
+#10: RFH        175,000,000

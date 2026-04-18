@@ -1,0 +1,27 @@
+Using map ../maps/maps/stern/sam/twd_160h.map.json for twd_160h.nv
+Dumping known entries for twd_160h.nv [Walking Dead, The Limited Edition (V1.60.0)]...
+
+high_scores
+-----------
+Grand Champion: JDB 75,000,000
+First Place: LFS 55,000,000
+Second Place: Tÿ 40,000,000
+Third Place: MDK 30,000,000
+Fourth Place: TEK 25,000,000
+
+mode_champions
+--------------
+Walkers Killed Champion: DAV
+Combo Champion: MAR
+Bicycle Girl Champion: RON 5,000,000
+Barn Champion: JOS 15,000,000
+CDC Champion: KWI 15,000,000
+Riot Champion: GLV 15,000,000
+Tunnel Champion: STQ 15,000,000
+Arena Champion: SDE 15,000,000
+Terminus Champion: TOM 25,000,000
+Blood Bath Champion: EPC 7,500,000
+Crossbow Champion: BFB 10,000,000
+X Champion: PVW 25,000,000
+Horde Champion: L E 50,000,000
+Last Man Standing Champion: EB 75,000,000
