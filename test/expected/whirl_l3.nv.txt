@@ -64,7 +64,7 @@ Maximum Credits: 10
 Player Count: 1
 Current Player: 1
 Tilted: false
-Game Over: false
+Game Over: true
 Extra Balls: 0
 Tilt Warnings: 0
 Free Play: false
