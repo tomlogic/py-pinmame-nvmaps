@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/harl_a40.map.json for harl_a40.nv
+Using maps/sega/whitestar/harl_a40.map.json for harl_a40.nv
 Dumping known entries for harl_a40.nv [Harley-Davidson (Stern, 4.00)]...
 
 Game State

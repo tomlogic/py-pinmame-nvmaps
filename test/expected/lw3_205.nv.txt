@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/lw3_200.map.json for lw3_205.nv
+Using maps/dataeast/version3/lw3_200.map.json for lw3_205.nv
 Dumping known entries for lw3_205.nv [Lethal Weapon 3 (2.05)]...
 
 Game State

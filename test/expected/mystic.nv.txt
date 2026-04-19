@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-35.map.json for mystic.nv
+Using maps/bally/as-2518-35/system-rom-35.map.json for mystic.nv
 Dumping known entries for mystic.nv [Mystic]...
 
 Bookkeeping functions

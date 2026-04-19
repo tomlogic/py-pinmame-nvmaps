@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-17/system-rom-20.map.json for matahari.nv
+Using maps/bally/as-2518-17/system-rom-20.map.json for matahari.nv
 Dumping known entries for matahari.nv [Mata Hari]...
 
 Bookkeeping functions

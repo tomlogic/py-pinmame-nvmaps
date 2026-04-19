@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/opthund.map.json for opthund.nv
+Using maps/gottlieb/system3/opthund.map.json for opthund.nv
 Dumping known entries for opthund.nv [Operation Thunder]...
 
 Game State

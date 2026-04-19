@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/id4.map.json for id4.nv
+Using maps/sega/whitestar/id4.map.json for id4.nv
 Dumping known entries for id4.nv [ID4: Independence Day (2.02)]...
 
 Game State

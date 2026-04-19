@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/sam/smanve_101.map.json for smanve_100.nv
+Using maps/stern/sam/smanve_101.map.json for smanve_100.nv
 Dumping known entries for smanve_100.nv [Spider-Man Vault Edition (V1.0)]...
 
 high_scores

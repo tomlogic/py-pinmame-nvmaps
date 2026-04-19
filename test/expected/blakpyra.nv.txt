@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/blakpyra.map.json for blakpyra.nv
+Using maps/bally/as-2518-35/blakpyra.map.json for blakpyra.nv
 Dumping known entries for blakpyra.nv [Black Pyramid]...
 
 Bookkeeping functions

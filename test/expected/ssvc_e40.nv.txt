@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version2/generic.map.json for ssvc_e40.nv
+Using maps/dataeast/version2/generic.map.json for ssvc_e40.nv
 Dumping known entries for ssvc_e40.nv [Secret Service (4.0 Europe)]...
 
 Game State

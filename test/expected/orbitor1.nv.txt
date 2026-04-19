@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/orbitor1.map.json for orbitor1.nv
+Using maps/stern/m200/orbitor1.map.json for orbitor1.nv
 Dumping known entries for orbitor1.nv [Orbitor 1]...
 
 Audits

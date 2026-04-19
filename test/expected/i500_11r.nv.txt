@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/i500_11r.map.json for i500_11r.nv
+Using maps/williams/wpc/i500_11r.map.json for i500_11r.nv
 Dumping known entries for i500_11r.nv [Indianapolis 500 (1.1R)]...
 
 B.2 EARNINGS AUDS.

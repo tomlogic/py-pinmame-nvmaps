@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m100/freeplay.map.json for magicfp.nv
+Using maps/stern/m100/freeplay.map.json for magicfp.nv
 Dumping known entries for magicfp.nv [Magic (Free Play)]...
 
 Audits

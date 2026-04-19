@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-35.map.json for hotdoggn.nv
+Using maps/bally/as-2518-35/system-rom-35.map.json for hotdoggn.nv
 Dumping known entries for hotdoggn.nv [Hotdoggin']...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-B-10KB.map.json for goldwing.nv
+Using maps/gottlieb/system80b/80b-8digit-B-10KB.map.json for goldwing.nv
 Dumping known entries for goldwing.nv [Gold Wings]...
 
 Bookkeeping

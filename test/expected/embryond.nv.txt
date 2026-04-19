@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-52.map.json for embryond.nv
+Using maps/bally/as-2518-35/system-rom-52.map.json for embryond.nv
 Dumping known entries for embryond.nv [Embryon (7-digit conversion rev. 9)]...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/ckpt_a17.map.json for ckpt_a17.nv
+Using maps/dataeast/version3/ckpt_a17.map.json for ckpt_a17.nv
 Dumping known entries for ckpt_a17.nv [Checkpoint (1.7)]...
 
 Game State

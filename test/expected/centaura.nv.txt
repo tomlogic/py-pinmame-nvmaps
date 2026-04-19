@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/centaur-freeplay.map.json for centaura.nv
+Using maps/bally/as-2518-35/centaur-freeplay.map.json for centaura.nv
 Dumping known entries for centaura.nv [Centaur (Free Play)]...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/whitestar/strikext.map.json for strikext.nv
+Using maps/stern/whitestar/strikext.map.json for strikext.nv
 Dumping known entries for strikext.nv [Striker Xtreme (1.02)]...
 
 Game State

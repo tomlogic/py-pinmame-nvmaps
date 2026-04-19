@@ -1,4 +1,4 @@
-Using map maps\maps\capcom\abv106.map.json for abv106.nv
+Using maps/capcom/abv106.map.json for abv106.nv
 Dumping known entries for abv106.nv [Airborne (1.6)]...
 
 high_scores

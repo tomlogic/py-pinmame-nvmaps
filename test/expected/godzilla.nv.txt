@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/godzilla.map.json for godzilla.nv
+Using maps/sega/whitestar/godzilla.map.json for godzilla.nv
 Dumping known entries for godzilla.nv [Godzilla (2.05)]...
 
 Game State

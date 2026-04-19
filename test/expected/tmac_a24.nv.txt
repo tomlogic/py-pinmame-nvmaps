@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version2/generic.map.json for tmac_a24.nv
+Using maps/dataeast/version2/generic.map.json for tmac_a24.nv
 Dumping known entries for tmac_a24.nv [Time Machine (2.4)]...
 
 Game State

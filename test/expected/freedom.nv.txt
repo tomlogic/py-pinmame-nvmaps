@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-17/freedom.map.json for freedom.nv
+Using maps/bally/as-2518-17/freedom.map.json for freedom.nv
 Dumping known entries for freedom.nv [Freedom]...
 
 Bookkeeping functions

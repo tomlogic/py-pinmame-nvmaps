@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/vegas.map.json for vegas.nv
+Using maps/gottlieb/system3/vegas.map.json for vegas.nv
 Dumping known entries for vegas.nv [Vegas]...
 
 Game State

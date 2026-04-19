@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for elektra.nv
+Using maps/bally/as-2518-35/system-rom-53.map.json for elektra.nv
 Dumping known entries for elektra.nv [Elektra]...
 
 Bookkeeping functions

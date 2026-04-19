@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/sam/acd_170h.map.json for acd_170h.nv
+Using maps/stern/sam/acd_170h.map.json for acd_170h.nv
 Dumping known entries for acd_170h.nv [AC/DC Limited Edition (V1.70.0)]...
 
 high_scores

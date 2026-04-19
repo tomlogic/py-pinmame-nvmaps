@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ss_15.map.json for ss_15.nv
+Using maps/williams/wpc/ss_15.map.json for ss_15.nv
 Dumping known entries for ss_15.nv [Scared Stiff (1.5)]...
 
 B.2 EARNINGS AUDS.

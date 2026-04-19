@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/waterwld.map.json for waterwl5.nv
+Using maps/gottlieb/system3/waterwld.map.json for waterwl5.nv
 Dumping known entries for waterwl5.nv [Waterworld (rev. 5)]...
 
 Game State

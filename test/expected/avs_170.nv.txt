@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/sam/avs_170.map.json for avs_170.nv
+Using maps/stern/sam/avs_170.map.json for avs_170.nv
 Dumping known entries for avs_170.nv [Avengers, The (V1.7)]...
 
 high_scores

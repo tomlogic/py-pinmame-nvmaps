@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m100/generic.map.json for magic.nv
+Using maps/stern/m100/generic.map.json for magic.nv
 Dumping known entries for magic.nv [Magic]...
 
 Audits

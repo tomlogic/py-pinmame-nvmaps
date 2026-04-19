@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/pz_l3.map.json for pz_l3.nv
+Using maps/williams/wpc/pz_l3.map.json for pz_l3.nv
 Dumping known entries for pz_l3.nv [Party Zone, The (L-3)]...
 
 B.2 EARNINGS AUDS.

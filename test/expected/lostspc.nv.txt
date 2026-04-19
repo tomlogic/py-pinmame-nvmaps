@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/lostspc.map.json for lostspc.nv
+Using maps/sega/whitestar/lostspc.map.json for lostspc.nv
 Dumping known entries for lostspc.nv [Lost in Space (1.01, Display 1.02)]...
 
 Game State

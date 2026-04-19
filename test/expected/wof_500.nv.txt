@@ -1,2 +1,1 @@
-Using map ../maps/maps/stern/sam/wof_500.map.json for wof_500.nv
-Dumping known entries for wof_500.nv [Wheel of Fortune (V5.0)]...
+Couldn't find a map for wof_500.nv

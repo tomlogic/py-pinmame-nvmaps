@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/m200-7digit-B.map.json for splitsec.nv
+Using maps/stern/m200/m200-7digit-B.map.json for splitsec.nv
 Dumping known entries for splitsec.nv [Split Second]...
 
 Audits

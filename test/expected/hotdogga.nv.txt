@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/hotdoggn-freeplay.map.json for hotdogga.nv
+Using maps/bally/as-2518-35/hotdoggn-freeplay.map.json for hotdogga.nv
 Dumping known entries for hotdogga.nv [Hotdoggin' (modified rules rev. 2 Free Play)]...
 
 Bookkeeping functions

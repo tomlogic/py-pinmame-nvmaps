@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/pz_f4.map.json for pz_f4.nv
+Using maps/williams/wpc/pz_f4.map.json for pz_f4.nv
 Dumping known entries for pz_f4.nv [Party Zone, The (F-4 Fliptronic)]...
 
 B.2 EARNINGS AUDS.

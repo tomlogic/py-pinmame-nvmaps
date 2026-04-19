@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/deadweap.map.json for deadweap.nv
+Using maps/gottlieb/system3/deadweap.map.json for deadweap.nv
 Dumping known entries for deadweap.nv [Deadly Weapon]...
 
 Game State

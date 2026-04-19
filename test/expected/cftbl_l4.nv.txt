@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/cftbl_l4.map.json for cftbl_l4.nv
+Using maps/williams/wpc/cftbl_l4.map.json for cftbl_l4.nv
 Dumping known entries for cftbl_l4.nv [Creature from the Black Lagoon (L-4)]...
 
 B.2 EARNINGS AUDS.

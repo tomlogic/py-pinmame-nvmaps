@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/sttng_l7.map.json for sttng_l7.nv
+Using maps/williams/wpc/sttng_l7.map.json for sttng_l7.nv
 Dumping known entries for sttng_l7.nv [Star Trek: The Next Generation (LX-7, Sound L-1)]...
 
 B.2 EARNINGS AUDS.

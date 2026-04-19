@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/frpwr_l6.map.json for frpwr_l2.nv
+Using maps/williams/system6/frpwr_l6.map.json for frpwr_l2.nv
 Dumping known entries for frpwr_l2.nv [Firepower (L-2)]...
 
 Standard Audits

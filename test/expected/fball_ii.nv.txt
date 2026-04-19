@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-52.map.json for fball_ii.nv
+Using maps/bally/as-2518-35/system-rom-52.map.json for fball_ii.nv
 Dumping known entries for fball_ii.nv [Fireball II]...
 
 Bookkeeping functions

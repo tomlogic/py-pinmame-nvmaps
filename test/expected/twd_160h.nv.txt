@@ -1,11 +1,11 @@
-Using map ../maps/maps/stern/sam/twd_160h.map.json for twd_160h.nv
+Using maps/stern/sam/twd_160h.map.json for twd_160h.nv
 Dumping known entries for twd_160h.nv [Walking Dead, The Limited Edition (V1.60.0)]...
 
 high_scores
 -----------
 Grand Champion: JDB 75,000,000
 First Place: LFS 55,000,000
-Second Place: Tÿ 40,000,000
+Second Place: T 40,000,000
 Third Place: MDK 30,000,000
 Fourth Place: TEK 25,000,000
 

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/jd_l7.map.json for jd_l7.nv
+Using maps/williams/wpc/jd_l7.map.json for jd_l7.nv
 Dumping known entries for jd_l7.nv [Judge Dredd (L-7)]...
 
 B.2 EARNINGS AUDS.

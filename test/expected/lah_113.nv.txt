@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/lah_113.map.json for lah_113.nv
+Using maps/dataeast/version3/lah_113.map.json for lah_113.nv
 Dumping known entries for lah_113.nv [Last Action Hero (1.13 unofficial MOD)]...
 
 Game State

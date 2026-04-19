@@ -1,4 +1,4 @@
-Using map maps\maps\sega\whitestar\xfiles.map.json for xfiles304.nv
+Using maps/sega/whitestar/xfiles.map.json for xfiles304.nv
 Dumping known entries for xfiles304.nv [X-Files, The (3.04 unofficial MOD)]...
 
 Game State

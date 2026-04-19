@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/trek_201.map.json for trek_300.nv
+Using maps/dataeast/version3/trek_201.map.json for trek_300.nv
 Dumping known entries for trek_300.nv [Star Trek 25th Anniversary (3.00 unofficial MOD)]...
 
 Game State

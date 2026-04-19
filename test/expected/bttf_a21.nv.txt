@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/bttf_a21.map.json for bttf_a21.nv
+Using maps/dataeast/version3/bttf_a21.map.json for bttf_a21.nv
 Dumping known entries for bttf_a21.nv [Back to the Future (2.1)]...
 
 Game State

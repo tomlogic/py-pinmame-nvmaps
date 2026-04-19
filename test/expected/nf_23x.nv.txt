@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/nf_23.map.json for nf_23x.nv
+Using maps/williams/wpc/nf_23.map.json for nf_23x.nv
 Dumping known entries for nf_23x.nv [No Fear: Dangerous Sports (2.3X Export / S1.1)]...
 
 B.2 EARNINGS AUDS.

@@ -1,4 +1,4 @@
-Using map maps\maps\stern\sam\twd_156.map.json for twd_156.nv
+Using maps/stern/sam/twd_156.map.json for twd_156.nv
 Dumping known entries for twd_156.nv [Walking Dead, The (V1.56)]...
 
 high_scores

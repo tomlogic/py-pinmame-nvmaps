@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/ccruise.map.json for ccruise.nv
+Using maps/gottlieb/system3/ccruise.map.json for ccruise.nv
 Dumping known entries for ccruise.nv [Caribbean Cruise]...
 
 Game State

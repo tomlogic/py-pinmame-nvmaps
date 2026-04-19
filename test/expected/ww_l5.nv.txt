@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ww_l5.map.json for ww_l5.nv
+Using maps/williams/wpc/ww_l5.map.json for ww_l5.nv
 Dumping known entries for ww_l5.nv [White Water (L-5)]...
 
 B.2 EARNINGS AUDS.

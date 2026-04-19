@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for cheetahb2.nv
+Using maps/stern/m200/m200-7digit-A.map.json for cheetahb2.nv
 Dumping known entries for cheetahb2.nv [Cheetah (Blue cabinet Bonus shot 1/ball)]...
 
 Audits

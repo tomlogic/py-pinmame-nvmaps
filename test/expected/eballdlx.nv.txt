@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/eballdlx.map.json for eballdlx.nv
+Using maps/bally/as-2518-35/eballdlx.map.json for eballdlx.nv
 Dumping known entries for eballdlx.nv [Eight Ball Deluxe (rev. 15)]...
 
 Bookkeeping functions

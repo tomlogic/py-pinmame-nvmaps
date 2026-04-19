@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/stwr_103.map.json for stwr_106.nv
+Using maps/dataeast/version3/stwr_103.map.json for stwr_106.nv
 Dumping known entries for stwr_106.nv [Star Wars (1.06 20th Anniversary)]...
 
 Game State

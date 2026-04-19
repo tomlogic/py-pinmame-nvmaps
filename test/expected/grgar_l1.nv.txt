@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/generic.map.json for grgar_l1.nv
+Using maps/williams/system6/generic.map.json for grgar_l1.nv
 Dumping known entries for grgar_l1.nv [Gorgar (L-1)]...
 
 Standard Audits

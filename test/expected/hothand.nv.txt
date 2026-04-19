@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m100/generic.map.json for hothand.nv
+Using maps/stern/m100/generic.map.json for hothand.nv
 Dumping known entries for hothand.nv [Hot Hand]...
 
 Audits

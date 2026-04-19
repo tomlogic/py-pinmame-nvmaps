@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/twst_405.map.json for twst_405.nv
+Using maps/sega/whitestar/twst_405.map.json for twst_405.nv
 Dumping known entries for twst_405.nv [Twister (4.05)]...
 
 Game State

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/dh_lx2.map.json for dh_lx2.nv
+Using maps/williams/wpc/dh_lx2.map.json for dh_lx2.nv
 Dumping known entries for dh_lx2.nv [Dirty Harry (LX-2)]...
 
 B.2 EARNINGS AUDS.

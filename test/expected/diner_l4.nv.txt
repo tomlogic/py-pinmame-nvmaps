@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/diner_l4.map.json for diner_l4.nv
+Using maps/williams/system11/diner_l4.map.json for diner_l4.nv
 Dumping known entries for diner_l4.nv [Diner (LA-4)]...
 
 Audits

@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/m200-7digit-B.map.json for lightnin.nv
+Using maps/stern/m200/m200-7digit-B.map.json for lightnin.nv
 Dumping known entries for lightnin.nv [Lightning]...
 
 Audits

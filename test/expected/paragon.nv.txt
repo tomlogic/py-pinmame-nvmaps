@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-30.map.json for paragon.nv
+Using maps/bally/as-2518-35/system-rom-30.map.json for paragon.nv
 Dumping known entries for paragon.nv [Paragon]...
 
 Bookkeeping functions

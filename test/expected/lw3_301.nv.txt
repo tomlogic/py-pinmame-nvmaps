@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/lw3_208.map.json for lw3_301.nv
+Using maps/dataeast/version3/lw3_208.map.json for lw3_301.nv
 Dumping known entries for lw3_301.nv [Lethal Weapon 3 (3.01 unofficial MOD)]...
 
 Game State

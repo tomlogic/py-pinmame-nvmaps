@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/m200-7digit-B.map.json for dragfist.nv
+Using maps/stern/m200/m200-7digit-B.map.json for dragfist.nv
 Dumping known entries for dragfist.nv [Dragonfist]...
 
 Audits

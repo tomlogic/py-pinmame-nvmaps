@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m100/generic.map.json for stars.nv
+Using maps/stern/m100/generic.map.json for stars.nv
 Dumping known entries for stars.nv [Stars]...
 
 Audits

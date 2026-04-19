@@ -1,3 +1,4 @@
+Using maps/alving/mystcast.map.json for mystcast.nv
 Dumping known entries for mystcast.nv [Mystery Castle (R02)]...
 
 high_scores

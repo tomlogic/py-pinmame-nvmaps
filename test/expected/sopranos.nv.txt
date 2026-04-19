@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/whitestar/sopranos.map.json for sopranos.nv
+Using maps/stern/whitestar/sopranos.map.json for sopranos.nv
 Dumping known entries for sopranos.nv [Sopranos, The (5.00)]...
 
 Game State

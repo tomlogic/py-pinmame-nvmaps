@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/eballdlx-freeplay.map.json for eballdla.nv
+Using maps/bally/as-2518-35/eballdlx-freeplay.map.json for eballdla.nv
 Dumping known entries for eballdla.nv [Eight Ball Deluxe (Free Play)]...
 
 Bookkeeping functions

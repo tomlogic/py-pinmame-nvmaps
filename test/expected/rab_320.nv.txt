@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/rab_320.map.json for rab_320.nv
+Using maps/dataeast/version3/rab_320.map.json for rab_320.nv
 Dumping known entries for rab_320.nv [Adventures of Rocky and Bullwinkle and Friends, The (3.20)]...
 
 Game State

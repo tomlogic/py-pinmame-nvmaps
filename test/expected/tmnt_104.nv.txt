@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/tmnt_104.map.json for tmnt_104.nv
+Using maps/dataeast/version3/tmnt_104.map.json for tmnt_104.nv
 Dumping known entries for tmnt_104.nv [Teenage Mutant Ninja Turtles (1.04)]...
 
 Game State

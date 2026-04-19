@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-17/system-rom-20.map.json for stk_sprs.nv
+Using maps/bally/as-2518-17/system-rom-20.map.json for stk_sprs.nv
 Dumping known entries for stk_sprs.nv [Strikes and Spares]...
 
 Bookkeeping functions

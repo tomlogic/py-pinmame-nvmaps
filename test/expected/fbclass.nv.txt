@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for fbclass.nv
+Using maps/bally/as-2518-35/system-rom-53.map.json for fbclass.nv
 Dumping known entries for fbclass.nv [Fireball Classic]...
 
 Bookkeeping functions

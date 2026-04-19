@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m100/generic.map.json for stingray.nv
+Using maps/stern/m100/generic.map.json for stingray.nv
 Dumping known entries for stingray.nv [Stingray]...
 
 Audits

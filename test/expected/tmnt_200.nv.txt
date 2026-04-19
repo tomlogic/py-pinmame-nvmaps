@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/tmnt_104.map.json for tmnt_200.nv
+Using maps/dataeast/version3/tmnt_104.map.json for tmnt_200.nv
 Dumping known entries for tmnt_200.nv [Teenage Mutant Ninja Turtles (2.00 unofficial MOD)]...
 
 Game State

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-35.map.json for futurspa.nv
+Using maps/bally/as-2518-35/system-rom-35.map.json for futurspa.nv
 Dumping known entries for futurspa.nv [Future Spa]...
 
 Bookkeeping functions

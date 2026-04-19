@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/esha_la3.map.json for esha_pr4.nv
+Using maps/williams/system11/esha_la3.map.json for esha_pr4.nv
 Dumping known entries for esha_pr4.nv [Earthshaker (PR-4 Family version)]...
 
 Audits

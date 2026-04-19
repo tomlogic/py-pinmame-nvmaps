@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system7/generic-10KB.map.json for tmfnt_l5.nv
+Using maps/williams/system7/generic-10KB.map.json for tmfnt_l5.nv
 Dumping known entries for tmfnt_l5.nv [Time Fantasy (L-5)]...
 
 Game Audits

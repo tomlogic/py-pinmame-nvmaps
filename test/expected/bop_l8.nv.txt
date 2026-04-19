@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/bop_l7.map.json for bop_l8.nv
+Using maps/williams/wpc/bop_l7.map.json for bop_l8.nv
 Dumping known entries for bop_l8.nv [Machine: Bride of Pinbot, The (L-8 billionaire multiplayer patch)]...
 
 B.2 EARNINGS AUDS.

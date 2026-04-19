@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/alien_poker.map.json for alpok_l2.nv
+Using maps/williams/system6/alien_poker.map.json for alpok_l2.nv
 Dumping known entries for alpok_l2.nv [Alien Poker (L-2)]...
 
 Standard Audits

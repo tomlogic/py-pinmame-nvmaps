@@ -1,5 +1,5 @@
-Using map ../maps/maps/capcom/kpb105.map.json for kpv106.nv
-Dumping known entries for kpv106.nv [(Unknown ROM kpv106)]...
+Using maps/capcom/kpb105.map.json for kpv106.nv
+Dumping known entries for kpv106.nv [Kingpin (V1.06)]...
 
 high_scores
 -----------

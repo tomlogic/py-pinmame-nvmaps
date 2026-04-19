@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/clas1812.map.json for clas1812.nv
+Using maps/gottlieb/system3/clas1812.map.json for clas1812.nv
 Dumping known entries for clas1812.nv [Class of 1812]...
 
 Game State

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/swrds_l2.map.json for swrds_l2.nv
+Using maps/williams/system11/swrds_l2.map.json for swrds_l2.nv
 Dumping known entries for swrds_l2.nv [Swords of Fury (L-2)]...
 
 Audits

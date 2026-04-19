@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-30.map.json for playboy.nv
+Using maps/bally/as-2518-35/system-rom-30.map.json for playboy.nv
 Dumping known entries for playboy.nv [Playboy]...
 
 Bookkeeping functions

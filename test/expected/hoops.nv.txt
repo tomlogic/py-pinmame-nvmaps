@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/hoops.map.json for hoops.nv
+Using maps/gottlieb/system3/hoops.map.json for hoops.nv
 Dumping known entries for hoops.nv [Hoops]...
 
 Game State

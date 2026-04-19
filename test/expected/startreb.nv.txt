@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-30-7digit.map.json for startreb.nv
+Using maps/bally/as-2518-35/system-rom-30-7digit.map.json for startreb.nv
 Dumping known entries for startreb.nv [Star Trek (7-digit conversion rev. 20)]...
 
 Bookkeeping functions

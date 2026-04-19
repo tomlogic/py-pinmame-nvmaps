@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-35-7digit.map.json for hglbtrtb.nv
+Using maps/bally/as-2518-35/system-rom-35-7digit.map.json for hglbtrtb.nv
 Dumping known entries for hglbtrtb.nv [Harlem Globetrotters (7-digit conversion)]...
 
 Bookkeeping functions

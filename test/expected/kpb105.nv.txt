@@ -1,3 +1,4 @@
+Using maps/capcom/kpb105.map.json for kpb105.nv
 Dumping known entries for kpb105.nv [Kingpin (Beta 1.05)]...
 
 high_scores

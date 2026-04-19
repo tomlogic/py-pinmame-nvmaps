@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-52-freeplay.map.json for flashgfa.nv
+Using maps/bally/as-2518-35/system-rom-52-freeplay.map.json for flashgfa.nv
 Dumping known entries for flashgfa.nv [Flash Gordon (French Free Play)]...
 
 Bookkeeping functions

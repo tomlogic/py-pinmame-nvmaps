@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ww_lh6.map.json for ww_lh6-default.nv
+Using maps/williams/wpc/ww_lh6.map.json for ww_lh6-default.nv
 Dumping known entries for ww_lh6-default.nv [White Water (LH-6)]...
 
 B.2 EARNINGS AUDS.

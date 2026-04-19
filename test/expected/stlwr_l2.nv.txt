@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system4/stlwr_l2.map.json for stlwr_l2.nv
+Using maps/williams/system4/stlwr_l2.map.json for stlwr_l2.nv
 Dumping known entries for stlwr_l2.nv [Stellar Wars (L-2)]...
 
 Standard Audits

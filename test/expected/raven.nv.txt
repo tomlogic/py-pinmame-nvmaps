@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/raven.map.json for raven.nv
+Using maps/gottlieb/system80b/raven.map.json for raven.nv
 Dumping known entries for raven.nv [Raven]...
 
 Bookkeeping

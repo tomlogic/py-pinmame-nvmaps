@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-53-freeplay.map.json for xsandosa.nv
+Using maps/bally/as-2518-35/system-rom-53-freeplay.map.json for xsandosa.nv
 Dumping known entries for xsandosa.nv [X's & O's (Free Play)]...
 
 Bookkeeping functions

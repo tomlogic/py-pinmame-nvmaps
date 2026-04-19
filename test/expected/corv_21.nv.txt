@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/corv_21.map.json for corv_21.nv
+Using maps/williams/wpc/corv_21.map.json for corv_21.nv
 Dumping known entries for corv_21.nv [Corvette (2.1)]...
 
 B.2 EARNINGS AUDS.

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-35-7digit.map.json for ngndshkb.nv
+Using maps/bally/as-2518-35/system-rom-35-7digit.map.json for ngndshkb.nv
 Dumping known entries for ngndshkb.nv [Nitro Ground Shaker (7-digit conversion)]...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/wwfr_106.map.json for wwfr_106.nv
+Using maps/dataeast/version3/wwfr_106.map.json for wwfr_106.nv
 Dumping known entries for wwfr_106.nv [WWF Royal Rumble (1.06)]...
 
 Game State
