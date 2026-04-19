@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-17/system-rom-20.map.json for evelknie.nv
+Using maps/bally/as-2518-17/system-rom-20.map.json for evelknie.nv
 Dumping known entries for evelknie.nv [Evel Knievel]...
 
 Bookkeeping functions

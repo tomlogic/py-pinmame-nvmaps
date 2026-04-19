@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/skatebll-freeplay.map.json for skateblb.nv
+Using maps/bally/as-2518-35/skatebll-freeplay.map.json for skateblb.nv
 Dumping known entries for skateblb.nv [Skateball (Improved attract mode, Free Play rev. 3)]...
 
 Bookkeeping functions

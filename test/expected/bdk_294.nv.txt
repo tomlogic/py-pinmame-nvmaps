@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/sam/bdk_294.map.json for bdk_294.nv
+Using maps/stern/sam/bdk_294.map.json for bdk_294.nv
 Dumping known entries for bdk_294.nv [Batman: The Dark Knight (V2.94)]...
 
 high_scores

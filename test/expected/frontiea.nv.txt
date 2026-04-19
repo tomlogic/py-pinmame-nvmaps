@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/frontier-freeplay.map.json for frontiea.nv
+Using maps/bally/as-2518-35/frontier-freeplay.map.json for frontiea.nv
 Dumping known entries for frontiea.nv [Frontier (Free Play)]...
 
 Bookkeeping functions

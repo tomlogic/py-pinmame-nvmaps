@@ -1,4 +1,4 @@
-Using map ../maps/maps/zaccaria/gen2/robot.map.json for robot.nv
+Using maps/zaccaria/gen2/robot.map.json for robot.nv
 Dumping known entries for robot.nv [Robot]...
 
 Game State

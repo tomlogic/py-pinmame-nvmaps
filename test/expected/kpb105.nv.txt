@@ -1,0 +1,18 @@
+Using maps/capcom/kpb105.map.json for kpb105.nv
+Dumping known entries for kpb105.nv [Kingpin (Beta 1.05)]...
+
+high_scores
+-----------
+Kingpin #1: MRP 2,500,000,000
+Kingpin #2: TON 2,000,000,000
+Kingpin #3: DMW 1,500,000,000
+Kingpin #4: JRP 1,000,000,000
+Kingpin #5: DMP 500,000,000
+
+mode_champions
+--------------
+Buyin Boss #1: TND 5,000,000,000
+Buyin Boss #2: ASK 4,000,000,000
+Buyin Boss #3: HOT 3,000,000,000
+Buyin Boss #4: PFZ 2,000,000,000
+Buyin Boss #5: XXX 1,000,000,000

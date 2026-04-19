@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/dm_h6.map.json for dm_h6.nv
+Using maps/williams/wpc/dm_h6.map.json for dm_h6.nv
 Dumping known entries for dm_h6.nv [Demolition Man (H-6)]...
 
 B.2 Earnings Audits

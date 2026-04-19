@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3b/baywatch.map.json for bay_401.nv
+Using maps/dataeast/version3b/baywatch.map.json for bay_401.nv
 Dumping known entries for bay_401.nv [Baywatch (4.01 unofficial MOD)]...
 
 Game State

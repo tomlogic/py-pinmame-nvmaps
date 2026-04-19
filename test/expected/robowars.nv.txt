@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/80b-8digit-C-10KB.map.json for robowars.nv
+Using maps/gottlieb/system80b/80b-8digit-C-10KB.map.json for robowars.nv
 Dumping known entries for robowars.nv [Robo-War]...
 
 Bookkeeping

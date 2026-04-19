@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for flight2k.nv
+Using maps/stern/m200/m200-7digit-A.map.json for flight2k.nv
 Dumping known entries for flight2k.nv [Flight 2000]...
 
 Audits

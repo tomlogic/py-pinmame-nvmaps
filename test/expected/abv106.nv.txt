@@ -1,0 +1,18 @@
+Using maps/capcom/abv106.map.json for abv106.nv
+Dumping known entries for abv106.nv [Airborne (1.6)]...
+
+high_scores
+-----------
+High Score #1: DAM 500,000,000
+High Score #2: KEV 412,500,000
+High Score #3: BRI 325,000,000
+High Score #4: CG  237,500,000
+High Score #5: RLR 150,000,000
+
+mode_champions
+--------------
+Buyin Boss #1: SAM 1,000,000,000
+Buyin Boss #2: KAT 825,000,000
+Buyin Boss #3: TND 650,000,000
+Buyin Boss #4: FML 475,000,000
+Buyin Boss #5: HUG 300,000,000

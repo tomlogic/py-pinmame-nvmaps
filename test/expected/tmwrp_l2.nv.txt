@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/generic.map.json for tmwrp_l2.nv
+Using maps/williams/system6/generic.map.json for tmwrp_l2.nv
 Dumping known entries for tmwrp_l2.nv [Time Warp (L-2)]...
 
 Standard Audits

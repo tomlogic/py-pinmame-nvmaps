@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/dm_lx4.map.json for dm_lx4.nv
+Using maps/williams/wpc/dm_lx4.map.json for dm_lx4.nv
 Dumping known entries for dm_lx4.nv [Demolition Man (LX-4)]...
 
 B.2 Earnings Audits

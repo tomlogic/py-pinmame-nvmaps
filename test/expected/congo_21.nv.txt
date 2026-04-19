@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/congo_21.map.json for congo_21.nv
+Using maps/williams/wpc/congo_21.map.json for congo_21.nv
 Dumping known entries for congo_21.nv [Congo (2.1, DCS95 S1.1)]...
 
 B.2 EARNINGS AUDS.

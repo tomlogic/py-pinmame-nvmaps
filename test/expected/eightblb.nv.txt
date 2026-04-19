@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-17/system-rom-20-freeplay1.map.json for eightblb.nv
+Using maps/bally/as-2518-17/system-rom-20-freeplay1.map.json for eightblb.nv
 Dumping known entries for eightblb.nv [Eight Ball (Free Play)]...
 
 Bookkeeping functions

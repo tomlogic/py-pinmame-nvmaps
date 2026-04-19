@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/embryon-freeplay.map.json for embryona.nv
+Using maps/bally/as-2518-35/embryon-freeplay.map.json for embryona.nv
 Dumping known entries for embryona.nv [Embryon (Free Play)]...
 
 Bookkeeping functions

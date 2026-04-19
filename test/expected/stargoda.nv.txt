@@ -1,4 +1,4 @@
-Using map ../maps/maps/zaccaria/gen1/stargoda.map.json for stargoda.nv
+Using maps/zaccaria/gen1/stargoda.map.json for stargoda.nv
 Dumping known entries for stargoda.nv [Star God (alternate sound)]...
 
 Game State

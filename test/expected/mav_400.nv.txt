@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3b/maverick.map.json for mav_400.nv
+Using maps/dataeast/version3b/maverick.map.json for mav_400.nv
 Dumping known entries for mav_400.nv [Maverick, The Movie (4.00)]...
 
 Game State

@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version1/lwar_a83.map.json for lwar_a81.nv
+Using maps/dataeast/version1/lwar_a83.map.json for lwar_a81.nv
 Dumping known entries for lwar_a81.nv [Laser War (8.1)]...
 
 Game State

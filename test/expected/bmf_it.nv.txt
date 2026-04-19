@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3b/batmanf.map.json for bmf_it.nv
+Using maps/dataeast/version3b/batmanf.map.json for bmf_it.nv
 Dumping known entries for bmf_it.nv [Batman Forever (4.0 Italian, Display 4.01)]...
 
 Game State

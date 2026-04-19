@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for seawitch.nv
+Using maps/stern/m200/m200-7digit-A.map.json for seawitch.nv
 Dumping known entries for seawitch.nv [Seawitch]...
 
 Audits

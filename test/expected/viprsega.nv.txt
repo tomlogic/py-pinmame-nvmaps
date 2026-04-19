@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/viprsega.map.json for viprsega.nv
+Using maps/sega/whitestar/viprsega.map.json for viprsega.nv
 Dumping known entries for viprsega.nv [Viper Night Drivin' (2.01)]...
 
 Game State

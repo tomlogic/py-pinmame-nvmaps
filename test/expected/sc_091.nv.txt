@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/sc_091.map.json for sc_091.nv
+Using maps/williams/wpc/sc_091.map.json for sc_091.nv
 Dumping known entries for sc_091.nv [Safe Cracker (0.91 Prototype / S1.0)]...
 
 B.2 EARNINGS AUDS.

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system3/disco_l1.map.json for disco_l1.nv
+Using maps/williams/system3/disco_l1.map.json for disco_l1.nv
 Dumping known entries for disco_l1.nv [Disco Fever (L-1)]...
 
 Standard Audits

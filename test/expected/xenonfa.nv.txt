@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/xenon-freeplay.map.json for xenonfa.nv
+Using maps/bally/as-2518-35/xenon-freeplay.map.json for xenonfa.nv
 Dumping known entries for xenonfa.nv [Xenon (French Free Play)]...
 
 Bookkeeping functions

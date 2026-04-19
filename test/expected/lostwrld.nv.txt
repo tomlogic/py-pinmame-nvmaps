@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/lostwrld.map.json for lostwrld.nv
+Using maps/bally/as-2518-35/lostwrld.map.json for lostwrld.nv
 Dumping known entries for lostwrld.nv [Lost World]...
 
 Bookkeeping functions

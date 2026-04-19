@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/gldneye.map.json for gldneye.nv
+Using maps/sega/whitestar/gldneye.map.json for gldneye.nv
 Dumping known entries for gldneye.nv [GoldenEye]...
 
 Game State

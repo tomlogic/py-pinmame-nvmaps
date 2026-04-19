@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/lostwrld-freeplay.map.json for lostwldb.nv
+Using maps/bally/as-2518-35/lostwrld-freeplay.map.json for lostwldb.nv
 Dumping known entries for lostwldb.nv [Lost World (Free Play)]...
 
 Bookkeeping functions

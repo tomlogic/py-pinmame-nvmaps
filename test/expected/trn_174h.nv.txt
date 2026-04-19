@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/sam/trn_174h.map.json for trn_174h.nv
+Using maps/stern/sam/trn_174h.map.json for trn_174h.nv
 Dumping known entries for trn_174h.nv [TRON: Legacy Limited Edition (V1.74)]...
 
 high_scores

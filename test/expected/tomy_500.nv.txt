@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/tomy_400.map.json for tomy_500.nv
+Using maps/dataeast/version3/tomy_400.map.json for tomy_500.nv
 Dumping known entries for tomy_500.nv [Tommy Pinball Wizard, The Who's (5.00 unofficial MOD)]...
 
 Game State

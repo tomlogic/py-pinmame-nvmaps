@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/afm_113.map.json for afm_113.nv
+Using maps/williams/wpc/afm_113.map.json for afm_113.nv
 Dumping known entries for afm_113.nv [Attack From Mars (1.13 / S1.1)]...
 
 B.2 Earnings Audits

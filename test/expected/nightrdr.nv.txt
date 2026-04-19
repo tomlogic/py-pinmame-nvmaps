@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-17/system-rom-20.map.json for nightrdr.nv
+Using maps/bally/as-2518-17/system-rom-20.map.json for nightrdr.nv
 Dumping known entries for nightrdr.nv [Night Rider (rev. 21)]...
 
 Bookkeeping functions

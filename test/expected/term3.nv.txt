@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/whitestar/term3.map.json for term3.nv
+Using maps/stern/whitestar/term3.map.json for term3.nv
 Dumping known entries for term3.nv [Terminator 3: Rise of the Machines (4.00)]...
 
 high_scores

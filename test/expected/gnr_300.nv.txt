@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/gnr_300.map.json for gnr_300.nv
+Using maps/dataeast/version3/gnr_300.map.json for gnr_300.nv
 Dumping known entries for gnr_300.nv [Guns N' Roses (3.00)]...
 
 Game State

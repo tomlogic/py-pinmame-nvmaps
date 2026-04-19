@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/lca.map.json for lca.nv
+Using maps/gottlieb/system3/lca.map.json for lca.nv
 Dumping known entries for lca.nv [Lights, Camera, Action]...
 
 Game State

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/cv_14.map.json for cv_14.nv
+Using maps/williams/wpc/cv_14.map.json for cv_14.nv
 Dumping known entries for cv_14.nv [Cirqus Voltaire (1.4)]...
 
 B.2 EARNINGS AUDS.

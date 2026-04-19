@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system9/generic.map.json for sshtl_l7.nv
+Using maps/williams/system9/generic.map.json for sshtl_l7.nv
 Dumping known entries for sshtl_l7.nv [Space Shuttle (L-7)]...
 
 Game Audits

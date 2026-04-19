@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/grand_l4.map.json for grand_l4.nv
+Using maps/williams/system11/grand_l4.map.json for grand_l4.nv
 Dumping known entries for grand_l4.nv [Grand Lizard (L-4)]...
 
 Audits

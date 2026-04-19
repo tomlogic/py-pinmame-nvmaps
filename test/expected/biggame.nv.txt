@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m200/m200-7digit-A.map.json for biggame.nv
+Using maps/stern/m200/m200-7digit-A.map.json for biggame.nv
 Dumping known entries for biggame.nv [Big Game]...
 
 Audits

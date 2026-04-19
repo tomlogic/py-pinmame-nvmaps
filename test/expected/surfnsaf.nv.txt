@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/surfnsaf.map.json for surfnsaf.nv
+Using maps/gottlieb/system3/surfnsaf.map.json for surfnsaf.nv
 Dumping known entries for surfnsaf.nv [Surf 'n Safari]...
 
 Game State

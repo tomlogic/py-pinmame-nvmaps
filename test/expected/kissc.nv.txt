@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/kiss-freeplay.map.json for kissc.nv
+Using maps/bally/as-2518-35/kiss-freeplay.map.json for kissc.nv
 Dumping known entries for kissc.nv [Kiss (Free Play rev. 3)]...
 
 Bookkeeping functions

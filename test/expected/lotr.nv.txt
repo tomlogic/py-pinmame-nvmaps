@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/whitestar/lotr.map.json for lotr.nv
+Using maps/stern/whitestar/lotr.map.json for lotr.nv
 Dumping known entries for lotr.nv [Lord of the Rings, The (10.00)]...
 
 Game State

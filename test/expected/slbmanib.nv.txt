@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-35-7digit.map.json for slbmanib.nv
+Using maps/bally/as-2518-35/system-rom-35-7digit.map.json for slbmanib.nv
 Dumping known entries for slbmanib.nv [Silverball Mania (7-digit conversion)]...
 
 Bookkeeping functions

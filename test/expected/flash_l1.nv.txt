@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/flash_l1.map.json for flash_l1.nv
+Using maps/williams/system6/flash_l1.map.json for flash_l1.nv
 Dumping known entries for flash_l1.nv [Flash (Sys.6 L-1)]...
 
 Standard Audits

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/smman.map.json for smman.nv
+Using maps/bally/as-2518-35/smman.map.json for smman.nv
 Dumping known entries for smman.nv [Six Million Dollar Man, The]...
 
 Bookkeeping functions

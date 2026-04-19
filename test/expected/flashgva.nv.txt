@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-52-freeplay.map.json for flashgva.nv
+Using maps/bally/as-2518-35/system-rom-52-freeplay.map.json for flashgva.nv
 Dumping known entries for flashgva.nv [Flash Gordon (Vocalizer Sound Free Play)]...
 
 Bookkeeping functions

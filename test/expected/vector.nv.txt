@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for vector.nv
+Using maps/bally/as-2518-35/system-rom-53.map.json for vector.nv
 Dumping known entries for vector.nv [Vector]...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/silvslug.map.json for silvslug.nv
+Using maps/gottlieb/system3/silvslug.map.json for silvslug.nv
 Dumping known entries for silvslug.nv [Silver Slugger]...
 
 Game State

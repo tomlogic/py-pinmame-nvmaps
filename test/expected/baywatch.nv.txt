@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3b/baywatch.map.json for baywatch.nv
+Using maps/dataeast/version3b/baywatch.map.json for baywatch.nv
 Dumping known entries for baywatch.nv [Baywatch (4.00)]...
 
 Game State

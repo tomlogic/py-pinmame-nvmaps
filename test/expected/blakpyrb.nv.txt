@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/blakpyra-freeplay.map.json for blakpyrb.nv
+Using maps/bally/as-2518-35/blakpyra-freeplay.map.json for blakpyrb.nv
 Dumping known entries for blakpyrb.nv [Black Pyramid (Free Play)]...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/jy_12.map.json for jy_12.nv
+Using maps/williams/wpc/jy_12.map.json for jy_12.nv
 Dumping known entries for jy_12.nv [Junk Yard (1.2)]...
 
 B.2 EARNINGS AUDS.

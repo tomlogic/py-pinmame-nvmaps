@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/m100/generic.map.json for pinball.nv
+Using maps/stern/m100/generic.map.json for pinball.nv
 Dumping known entries for pinball.nv [Pinball]...
 
 Audits

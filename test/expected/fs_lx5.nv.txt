@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/fs_lx5.map.json for fs_lx5.nv
+Using maps/williams/wpc/fs_lx5.map.json for fs_lx5.nv
 Dumping known entries for fs_lx5.nv [Flintstones, The (LX-5)]...
 
 B.2 EARNINGS AUDS.

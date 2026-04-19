@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system6/algar.map.json for algar_l1.nv
+Using maps/williams/system6/algar.map.json for algar_l1.nv
 Dumping known entries for algar_l1.nv [Algar (L-1)]...
 
 Standard Audits

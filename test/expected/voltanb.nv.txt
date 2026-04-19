@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-30-7digit.map.json for voltanb.nv
+Using maps/bally/as-2518-35/system-rom-30-7digit.map.json for voltanb.nv
 Dumping known entries for voltanb.nv [Voltan Escapes Cosmic Doom (7-digit conversion rev. 20)]...
 
 Bookkeeping functions

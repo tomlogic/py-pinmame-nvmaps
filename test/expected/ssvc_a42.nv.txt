@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version2/generic.map.json for ssvc_a42.nv
+Using maps/dataeast/version2/generic.map.json for ssvc_a42.nv
 Dumping known entries for ssvc_a42.nv [Secret Service (4.2, alternate sound)]...
 
 Game State

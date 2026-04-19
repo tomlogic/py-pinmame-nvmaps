@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/tfight.map.json for tfight.nv
+Using maps/gottlieb/system3/tfight.map.json for tfight.nv
 Dumping known entries for tfight.nv [Title Fight]...
 
 Game State

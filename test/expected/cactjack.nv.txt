@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/cactjack.map.json for cactjack.nv
+Using maps/gottlieb/system3/cactjack.map.json for cactjack.nv
 Dumping known entries for cactjack.nv [Cactus Jack's]...
 
 Game State

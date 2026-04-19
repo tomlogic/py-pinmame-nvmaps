@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/dm_dt101.map.json for dm_dt101.nv
+Using maps/williams/wpc/dm_dt101.map.json for dm_dt101.nv
 Dumping known entries for dm_dt101.nv [Demolition Man (FreeWPC/Demolition Time 1.01)]...
 
 Game State

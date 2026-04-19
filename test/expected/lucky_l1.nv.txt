@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system3/lucky_l1.map.json for lucky_l1.nv
+Using maps/williams/system3/lucky_l1.map.json for lucky_l1.nv
 Dumping known entries for lucky_l1.nv [Lucky Seven (L-1)]...
 
 Standard Audits

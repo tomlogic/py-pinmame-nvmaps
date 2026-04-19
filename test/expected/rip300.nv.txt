@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/whitestar/rip300.map.json for rip300.nv
+Using maps/stern/whitestar/rip300.map.json for rip300.nv
 Dumping known entries for rip300.nv [Ripley's Believe It or Not! (3.00)]...
 
 Game State

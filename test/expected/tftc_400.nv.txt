@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/tftc_400.map.json for tftc_400.nv
+Using maps/dataeast/version3/tftc_400.map.json for tftc_400.nv
 Dumping known entries for tftc_400.nv [Tales from the Crypt (4.00 unofficial MOD)]...
 
 Game State

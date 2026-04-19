@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ts_lx5.map.json for ts_lx5.nv
+Using maps/williams/wpc/ts_lx5.map.json for ts_lx5.nv
 Dumping known entries for ts_lx5.nv [Shadow, The (LX-5)]...
 
 B.2 EARNINGS AUDS.

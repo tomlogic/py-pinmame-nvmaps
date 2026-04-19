@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/apollo2.map.json for apollo2.nv
+Using maps/sega/whitestar/apollo2.map.json for apollo2.nv
 Dumping known entries for apollo2.nv [Apollo 13 (2.03)]...
 
 Game State

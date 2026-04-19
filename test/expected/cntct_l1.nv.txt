@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system3/cntct_l1.map.json for cntct_l1.nv
+Using maps/williams/system3/cntct_l1.map.json for cntct_l1.nv
 Dumping known entries for cntct_l1.nv [Contact (L-1)]...
 
 Standard Audits

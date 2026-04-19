@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3b/frankst.map.json for franksti.nv
+Using maps/dataeast/version3b/frankst.map.json for franksti.nv
 Dumping known entries for franksti.nv [Frankenstein, Mary Shelley's (Italian)]...
 
 Game State

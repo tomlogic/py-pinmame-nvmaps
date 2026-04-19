@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/wpc/ij_l7.map.json for ij_l7.nv
+Using maps/williams/wpc/ij_l7.map.json for ij_l7.nv
 Dumping known entries for ij_l7.nv [Indiana Jones: The Pinball Adventure (L-7)]...
 
 B.2 EARNINGS AUDS.

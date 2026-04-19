@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3b/baywatch.map.json for bay_d400.nv
+Using maps/dataeast/version3b/baywatch.map.json for bay_d400.nv
 Dumping known entries for bay_d400.nv [Baywatch (4.00 Dutch)]...
 
 Game State

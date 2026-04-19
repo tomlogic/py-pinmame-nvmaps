@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/startrp.map.json for startrp.nv
+Using maps/sega/whitestar/startrp.map.json for startrp.nv
 Dumping known entries for startrp.nv [Starship Troopers (2.01)]...
 
 Game State

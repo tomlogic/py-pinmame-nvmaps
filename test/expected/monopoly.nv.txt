@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/whitestar/monopoly.map.json for monopoly.nv
+Using maps/stern/whitestar/monopoly.map.json for monopoly.nv
 Dumping known entries for monopoly.nv [Monopoly (3.20)]...
 
 Game State

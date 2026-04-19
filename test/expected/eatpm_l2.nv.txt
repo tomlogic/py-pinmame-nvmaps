@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/eatpm_l4.map.json for eatpm_l2.nv
+Using maps/williams/system11/eatpm_l4.map.json for eatpm_l2.nv
 Dumping known entries for eatpm_l2.nv [Elvira and the Party Monsters (LA-2)]...
 
 Audits

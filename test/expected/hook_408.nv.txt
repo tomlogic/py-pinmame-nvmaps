@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/hook_408.map.json for hook_408.nv
+Using maps/dataeast/version3/hook_408.map.json for hook_408.nv
 Dumping known entries for hook_408.nv [Hook (4.08)]...
 
 Game State

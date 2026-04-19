@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/swtril30.map.json for swtril30.nv
+Using maps/sega/whitestar/swtril30.map.json for swtril30.nv
 Dumping known entries for swtril30.nv [Star Wars Trilogy Special Edition, The (3.00)]...
 
 Game State

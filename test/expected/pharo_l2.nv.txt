@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system7/generic-10KB.map.json for pharo_l2.nv
+Using maps/williams/system7/generic-10KB.map.json for pharo_l2.nv
 Dumping known entries for pharo_l2.nv [Pharaoh (L-2)]...
 
 Game Audits

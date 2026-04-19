@@ -1,0 +1,27 @@
+Using maps/stern/sam/twd_156.map.json for twd_156.nv
+Dumping known entries for twd_156.nv [Walking Dead, The (V1.56)]...
+
+high_scores
+-----------
+Grand Champion: LFS 75,000,000
+First Place: T 55,000,000
+Second Place: MDK 40,000,000
+Third Place: DAF 30,000,000
+Fourth Place: DAV 28,191,030
+
+mode_champions
+--------------
+Walkers Killed Champion: MAR
+Combo Champion: RON 2,500,000
+Bicycle Girl Champion: JOS 5,000,000
+Barn Champion: KWI 15,000,000
+CDC Champion: GLV 15,000,000
+Riot Champion: STQ 15,000,000
+Tunnel Champion: SDE 15,000,000
+Arena Champion: TOM 15,000,000
+Terminus Champion: EPC 25,000,000
+Blood Bath Champion: BFB 7,500,000
+Crossbow Champion: PVW 10,000,000
+X Champion: L E 25,000,000
+Horde Champion: EB 50,000,000
+Last Man Standing Champion: 75,000,000

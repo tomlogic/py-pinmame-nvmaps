@@ -1,4 +1,4 @@
-Using map ../maps/maps/sega/whitestar/spacejam.map.json for spacejam.nv
+Using maps/sega/whitestar/spacejam.map.json for spacejam.nv
 Dumping known entries for spacejam.nv [Space Jam (3.00)]...
 
 Game State

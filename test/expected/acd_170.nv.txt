@@ -1,0 +1,28 @@
+Using maps/stern/sam/acd_170.map.json for acd_170.nv
+Dumping known entries for acd_170.nv [AC/DC (V1.70.0)]...
+
+high_scores
+-----------
+Grand Champion: LFS 75,000,000
+First Place: R B 55,000,000
+Second Place: J Y 40,000,000
+Third Place: M G 30,000,000
+Fourth Place: ABC 25,000,000
+
+mode_champions
+--------------
+Combo Champion: ABC 20
+Back In Black Champion: ABC 7,500,000
+For Those About To Rock Champion: ABC 7,500,000
+Hell Aint A Bad Place To Be Champion: ABC 7,500,000
+Hells Bells Champion: ABC 7,500,000
+Highway To Hell Champion: ABC 7,500,000
+Let There Be Rock Champion: ABC 7,500,000
+Rock N Roll Train Champion: ABC 7,500,000
+Thunderstruck Champion: ABC 7,500,000
+T.N.T. Champion: ABC 7,500,000
+War Machine Champion: ABC 7,500,000
+Whole Lotta Rosie Champion: ABC 7,500,000
+You Shook Me All Night Long Champion: ABC 7,500,000
+Song Jackpot Champion: ABC 20,000,000
+Encore Champion: ABC 30,000,000

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/spectrum.map.json for spectru4.nv
+Using maps/bally/as-2518-35/spectrum.map.json for spectru4.nv
 Dumping known entries for spectru4.nv [Spectrum (rev. 4)]...
 
 Bookkeeping functions

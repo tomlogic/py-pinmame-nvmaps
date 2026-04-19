@@ -1,4 +1,4 @@
-Using map ../maps/maps/stern/whitestar/simpprty.map.json for simpprty.nv
+Using maps/stern/whitestar/simpprty.map.json for simpprty.nv
 Dumping known entries for simpprty.nv [Simpsons Pinball Party, The (5.00)]...
 
 Game State

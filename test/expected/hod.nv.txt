@@ -1,4 +1,4 @@
-Using map ../maps/maps/zaccaria/gen1/hod.map.json for hod.nv
+Using maps/zaccaria/gen1/hod.map.json for hod.nv
 Dumping known entries for hod.nv [House of Diamonds]...
 
 Game State

@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-17/freedom-freeplay.map.json for freedoma.nv
+Using maps/bally/as-2518-17/freedom-freeplay.map.json for freedoma.nv
 Dumping known entries for freedoma.nv [Freedom (Free Play+ rev. 07)]...
 
 Bookkeeping functions

@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system11/esha_la3.map.json for esha_la1.nv
+Using maps/williams/system11/esha_la3.map.json for esha_la1.nv
 Dumping known entries for esha_la1.nv [Earthshaker (LA-1)]...
 
 Audits

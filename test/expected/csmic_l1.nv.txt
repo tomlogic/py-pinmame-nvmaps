@@ -1,4 +1,4 @@
-Using map ../maps/maps/williams/system7/generic-10KB.map.json for csmic_l1.nv
+Using maps/williams/system7/generic-10KB.map.json for csmic_l1.nv
 Dumping known entries for csmic_l1.nv [Cosmic Gunfight (L-1)]...
 
 Game Audits

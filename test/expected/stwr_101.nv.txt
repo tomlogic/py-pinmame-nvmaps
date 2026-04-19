@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version3/stwr_101.map.json for stwr_101.nv
+Using maps/dataeast/version3/stwr_101.map.json for stwr_101.nv
 Dumping known entries for stwr_101.nv [Star Wars (1.01)]...
 
 Game State

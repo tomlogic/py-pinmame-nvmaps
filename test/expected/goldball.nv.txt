@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/goldball.map.json for goldball.nv
+Using maps/bally/as-2518-35/goldball.map.json for goldball.nv
 Dumping known entries for goldball.nv [Gold Ball]...
 
 Bookkeeping functions

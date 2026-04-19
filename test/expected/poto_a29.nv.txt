@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version2/poto_a32.map.json for poto_a29.nv
+Using maps/dataeast/version2/poto_a32.map.json for poto_a29.nv
 Dumping known entries for poto_a29.nv [Phantom of the Opera, The (2.9)]...
 
 Game State

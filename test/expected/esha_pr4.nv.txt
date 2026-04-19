@@ -1,0 +1,75 @@
+Using maps/williams/system11/esha_la3.map.json for esha_pr4.nv
+Dumping known entries for esha_pr4.nv [Earthshaker (PR-4 Family version)]...
+
+Audits
+------
+01 LEFT COINS: 0
+02 CENTER COINS: 0
+03 RIGHT COINS: 3
+04 PAID CREDITS: 3
+05 TOTAL PLAYS: 6
+06 TOTAL FREE: 12
+08 REPLAY AWARDS: 5
+10 SPECIAL AWARDS: 0
+12 MATCH AWARDS: 1
+13 H.S.T.D. CREDITS: 6
+15 EXTRA BALLS: 5
+18 MINUTES OF PLAY: 25
+19 BALLS PLAYED: 23
+20 REPLAY 1 AWARDS: 5
+21 REPLAY 2 AWARDS: 0
+22 REPLAY 3 AWARDS: 0
+23 REPLAY 4 AWARDS: 0
+24 1 PLAYER GAMES: 6
+25 2 PLAYER GAMES: 0
+26 3 PLAYER GAMES: 0
+27 4 PLAYER GAMES: 0
+28 BURN-IN CYCLES: 0
+29 LEFT OUTLANE: 10
+30 RIGHT OUTLANE: 2
+31 HEAD FOR SHELTER: 0
+32 JACKPOTS: 0
+33 3 BL. MULTI-BALLS: 3
+34 100K CENTER RAMP: 5
+35 TRIPS TO FAULT: 5
+36 MILES TRAVELED: 144
+37 2 BL. MULTI-BALLS: 1
+38 MILLION SHOTS: 0
+39 H.S. RESET COUNTER: 2,994
+40 0.0-0.4 MIL. SCORE: 0
+41 0.5-0.9 MIL. SCORE: 0
+42 1.0-1.9 MIL. SCORE: 1
+43 2.0-2.9 MIL. SCORE: 0
+44 3.0-3.9 MIL. SCORE: 0
+45 4.0-5.9 MIL. SCORE: 5
+46 6.0-7.9 MIL. SCORE: 0
+47 8.0-99.9 MIL. SCORE: 0
+50 BONUS 2X REACHED: 6
+51 BONUS 3X REACHED: 5
+52 BONUS 4X REACHED: 2
+53 BONUS 5X REACHED: 0
+
+Game State
+----------
+Credits: 9
+Player 1: 4,328,230
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Ball: n/a
+Ball Count: 3
+Maximum Credits: 10
+Player Count: 1
+Current Player: 1
+Tilted: false
+Game Over: true
+Extra Balls: 0
+Tilt Warnings: 0
+Free Play: false
+
+high_scores
+-----------
+First Place: MCH 5,194,170
+Second Place: MCH 4,634,630
+Third Place: MCH 4,328,230
+Fourth Place: MCH 4,211,840

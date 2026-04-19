@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version2/generic.map.json for torp_e21.nv
+Using maps/dataeast/version2/generic.map.json for torp_e21.nv
 Dumping known entries for torp_e21.nv [Torpedo Alley (2.1 Europe)]...
 
 Game State

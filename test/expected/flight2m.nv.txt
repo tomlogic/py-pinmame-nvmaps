@@ -1,0 +1,6 @@
+Using maps/stern/m200/flight2m.map.json for flight2m.nv
+Dumping known entries for flight2m.nv [Flight 2000 (modified rules rev. 3335)]...
+
+high_scores
+-----------
+1st: 128,990

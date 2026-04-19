@@ -1,0 +1,28 @@
+Using maps/sega/whitestar/xfiles.map.json for xfiles304.nv
+Dumping known entries for xfiles304.nv [X-Files, The (3.04 unofficial MOD)]...
+
+Game State
+----------
+Player 1: 170,240
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 1
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+First: CNH 24,000,000
+Second: MAX 21,000,000
+Third: SRS 19,500,000
+Fourth: JSN 18,000,000
+Fifth: KEN 16,500,000
+Sixth: DIO 15,000,000

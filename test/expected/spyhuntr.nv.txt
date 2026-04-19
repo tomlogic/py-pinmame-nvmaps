@@ -1,4 +1,4 @@
-Using map ../maps/maps/bally/as-2518-35/system-rom-53.map.json for spyhuntr.nv
+Using maps/bally/as-2518-35/system-rom-53.map.json for spyhuntr.nv
 Dumping known entries for spyhuntr.nv [Spy Hunter]...
 
 Bookkeeping functions

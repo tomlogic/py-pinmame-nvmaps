@@ -1,4 +1,4 @@
-Using map ../maps/maps/dataeast/version2/generic.map.json for torp_a16.nv
+Using maps/dataeast/version2/generic.map.json for torp_a16.nv
 Dumping known entries for torp_a16.nv [Torpedo Alley (1.6)]...
 
 Game State

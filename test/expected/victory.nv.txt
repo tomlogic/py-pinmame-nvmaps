@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system80b/victory.map.json for victory.nv
+Using maps/gottlieb/system80b/victory.map.json for victory.nv
 Dumping known entries for victory.nv [Victory]...
 
 Bookkeeping

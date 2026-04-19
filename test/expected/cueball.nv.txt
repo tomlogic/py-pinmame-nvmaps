@@ -1,4 +1,4 @@
-Using map ../maps/maps/gottlieb/system3/cueball.map.json for cueball.nv
+Using maps/gottlieb/system3/cueball.map.json for cueball.nv
 Dumping known entries for cueball.nv [Cue Ball Wizard]...
 
 Game State
