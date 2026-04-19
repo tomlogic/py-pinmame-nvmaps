@@ -1324,8 +1324,9 @@ def main() -> None:
             args.map = map_for_rom(args.rom)
 
             if args.map:
-                print("Using map %s for %s" %
-                      (os.path.relpath(args.map), basename))
+                # standardize formatting of relative path for automated test purposes
+                print("Using %s for %s" %
+                      (os.path.relpath(args.map, MAPS_ROOT).replace("\\", "/"), basename))
             else:
                 print("Couldn't find a map for %s" % basename)
                 return
