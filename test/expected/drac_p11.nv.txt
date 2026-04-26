@@ -1,25 +1,25 @@
-Using maps/williams/wpc/drac_l1.map.json for drac_l1.nv
-Dumping known entries for drac_l1.nv [Bram Stoker's Dracula (L-1)]...
+Using maps/williams/wpc/drac_l1.map.json for drac_p11.nv
+Dumping known entries for drac_p11.nv [Bram Stoker's Dracula (P-11 Prototype)]...
 
 B.2 EARNINGS AUDS.
 ------------------
 02 RECENT LEFT SLOT: 0
-03 RECENT CENT. SLOT: 35
-04 RECENT RGHT. SLOT: 22
+03 RECENT CENT. SLOT: 0
+04 RECENT RGHT. SLOT: 0
 05 RECENT 4TH SLOT: 0
-06 RECENT PAID CRED: 28
+06 RECENT PAID CRED: 0
 07 RECENT SERV. CRED: 0
 09 TOTAL LEFT SLOT: 0
-10 TOTAL CENTR. SLOT: 35
-11 TOTAL RIGHT SLOT: 22
+10 TOTAL CENTR. SLOT: 0
+11 TOTAL RIGHT SLOT: 0
 12 TOTAL 4TH SLOT: 0
-13 TOTAL PAID CRED.: 28
+13 TOTAL PAID CRED.: 0
 14 TOTAL SERV. CRED.: 0
 
 B.3 STANDARD AUDS.
 ------------------
-01 GAMES STARTED: 18
-02 TOTAL PLAYS: 6
+01 GAMES STARTED: 0
+02 TOTAL PLAYS: 0
 03 TOTAL FREE PLAYS: 0
 05 REPLAY AWARDS: 0
 07 SPECIAL AWARDS: 0
@@ -27,24 +27,24 @@ B.3 STANDARD AUDS.
 11 H.S.T.D. CREDITS: 0
 13 EXTRA BALLS: 0
 15 TICKETS AWARDED: 0
-17 LEFT DRAINS: 3
-18 RIGHT DRAINS: 2
-21 PLAY TIME: 0:05:00
-22 MINUTES ON: 30
-23 BALLS PLAYED: 18
+17 LEFT DRAINS: 0
+18 RIGHT DRAINS: 0
+21 PLAY TIME: 0:00:00
+22 MINUTES ON: 0
+23 BALLS PLAYED: 0
 24 TILTS: 0
 25 REPLAY 1 AWARDS: 0
 26 REPLAY 2 AWARDS: 0
 27 REPLAY 3 AWARDS: 0
 28 REPLAY 4 AWARDS: 0
-29 1 PLAYER GAMES: 1
+29 1 PLAYER GAMES: 0
 30 2 PLAYER GAMES: 0
 31 3 PLAYER GAMES: 0
 32 4 PLAYER GAMES: 0
-33 H.S.T.D. RESET COUNT: 2,994
+33 H.S.T.D. RESET COUNT: 3,000
 34 BURN-IN TIME: 0:00:00
-36 LEFT FLIPPER: 238
-37 RIGHT FLIPPER: 242
+36 LEFT FLIPPER: 0
+37 RIGHT FLIPPER: 0
 
 B.4 FEATURE AUDS.
 -----------------
@@ -53,7 +53,7 @@ B.4 FEATURE AUDS.
 03 Outlane Ex.Ball: 0
 04 Loop Ex.Ball Lit: 0
 05 V.Mode Ex. Ball: 0
-06 Mystery Ex. Ball: 1
+06 Mystery Ex. Ball: 0
 07 All Locks: 0
 08 All Multiballs: 0
 09 Mist M.Ball, Tot.: 0
@@ -62,42 +62,42 @@ B.4 FEATURE AUDS.
 12 Castle M.Ball, 1st: 0
 13 Coffin M.Ball, Tot.: 0
 14 Coffin M.Ball, 1st: 0
-15 Bonus X's: 5
-16 Altars, Total: 5
-17 Altars, 1st: 2
-18 Altars, 2nd: 1
-19 Altars, 3rd: 1
-20 Altars, 4th: 1
+15 Bonus X's: 0
+16 Altars, Total: 0
+17 Altars, 1st: 0
+18 Altars, 2nd: 0
+19 Altars, 3rd: 0
+20 Altars, 4th: 0
 21 Altars, 5th: 0
-22 Rat mode, Total: 1
-23 Rat mode, 1st: 1
-24 Loops, Total: 1
-25 Loops, 1st: 1
+22 Rat mode, Total: 0
+23 Rat mode, 1st: 0
+24 Loops, Total: 0
+25 Loops, 1st: 0
 26 Loops, 2nd: 0
 27 Loops, 3rd: 0
 28 Loops, 4th: 0
 29 Loops, 5th: 0
 30 Bat mode, Total: 0
 31 Bat mode, 1st: 0
-32 Mystery, Total: 5
-33 Mystery, 1st: 5
+32 Mystery, Total: 0
+33 Mystery, 1st: 0
 34 Video Mode, Total: 0
 35 Video Mode, 1st: 0
 36 Video Modes, Won: 0
 37 Video Modes, Lost: 0
-38 Balls Saved: 4
+38 Balls Saved: 0
 39 Magnet Faults: 0
 40 T.R. Ramp Faults: 0
 41 Other Sw. Faults: 0
 42 2X Multi-M.Balls: 0
 43 3X Multi-M.Balls: 0
-44 Mist M.B. Attempts: 1
+44 Mist M.B. Attempts: 0
 
 B.5 HISTOGRAMS
 --------------
 01 0-1.9 M. SCORE: 0
 02 2-4.9 M. SCORE: 0
-03 5-9.9 M. SCORE: 1
+03 5-9.9 M. SCORE: 0
 04 10-19 M. SCORE: 0
 05 20-29 M. SCORE: 0
 06 30-39 M. SCORE: 0
@@ -109,7 +109,7 @@ B.5 HISTOGRAMS
 12 200-299 M. SCORE: 0
 13 OVER 300 MILLION: 0
 14 GAME TIME 0.0-1.0M: 0
-15 GAME TIME 1.0-1.5M: 1
+15 GAME TIME 1.0-1.5M: 0
 16 GAME TIME 1.5-2.0M: 0
 17 GAME TIME 2.0-2.5M: 0
 18 GAME TIME 2.5-3.0M: 0
@@ -124,17 +124,17 @@ B.5 HISTOGRAMS
 
 B.6 TIME-STAMPS
 ---------------
-02 TOTALS CLEARED: 2024-01-11 12:13
-03 CLOCK LAST SET: 2024-01-11 12:13
-04 AUDITS CLEARED: 2024-01-11 12:13
-05 COINS CLEARED: 2024-01-11 12:13
-06 FACTORY SETTING: 2024-01-11 12:13
-07 LAST GAME START: 2024-11-12 18:29
-08 LAST REPLAY: 2024-01-11 12:13
-09 LAST HSTD RESET: 2024-01-11 12:13
-10 CHAMPION RESET: 2024-01-11 12:13
-11 LAST PRINTOUT: 2024-01-11 12:13
-12 LAST SERV. CRED: 2024-01-11 12:13
+02 TOTALS CLEARED: 2026-04-25 18:45
+03 CLOCK LAST SET: 2026-04-25 18:45
+04 AUDITS CLEARED: 2026-04-25 18:45
+05 COINS CLEARED: 2026-04-25 18:45
+06 FACTORY SETTING: 2026-04-25 18:45
+07 LAST GAME START: 2026-04-25 18:45
+08 LAST REPLAY: 2026-04-25 18:45
+09 LAST HSTD RESET: 2026-04-25 18:45
+10 CHAMPION RESET: 2026-04-25 18:45
+11 LAST PRINTOUT: 2026-04-25 18:45
+12 LAST SERV. CRED: 2026-04-25 18:45
 
 A.1 Standard Adjustments
 ------------------------
@@ -217,15 +217,15 @@ A.2 Feature Adjustments
 
 Game State
 ----------
-Players: 2
-Player 1: 595,070
+Players: 0
+Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
-Credits: 10
-Volume: 27
+Credits: 0
+Volume: 12
 Replay: 200,000,000
-Game Over: false
+Game Over: true
 Current Player: 1
 Ball: 1
 Extra Balls: 0
