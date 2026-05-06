@@ -1,0 +1,10 @@
+Using maps/gottlieb/system3/smb.map.json for smb.nv
+Dumping known entries for smb.nv [Super Mario Bros.]...
+
+high_scores
+-----------
+Mario's Friends #1: JET 250,000,000
+Mario's Friends #2: CM  200,000,000
+Mario's Friends #3: DAV 165,000,000
+Mario's Friends #4: ZAB 135,000,000
+Mario's Friends #5: EZY 110,000,000

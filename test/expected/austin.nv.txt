@@ -1,0 +1,25 @@
+Using maps/stern/whitestar/austin.map.json for austin.nv
+Dumping known entries for austin.nv [Austin Powers (3.02)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 2
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+First: LON        500,000,000
+Second: JDB        400,000,000
+Third: KEF        350,000,000
+Fourth: M G        325,000,000
+Fifth: WES        300,000,000

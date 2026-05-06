@@ -1,0 +1,25 @@
+Using maps/stern/whitestar/nascar.map.json for nascar.nv
+Dumping known entries for nascar.nv [NASCAR (4.50)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 2
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: PML        100,000,000
+Second: AGK        65,000,000
+Third: JRK        55,000,000
+Fourth: J Y        50,000,000
+Fifth: C G        45,000,000

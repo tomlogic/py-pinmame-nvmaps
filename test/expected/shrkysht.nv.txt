@@ -1,0 +1,30 @@
+Using maps/stern/whitestar/shrkysht.map.json for shrkysht.nv
+Dumping known entries for shrkysht.nv [Sharkey's Shootout (2.11)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 3
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: JDB        300,000,000
+Second: XAQ        275,000,000
+Third: KEF        250,000,000
+Fourth: KLJ        225,000,000
+Fifth: J Y        200,000,000
+Sixth: JAY        175,000,000
+Seventh: M G        150,000,000
+Eighth: LON        125,000,000
+Ninth: BOB        100,000,000
+Tenth: P R        75,000,000

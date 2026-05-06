@@ -1,0 +1,10 @@
+Using maps/gottlieb/system3/rescu911.map.json for rescu911.nv
+Dumping known entries for rescu911.nv [Rescue 911 (rev. 1)]...
+
+high_scores
+-----------
+Super Hero: BEV 160,000,000
+Hero #1: BFW 140,000,000
+Hero #2: RAY 120,000,000
+Hero #3: JON 100,000,000
+Hero #4: GIL 80,000,000

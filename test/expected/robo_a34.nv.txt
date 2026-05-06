@@ -70,9 +70,9 @@ Game Over: false
 high_scores
 -----------
 Commander: BMW 4,000,000
-1st Place: TEB 3,500,000
-2nd Place: ERB 3,000,000
-3rd Place: DAS 2,500,000
+Chief: TEB 3,500,000
+Sarge: ERB 3,000,000
+Flat Foot: DAS 2,500,000
 
 mode_champions
 --------------

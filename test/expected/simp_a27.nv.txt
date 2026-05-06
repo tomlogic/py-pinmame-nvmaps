@@ -18,9 +18,9 @@ Game Over: true
 
 high_scores
 -----------
-First: JEK 8,000,000
-Second: RAY 7,000,000
-Third: BLS 6,000,000
-Fourth: P G 5,000,000
-Fifth: T S 4,000,000
-Sixth: JCG 3,000,000
+The Best Dude: JEK 8,000,000
+Under-Achievers #2: RAY 7,000,000
+Under-Achievers #3: BLS 6,000,000
+Under-Achievers #4: P G 5,000,000
+Under-Achievers #5: T S 4,000,000
+Under-Achievers #6: JCG 3,000,000

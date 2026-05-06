@@ -18,9 +18,9 @@ Game Over: true
 
 high_scores
 -----------
-First: JEK 7,500,000
-Second: RAY 6,500,000
-Third: BLS 5,500,000
-Fourth: NBW 4,500,000
-Fifth: P G 3,500,000
-Sixth: A A 2,500,000
+World Record: JEK 7,500,000
+First: RAY 6,500,000
+Second: BLS 5,500,000
+Third: NBW 4,500,000
+Fourth: P G 3,500,000
+Fifth: A A 2,500,000

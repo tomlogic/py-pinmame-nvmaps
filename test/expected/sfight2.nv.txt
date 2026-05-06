@@ -1,0 +1,10 @@
+Using maps/gottlieb/system3/sfight2.map.json for sfight2.nv
+Dumping known entries for sfight2.nv [Street Fighter II]...
+
+high_scores
+-----------
+Street Fighters #1: RAY 160,000,000
+Street Fighters #2: DEB 140,000,000
+Street Fighters #3: RYN 120,000,000
+Street Fighters #4: ANN 100,000,000
+Street Fighters #5: JET 80,000,000

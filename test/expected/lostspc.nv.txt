@@ -26,3 +26,7 @@ Third: DAY        200,000,000
 Fourth: KRT        175,000,000
 Fifth: JIM        150,000,000
 Sixth: JAY        125,000,000
+Seventh: MIK        120,000,000
+Eighth: JOE        115,000,000
+Ninth: OUT        110,000,000
+Tenth: LON        105,000,000

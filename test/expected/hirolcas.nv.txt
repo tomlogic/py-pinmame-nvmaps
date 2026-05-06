@@ -1,0 +1,25 @@
+Using maps/stern/whitestar/hirolcas.map.json for hirolcas.nv
+Dumping known entries for hirolcas.nv [High Roller Casino (3.00)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: KEF        500,000,000
+Second: JDB        400,000,000
+Third: XAQ        350,000,000
+Fourth: M G        325,000,000
+Fifth: RAY        300,000,000

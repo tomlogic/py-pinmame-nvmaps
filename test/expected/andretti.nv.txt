@@ -1,0 +1,14 @@
+Using maps/gottlieb/system3/andretti.map.json for andretti.nv
+Dumping known entries for andretti.nv [Mario Andretti]...
+
+high_scores
+-----------
+Standings #1: JON 1,900,000,000
+Standings #2: RPG 1,600,000,000
+Standings #3: DLW 1,300,000,000
+Standings #4: RGP 1,000,000,000
+Standings #5: MHG 700,000,000
+
+mode_champions
+--------------
+Highest Ball Score: DAN 800,000,000
