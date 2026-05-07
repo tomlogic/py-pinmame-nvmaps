@@ -1,0 +1,25 @@
+Using maps/stern/whitestar/term3_2.map.json for term3_2.nv
+Dumping known entries for term3_2.nv [Terminator 3: Rise of the Machines (2.05)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 2
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+First: SSR        100,000,000
+Second: JMR        90,000,000
+Third: LON        80,000,000
+Fourth: MG         70,000,000
+Fifth: CG         60,000,000

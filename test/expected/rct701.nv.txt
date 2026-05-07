@@ -1,0 +1,25 @@
+Using maps/stern/whitestar/rctycn.map.json for rct701.nv
+Dumping known entries for rct701.nv [RollerCoaster Tycoon (7.01)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 2
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: PML        18,500,000
+Second: KOZ        14,500,000
+Third: JRK        12,500,000
+Fourth: ALS        10,500,000
+Fifth: J Y        8,500,000
