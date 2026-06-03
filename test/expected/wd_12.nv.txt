@@ -182,4 +182,5 @@ Fourth Place: Z B 750,000,000
 mode_champions
 --------------
 The Roof Champion: XAQ
+Midnight Champ: XAQ
 Last Played: 2025-01-06 00:01

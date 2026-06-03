@@ -1,4 +1,4 @@
-Using maps/williams/system9/generic.map.json for comet_l4.nv
+Using maps/williams/system9/comet_l5.map.json for comet_l4.nv
 Dumping known entries for comet_l4.nv [Comet (L-4)]...
 
 Game Audits
@@ -60,7 +60,7 @@ Standard Adjustments
 23 Coin Units/Credit: 1
 24 Units for Bonus Credit: 0
 25 Minimum Coin Units: 0
-26 Match: ON
+26 Match: Standard Match (awards 10% replays)
 27 Special Awards: CREDIT
 28 Replay Awards: CREDIT
 29 Tilt Warnings: 3

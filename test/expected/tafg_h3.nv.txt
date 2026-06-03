@@ -1,5 +1,5 @@
 Using maps/williams/wpc/tafg_h3.map.json for tafg_h3.nv
-Dumping known entries for tafg_h3.nv [Addams Family Special Collectors Edition, The (H-3)]...
+Dumping known entries for tafg_h3.nv [Addams Family Special Collectors Edition / Gold, The (H-3)]...
 
 B.2 EARNINGS AUDS.
 ------------------

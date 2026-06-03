@@ -1,5 +1,5 @@
 Using maps/williams/wpc/tafg_lx3.map.json for tafg_lx3.nv
-Dumping known entries for tafg_lx3.nv [Addams Family Special Collectors Edition Gold, The (LX-3)]...
+Dumping known entries for tafg_lx3.nv [Addams Family Special Collectors Edition / Gold, The (LX-3)]...
 
 B.2 EARNINGS AUDS.
 ------------------

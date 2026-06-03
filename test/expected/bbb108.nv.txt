@@ -1,0 +1,49 @@
+Using maps/capcom/bbb108.map.json for bbb108.nv
+Dumping known entries for bbb108.nv [Big Bang Bar (Beta 1.8 US)]...
+
+Game State
+----------
+Player 1: 50,000,000
+Player 2: 25,000,000
+Credits: 0
+Free Play: true
+Ball Count: 3
+Current Player: 2
+Tilted: false
+Current Ball: 1
+Player Count: 1
+Game Over: false
+Recent Game 1: 0
+Recent Game 2: 0
+Recent Game 3: 0
+
+high_scores
+-----------
+High Score #1: ROB 500,000,000
+High Score #2: SPK 438,000,000
+High Score #3: KRL 374,000,000
+High Score #4: JRP 312,000,000
+High Score #5: M2  250,000,000
+
+mode_champions
+--------------
+Buyin Barflies #1: SPK 1,000,000,000
+Buyin Barflies #2: PFZ 875,000,000
+Buyin Barflies #3: TON 750,000,000
+Buyin Barflies #4: MNY 625,000,000
+Buyin Barflies #5: BBB 500,000,000
+Big Bang Regulars #1: SPK
+Big Bang Regulars #2: PFZ
+Big Bang Regulars #3: TON
+Big Bang Regulars #4: MNY
+Big Bang Regulars #5: BBB
+Underground Elite #1: SPK 10
+Underground Elite #2: PFZ 9
+Underground Elite #3: TON 8
+Underground Elite #4: MNY 7
+Underground Elite #5: BBB 6
+Weak Kidney Club #1: TON 30
+Weak Kidney Club #2: MNY 25
+Weak Kidney Club #3: BBB 20
+Weak Kidney Club #4: 0
+Weak Kidney Club #5: 0
