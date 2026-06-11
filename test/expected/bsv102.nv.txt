@@ -1,0 +1,22 @@
+Using maps/capcom/bsv102.map.json for bsv102.nv
+Dumping known entries for bsv102.nv [Breakshot (1.2)]...
+
+high_scores
+-----------
+High Score #1: WIZ 10,000,000
+High Score #2: TON 8,000,000
+High Score #3: DMW 5,000,000
+High Score #4: JRP 3,000,000
+High Score #5: DMP 1,000,000
+
+mode_champions
+--------------
+Buyin Boss #1: TND 20,000,000
+Buyin Boss #2: SAM 16,000,000
+Buyin Boss #3: PFZ 10,000,000
+Buyin Boss #4: DAN 6,000,000
+Buyin Boss #5: XXX 2,000,000
+Cutthroat Champion #1: TON 20,000,000
+Cutthroat Champion #2: AJD 15,000,000
+Cutthroat Champion #3: MAD 10,000,000
+Cutthroat Champion #4: KTN 5,000,000
