@@ -1,0 +1,247 @@
+Using maps/williams/wpc/drac_l1.map.json for drac_l2c.nv
+Dumping known entries for drac_l2c.nv [Bram Stoker's Dracula (L-2C Competition MOD)]...
+
+B.2 EARNINGS AUDS.
+------------------
+02 RECENT LEFT SLOT: 0
+03 RECENT CENT. SLOT: 0
+04 RECENT RGHT. SLOT: 0
+05 RECENT 4TH SLOT: 0
+06 RECENT PAID CRED: 0
+07 RECENT SERV. CRED: 0
+09 TOTAL LEFT SLOT: 0
+10 TOTAL CENTR. SLOT: 0
+11 TOTAL RIGHT SLOT: 0
+12 TOTAL 4TH SLOT: 0
+13 TOTAL PAID CRED.: 0
+14 TOTAL SERV. CRED.: 0
+
+B.3 STANDARD AUDS.
+------------------
+01 GAMES STARTED: 0
+02 TOTAL PLAYS: 0
+03 TOTAL FREE PLAYS: 0
+05 REPLAY AWARDS: 0
+07 SPECIAL AWARDS: 0
+09 MATCH AWARDS: 0
+11 H.S.T.D. CREDITS: 0
+13 EXTRA BALLS: 0
+15 TICKETS AWARDED: 0
+17 LEFT DRAINS: 0
+18 RIGHT DRAINS: 0
+21 PLAY TIME: 0:00:00
+22 MINUTES ON: 0
+23 BALLS PLAYED: 0
+24 TILTS: 0
+25 REPLAY 1 AWARDS: 0
+26 REPLAY 2 AWARDS: 0
+27 REPLAY 3 AWARDS: 0
+28 REPLAY 4 AWARDS: 0
+29 1 PLAYER GAMES: 0
+30 2 PLAYER GAMES: 0
+31 3 PLAYER GAMES: 0
+32 4 PLAYER GAMES: 0
+33 H.S.T.D. RESET COUNT: 3,000
+34 BURN-IN TIME: 0:00:00
+36 LEFT FLIPPER: 0
+37 RIGHT FLIPPER: 0
+
+B.4 FEATURE AUDS.
+-----------------
+01 Outlane Lit: 0
+02 Outlane Special: 0
+03 Outlane Ex.Ball: 0
+04 Loop Ex.Ball Lit: 0
+05 V.Mode Ex. Ball: 0
+06 Mystery Ex. Ball: 0
+07 All Locks: 0
+08 All Multiballs: 0
+09 Mist M.Ball, Tot.: 0
+10 Mist M.Ball, 1st: 0
+11 Castle M.Ball, Tot.: 0
+12 Castle M.Ball, 1st: 0
+13 Coffin M.Ball, Tot.: 0
+14 Coffin M.Ball, 1st: 0
+15 Bonus X's: 0
+16 Altars, Total: 0
+17 Altars, 1st: 0
+18 Altars, 2nd: 0
+19 Altars, 3rd: 0
+20 Altars, 4th: 0
+21 Altars, 5th: 0
+22 Rat mode, Total: 0
+23 Rat mode, 1st: 0
+24 Loops, Total: 0
+25 Loops, 1st: 0
+26 Loops, 2nd: 0
+27 Loops, 3rd: 0
+28 Loops, 4th: 0
+29 Loops, 5th: 0
+30 Bat mode, Total: 0
+31 Bat mode, 1st: 0
+32 Mystery, Total: 0
+33 Mystery, 1st: 0
+34 Video Mode, Total: 0
+35 Video Mode, 1st: 0
+36 Video Modes, Won: 0
+37 Video Modes, Lost: 0
+38 Balls Saved: 0
+39 Magnet Faults: 0
+40 T.R. Ramp Faults: 0
+41 Other Sw. Faults: 0
+42 2X Multi-M.Balls: 0
+43 3X Multi-M.Balls: 0
+44 Mist M.B. Attempts: 0
+
+B.5 HISTOGRAMS
+--------------
+01 0-1.9 M. SCORE: 0
+02 2-4.9 M. SCORE: 0
+03 5-9.9 M. SCORE: 0
+04 10-19 M. SCORE: 0
+05 20-29 M. SCORE: 0
+06 30-39 M. SCORE: 0
+07 40-49 M. SCORE: 0
+08 50-69 M. SCORE: 0
+09 70-99 M. SCORE: 0
+10 100-149 M. SCORE: 0
+11 150-199 M. SCORE: 0
+12 200-299 M. SCORE: 0
+13 OVER 300 MILLION: 0
+14 GAME TIME 0.0-1.0M: 0
+15 GAME TIME 1.0-1.5M: 0
+16 GAME TIME 1.5-2.0M: 0
+17 GAME TIME 2.0-2.5M: 0
+18 GAME TIME 2.5-3.0M: 0
+19 GAME TIME 3.0-3.5M: 0
+20 GAME TIME 3.5-4.0M: 0
+21 GAME TIME 4-5 M.: 0
+22 GAME TIME 5-6 M.: 0
+23 GAME TIME 6-8 M.: 0
+24 GAME TIME 8-10 M: 0
+25 GAME TIME 10-15M: 0
+26 GAME TIME > 15M: 0
+
+B.6 TIME-STAMPS
+---------------
+02 TOTALS CLEARED: 2026-06-19 21:16
+03 CLOCK LAST SET: 2026-06-19 21:16
+04 AUDITS CLEARED: 2026-06-19 21:16
+05 COINS CLEARED: 2026-06-19 21:16
+06 FACTORY SETTING: 2026-06-19 21:16
+07 LAST GAME START: 2026-06-19 21:16
+08 LAST REPLAY: 2026-06-19 21:16
+09 LAST HSTD RESET: 2026-06-19 21:16
+10 CHAMPION RESET: 2026-06-19 21:16
+11 LAST PRINTOUT: 2026-06-19 21:16
+12 LAST SERV. CRED: 2026-06-19 21:16
+
+A.1 Standard Adjustments
+------------------------
+01 Balls Per Game: 3
+02 Tilt Warnings: 3
+03 Max E.B Count: 4
+04 Max E.B Per B.I.P: OFF
+05 Replay System: Auto %
+06 Replay Percent: 10
+07 Replay Start: 200M
+08 Replay Levels: 1
+13 Replay Boost: 50M
+14 Replay Award: Credit
+15 Special Award: Credit
+16 Match Award: Credit
+17 Ex. Ball Ticket: NO
+18 Max. Tick,/Player: 25%
+19 Match Feature: 10%
+20 Custom Message: ON
+21 Language: English
+22 Clock Style: AM/PM
+23 Date Style: Mmm. DD YY
+24 Show Time + Date: NO
+25 Allow Dm. Illum: YES
+26 Tournament Play: YES
+27 Euro. Scr Format: NO
+28 Min. Vol. Override: YES
+29 GI Power Saver: 15 MINUTES
+30 Power Save Level: 5
+31 Ticket Exp. Board: NO
+32 No Bonus Flips: NO
+33 Game Restart: SLOW
+
+A.2 Feature Adjustments
+-----------------------
+01 Ball  Time: 35 Sec
+02 Auto. %Special&Match: YES
+03 Ball Saver: 2 Sec
+04 Auto. Ex.Ball: 20 %
+05 1st ExB. Lit At: 8 Loops
+06 Next ExB. Lit At: 16 Loops
+07 V.Mode ExBall At: 2 Waves
+08 Volume Change: YES
+09 Pre-lite V.Mode: NONE
+10 V.Mode Award: NONE
+11 Bonus 'X' Memory: YES
+12 Castle Lock Time: 15
+13 Castle Jackpot: 20 Sec
+14 Jet Timer: 10
+15 Pre-lite Coffin: NONE
+16 Coffin Ramp Time: 15 Sec
+17 Left Ramp Time: 10 Sec
+18 Mystery Time: 5 Sec
+19 Mystery Pre-Lit: Game Start
+20 Myst:Castle Lock: 10 %
+21 Myst:Coffin Lock: 10 %
+22 Myst:V.Mode Lit: 10 %
+23 Myst:Bonus: 25 %
+24 Video Mode Diff.: Medium
+25 1st Loop Bonus: 6 Loop
+26 Other Loop Bonus: 6 Loop
+27 1st Mist M.B. Lit: 5 Loop
+28 Other Mist M.B: 10 Loop
+29 1st Bats: 3 Loop
+30 Other Bats: 10 Loop
+31 Bats Time: 15 Sec
+32 Number of Bats: 15
+33 Outlane Lit at: 15 Altar
+34 1st Rats At: 3 Altar
+35 Next Rats At: 5 Altar
+36 Number of Rats: 15
+37 Rats Timer: 15 Sec
+38 Timed Plunger: OFF
+39 Flipped Plunger: NO
+40 Fancy A. Mode G.I: YES
+41 Attr. Mode Sounds: NONE
+42 Magnet: Enabled
+43 Family Mode: NO
+44 Game Over Unlock: NO
+
+Game State
+----------
+Players: 0
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Volume: 12
+Replay: 200,000,000
+Game Over: true
+Current Player: 1
+Ball: 1
+Extra Balls: 0
+EBs this Ball: 0
+Ball Count: 3
+Maximum Credits: 10
+Free Play: false
+
+high_scores
+-----------
+Greatest Vampire Hunter: CD  300,000,000
+Best Hunter #1: BSO 250,000,000
+Best Hunter #2: BIL 200,000,000
+Best Hunter #3: P H 150,000,000
+Best Hunter #4: S   100,000,000
+
+mode_champions
+--------------
+Loop Champion: CD  6
