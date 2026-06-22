@@ -1,0 +1,28 @@
+Using maps/sega/whitestar/twst_405.map.json for twst_300.nv
+Dumping known entries for twst_300.nv [Twister (3.00)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 2
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+First: JEK 2,400,000,000
+Second: JB  2,100,000,000
+Third: LON 1,950,000,000
+Fourth: DAY 1,800,000,000
+Fifth: KRT 1,650,000,000
+Sixth: MRK 1,500,000,000

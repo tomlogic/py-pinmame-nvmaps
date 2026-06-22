@@ -1,0 +1,37 @@
+Using maps/stern/whitestar/strikext.map.json for strxt_fr.nv
+Dumping known entries for strxt_fr.nv [Striker Xtreme (1.02 French)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Max Credits: 30
+Free Play: false
+Tilted: false
+Current Player: 1
+Current Ball: 1
+Player Count: 2
+Ball Count: 3
+Game Over: false
+
+high_scores
+-----------
+#1: JOE        400,000,000
+#2: LON        375,000,000
+#3: DAY        350,000,000
+#4: KRT        325,000,000
+#5: JAY        300,000,000
+#6: KJY        275,000,000
+#7: RAY        250,000,000
+#8: JDB        225,000,000
+#9: XAQ        200,000,000
+#10: KEF        175,000,000
+
+mode_champions
+--------------
+Goal Champ: LON 25 goals

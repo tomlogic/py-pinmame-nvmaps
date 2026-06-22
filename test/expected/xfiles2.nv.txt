@@ -1,0 +1,28 @@
+Using maps/sega/whitestar/xfiles.map.json for xfiles2.nv
+Dumping known entries for xfiles2.nv [X-Files, The (2.04)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 2
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+First: LON 24,000,000
+Second: RFH 21,000,000
+Third: DAY 19,500,000
+Fourth: KRT 18,000,000
+Fifth: JIM 16,500,000
+Sixth: JAY 15,000,000

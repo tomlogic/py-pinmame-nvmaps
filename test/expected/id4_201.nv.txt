@@ -1,0 +1,28 @@
+Using maps/sega/whitestar/id4.map.json for id4_201.nv
+Dumping known entries for id4_201.nv [ID4: Independence Day (2.01)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Player 5: 0
+Player 6: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 2
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+First: DJM 3,000,000,000
+Second: RFH 2,700,000,000
+Third: NF  2,400,000,000
+Fourth: DAY 2,100,000,000
+Fifth: JRB 1,850,000,000
+Sixth: CMK 1,500,000,000
