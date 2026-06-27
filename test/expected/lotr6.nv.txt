@@ -1,0 +1,25 @@
+Using maps/stern/whitestar/lotr6.map.json for lotr6.nv
+Dumping known entries for lotr6.nv [Lord of the Rings, The (6.00)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 2
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: KEF        75,000,000
+Second: G G        60,000,000
+Third: C G        50,000,000
+Fourth: XAQ        45,000,000
+Fifth: M G        40,000,000

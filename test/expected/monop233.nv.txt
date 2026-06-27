@@ -1,0 +1,30 @@
+Using maps/stern/whitestar/monop233.map.json for monop233.nv
+Dumping known entries for monop233.nv [Monopoly (2.33)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 0
+Ball Count: 3
+Player: 0
+Ball: 0
+Game Over: true
+
+high_scores
+-----------
+First: PML        30,000,000
+Second: KOZ        26,000,000
+Third: JRK        22,000,000
+Fourth: GDD        20,500,000
+Fifth: JY         18,000,000
+Sixth: CG         16,500,000
+Seventh: CJL        12,000,000
+Eighth: BRL        10,500,000
+Ninth: AIG        8,000,000
+Tenth: PLD        6,500,000
