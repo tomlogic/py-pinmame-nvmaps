@@ -146,7 +146,7 @@ Player 3: 0
 Player 4: 0
 WPC Game ID: 50023
 Credits: 0
-Volume: 255
+Volume: n/a
 Replay: 450,000,000
 Game Over: true
 Current Player: 1
