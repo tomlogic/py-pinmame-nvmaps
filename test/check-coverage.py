@@ -63,14 +63,14 @@ no_coverage = []
 # and finally print a list of map files with no/partial coverage
 if map_files:
     print("Warning: partial map coverage; missing .nv files for:")
-    for file, roms in map_files.items():
+    for file, roms in sorted(map_files.items()):
         if file not in map_coverage:
             no_coverage.append(file)
         else:
             print("%s: %s" % (file, ', '.join(roms)))
     if no_coverage:
         print("\nError: no map coverage; missing .nv files for:")
-        for file in no_coverage:
+        for file in sorted(no_coverage):
             print("%s: %s" % (file, ', '.join(map_files.get(file))))
 
         # partial coverage is just a warning, no coverage is failure
