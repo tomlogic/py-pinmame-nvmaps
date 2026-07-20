@@ -1,4 +1,4 @@
-Using maps/gottlieb/system80/generic.map.json for vlcno_ax.nv
+Using maps/gottlieb/system80/generic-1prom.map.json for vlcno_ax.nv
 Dumping known entries for vlcno_ax.nv [Volcano]...
 
 Bookkeeping
@@ -13,19 +13,42 @@ Bookkeeping
 09 Specials: 0
 10 Times HGTD Awarded: 0
 14 Highest Game To Date: 0
-14a HGTD Initials: 
-15 Game Time: 0 seconds
+15 Total Game Time: 0:00:00
 
 Standard Adjustments
 --------------------
-11 First High Score: 0
-12 Second High Score: 0
-13 Third High Score: 0
+11 First Replay Score: 0
+12 Second Replay Score: 0
+13 Third Replay Score: 0
+
+Game State
+----------
+Credits: 0
+
+DIP Switches
+------------
+Left Coin Chute: 5 credits/coin
+Right Coin Chute: 1 credit/coin
+Center Coin Chute: 4 credits/2 coins
+Center Coin Chute Credits: no effect
+Left/Right Coin Chute Control: separate
+Maximum Credits: 10
+Balls/Game: 3
+Match: on
+Replay Limit: no limit
+Novelty: score 50K instead of extra ball/special
+Game Mode: extra ball
+Playfield Special: special
+High Score Awards: 3 replays
+Sound When Scoring: on
+Replay Button Tune: on
+Coin Switch Tune: on
+Credits Display: on
+Tilt Penalty: ball in play only
+Attract Features: on
+Game Setting #1: liberal
+Game Setting #2: liberal
 
 high_scores
 -----------
-High Score #1: 0
-High Score #2: 0
-High Score #3: 0
-High Score #4: 0
-High Score #5: 0
+High Score: 0
