@@ -1,10 +1,24 @@
 Using maps/gottlieb/system3/gladiatr.map.json for gladiatr.nv
 Dumping known entries for gladiatr.nv [Gladiators]...
 
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
 high_scores
 -----------
 Ultimate Gladiator: RJS 300,000,000
-Honorific Gladiators #1: EZY 250,000,000
-Honorific Gladiators #2: JET 200,000,000
-Honorific Gladiators #3: CEN 150,000,000
-Honorific Gladiators #4: BOB 100,000,000
+Second: EZY 250,000,000
+Third: JET 200,000,000
+Fourth: CEN 150,000,000
+Fifth: BOB 100,000,000

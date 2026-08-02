@@ -1,10 +1,24 @@
 Using maps/gottlieb/system3/sfight2.map.json for sfight2.nv
 Dumping known entries for sfight2.nv [Street Fighter II]...
 
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
 high_scores
 -----------
-Street Fighters #1: RAY 160,000,000
-Street Fighters #2: DEB 140,000,000
-Street Fighters #3: RYN 120,000,000
-Street Fighters #4: ANN 100,000,000
-Street Fighters #5: JET 80,000,000
+First: RAY 160,000,000
+Second: DEB 140,000,000
+Third: RYN 120,000,000
+Fourth: ANN 100,000,000
+Fifth: JET 80,000,000

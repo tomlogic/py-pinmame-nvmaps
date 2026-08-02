@@ -1,0 +1,24 @@
+Using maps/gottlieb/system3/teedoff.map.json for teedoff.nv
+Dumping known entries for teedoff.nv [Tee'd Off]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+First: OEX 320,254,780
+Second: DOW 280,136,290
+Third: NEY 240,435,570
+Fourth: SPX 200,618,320
+Fifth: NYA 160,771,940

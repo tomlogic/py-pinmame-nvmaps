@@ -1,10 +1,24 @@
 Using maps/gottlieb/system3/smb.map.json for smb.nv
 Dumping known entries for smb.nv [Super Mario Bros.]...
 
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 10
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
 high_scores
 -----------
-Mario's Friends #1: JET 250,000,000
-Mario's Friends #2: CM  200,000,000
-Mario's Friends #3: DAV 165,000,000
-Mario's Friends #4: ZAB 135,000,000
-Mario's Friends #5: EZY 110,000,000
+First: JET 250,000,000
+Second: CM  200,000,000
+Third: DAV 165,000,000
+Fourth: ZAB 135,000,000
+Fifth: EZY 110,000,000

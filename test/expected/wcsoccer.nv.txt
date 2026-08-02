@@ -1,0 +1,24 @@
+Using maps/gottlieb/system3/wcsoccer.map.json for wcsoccer.nv
+Dumping known entries for wcsoccer.nv [World Challenge Soccer (rev. 1)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+First: DGH 660,000,000
+Second: CEN 280,000,000
+Third: JET 240,000,000
+Fourth: DMD 200,000,000
+Fifth: TIF 160,000,000

@@ -1,13 +1,27 @@
 Using maps/gottlieb/system3/barbwire.map.json for barbwire.nv
 Dumping known entries for barbwire.nv [Barb Wire]...
 
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 4
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
 high_scores
 -----------
-First Place: WIL 1,900,000,000
-Second Place: JON 1,600,000,000
-Third Place: RAY 1,300,000,000
-Fourth Place: TIM 1,000,000,000
-Fifth Place: DON 700,000,000
+First: WIL 1,900,000,000
+Second: JON 1,600,000,000
+Third: RAY 1,300,000,000
+Fourth: TIM 1,000,000,000
+Fifth: DON 700,000,000
 
 mode_champions
 --------------

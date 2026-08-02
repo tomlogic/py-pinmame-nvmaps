@@ -1,0 +1,24 @@
+Using maps/gottlieb/system3/bighurt.map.json for bighurt.nv
+Dumping known entries for bighurt.nv [Big Hurt (rev. 3)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Max Credits: 20
+Ball: 0
+Ball Count: 3
+Current Player: 1
+Player Count: 0
+Game Over: true
+
+high_scores
+-----------
+First: JET 999,000,000
+Second: MOO 800,000,000
+Third: BOW 700,000,000
+Fourth: WOW 600,000,000
+Fifth: SNP 500,000,000
