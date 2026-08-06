@@ -850,7 +850,7 @@ class RamMapping(object):
         value = self.format_entry(memory)
         if self.section in ['audits', 'adjustments']:
             if value is None:
-                value = self.entry.get('default', '')
+                value = self.entry.get('default')
             return self.format_label(self.key), value
         elif self.section in ['game_state', 'score_record', 'dip_switches', None]:
             return self.format_label(), value
@@ -894,12 +894,15 @@ class ParseNVRAM(object):
         """
         Set nvram contents from contents of PinMAME .nv file.
         """
+        length = 0
         nvram_mem = self.get_memory_area(mem_type='nvram')
-        base = nvram_mem.get('address', 0)
-        length = nvram_mem.get('size', len(nv_data))
-        if length > len(nv_data):
-            length = len(nv_data)
-        self.memory.update_memory(base, nv_data[:length])
+        if nvram_mem:
+            base = nvram_mem.get('address', 0)
+            length = nvram_mem.get('size', len(nv_data))
+            if length > len(nv_data):
+                length = len(nv_data)
+            self.memory.update_memory(base, nv_data[:length])
+
         if length < len(nv_data):
             self.memory.set_pinmame_data(nv_data[length:])
 
