@@ -1,0 +1,8 @@
+Using maps/atari/aavenger.map.json for aavenger.nv
+Dumping known entries for aavenger.nv [Airborne Avenger]...
+
+Adjustments
+-----------
+
+Game State
+----------

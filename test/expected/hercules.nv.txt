@@ -1,0 +1,34 @@
+Using maps/atari/generic-gen2.map.json for hercules.nv
+Dumping known entries for hercules.nv [Hercules]...
+
+Audits
+------
+05 Credits: 10
+06 Left Coins: 0
+07 Right Coins: 3
+08 Total Coins: 3
+09 Total Plays: 2
+10 Total Replays: 0
+11 Game Timer: 0:00:00
+12 Specials: 0
+13 Extra Balls: 0
+14 Tilts: 0
+15 Battery Backup Errors: 0
+
+Adjustments
+-----------
+16 Replay Level 1: 155,000
+17 Replay Level 2: 45,000
+18 Replay Level 3: 1,000,000
+19 High Score: 100,000
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+High Score: 100,000

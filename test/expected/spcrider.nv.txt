@@ -1,0 +1,8 @@
+Using maps/atari/spcrider.map.json for spcrider.nv
+Dumping known entries for spcrider.nv [Space Riders]...
+
+Adjustments
+-----------
+
+Game State
+----------

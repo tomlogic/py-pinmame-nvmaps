@@ -1,0 +1,8 @@
+Using maps/atari/atarians.map.json for atarians.nv
+Dumping known entries for atarians.nv [Atarians, The]...
+
+Adjustments
+-----------
+
+Game State
+----------

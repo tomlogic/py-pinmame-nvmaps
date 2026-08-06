@@ -1,0 +1,8 @@
+Using maps/atari/midearta.map.json for midearta.nv
+Dumping known entries for midearta.nv [Middle Earth (alternate)]...
+
+Adjustments
+-----------
+
+Game State
+----------

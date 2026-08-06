@@ -1,0 +1,8 @@
+Using maps/atari/time2000.map.json for time2000.nv
+Dumping known entries for time2000.nv [Time 2000]...
+
+Adjustments
+-----------
+
+Game State
+----------
