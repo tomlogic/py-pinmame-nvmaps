@@ -996,19 +996,6 @@ class ParseNVRAM(object):
                                                        label,
                                                        key))
 
-        # TODO: remove this last_game support at some point.  Deprecated in fileformat v0.6.
-        player_num = 1
-        for p in self.map_json.get('last_game', []):
-            entry = p.copy()
-            entry['label'] = 'Player %u' % player_num
-            entry['short_label'] = 'P%u' % player_num
-            self.mapping.append(RamMapping(entry,
-                                           self.metadata,
-                                           'game_state',
-                                           'Player Scores',
-                                           str(player_num)))
-            player_num += 1
-
         for group in ['high_scores', 'mode_champions']:
             for entry in self.map_json.get(group, []):
                 self.mapping.append(RamMapping(entry,
