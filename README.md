@@ -1,8 +1,8 @@
 # Python samples for PinMAME NVRAM Maps
 
 This small project contains some Python code to parse NVRAM (`.nv`)
-files from PinMAME, using JSON-based mapping files from the [PinMAME
-NVRAM Maps](https://github.com/tomlogic/pinmame-nvram-maps) project.
+files from PinMAME, using JSON-based mapping files from [Tom Logic's Pinball
+Memory Maps](https://github.com/tomlogic/pinball-memory-maps) project.
 
 The project currently includes a Python program (`nvram_parser.py`) that
 works as a standalone application to dump a parsed `.nv` file, or as a
