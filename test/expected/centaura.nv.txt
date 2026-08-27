@@ -44,7 +44,7 @@ Final Score P3: 0
 Final Score P4: 0
 Ball Count: 3
 Max Credits: 10
-Free Play: False
+Free Play: false
 Game Over: false
 Tilted: false
 

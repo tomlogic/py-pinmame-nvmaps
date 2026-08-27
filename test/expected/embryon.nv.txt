@@ -41,6 +41,28 @@ Max Credits: 10
 Game Over: true
 Tilted: false
 
+DIP Switches
+------------
+Coin Chute #1 (hinge side) Credits/Coin: 1 credit/coin
+Top Drop Targets Feature: collect feature on 2nd completion
+Memory for 10K/20K/40K Bonus and Special: off
+Memory for Bonus Multipliers: off
+Coin Chute #3 (right side) Credits/Coin: 1 credit/coin
+Memory for Top Center Lane Values: off
+Memory for Right Side Stand Up Target Values: off
+Memory for Left Side Stand Up Target Values: off
+Coin Chute #2 (center) Credits/Coin: 8 credits/coin
+Inside Target Lites Outside Targets: 2 outside lites
+Memory for Center Outside Target Lites: off
+Memory for 1 and 2 Top Lane Lites: off
+Memory for A and B Lane Lites (Flipsave): off
+Maximum Credits: 10
+Credits Displayed: off
+Match Feature: off
+Replays per Game: only 1 replay per player per game
+Game Over Attract Voice: no voice
+Balls per Game: 3
+
 high_scores
 -----------
 High Score: 0

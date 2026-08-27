@@ -37,6 +37,19 @@ Max Credits: 10
 Game Over: true
 Tilted: false
 
+DIP Switches
+------------
+Coin Chute #1 (hinge side) Credits/Coin: incentive: 1@1, 2@2 (3/2)
+High Score / Special Award Mode: ?
+Coin Chute #3 Credits/Coin: incentive: 1@1, 2@2 (3/2)
+Coin Chute #2 Credits/Coin: 8 credits/coin
+High Score to Date Award: 1 credit
+Maximum Credits: 10
+Credits Displayed: off
+Match Feature: off
+Sound Option: chimes on most scoring
+Balls per Game: 3
+
 high_scores
 -----------
 High Score: 0

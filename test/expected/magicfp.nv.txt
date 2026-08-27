@@ -20,7 +20,7 @@ Adjustments
 
 Game State
 ----------
-Free Play: True
+Free Play: true
 Match: 0
 Credits: 0
 Player 1: 0

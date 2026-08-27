@@ -42,6 +42,26 @@ Max Credits: 10
 Game Over: true
 Tilted: false
 
+DIP Switches
+------------
+Coin Chute #1 (hinge side) Credits/Coin: 1 credit/coin
+Single and Double Lites: alternate
+Flyaway 25K Lite at Start of Game: off
+Runs to Beat Advances: stay at set up runs
+Coin Chute #2 Credits/Coin: 1 credit/coin
+Flyaway Special Lite: special then 50K which stays on
+Extra Balls per Game: only 1 extra ball per game
+Flyaway Value Lites Recall: not recalled for next ball
+Coin Chute #3 Credits/Coin: 8 credits/coin
+Runs to Beat: 50
+S and L Return Lane Lites: not tied
+Maximum Credits: 10
+Credits Displayed: off
+Match Feature: off
+Replays per Game: only 1 replay per player per game
+Outhole Bonus Score per Run: 10,000 points
+Balls per Game: 3
+
 high_scores
 -----------
 High Score: 0

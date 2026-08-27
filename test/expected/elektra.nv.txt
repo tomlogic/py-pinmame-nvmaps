@@ -42,6 +42,16 @@ Max Credits: 10
 Game Over: false
 Tilted: false
 
+DIP Switches
+------------
+Coin Chute #1 (hinge side) Credits/Coin: 1 credit/coin
+Coin Chute #3 (right side) Credits/Coin: 1 credit/coin
+Coin Chute #2 (center) Credits/Coin: 8 credits/coin
+Maximum Credits: 10
+Credits Displayed: off
+Match Feature: off
+Balls per Game: 3
+
 high_scores
 -----------
 High Score: 0
