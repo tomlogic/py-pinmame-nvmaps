@@ -780,7 +780,10 @@ class RamMapping(object):
             values = self.entry_values()
             if value >= len(values):
                 return '?' + str(value)
-            return values[value]
+            indexed_value = values[value]
+            if isinstance(indexed_value, bool):
+                return 'true' if indexed_value else 'false'
+            return indexed_value
 
         if encoding == 'ch':
             result = ''
