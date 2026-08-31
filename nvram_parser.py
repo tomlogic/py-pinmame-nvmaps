@@ -54,7 +54,7 @@ def to_int(v: Union[int, str]) -> int:
     """Returns 'v' if already an int, otherwise assume a string and convert
     with a base of '0' (which handles leading 0 as octal and 0x as hex).
     """
-    if type(v) is int:
+    if isinstance(v, int):
         return v
     return int(v, 0)
 
@@ -240,7 +240,7 @@ class SparseMemory(object):
         return None
 
     def update_memory(self, address: int, data: Union[bytearray, bytes, list]) -> None:
-        if type(data) in [list, bytes]:
+        if isinstance(data, (list, bytes)):
             # convert to bytearray so we can modify it in the future
             data = bytearray(data)
         region = self.find_region(address)
@@ -609,7 +609,7 @@ class RamMapping(object):
 
             if value is not None:
                 scale = self.entry.get('scale', 1)
-                if type(scale) is float:
+                if isinstance(scale, float):
                     value *= scale
                 else:
                     value *= to_int(scale)
@@ -640,7 +640,7 @@ class RamMapping(object):
         encoding = self.entry['encoding']
 
         if encoding == 'dipsw':
-            assert type(value) is int
+            assert isinstance(value, int)
             dipsw_data = memory.get_dipsw_data()
             if dipsw_data:
                 # use reversed() to start with LSB in list of offsets
@@ -660,10 +660,10 @@ class RamMapping(object):
 
         # TODO: update to use char_map if present
         if encoding == 'ch':
-            assert type(value) is str and len(value) == len(old_bytes)
+            assert isinstance(value, str) and len(value) == len(old_bytes)
             new_bytes = list(value)
         elif encoding == 'wpc_rtc':
-            assert type(value) is datetime
+            assert isinstance(value, datetime)
             # for day of week 1=Sunday, 7=Saturday
             # isoweekday() returns 1=Monday 7=Sunday
             new_bytes = [value.year // 256, value.year % 256,
@@ -758,7 +758,7 @@ class RamMapping(object):
             values = self.entry.get('values', [])
             if values is None:
                 return '0'
-            if type(values[0]) is int:
+            if isinstance(values[0], int):
                 mask = 1
                 bits_value = 0
                 for b in values:
@@ -766,7 +766,7 @@ class RamMapping(object):
                         bits_value += b
                     mask <<= 1
                 return self.format_value(bits_value)
-            elif type(values[0]) is str:
+            elif isinstance(values[0], str):
                 mask = 1
                 set_values = []
                 for b in values:
