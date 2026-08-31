@@ -313,27 +313,34 @@ class SparseMemory(object):
 
 class ChecksumMapping(object):
     """Simplified RamMapping object used for checksum values."""
-    def __init__(self, start: int, end: int, checksum: Optional[int], label: str,
-                 checksum16: bool, big_endian: bool):
+    def __init__(self, start: int, end: int, bits: int, record: dict, big_endian: bool):
         """
         Create a ChecksumMapping object, to represent an 8-bit or 16-bit checksum stored in
         a game's memory.
         :param start: Starting address of the memory range checksummed
         :param end: Ending address of the memory range checksummed.  If checksum = None, this
                     address actually includes the checksum itself.
-        :param checksum: Address for the checksum, if not included in the start-end range.
-        :param label: Label describing checksum.
-        :param checksum16: This is a 2-byte (16-bit) checksum.
+        :param bits: Either 4, 8, or 16 (nibble, 8-bit, 16-bit).
+        :param record: original record from JSON (used for label, complement, and checksum fields)
         :param big_endian: The checksum is stored big-endian (MSB first).
         """
-        self.label = label
+        self.label = record.get('label')
+        self.complement = record.get('complement', True)
         self.big_endian = big_endian
-        self.checksum16 = checksum16
-        self.formatting = '0x%04X' if checksum16 else '0x%02X'
+        self.bits = bits
+        if self.bits == 4:
+            self.formatting = '0x%1X'
+        elif self.bits == 8:
+            self.formatting = '0x%02X'
+        elif self.bits == 16:
+            self.formatting = '0x%04X'
+        else:
+            raise ValueError('Invalid bits value (%u)' % bits)
         self.start = start
-        self.end = end
+        checksum = record.get('checksum')
         if checksum:
-            self.checksum = checksum
+            self.end = end
+            self.checksum = to_int(checksum)
         else:
             # checksum included in start-end range
             self.end = end - self.length()
@@ -341,12 +348,12 @@ class ChecksumMapping(object):
 
     def offsets(self) -> List[int]:
         offsets = [self.checksum]
-        if self.checksum16:
+        if self.bits == 16:
             offsets.append(self.checksum + 1)
         return offsets
 
     def length(self) -> int:
-        return 1 + self.checksum16
+        return 2 if self.bits == 16 else 1
 
     def coverage(self) -> List[int]:
         """
@@ -356,12 +363,18 @@ class ChecksumMapping(object):
         return list(range(self.start, self.end + 1))
 
     def calculate(self, memory: SparseMemory) -> int:
-        checksum = -1
+        checksum = 0
         for address in self.coverage():
-            checksum -= memory.get_byte(address)
-        if self.checksum16:
+            checksum += memory.get_byte(address)
+        if self.complement:
+            checksum = ~checksum
+        if self.bits == 4:
+            return checksum & 0xF
+        elif self.bits == 8:
+            return checksum & 0xFF
+        elif self.bits == 16:
             return checksum & 0xFFFF
-        return checksum & 0xFF
+        raise ValueError('Invalid bits value (%u)' % self.bits)
 
     def update(self, memory: SparseMemory) -> None:
         """
@@ -369,7 +382,7 @@ class ChecksumMapping(object):
         :param memory: SparseMemory object to update
         """
         checksum = self.calculate(memory)
-        if self.checksum16:
+        if self.bits == 16:
             # create little-endian version of checksum
             checksum = [checksum & 0xFF, (checksum >> 8)]
             if self.big_endian:
@@ -380,7 +393,7 @@ class ChecksumMapping(object):
 
     def get_value(self, memory: SparseMemory) -> int:
         checksum = memory.get_byte(self.checksum)
-        if self.checksum16:
+        if self.bits == 16:
             if self.big_endian:
                 checksum = (checksum << 8) + memory.get_byte(self.checksum + 1)
             else:
@@ -401,10 +414,8 @@ class ChecksumMapping(object):
         """
         stored = self.get_value(memory)
         calculated = self.calculate(memory)
-        if self.checksum16:
-            label = 'checksum16[%X:%X]' % (self.start, self.end - 2)
-        else:
-            label = 'checksum8[%X:%X]' % (self.start, self.end - 1)
+        complement = '~' if self.complement else ''
+        label = '%ssum%u[%X:%X]' % (complement, self.bits, self.start, self.end)
 
         value = self.formatting % stored
         if stored != calculated:
@@ -1011,22 +1022,32 @@ class ParseNVRAM(object):
 
         # add ChecksumMapping objects for checksum8 and checksum16 entries
         self.checksum_entries = []
-        for checksum in ['checksum8', 'checksum16']:
-            is_16 = (checksum == 'checksum16')
-            for c in self.map_json.get(checksum, []):
-                start = to_int(c['start'])
-                if 'end' in c:
-                    end = to_int(c['end'])
-                else:
-                    length = c.get('length', 1)
-                    end = start + to_int(length) - 1
-                grouping = c.get('groupings', end - start + 1)
-                while start <= end:
-                    entry_end = start + grouping - 1
-                    self.checksum_entries.append(ChecksumMapping(start, entry_end, c.get('checksum'),
-                                                                 c.get('label'), is_16,
-                                                                 self.metadata['big_endian']))
-                    start = entry_end + 1
+        validation = json_metadata.get('validation')
+        if validation:
+            checksum_records = validation.get('checksum', [])
+            if not isinstance(checksum_records, list):
+                checksum_records = [checksum_records]
+            for c in checksum_records:
+                self.checksum_helper(c, c.get('bits', 8))
+        else:
+            for c in self.map_json.get('checksum8', []):
+                self.checksum_helper(c, 8)
+            for c in self.map_json.get('checksum16', []):
+                self.checksum_helper(c, 16)
+
+    def checksum_helper(self, record: dict, bits):
+        start = to_int(record['start'])
+        if 'end' in record.keys():
+            end = to_int(record['end'])
+        else:
+            length = record.get('length', 1)
+            end = start + to_int(length) - 1
+        grouping = record.get('groupings', end - start + 1)
+        while start <= end:
+            entry_end = start + grouping - 1
+            self.checksum_entries.append(ChecksumMapping(start, entry_end, bits, record,
+                                                         self.metadata['big_endian']))
+            start = entry_end + 1
 
     def get_entry(self, *, section: Optional[str] = None,
                   subsection: Optional[str] = None, key: Optional[str] = None) -> Optional[RamMapping]:
