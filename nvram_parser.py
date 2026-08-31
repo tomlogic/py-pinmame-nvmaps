@@ -1149,13 +1149,13 @@ class ParseNVRAM(object):
                                    score))
         return scores
 
-    def dump(self, group: str = None, verify_checksums: bool = True) -> None:
+    def dump(self, group: str = None, validate: bool = True) -> None:
         """
         Print out formatted values for all entries for this map/nvram data.
 
         :param group: Limit dump to a single group, based on it's formatted name
                       (e.g., "Game State" instead of "game_state").
-        :param verify_checksums: If True (default) verify checksums in nvram data.
+        :param validate: If True (default) verify checksums/mirroring in nvram data.
         :return: None
         """
         last_group = None
@@ -1180,14 +1180,29 @@ class ParseNVRAM(object):
         if last_played is not None:
             print('Last Played:', last_played)
 
-        if verify_checksums:
+        if validate:
             for checksum in self.checksum_entries:
-                # create formatted strings for each checksum (either 2 or 4 hexits)
+                # create formatted strings for each checksum (either 1, 2, or 4 hexits)
                 calc_sum = checksum.formatting % checksum.calculate(self.memory)
                 stored_sum = checksum.formatting % checksum.get_value(self.memory)
                 if calc_sum != stored_sum:
                     print("checksum at 0x%X: %s != %s %s" % (checksum.start, calc_sum,
                                                              stored_sum, checksum.label))
+
+            mirroring = self.metadata.get('validation', {}).get('mirror')
+            if not isinstance(mirroring, list):
+                mirroring = [mirroring]
+            for entry in mirroring:
+                length = to_int(entry.get('length', 1))
+                addresses = entry.get('addresses', [])
+                # for 3 entries, compare 1 to 2, 1 to 3, then 2 to 3
+                for base in range(0, len(addresses) - 1):
+                    base_addr = to_int(addresses[base])
+                    base_mem = self.memory.get_range(base_addr, length)
+                    for compare in range(base + 1, len(addresses)):
+                        compare_addr = to_int(addresses[compare])
+                        if base_mem != self.memory.get_range(compare_addr, length):
+                            print('%u mirrored bytes at 0x%X != 0x%X' % (length, base_addr, compare_addr))
 
     @staticmethod
     def hex_line(data: bytearray, nibble: Nibble, text: Optional[str] = None) -> str:
