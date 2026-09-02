@@ -1022,12 +1022,10 @@ class ParseNVRAM(object):
 
         # add ChecksumMapping objects for checksum8 and checksum16 entries
         self.checksum_entries = []
+        # if _metadata.validation is present, ignore checksum8/checksum16 entries
         validation = json_metadata.get('validation')
         if validation:
-            checksum_records = validation.get('checksum', [])
-            if not isinstance(checksum_records, list):
-                checksum_records = [checksum_records]
-            for c in checksum_records:
+            for c in validation.get('checksum', []):
                 self.checksum_helper(c, c.get('bits', 8))
         else:
             for c in self.map_json.get('checksum8', []):
@@ -1189,9 +1187,7 @@ class ParseNVRAM(object):
                     print("checksum at 0x%X: %s != %s %s" % (checksum.start, calc_sum,
                                                              stored_sum, checksum.label))
 
-            mirroring = self.metadata.get('validation', {}).get('mirror')
-            if not isinstance(mirroring, list):
-                mirroring = [mirroring]
+            mirroring = self.metadata.get('validation', {}).get('mirror', [])
             for entry in mirroring:
                 length = to_int(entry.get('length', 1))
                 addresses = entry.get('addresses', [])
