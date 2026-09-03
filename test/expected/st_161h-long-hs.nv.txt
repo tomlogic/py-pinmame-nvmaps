@@ -3,6 +3,7 @@ Dumping known entries for st_161h-long-hs.nv [Star Trek (Stern) Limited Edition 
 
 Game State
 ----------
+Player Count: 2
 Player 1: 3,617,980
 Player 2: 55,015,990
 Player 3: 0

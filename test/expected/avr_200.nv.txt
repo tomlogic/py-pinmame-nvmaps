@@ -1,0 +1,22 @@
+Using maps/stern/sam/avr_200.map.json for avr_200.nv
+Dumping known entries for avr_200.nv [Avatar (V2.0)]...
+
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: G S 75,000,000
+High Score #1: L R 55,000,000
+High Score #2: J R 40,000,000
+High Score #3: D T 30,000,000
+High Score #4: P P 25,000,000
+
+mode_champions
+--------------
+Final Battle Champion: LFS 25,000,000

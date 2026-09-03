@@ -1,6 +1,14 @@
 Using maps/stern/sam/bdk_294.map.json for bdk_294.nv
 Dumping known entries for bdk_294.nv [Batman: The Dark Knight (V2.94)]...
 
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
 high_scores
 -----------
 Grand Champion: GAG 240,000,000

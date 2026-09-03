@@ -1,6 +1,14 @@
 Using maps/stern/sam/twd_156.map.json for twd_156.nv
 Dumping known entries for twd_156.nv [Walking Dead, The (V1.56)]...
 
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
 high_scores
 -----------
 Grand Champion: LFS 75,000,000

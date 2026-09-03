@@ -3,6 +3,7 @@ Dumping known entries for tf_180.nv [Transformers (V1.8)]...
 
 Game State
 ----------
+Player Count: 1
 Player 1: 584,950
 Player 2: 0
 Player 3: 0
