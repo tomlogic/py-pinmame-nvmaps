@@ -1,0 +1,23 @@
+Using maps/stern/sam/xmn_151h.map.json for xmn_151h.nv
+Dumping known entries for xmn_151h.nv [X-Men Limited Edition (V1.51)]...
+
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Volume: 40
+
+high_scores
+-----------
+Grand Champion: G S 75,000,000
+High Score #1: L R 55,000,000
+High Score #2: J R 40,000,000
+High Score #3: D T 30,000,000
+High Score #4: P P 25,000,000
+
+mode_champions
+--------------
+Combo Champion: YAN 15 Combos

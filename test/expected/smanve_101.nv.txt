@@ -1,6 +1,14 @@
 Using maps/stern/sam/smanve_101.map.json for smanve_101.nv
 Dumping known entries for smanve_101.nv [Spider-Man Vault Edition (V1.01)]...
 
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
 high_scores
 -----------
 Grand Champion: SSR 150,000,000

@@ -1,0 +1,18 @@
+Using maps/stern/sam/csi_240.map.json for csi_240.nv
+Dumping known entries for csi_240.nv [CSI: Crime Scene Investigation (V2.4)]...
+
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: G S 75,000,000
+High Score #1: L R 55,000,000
+High Score #2: R T 40,000,000
+High Score #3: D T 30,000,000
+High Score #4: J B 25,000,000

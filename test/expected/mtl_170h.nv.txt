@@ -1,0 +1,31 @@
+Using maps/stern/sam/mtl_170h.map.json for mtl_170h.nv
+Dumping known entries for mtl_170h.nv [Metallica Limited Edition (V1.7)]...
+
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: JDB 75,000,000
+High Score #1: LFS 55,000,000
+High Score #2: J R 40,000,000
+High Score #3: DDG 30,000,000
+High Score #4: M G 25,000,000
+
+mode_champions
+--------------
+Combo Champion: ABC 20
+Battery Champion: ABC 25,000,000
+Enter Sandman Champion: ABC 25,000,000
+Fade To Black Champion: ABC 25,000,000
+For Whom The Bell Tolls Champion: ABC 25,000,000
+Fuel Champion: ABC 5,000,000
+Lady Justice Champion: ABC 2,500,000
+Seek & Destroy Champion: ABC 15,000,000
+The End Of The Line Champion: ABC 50,000,000
+Blackened Champion: ABC 15,000,000

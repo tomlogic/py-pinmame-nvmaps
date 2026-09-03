@@ -1,0 +1,25 @@
+Using maps/stern/sam/nba_802.map.json for nba_802.nv
+Dumping known entries for nba_802.nv [NBA (V8.02)]...
+
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: G S 75,000,000
+High Score #1: L R 55,000,000
+High Score #2: R T 40,000,000
+High Score #3: D T 30,000,000
+High Score #4: J B 25,000,000
+
+mode_champions
+--------------
+Free Throws Champion: LON 2 In A Row
+2-Pointers Champion: LON 4 In A Row
+3-Pointers Champion: LON 3 In A Row
+NBA Finals Champion: LON 25,000,000

@@ -1,0 +1,18 @@
+Using maps/stern/sam/fg_1200af.map.json for fg_1200af.nv
+Dumping known entries for fg_1200af.nv [Family Guy (V12.0 English, French)]...
+
+Game State
+----------
+Player Count: 1
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+
+high_scores
+-----------
+Grand Champion: G S 75,000,000
+High Score #1: L R 55,000,000
+High Score #2: R T 40,000,000
+High Score #3: D T 30,000,000
+High Score #4: J B 25,000,000

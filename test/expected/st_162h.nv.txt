@@ -3,6 +3,7 @@ Dumping known entries for st_162h.nv [Star Trek (Stern) Limited Edition (V1.62)]
 
 Game State
 ----------
+Player Count: 1
 Player 1: 0
 Player 2: 0
 Player 3: 0
