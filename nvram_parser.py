@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import argparse
+import copy
 import glob
 import json
 import os
@@ -50,11 +51,11 @@ def get_nibble(value: Optional[str]) -> Nibble:
         raise ValueError("invalid `nibble` value")
 
 
-def to_int(v: Union[int, str]) -> int:
-    """Returns 'v' if already an int, otherwise assume a string and convert
+def to_int(v: Union[int, str, None]) -> Union[int, None]:
+    """Returns 'v' if already an int, None if None, otherwise assume a string and convert
     with a base of '0' (which handles leading 0 as octal and 0x as hex).
     """
-    if isinstance(v, int):
+    if v is None or isinstance(v, int):
         return v
     return int(v, 0)
 
@@ -217,6 +218,40 @@ def platform_list() -> List[str]:
     return platforms
 
 
+def repeated_records(base: dict) -> List[dict]:
+    """
+    If the provided record has a `repeat` entry, generate multiple copies with
+    the appropriate start/length values.
+
+    :param base: record with optional `repeat` entry
+    :return: list of records with modified `start` values
+    """
+    # Create an iterator that delivers multiple records?  For now return a list.
+    repeat = base.get('repeat')
+    if repeat is None:
+        return [base]
+    if base.get('end'):
+        raise ValueError("repeated records can't have an `end` property")
+    count = to_int(repeat.get('count'))
+    step = to_int(repeat.get('step'))
+    if not base or not count:
+        raise ValueError('`repeat` record is missing count or step', repeat)
+
+    records = []
+    # return copies of the base record, without its `repeat` entry
+    del base['repeat']
+    start = to_int(base.get('start', 0))
+    label: Union[str, None] = base.get('label')
+    for i in range(count):
+        new_record = copy.copy(base)
+        new_record['start'] = start + i * step
+        if label:
+            new_record['label'] = label.replace('{#}', str(i + 1))
+        records.append(new_record)
+
+    return records
+
+
 class SparseMemory(object):
     """
     Object representing memory contents for a portion of the full address space.
@@ -313,13 +348,13 @@ class SparseMemory(object):
 
 class ChecksumMapping(object):
     """Simplified RamMapping object used for checksum values."""
-    def __init__(self, start: int, end: int, bits: int, record: dict, big_endian: bool):
+    def __init__(self, start: int, length: int, bits: int, record: dict, big_endian: bool):
         """
         Create a ChecksumMapping object, to represent an 8-bit or 16-bit checksum stored in
         a game's memory.
         :param start: Starting address of the memory range checksummed
-        :param end: Ending address of the memory range checksummed.  If checksum = None, this
-                    address actually includes the checksum itself.
+        :param length: Length of the memory range checksummed.  If checksum = None, this
+                    includes the checksum itself.
         :param bits: Either 4, 8, or 16 (nibble, 8-bit, 16-bit).
         :param record: original record from JSON (used for label, complement, and checksum fields)
         :param big_endian: The checksum is stored big-endian (MSB first).
@@ -337,13 +372,13 @@ class ChecksumMapping(object):
         else:
             raise ValueError('Invalid bits value (%u)' % bits)
         self.start = start
+        self.end = start + length - 1
         checksum = record.get('checksum')
         if checksum:
-            self.end = end
             self.checksum = to_int(checksum)
         else:
             # checksum included in start-end range
-            self.end = end - self.length()
+            self.end -= self.length()
             self.checksum = self.end + 1
 
     def offsets(self) -> List[int]:
@@ -1035,17 +1070,23 @@ class ParseNVRAM(object):
 
     def checksum_helper(self, record: dict, bits):
         start = to_int(record['start'])
+        # normalize to start/length instead of start/end
         if 'end' in record.keys():
-            end = to_int(record['end'])
+            length = to_int(record['end']) - start + 1
         else:
-            length = record.get('length', 1)
-            end = start + to_int(length) - 1
-        grouping = record.get('groupings', end - start + 1)
-        while start <= end:
-            entry_end = start + grouping - 1
-            self.checksum_entries.append(ChecksumMapping(start, entry_end, bits, record,
-                                                         self.metadata['big_endian']))
-            start = entry_end + 1
+            length = to_int(record.get('length', 1))
+        if 'groupings' in record:
+            grouping = record.get('groupings', length)
+            while length > 0:
+                self.checksum_entries.append(ChecksumMapping(start, grouping, bits, record,
+                                                             self.metadata['big_endian']))
+                start += grouping
+                length -= grouping
+        else:
+            for parsed_record in repeated_records(record):
+                start = to_int(parsed_record['start'])
+                self.checksum_entries.append(ChecksumMapping(start, length, bits, parsed_record,
+                                                             self.metadata['big_endian']))
 
     def get_entry(self, *, section: Optional[str] = None,
                   subsection: Optional[str] = None, key: Optional[str] = None) -> Optional[RamMapping]:
@@ -1157,6 +1198,7 @@ class ParseNVRAM(object):
         :return: None
         """
         last_group = None
+        verbose_validate = False
         for map_entry in self.mapping:
             if group is None or map_entry.group == group:
                 if map_entry.group == 'DIP Switches' \
@@ -1186,19 +1228,27 @@ class ParseNVRAM(object):
                 if calc_sum != stored_sum:
                     print("checksum at 0x%X: %s != %s %s" % (checksum.start, calc_sum,
                                                              stored_sum, checksum.label))
+                elif verbose_validate:
+                    print("checksum at 0x%X: %s == %s %s" % (checksum.start, calc_sum,
+                                                             stored_sum, checksum.label))
 
             mirroring = self.metadata.get('validation', {}).get('mirror', [])
-            for entry in mirroring:
-                length = to_int(entry.get('length', 1))
-                addresses = entry.get('addresses', [])
-                # for 3 entries, compare 1 to 2, 1 to 3, then 2 to 3
-                for base in range(0, len(addresses) - 1):
-                    base_addr = to_int(addresses[base])
-                    base_mem = self.memory.get_range(base_addr, length)
-                    for compare in range(base + 1, len(addresses)):
-                        compare_addr = to_int(addresses[compare])
-                        if base_mem != self.memory.get_range(compare_addr, length):
-                            print('%u mirrored bytes at 0x%X != 0x%X' % (length, base_addr, compare_addr))
+            for base_entry in mirroring:
+                for entry in repeated_records(base_entry):
+                    label = entry.get('label')
+                    length = to_int(entry.get('length', 1))
+                    start = to_int(entry.get('start', 0))
+                    offsets = entry.get('offsets', [])
+                    # for 3 entries, compare 1 to 2, 1 to 3, then 2 to 3
+                    for base in range(0, len(offsets) - 1):
+                        base_addr = start + to_int(offsets[base])
+                        base_mem = self.memory.get_range(base_addr, length)
+                        for compare in range(base + 1, len(offsets)):
+                            compare_addr = start + to_int(offsets[compare])
+                            if base_mem != self.memory.get_range(compare_addr, length):
+                                print('%u mirrored bytes at 0x%X != 0x%X %s' % (length, base_addr, compare_addr, label))
+                            elif verbose_validate:
+                                print('%u mirrored bytes at 0x%X == 0x%X %s' % (length, base_addr, compare_addr, label))
 
     @staticmethod
     def hex_line(data: bytearray, nibble: Nibble, text: Optional[str] = None) -> str:
