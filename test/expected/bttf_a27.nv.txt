@@ -1,0 +1,26 @@
+Using maps/dataeast/version3/bttf_a27.map.json for bttf_a27.nv
+Dumping known entries for bttf_a27.nv [Back to the Future (2.7)]...
+
+Game State
+----------
+Player 1: 0
+Player 2: 0
+Player 3: 0
+Player 4: 0
+Credits: 0
+Free Play: false
+Max Credits: 30
+Player Count: 2
+Ball Count: 3
+Player: 1
+Ball: 1
+Game Over: false
+
+high_scores
+-----------
+World Record: JEK 7,500,000
+First: RAY 6,500,000
+Second: BLS 5,500,000
+Third: NBW 4,500,000
+Fourth: P G 3,500,000
+Fifth: A A 2,500,000
