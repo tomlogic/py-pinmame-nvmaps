@@ -50,11 +50,6 @@ Game Setting #2: on
 
 high_scores
 -----------
-High Score #1: 0
-High Score #2: 0
-High Score #3: 0
 
 mode_champions
 --------------
-Team Score #1: 0
-Team Score #2: 0

@@ -62,7 +62,7 @@ Free Play: false
 
 high_scores
 -----------
-First Place: 4,291,770
+First Place:     4,291,770
 Second Place: CLF 4,000,000
 Third Place: EJB 3,500,000
 Fourth Place: BLS 3,000,000

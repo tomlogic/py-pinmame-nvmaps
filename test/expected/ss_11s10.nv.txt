@@ -196,4 +196,14 @@ First Place: MAB 15,000,000
 Second Place: RRR 10,000,000
 Third Place: ONE 8,000,000
 Fourth Place:  PH 5,000,000
+
+mode_champions
+--------------
+Spider Champ: TEX 2026-06-19 22:00
+Favorite Stiff Count: 5 Stiffs
+Favorite Stiff #1: WIN
+Favorite Stiff #2: CJS
+Favorite Stiff #3: ASR
+Favorite Stiff #4: BCM
+Favorite Stiff #5: MAB
 Last Played: 2026-06-19 00:01

@@ -242,11 +242,19 @@ def repeated_records(base: dict) -> List[dict]:
     del base['repeat']
     start = to_int(base.get('start', 0))
     label: Union[str, None] = base.get('label')
+    short_label: Union[str, None] = base.get('short_label')
     for i in range(count):
-        new_record = copy.copy(base)
+        new_record = copy.deepcopy(base)
         new_record['start'] = start + i * step
+        if 'checksum' in new_record:
+            new_record['checksum'] = to_int(new_record['checksum']) + i * step
+        for sub_record in new_record.values():
+            if isinstance(sub_record, dict) and 'start' in sub_record:
+                sub_record['start'] = to_int(sub_record['start']) + i * step
         if label:
             new_record['label'] = label.replace('{#}', str(i + 1))
+        if short_label:
+            new_record['short_label'] = short_label.replace('{#}', str(i + 1))
         records.append(new_record)
 
     return records
@@ -833,6 +841,7 @@ class RamMapping(object):
 
         if encoding == 'ch':
             result = ''
+            raw_result = ''
             char_map = self.metadata.get('char_map')
             while ba:
                 b = ba.pop(0)
@@ -844,9 +853,10 @@ class RamMapping(object):
                 else:
                     ch = chr(b)
 
+                raw_result += ch
                 if ch.isprintable():
                     result += ch
-            if result == self.entry.get('default', '   '):
+            if raw_result == self.entry.get('default'):
                 return None
             return result
         elif encoding == 'raw':
@@ -884,6 +894,10 @@ class RamMapping(object):
             if sub in self.sub_entry:
                 # during high score entry on High Speed, `initials` returns None
                 formatted = self.sub_entry[sub].format_entry(memory)
+                if sub == 'initials' and formatted is None:
+                    # skip over unfilled entries (e.g., Masters of Powerdown on Johnny Mnemonic)
+                    return None
+                # TODO: ignore if score's value matches default (see BoP Billionaires)
                 if formatted:
                     elements.append(formatted)
         if elements:
@@ -1036,11 +1050,15 @@ class ParseNVRAM(object):
         }
         for section, label in sections.items():
             if section in self.map_json:
-                for key, entries in self.map_json[section].items():
+                for key, value in self.map_json[section].items():
                     if key.startswith('_'):
                         continue
-                    if not isinstance(entries, list):
-                        entries = [entries]
+                    if isinstance(value, list):
+                        entries = []
+                        for record in value:
+                            entries.extend(repeated_records(record))
+                    else:
+                        entries = [value]
                     for entry in entries:
                         self.mapping.append(RamMapping(entry,
                                                        self.metadata,
@@ -1049,11 +1067,12 @@ class ParseNVRAM(object):
                                                        key))
 
         for group in ['high_scores', 'mode_champions']:
-            for entry in self.map_json.get(group, []):
-                self.mapping.append(RamMapping(entry,
-                                               self.metadata,
-                                               'score_record',
-                                               group))
+            for record in self.map_json.get(group, []):
+                for entry in repeated_records(record):
+                    self.mapping.append(RamMapping(entry,
+                                                   self.metadata,
+                                                   'score_record',
+                                                   group))
 
         # add ChecksumMapping objects for checksum8 and checksum16 entries
         self.checksum_entries = []

@@ -15,5 +15,4 @@ First Place: SAM 40
 Second Place: JOE 30
 Third Place: ISA 20
 Fourth Place: MOM 10
-Fifth Place: 0
 Last Played: 2025-01-07 00:01

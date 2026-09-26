@@ -50,8 +50,3 @@ Game Setting #2: on
 
 high_scores
 -----------
-High Score #1: 0
-High Score #2: 0
-High Score #3: 0
-High Score #4: 0
-High Score #5: 0

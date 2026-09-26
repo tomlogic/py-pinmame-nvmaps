@@ -18,8 +18,8 @@ Game Over: true
 
 high_scores
 -----------
-High Score #1: 35,000,000
-High Score #2: 0
-High Score #3: 0
-High Score #4: 0
-High Score #5: 0
+High Score #1:     35,000,000
+High Score #2:     0
+High Score #3:     0
+High Score #4:     0
+High Score #5:     0
