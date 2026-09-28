@@ -18,9 +18,9 @@ Bookkeeping
 
 Standard Adjustments
 --------------------
-11 First High Score: 800,000
-12 Second High Score: 1,400,000
-13 Third High Score: 1,800,000
+11 First Replay Level: 800,000
+12 Second Replay Level: 1,400,000
+13 Third Replay Level: 1,800,000
 
 Game State
 ----------

@@ -19,9 +19,9 @@ Bookkeeping
 Standard Adjustments
 --------------------
 06 Replay Percentage: 88%
-11 First High Score: 5,600,000
-12 Second High Score: 7,800,000
-13 Third High Score: 9,000,000
+11 First Replay Level: 5,600,000
+12 Second Replay Level: 7,800,000
+13 Third Replay Level: 9,000,000
 
 Game State
 ----------

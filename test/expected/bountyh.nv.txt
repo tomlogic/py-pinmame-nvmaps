@@ -18,9 +18,9 @@ Bookkeeping
 
 Standard Adjustments
 --------------------
-11 First High Score: 0
-12 Second High Score: 0
-13 Third High Score: 0
+11 First Replay Level: 0
+12 Second Replay Level: 0
+13 Third Replay Level: 0
 
 Game State
 ----------
