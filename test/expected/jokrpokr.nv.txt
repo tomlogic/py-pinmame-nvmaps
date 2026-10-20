@@ -1,0 +1,26 @@
+Using maps/gottlieb/system1/system1-generic.map.json for jokrpokr.nv
+Dumping known entries for jokrpokr.nv [Joker Poker]...
+
+Audits
+------
+00 Left Coins: 39
+01 Right Coins: 5
+02 Total Plays: 14
+03 Replays: 0
+04 Slam Tilts: 0
+05 Extra Balls: 0
+06 Tilts: 0
+
+Adjustments
+-----------
+07 First Replay Level: 0
+08 First Replay Level: 0
+09 First Replay Level: 0
+
+Game State
+----------
+Credits: 8
+
+high_scores
+-----------
+High Score To Date: 0

@@ -1,0 +1,26 @@
+Using maps/gottlieb/system1/system1-generic.map.json for totem.nv
+Dumping known entries for totem.nv [Totem]...
+
+Audits
+------
+00 Left Coins: 0
+01 Right Coins: 0
+02 Total Plays: 0
+03 Replays: 0
+04 Slam Tilts: 0
+05 Extra Balls: 0
+06 Tilts: 0
+
+Adjustments
+-----------
+07 First Replay Level: 0
+08 First Replay Level: 0
+09 First Replay Level: 0
+
+Game State
+----------
+Credits: 0
+
+high_scores
+-----------
+High Score To Date: 0
