@@ -31,6 +31,7 @@ Final Score P1: 0
 Final Score P2: 0
 Ball Count: 3
 Max Credits: 10
+Ignore Scores: false
 Game Over: true
 Tilted: false
 

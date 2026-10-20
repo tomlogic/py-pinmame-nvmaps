@@ -4,10 +4,15 @@ Dumping known entries for smanve_101.nv [Spider-Man Vault Edition (V1.01)]...
 Game State
 ----------
 Player Count: 1
+Free Play: false
+Credits: 0
+Maximum Credits: 30
+Balls Per Game: 3
 Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Master Volume: 40
 
 high_scores
 -----------

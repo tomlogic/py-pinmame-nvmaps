@@ -29,6 +29,7 @@ Final Score P6: 0
 Ball Count: 3
 Max Credits: 5
 Free Play: false
+Ignore Scores: false
 Game Over: true
 Tilted: false
 

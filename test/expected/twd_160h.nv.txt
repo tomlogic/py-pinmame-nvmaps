@@ -4,6 +4,11 @@ Dumping known entries for twd_160h.nv [Walking Dead, The Limited Edition (V1.60.
 Game State
 ----------
 Player Count: 1
+Free Play: false
+Credits: 0
+Master Volume: 40
+Maximum Credits: 30
+Balls Per Game: 3
 Player 1: 0
 Player 2: 0
 Player 3: 0

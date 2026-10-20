@@ -7,6 +7,9 @@ Player 1: 0
 Player 2: 0
 Player 3: 0
 Player 4: 0
+Free Play: true
+Maximum Credits: 30
+Balls Per Game: 3
 
 high_scores
 -----------

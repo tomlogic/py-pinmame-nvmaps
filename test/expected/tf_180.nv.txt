@@ -4,6 +4,11 @@ Dumping known entries for tf_180.nv [Transformers (V1.8)]...
 Game State
 ----------
 Player Count: 1
+Free Play: false
+Credits: 10
+Master Volume: 40
+Maximum Credits: 30
+Balls Per Game: 3
 Player 1: 584,950
 Player 2: 0
 Player 3: 0
@@ -25,4 +30,4 @@ Decepticon #4: BLK 25,000,000
 mode_champions
 --------------
 Combo: LON 20
-Best Combo Champion: LON 327,681-WAY
+Best Combo Champion: LON

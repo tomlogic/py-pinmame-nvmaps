@@ -4,7 +4,12 @@ Dumping known entries for twenty4_150.nv [24 (V1.5)]...
 Game State
 ----------
 Player Count: 1
+Free Play: false
+Credits: 0
+Maximum Credits: 30
+Balls Per Game: 3
 Ball: 255
+Game Over: true
 Player 1: 0
 Player 2: 0
 Player 3: 0

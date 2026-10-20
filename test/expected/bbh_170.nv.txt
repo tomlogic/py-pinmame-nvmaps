@@ -4,6 +4,10 @@ Dumping known entries for bbh_170.nv [Big Buck Hunter Pro (V1.7)]...
 Game State
 ----------
 Player Count: 1
+Free Play: false
+Credits: 0
+Maximum Credits: 30
+Balls Per Game: 3
 Player 1: 0
 Player 2: 0
 Player 3: 0

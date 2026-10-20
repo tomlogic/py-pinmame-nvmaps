@@ -1,9 +1,81 @@
 Using maps/stern/sam/st_161h.map.json for st_161h.nv
 Dumping known entries for st_161h.nv [Star Trek (Stern) Limited Edition (V1.61)]...
 
+A.1 Standard Adjustments
+------------------------
+01 Replay Type: AUTO
+02 Replay Percentage: 10%
+03 Replay Award: CREDIT
+04 Replay Levels: 1
+05 Auto Replay Start: 20,000,000
+06 Dynamic Replay Start: 60,000,000
+07 Replay Level #1: 15,000,000
+08 Replay Level #2: 30,000,000
+09 Replay Level #3: 45,000,000
+10 Replay Level #4: 60,000,000
+11 Replay Boost: true
+12 Special Limit: 1
+13 Special Percentage: 10%
+14 Special Award: CREDIT
+15 Free Game Limit: 5
+16 Extra Ball Limit: 5
+17 Extra Ball Percentage: 25%
+18 Game Pricing: USA 10
+19 Match Percentage: 9%
+20 Match Award: CREDIT
+21 Balls Per Game: 3
+22 Tilt Warnings: 2
+23 Credit Limit: 30
+24 Allow High Scores: true
+25 High Score Award: CREDIT
+26 Grand Champion Awards: 1
+27 High Score #1 Awards: 1
+28 High Score #2 Awards: 0
+29 High Score #3 Awards: 0
+30 High Score #4 Awards: 0
+31 Grand Champion Score: 75,000,000
+32 High Score #1: 55,000,000
+33 High Score #2: 40,000,000
+34 High Score #3: 30,000,000
+35 High Score #4: 25,000,000
+36 HSTD Initials: 3 INITIALS
+37 HSTD Reset Count: 2,000
+38 Free Play: false
+39 Language: ENGLISH
+40 Player Language Select: false
+41 Custom Message: ON
+42 Flash Lamp Power: NORMAL
+43 Coil Pulse Power: NORMAL
+44 Knocker Volume: NORMAL
+45 Game Restart: true
+46 Bill Validator: false
+47 Music Volume: 1
+48 Ball Save Time: 5 s
+49 Timed Plunger: OFF
+50 Flipper Ball Launch: OFF
+51 Coindoor Ball Saver: false
+52 Competition Mode: false
+53 Consolation Ball: true
+54 Fast Boot: true
+55 Q24 Option: COIN METER
+56 Ticket Dispenser: false
+57 Player Competition: true
+58 Team Scores: false
+59 Location ID: 0
+60 Game ID: 0
+61 Time Format: 12-HOUR
+62 Coin Input Delay: 30
+63 Lost Ball Recovery: true
+64 Coin Door Disable Tilt: false
+
 Game State
 ----------
 Player Count: 1
+Free Play: false
+Credits: 14
+Master Volume: 63
+Maximum Credits: 30
+Balls Per Game: 3
 Player 1: 691,690
 Player 2: 0
 Player 3: 0
