@@ -130,6 +130,42 @@ B.6 TIME-STAMPS
 11 LAST PRINTOUT: 2026-06-19 22:08
 12 LAST SERV. CRED: 2026-06-19 22:08
 
+A.1 Standard Adjustments
+------------------------
+01 Balls Per Game: 3
+02 Tilt Warnings: 3
+03 Max. E.B. Count: 4
+04 Max E.B. Per B.I.P.: OFF
+05 Replay System: Auto %
+06 Replay Percent: 10%
+07 Replay Start: 30,000,000
+08 Replay Levels: 1
+09 Replay Level 1: 30,000,000
+10 Replay Level 2: OFF
+11 Replay Level 3: OFF
+12 Replay Level 4: OFF
+13 Replay Boost: 5,000,000
+14 Replay Award: Credit
+15 Special Award: Credit
+16 Match Award: Credit
+17 Ex. Ball Ticket: No
+18 Max. Tick./Player: 25
+19 Match Feature: 7%
+20 Custom Message: ON
+21 Language: English
+22 Clock Style: AM / PM
+23 Date Style: Mmm. DD, YY
+24 Show Time + Date: No
+25 Allow Dim Illum.: Yes
+26 Tournament Play: No
+27 Euro. Scr. Format: No
+28 Min. Vol. Override: No
+29 GI Power Saver: 15 MINUTES
+30 Power Save Level: 5
+31 Ticket Exp. Board: No
+32 No Bonus Flips: No
+33 Game Re-Start: Slow
+
 Game State
 ----------
 Players: 0

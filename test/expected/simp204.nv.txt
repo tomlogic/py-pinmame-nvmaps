@@ -1,4 +1,4 @@
-Using maps/stern/whitestar/simpprty.map.json for simp204.nv
+Using maps/stern/whitestar/simp204.map.json for simp204.nv
 Dumping known entries for simp204.nv [Simpsons Pinball Party, The (2.04)]...
 
 Game State
