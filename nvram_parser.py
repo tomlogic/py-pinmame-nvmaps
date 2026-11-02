@@ -783,7 +783,7 @@ class RamMapping(object):
         """Return a list of values for an entry with enum or dipsw encoding."""
         if self.entry['encoding'] not in ['enum', 'dipsw']:
             raise ValueError("Entry doesn't use enum/dipsw encoding.")
-        values = self.entry['values']
+        values = self.entry.get('values', [])
         if isinstance(values, str):
             # look up a shared list of values
             values = self.metadata['values'].get(values, [])
