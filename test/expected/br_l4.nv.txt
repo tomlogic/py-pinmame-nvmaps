@@ -155,7 +155,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -169,6 +169,44 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Lock Timer: 0:00:20
+02 Right Ramp Time: 0:00:20
+03 Ramp Open Start: 2
+04 Ramp Open Max: 6
+05 Combo 1st Timer: 0:00:05
+06 Combo 2nd Timer: 0:00:05
+07 Reload Timer: 0:00:20
+08 Mid. Ramp Timer: 0:00:06
+09 Extra Ball Pct: 20%
+10 Jackpot Lit Pct: 15%
+11 Random Award: Medium
+12 Skill Shot: Easy
+13 Hidden Treasure: Always
+14 Jewel Reset: 6 Jewels
+15 Millions Timer: 0:00:30
+16 Enable Lock: Hard
+17 Broadside Bonus: Easy
+18 Can. Shots Reset.: Easy
+19 Attract Sound: Off
+20 Special Pct: 7%
+21 Special Lt. After: 2 Shp Sunk
+22 Swing Rig. Start: 1
+23 Walk Plank Start: 1
+24 Knife Thrw Start: 1
+25 Video Gm. Levels: On
+26 Cannon Levels: On
+27 Cannon Lev. Start: 1
+28 Double Brdsde. Tm.: 0:00:30
+29 Ball Saver: 0:00:07
+30 Consl. Ramp/Ball: 0:01:00
+31 Multiball Bonus: Easy
+32 Sinkship Start: Sink
+33 Ship Sunk Backup: 2
+34 Sinkship Letters: Easy
+35 Vid. Mode Flipper: On
 
 Game State
 ----------

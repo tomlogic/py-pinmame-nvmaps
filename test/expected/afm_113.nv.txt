@@ -163,6 +163,7 @@ A.1 Standard Adjustments
 12 Replay L4: OFF
 13 Replay Boost: 1
 14 Replay: Credit
+15 Special Award: Credit
 16 Match Award: Credit
 17 Ex. Ball Ticket: NO
 18 Max Tick/Player: 25

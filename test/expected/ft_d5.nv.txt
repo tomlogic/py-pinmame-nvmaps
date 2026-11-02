@@ -143,7 +143,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -157,6 +157,22 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Timed Plunger: Off
+02 Flipper Plunger: No
+03 Outlne. Auto Cast: Yes
+04 Pct. Extra Balls: 25%
+05 Ramp Timer: 0:00:10
+06 Fish Finder Time: 0:00:10
+07 Stretch Truth: 0:00:15
+08 Feed Frenzy Time: Slow
+09 Captv. Ball Lites: 1
+10 Lock Difficulty: Medium
+11 Ball Save Time: 0:00:07
+12 Special Lites At: 4 S.Gears
+13 Lock Save Time: Off
 
 Game State
 ----------

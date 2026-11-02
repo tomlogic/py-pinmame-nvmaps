@@ -1,4 +1,4 @@
-Using maps/williams/wpc/t2_l8.map.json for t2_l84.nv
+Using maps/williams/wpc/t2_l84.map.json for t2_l84.nv
 Dumping known entries for t2_l84.nv [Terminator 2: Judgment Day (L-84 Profanity, bugfix/MOD, LED Ghost Fix)]...
 
 B.2 EARNINGS AUDS.
@@ -151,7 +151,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -165,6 +165,40 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Special Percent: 3%
+02 Extraball Percnt: 10%
+03 Extraball Memory: On
+04 Consolation Ball: On
+05 Drop Targt Count: 1
+06 Three Bank Count: 2
+07 Kickback Setting: Medium
+08 Skill Shot Timer: Medium
+09 Drop Targt Timer: 0:00:11
+10 Three Bank Timer: 0:00:15
+11 Hurry Up Timer: 0:00:15
+12 Payback Timer: 0:00:20
+13 Jackpot Timer: 0:00:12
+14 Millions Plus: On
+15 Timed Plunger: Off
+16 Attract Sounds: Off
+17 Drp Tgt Autofire: Off
+18 T2 Fan Club: On
+19 Flipper Trigger: Off
+20 Drop Trgt. Broken: Off
+21 Drptrgt Dwn Mlti: Off
+22 Profanity: Off
+23 Attract Mode: L8.4
+24 Animation Code: Corrected
+25 Lamp Driver: Original
+26 Mb Start Dt Actn: None
+27 Timed 3bank Lamp: Original
+28 Cannon 1 Hit: Off
+29 Ss Autofire Time: Original
+30 Super Jackpot: Original
+31 Null: 0
 
 Game State
 ----------

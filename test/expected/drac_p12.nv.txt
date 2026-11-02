@@ -146,12 +146,16 @@ A.1 Standard Adjustments
 06 Replay Percent: 10
 07 Replay Start: 200M
 08 Replay Levels: 1
+09 Replay Level 1: 200M
+10 Replay Level 2: OFF
+11 Replay Level 3: OFF
+12 Replay Level 4: OFF
 13 Replay Boost: 50M
 14 Replay Award: Credit
 15 Special Award: Credit
 16 Match Award: Credit
 17 Ex. Ball Ticket: NO
-18 Max. Tick,/Player: 25%
+18 Max. Tick./Player: 25%
 19 Match Feature: 10%
 20 Custom Message: ON
 21 Language: English

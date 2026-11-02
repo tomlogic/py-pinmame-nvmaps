@@ -1,4 +1,4 @@
-Using maps/williams/wpc/tz_92.map.json for tz_i7.nv
+Using maps/williams/wpc/tz_h7.map.json for tz_i7.nv
 Dumping known entries for tz_i7.nv [Twilight Zone (I-7 LED Ghost Fix)]...
 
 B.2 EARNINGS AUDS.
@@ -157,7 +157,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -171,6 +171,46 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Ex. Ball Percent: 20
+03 1st Ex.Ball Ramps: 9
+04 2nd Ex.Ball Ramps: 45
+05 Ramp E.B. Memory: Yes
+06 Dead Ends For E.B.: 3
+07 Dead End E.B. Mem.: No
+08 Spiral E.B. Memory: No
+09 Door E.B. Memory: Yes
+10 1st Hard Lock: 2
+11 1st Hard Release: 3
+12 Last Rmp. Release: 1
+13 Last Easy Rel.: 1
+14 Door Spots: 1
+15 Piano Difficulty: Easy
+16 Slot Difficulty: Easy
+17 Spiral Start: Easy
+18 1st Hard Spiral: 1
+19 Spiral Lane Mem.: No
+20 Ramps For Camera: 10 Ramps
+21 Camera Memory: Yes
+22 Power At Start: No
+23 Outlane Diff.: Hard
+24 Disable Gumball: No
+25 Disable Clock: No
+26 No Powerball: No
+27 Free Ride Time: Off
+28 Buy-In Free Time: 10
+29 Low Line: No
+30 A-Mode Sound: Yes
+31 A-Mode Music: No
+32 Backup L.I.Z. Champ: 300
+33 Cred. Champ. Zone: 1
+34 A.Mode Clock Time: Yes
+35 Balls In Gumball: 3
+36 Last Free Ride: 1
+37 Freeplay Message: On
 
 Game State
 ----------

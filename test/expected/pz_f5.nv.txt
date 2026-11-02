@@ -138,7 +138,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 8%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -150,6 +150,27 @@ A.1 Standard Adjustments
 29 GI Power Saver: 15 MINUTES
 30 Power Save Level: 5
 31 Ticket Exp. Board: No
+
+A.2 Feature Adjustments
+-----------------------
+01 Special: 2%
+02 Multiball: 35%
+03 Extra Ball: 10%
+04 Fuel Start Level: 5
+05 W.O.O.C. Diff.: Medium
+06 W.O.O.C. Timer: 15
+07 Comic Diff.: Medium
+08 Comic Timer: 10
+09 Laff Attack Time: 15
+10 Drink Timer: 12
+11 Be Merry Timer: 13
+12 10X Pfld. Timer: 10
+13 Light Extra Ball: 5
+14 Extra Ball Mem.: On
+15 Attract Sounds: On
+16 Dancer: On
+17 D.J. Head: On
+18 Party-On!: On
 
 Game State
 ----------

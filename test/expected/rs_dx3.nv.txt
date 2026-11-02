@@ -1,4 +1,4 @@
-Using maps/williams/wpc/rs_l6.map.json for rs_dx3.nv
+Using maps/williams/wpc/rs_lx2.map.json for rs_dx3.nv
 Dumping known entries for rs_dx3.nv [Red and Ted's Road Show (DX-3 LED Ghost Fix)]...
 
 B.2 EARNINGS AUDS.
@@ -147,7 +147,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: OFF
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -161,6 +161,33 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Blink Eyes: No
+02 Special Percent: 8%
+03 Extraball Percnt: 20%
+04 Extraball Memory: On
+05 Buy Extra Ball: 1/2 Cred.
+06 Buy In Count: 4
+07 Attract Sounds: Off
+08 Starting Day: Monday
+09 Weeks To Lock 2: 0 Weeks
+10 Cnt Tween Wheels: 0 Bridges
+11 Skill Shot Award: Sovenier
+12 Game Over Effect: Off
+13 Whl Lamps Memory: Yes
+14 Wheel In Memory: Yes
+15 M. Between Cities: 400 Miles
+16 Longer Path: On
+17 Ball Save Timer: Off
+18 Outlane Serving: Off
+19 Default E.B. Blast: EB Blast 7
+20 Disable "Ted": Off
+21 Disable "Red": Off
+22 Dis. L. Ramp Div.: Off
+23 Dis. R. Ramp Div.: Off
+24 Dis. L. Lower Div.: Off
 
 Game State
 ----------

@@ -1,4 +1,4 @@
-Using maps/williams/wpc/totan_14.map.json for totan_13.nv
+Using maps/williams/wpc/totan_12.map.json for totan_13.nv
 Dumping known entries for totan_13.nv [Tales of the Arabian Nights (1.3 / S1.0)]...
 
 B.2 EARNINGS AUDS.
@@ -164,7 +164,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -178,6 +178,35 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: Off
+02 Buy In Count: 1
+03 A-Mode Sound: Yes
+04 A-Mode Music: No
+05 German Speech: No
+06 Free Ride Time: 5
+07 Shoot Star Diff.: Medium
+08 Shoot Star Mem.: No
+09 Tiger Loop Diff: Medium
+10 Ex. Ball Percent: 25
+11 Tiger Loop E.B. 1: 6
+12 Tiger Loop E.B. 2: On
+13 Bazaar Adv. Diff: Medium
+14 Multiball Diff: Medium
+15 Tiger E.B. Mem.: Yes
+16 Wish E.B. Mem.: Yes
+17 Tale E.B. Mem.: Yes
+18 Tale Light E.B.: 4
+19 Disable Ramp Div.: No
+20 Disable Vanish: No
+21 Disable Ramp Mag.: No
+22 Genie Ball Save: No
+23 Star Ball Save: Yes
+24 Volume Interlock: No
+25 Plyr Tournament: Yes
+26 Smoke Carryover: No
 
 Game State
 ----------

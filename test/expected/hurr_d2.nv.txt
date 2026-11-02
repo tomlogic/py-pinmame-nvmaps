@@ -134,7 +134,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 8%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -147,6 +147,29 @@ A.1 Standard Adjustments
 30 Power Save Level: 5
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
+
+A.2 Feature Adjustments
+-----------------------
+01 Pct. Extra Balls: 25%
+02 Pct. Special: 4%
+03 E.B. Lights At: 3X
+04 Sp. Lights At: 3 M. Balls
+05 Multiball Diff.: Easy
+06 Ferris Diff.: Medium
+07 Dummy Timer: 0:00:18
+08 Hurricane Diff.: Medium
+09 Hurricane Timer: 0:00:13
+10 Hurricane Mill.: 3 Ramps
+11 Comet Diff.: Easy
+12 Comet Timer: 0:00:10
+13 Comet Start: 50,000
+14 Palace Timer: 0:00:08
+15 Palace Start: Pal
+16 Palace Lights: Always
+17 Jackpot Timer: Slow
+18 Clown Lights: Always
+19 Family Mode: No
+20 Match Effect: Short
 
 Game State
 ----------

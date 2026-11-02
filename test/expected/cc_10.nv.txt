@@ -168,7 +168,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -183,6 +183,29 @@ A.1 Standard Adjustments
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
 34 Allow Chase Ball: Yes
+
+A.2 Feature Adjustments
+-----------------------
+01 Plyr Tournament: Yes
+02 Ball Saves: 1
+03 Ball Save Time: 4
+04 A-Mode Music: No
+05 Timed Plunger: Off
+06 Flipper Plunger: No
+07 Q.Draw Difficulty: Ex. Easy
+08 Light Q.Drw Diff.: Easy
+09 Q.Draws At Start: 0
+10 Q.Draws For EB: 4
+11 Starting Rank: Stranger
+12 Combos For Star: 10
+13 Num Bart Bros.: 3
+14 Train Mechanism: Enabled
+15 Polly EB Avail.: Yes
+16 Polly Awd. Shots: 5
+17 Gunft. Time (Sec): 6
+18 Bounty Lit Ball1: No
+19 Special Carry: No
+20 L Outlane Carry: Yes
 
 Game State
 ----------

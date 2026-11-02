@@ -121,7 +121,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -135,6 +135,22 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 % Random X. Ball: 18%
+02 Attract Sounds: Off
+03 Ballsave Time: 0:00:07
+04 Buy Extra Ball: 1 Credit
+05 Timed Plunger: Off
+07 Bowl. Credits: 1
+08 % Multiball: 10%
+09 % Light X. Ball: 5%
+10 Drain Save Timer: 0:00:06
+15 Max. Buyins: 3
+16 % Bedrock Derby: 40%
+17 Flipper Plunger: Off
+18 Amode GI Show: On
 
 Game State
 ----------

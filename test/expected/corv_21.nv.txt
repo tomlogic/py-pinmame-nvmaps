@@ -153,7 +153,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -167,6 +167,29 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Ex. Ball Memory: Yes
+03 Ex. Ball Percent: 20
+04 Ex. Ball Level: 7
+05 Ball Saves: 1
+06 Ball Save Time: 5
+07 Lock Difficulty: Medium
+08 Race Difficulty: Medium
+09 Catch Difficulty: Medium
+10 Chal. Difficulty: Easy
+11 Super Skill Shot: Yes
+12 Challenge Flips: Yes
+13 Endgame Lock Rel.: Yes
+14 Enable Def Saver: No
+15 Enable Censor: No
+16 Disable Zr1-Lt5: No
+17 A-Mode Music: No
+18 Kick. Difficulty: Medium
+19 No Match Speech: Off
+23 Backup Null Champ: 100
 
 Game State
 ----------

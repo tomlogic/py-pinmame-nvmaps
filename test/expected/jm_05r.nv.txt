@@ -198,6 +198,8 @@ A.2 Feature Adjustments
 16 Hand Position X: 44
 17 Hand Position Y: -24
 18 Hand Disabled: NO
+20 Def. Cyberpunk: 140
+21 Backup Null Champ: 100
 
 Game State
 ----------

@@ -191,7 +191,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -205,6 +205,42 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: Off
+02 Buy In Count: 1
+03 Attract Sounds: Off
+04 Flipper Sounds: On
+05 Attract Spider: 0:05:00
+06 Timed Plunger: Off
+07 Flipper Plunger: No
+08 Ball Saves: 1
+09 Ball Save Time: 4
+10 Coffin Ball Save: 6
+11 Crate Ball Save: 6
+12 Ex. Ball Percent: 20
+13 Ramp E.B. Start: 8
+14 Ramp Ex. Ball 2: On
+15 Autofire Locks: No
+16 Coffin Multiball: Medium
+17 Crate Multiball: Medium
+18 Ramp EB Memory: Yes
+19 Spider EB Memory: Yes
+20 Mystery E.B.Memory: Yes
+21 Leaper E.B. Memory: Yes
+22 Stiff Mode Timer: 30
+23 Boogie Mode Time: 20
+24 2X Mode Time: 20
+25 Leaper Mode Time: 20
+26 Beat Mode Timer: 20
+27 Plyr Tournament: Yes
+28 Disable Coffin: No
+29 Disable Crate: No
+30 Disable Spider: No
+31 Family Mode: Off
+32 Boogie Dancers: Off
+33 Clear Coffin Jam: On
 
 Game State
 ----------

@@ -1,4 +1,4 @@
-Using maps/williams/wpc/dm_lx4.map.json for dm_da1.nv
+Using maps/williams/wpc/dm_la1.map.json for dm_da1.nv
 Dumping known entries for dm_da1.nv [Demolition Man (DA-1 LED Ghost Fix)]...
 
 B.2 Earnings Audits
@@ -198,26 +198,26 @@ A.2 Feature Adjustments
 01 Buy Extra Ball: 1 Credit
 02 Ball Saves: 1
 03 Ball Save Time: 6
-04 Timed Plunger: OFF
+04 Timed Plunger: Off
 05 Ex. Ball Percent: 20
 06 1st Ex.Ball Level: 12
 07 2nd Ex.Ball Level: 50
-08 Combo E.B. Memory: YES
-09 Bonus X EB Mem.: YES
-10 Computer EB Mem.: YES
-11 Claw Difficulty: EASY
-12 Q. Freeze Diff.: MEDIUM
+08 Combo E.B. Memory: Yes
+09 Bonus X EB Mem.: Yes
+10 Computer EB Mem.: Yes
+11 Claw Difficulty: Easy
+12 Q. Freeze Diff.: Medium
 13 Combos/Computer: 10
-14 Computer Memory: YES
-15 A-Mode Sound: YES
-16 A-Mode Music: YES
+14 Computer Memory: Yes
+15 A-Mode Sound: Yes
+16 A-Mode Music: No
 17 Cred. Champ. Demo: 1
-18 Flipper Plunger: NO
-19 Claw Disabled: NO
+18 Flipper Plunger: No
+19 Claw Disabled: No
 20 Eyeball E.B. Level: 3
-21 Eyeball E.B. Mem.: YES
-24 Match Speech: OFF
-25 Crash Ball Save: EASY
+21 Eyeball E.B. Mem.: Yes
+22 Backup Demo Champ: 500
+23 Secret Features: On
 
 Game State
 ----------

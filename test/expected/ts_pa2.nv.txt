@@ -1,4 +1,4 @@
-Using maps/williams/wpc/ts_lx5.map.json for ts_pa2.nv
+Using maps/williams/wpc/ts_pa1.map.json for ts_pa2.nv
 Dumping known entries for ts_pa2.nv [Shadow, The (PA-2 LED Ghost Fix)]...
 
 B.2 EARNINGS AUDS.
@@ -182,7 +182,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -196,6 +196,47 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Max. Buyin Balls: 1
+03 Attract Music: Off
+04 Attract Sound: On
+05 Timed Plunger: Off
+06 Flipper Plunger: Off
+07 Ball Save Timer: 0:00:05
+08 Shadow Ball Save: 0:00:12
+09 Khan Ball Save: 0:00:06
+10 Hotel Ball Save: 0:00:09
+11 Cntr. Hit Bl. Save: No
+12 Farley Scene Tm.: 30
+13 Guilty Scene Tm.: 30
+14 Sphere Scene Tm.: 30
+15 Escape Doom Max: 30,000,000
+16 Vengeance Timer: 30
+17 Multi Lock Timer: 10
+18 Ex. Ball Percent: 20
+19 Who Knw. E.B.Memory: Yes
+20 Skill Shot E.B.Mem.: Yes
+21 Battle E.B. Memory: Yes
+22 Loop E.B. Memory: Yes
+23 Loop E.B. Start: 3
+24 Khan Lit Memory: Yes
+25 Khan Start Timer: 0:00:15
+26 Hold Locks: No
+27 Mongol Hurry Up: Medium
+28 Family Mode: Off
+29 Left Divertor: On
+30 Right Divertor: On
+31 Mini Playfield: On
+32 Autofire Locks: No
+33 Sdw. Loop Default: 2
+34 Bckup Aux Grand: 900
+35 Bckup Aux HSTD 1: 850
+36 Bckup Aux HSTD 2: 800
+37 Bckup Aux HSTD 3: 750
+38 Bckup Aux HSTD 4: 700
 
 Game State
 ----------

@@ -1,4 +1,4 @@
-Using maps/williams/wpc/taf_l5.map.json for taf_i4.nv
+Using maps/williams/wpc/taf_h4.map.json for taf_i4.nv
 Dumping known entries for taf_i4.nv [Addams Family, The (I-4 LED Ghost Fix)]...
 
 B.2 EARNINGS AUDS.
@@ -148,7 +148,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -162,6 +162,41 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Ex. Ball Percent: 25
+02 Bear Kick Ex. B. 1: 8
+03 Bear Kick Ex. B. 2: On
+04 Train Wreck E.B.: 4
+05 Bear Ex. B. Memory: Yes
+06 House Ex.B. Memory: Yes
+07 Train Ex.B. Memory: Yes
+08 Last Thing Lock: 1
+09 Last Swamp Lock: 1
+10 Last Chair Rel.: 2
+11 Jakpot Carryover: Yes
+12 Mil. Plus Memory: No
+13 Mil. Plus Max.: 10,000,000
+14 Hurry Up Start: 15,000,000
+15 House From Swamp: Yes
+16 Free Thing Lamps: 3
+17 Raise Dead Hits: 4
+18 Train Wreck Hits: 2
+19 Special Memory: No
+20 Disable Thing: No
+21 Disable Bookcase: No
+22 Trn. Wreck Memory: Yes
+23 Q. Multi Memory: Yes
+24 Green Lock Lamp: Yes
+25 Tour Ex.B. Memory: No
+26 Tour Difficulty: Medium
+27 A-Mode Sound: Yes
+28 A-Mode Music: No
+29 Gameover Kickout: No
+30 Spot Greed/Ball: Yes
+31 Freeplay Message: On
+32 Spot T-H-I-N-G: Left Ramp
 
 Game State
 ----------

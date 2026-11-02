@@ -1,4 +1,4 @@
-Using maps/williams/wpc/jy_12.map.json for jy_03.nv
+Using maps/williams/wpc/jy_03.map.json for jy_03.nv
 Dumping known entries for jy_03.nv [Junk Yard (0.3 Prototype)]...
 
 B.2 EARNINGS AUDS.
@@ -166,7 +166,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -180,6 +180,23 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: Off
+02 Buy In Count: 1
+03 Ball Saves: Off
+04 Ball Save Time: 6
+05 Timed Plunger: Off
+06 Flipper Plunger: No
+07 Staged Ball: On
+08 Special Mode: Yes
+09 Amode Bong Snds: Off
+10 Extraball Percnt: 35
+11 Multiball Percnt: 35
+12 Recycle Diffclty: Medium
+13 Euro Time Machne: No
+14 Window Awards: Normal
 
 Game State
 ----------

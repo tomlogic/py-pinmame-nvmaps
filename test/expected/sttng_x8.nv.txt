@@ -1,4 +1,4 @@
-Using maps/williams/wpc/sttng_l7.map.json for sttng_x8.nv
+Using maps/williams/wpc/sttng_x8.map.json for sttng_x8.nv
 Dumping known entries for sttng_x8.nv [Star Trek: The Next Generation (LX-8 MOD, Special Sound L-1)]...
 
 B.2 EARNINGS AUDS.
@@ -158,7 +158,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY

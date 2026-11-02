@@ -171,7 +171,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -185,6 +185,50 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Ball Saves: 1
+02 Ball Save Time: 4
+03 Ex. Ball Percnt.: 25
+04 Starting Castle: Random
+05 Castle Diff.: Hard
+06 Castle Ex. Ball: 2
+07 1st Hard Lock: 2
+08 Castle M.B. E.B. Dif.: Medium
+09 Troll Tgt. Memory: Yes
+10 Troll Tgt. Count: 8
+11 Troll Difficulty: Medium
+12 Troll Timer: 30
+13 Hurry Up E.B. 1: 10
+14 Hurry Up E.B. 2: 40
+15 R. Madness Save: Yes
+16 Max. R. Madness E.B.: 4
+17 B. King. Start Dif.: Easy
+18 Lane Video 1: 8
+19 Lane Video 2: 50
+20 Video E.B.: Yes
+21 Playr. Tourn. Mode: Yes
+22 Family Mode: No
+23 Attract Music: No
+24 Attract Sounds: Yes
+25 Timed Plunger: Off
+26 Flipper Plunger: No
+27 Disable L. Gate: No
+28 Disable R. Gate: No
+29 Disable Twr. Dvt.: No
+30 Disable Twr. Lock: No
+31 Disable Drwbrdg.: No
+32 Disable Cstl. Gt.: No
+33 Disable Castle: No
+34 Disable L. Troll: No
+35 Disable R. Troll: No
+36 Buy Extra Ball: Off
+37 Buy In Count: 1
+53 Battle Champ. 1: 1
+54 Battle Champ. 2: 0
+55 Battle Champ. 3: 0
+56 Battle Champ. 4: 0
 
 Game State
 ----------

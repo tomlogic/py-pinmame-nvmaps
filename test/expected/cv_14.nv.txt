@@ -174,7 +174,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -189,6 +189,43 @@ A.1 Standard Adjustments
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
 34 Allow Chase Ball: Yes
+
+A.2 Feature Adjustments
+-----------------------
+01 Ball Saves: 1
+02 Timed Plunger: Off
+03 Ball Save Time: 4
+04 Mball. Ball Saver: 5
+05 R.Mstr. Ball Save: 5
+06 Arc Mball. Save: 5
+07 Jugle. Mball. Save: 5
+08 Neon M.B Saver: 8
+09 Rmaster. Ex.Ball: 3
+10 "Boom" For E.B: 15
+11 Ramp Difficulty: Medium
+12 "Ring" Memory: No
+13 Side Show Lit: Yes
+14 Super Jets Time: 10
+15 Popcorn Time: 20
+16 Roonie Timer: 20
+17 Hat-Trick Timer: 20
+18 Cannon Mode Time: 10
+19 M/B Stack Locks: 1
+20 Flprs. Abort Anim.: Instant
+21 Plyr Tournament: Yes
+22 Magnet Ball Save: Yes
+23 A.Mode Music: Off
+24 A.Mode Sounds: Off
+25 A.Mode Flpr. Snds.: Yes
+26 Coin Start: No
+27 Neon Off Time: 1:00:00
+28 Neon On Time: 0:05:00
+29 Backbox: On
+30 Ringmaster: On
+31 Diverter: On
+32 "Knocker" Volume: 31
+33 Low Rm. Batle. Scr.: No
+34 Gameover Kickout: Delayed
 
 Game State
 ----------

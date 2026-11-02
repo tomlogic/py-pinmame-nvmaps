@@ -175,7 +175,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -189,6 +189,64 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Ball Time: 0:00:35
+02 Auto. %Spec.&Match: Yes
+03 V.Mode Auto.Ex.Ball: 10%
+04 V. Mode Ex.Ball: 3 Waves
+05 W.H.O. Auto. Ex.Ball: 10%
+06 1st Ex.B. Lit At: 2
+07 Next Ex.B. Lit At: 4 W-H-O
+08 Mem. Extra Ball: Yes
+09 Mem. W-H-O Timer: Yes
+10 1st W-H-O Timer: 0:00:10
+11 2nd W-H-O Timer: 0:00:08
+12 3rd W-H-O Timer: 0:00:07
+13 Last W-H-O Timer: 0:00:06
+14 Easy Locks For: 1
+15 Easy 3X5 For: 1
+16 3b. Jackpt./Davros: 2
+17 2b. Jackpt./Davros: 3
+18 Rematch 1st Ball: 0:00:10
+19 Rematch 2nd Ball: 0:00:05
+20 Rematch Targ. Add: 0:00:05
+21 Game Over Unlock: Yes
+22 R.E.P.A.I.R. 1 Lamp: 0:00:10
+23 R.E.P.A.I.R. 2 Lamps: 0:00:09
+24 R.E.P.A.I.R. 3 Lamps: 0:00:08
+25 R.E.P.A.I.R. 4 Lamps: 0:00:07
+26 R.E.P.A.I.R. 5 Lamps: 0:00:06
+27 R.E.P.A.I.R. All Lamps: 0:00:10
+28 Transmat/Doc. Mem.: Yes
+29 Transmat Spotdoc.: 750,000
+30 Mem. Doctors 1-7: Add 1
+31 Pre-Lite E.S.C.A.P.E.: 1 Lamps
+32 E.S.C.A.P.E. Targ. Mem.: Yes
+33 E.S.C.A.P.E. Bonus Mem.: No
+34 Bonus 'X' Memory: Yes
+35 Plyfld. X Memory: Yes
+36 Playfield, 1.5X: 0:00:10
+37 Playfield, 2.0X: 0:00:09
+38 Playfield, 2.5X: 0:00:08
+39 Playfield, 3.0X: 0:00:07
+40 Playfield, 3.5X: 0:00:06
+41 Playfield, 4.0X: 0:00:10
+42 Hang-On Time: 0:00:02
+43 Second Chance: 0:00:02
+44 Video Mode Lit.: Not Lit
+45 V.Mode Esc. Relit: Yes
+46 Video Mode Diff.: Medium
+47 Miniplayfield: Enabled
+48 Trap Door: Enabled
+49 Backbox Head: 
+50 Attr. Mode Sounds: None
+51 Fancy A. Mode G.I.: Yes
+52 Timed Plunger: Off
+53 Flipper Plunger: No
+54 Kick Lock Holes: No
+55 Game Start Doc.: 7
 
 Game State
 ----------

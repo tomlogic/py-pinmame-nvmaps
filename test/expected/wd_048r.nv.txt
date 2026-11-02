@@ -172,7 +172,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -186,6 +186,27 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Buy In Count: 3
+03 Ball Saves: 1
+04 Ball Save Time: 6
+05 Timed Plunger: Off
+06 Flipper Plunger: No
+07 Novice Mode: 2 Minutes
+08 Special Mode: Yes
+09 Plyr Tournament: Yes
+10 Staged Ball: On
+11 Amode Bong Snds: Sparse
+12 Extraball Percnt: 35
+13 Multiball Percnt: 35
+14 Extraball Memory: On
+15 Roof Champ Hard: Off
+16 Disable Slots: Off
+17 Disable Ramp: Off
+18 Disable 3 Bank: Off
 
 Game State
 ----------

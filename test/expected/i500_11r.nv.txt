@@ -172,7 +172,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -186,6 +186,38 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Buy In Count: 3
+03 Attract Sounds: Off
+04 Flipper Sounds: On
+05 Timed Plunger: Off
+06 Flipper Plunger: No
+07 Ball Save Time: 6
+08 Ball Saves: 1
+09 Turbo Ball Save: 0:00:09
+10 Boost Ball Save: 0:00:09
+11 Pit Ball Save: 0:00:07
+12 Ex. Ball Percent: 20
+13 Ramp E.B. Start: 8
+14 Ramp Ex. Ball 2: On
+15 Autofire Locks: No
+16 Race Difficulty: Medium
+17 Spdway EB Memory: Yes
+18 Ramp EB Memory: Yes
+19 Setup EB Memory: Yes
+20 Liteup EB Memory: Yes
+21 Pit Stop Time: 25
+22 Duel Mode Time: 30
+23 3X Mode Time: 30
+24 W. Turn Mode Time: 30
+25 Pole Mode Time: 20
+26 Gas Alley Time: 30
+27 Change Set. Time: 5
+28 Plyr Tournament: Yes
+29 German Speech: Off
 
 Game State
 ----------

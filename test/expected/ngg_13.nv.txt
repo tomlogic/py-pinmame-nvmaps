@@ -138,7 +138,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -153,6 +153,41 @@ A.1 Standard Adjustments
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
 34 Allow Chase Ball: Yes
+
+A.2 Feature Adjustments
+-----------------------
+01 A-Mode Sound: No
+02 A-Mode Music: No
+03 German Speech: No
+04 Plyr Tournament: Yes
+05 Ball Saves: 1
+06 Ball Save Time: 6
+07 Timed Plunger: Off
+08 Save After Ball1: Yes
+09 Disable Motor: No
+10 Disable Lft Ramp: No
+11 Disable Rgt Ramp: No
+12 Disable L Gofer: No
+13 Disable R Gofer: No
+14 Jets Diff.: Medium
+15 H-In-1 Reset: No
+16 Trap E.B. Mem.: Yes
+17 Golf EB At Hole: Auto %
+18 Golf E.B. Mem.: Yes
+19 Wheel E.B. Mem.: No
+20 Cart E.B. Mem.: Yes
+21 Kickback Diff.: Medium
+22 K-I-C-K Starts: Off
+23 Stack Kickbacks: Yes
+24 Max Kb Stack: 1
+25 First Cart Awd: 3
+26 Cart Award Intvl: 5
+27 Gofer Attitude: Very Rude
+28 Jet Kickback: Yes
+29 Volume Interlock: No
+30 Cart Path Reset: Yes
+31 Daily H.S. Cred: 0
+32 Kick Down Middle: No
 
 Game State
 ----------

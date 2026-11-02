@@ -202,7 +202,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -216,6 +216,44 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Timed Plunger: Off
+02 Flipper Plunger: Off
+03 Loop Lit Timer: 0:00:10
+04 Ramp Lit Timer: 0:00:08
+05 Ball Save Timer: 0:00:05
+06 Ball Save 3multi: 0:00:10
+07 Ball Save 2multi: 0:00:03
+08 Capt. Multi Start: 3 Hits
+09 Captive Multi Tm.: 0:00:20
+10 Get The Idol Tm.: 0:00:30
+11 Streets/Cairo Tm.: 0:00:30
+12 Monkey Brains Tm.: 0:00:30
+13 Steal/Stones Tm.: 0:00:30
+14 Rope Bridge Tm.: 0:00:30
+15 Castle Grnwld Tm.: 0:00:30
+16 Tank Chase Tm.: 0:00:30
+17 3 Challenges Tm.: 0:00:30
+18 Raven Bar Level: 1
+19 Choose Wise Lev.: 1
+20 Jackpot Mult. Tmr.: 0:00:10
+21 Path Start Level: 1
+22 Adv. Continue. Tmr.: 0:00:15
+23 Path Ex.Ball-Pit: Easy
+24 Lower Ex.Ball Hld.: On
+25 Super Jet Start: 75 Hits
+26 Hand/Fate Diff.: Easy
+27 Hand/Fate Timer: 0:00:10
+28 Hold Idol Locks: Yes
+29 Attract Music: Off
+30 Attract Sound: On
+31 Buy Extra Ball: 1 Credit
+32 Buy-In Bl.Save Tm.: 0:00:10
+33 Gun Trig. Buy In: Nothing
+34 Outlane Bl. Save: On
+35 Jackpot Diffclty.: Hard
 
 Game State
 ----------

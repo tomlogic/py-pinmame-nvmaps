@@ -1,4 +1,4 @@
-Using maps/williams/wpc/tom_13.map.json for tom_06.nv
+Using maps/williams/wpc/tom_06.map.json for tom_06.nv
 Dumping known entries for tom_06.nv [Theatre of Magic (0.6A Prototype)]...
 
 B.2 EARNINGS AUDS.
@@ -161,25 +161,20 @@ A.1 Standard Adjustments
 A.2 Feature Adjustments
 -----------------------
 01 Buy Extra Ball: ?3
-02 Buy-In Count: 4
-03 Attract Sounds: OFF
-04 Ball Save: ON
-05 Default Buy-In HS1: 1,000M
-06 Default Buy-In HS2: 980M
-07 Default Buy-In HS3: 960M
-08 Default Buy-In HS4: 940M
+02 Buy In Count: 4
+03 Attract Sounds: Off
+04 Ball Save: On
+05 Buyin HSTD 1: 1,000
+06 Buyin HSTD 2: 980
+07 Buyin HSTD 3: 960
+08 Buyin HSTD 4: 940
 09 % Spell Magic: 12%
-10 % Lite Extra Ball: 12%
+10 % Lite X. Ball: 12%
 11 % Lite Special: 1%
-12 Trunk Ball Save: NO
+12 Trunk Ball Save: No
 13 Hocus Pocus: 15
-14 Trunk Motor: ON
-15 German Speech: OFF
-16 'MAGIC' memory: n/a
-17 Difficult Lock: n/a
-18 Clock Start Hour: 12 NOON
-19 Mode Start Hits: 0
-20 Give Magic Letter: OFF
+14 Trunk Motors: On
+15 German Speech: Off
 
 Game State
 ----------

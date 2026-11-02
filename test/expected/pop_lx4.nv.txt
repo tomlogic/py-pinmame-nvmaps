@@ -150,7 +150,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -164,6 +164,23 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Ex. Ball Percent: 25
+02 Ramp Ex. Ball 1: 8
+03 Ramp Ex. Ball 2: On
+04 Ramp Ex.B. Memory: Yes
+05 Escal. Ex.B. Memory: Yes
+06 Special Memory: Yes
+07 Mode Difficulty: Medium
+08 Hurry Up Start: 40,000,000
+09 Escal. Award Time: 4
+10 Buy Extra Ball: 1 Credit
+11 Ball Save Time: Off
+12 Attract Sounds: Off
+13 Flipper Sounds: On
+14 Loop Record: 2
 
 Game State
 ----------

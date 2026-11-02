@@ -1,4 +1,4 @@
-Using maps/williams/wpc/wcs_l2.map.json for wcs_p2.nv
+Using maps/williams/wpc/wcs_p2.map.json for wcs_p2.nv
 Dumping known entries for wcs_p2.nv [World Cup Soccer (PA-2 Prototype)]...
 
 B.2 EARNINGS AUDS.
@@ -165,7 +165,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -179,6 +179,41 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Buy Extra Ball: 1 Credit
+02 Buy In Count: 3 Buy Ins
+03 Starting Rank: 16
+04 Last Easy M. Ball: 1
+05 Last Easy Rel.: 0
+06 Goals/No Rematch: 1
+07 Strikr. Awd. Goals: 1st Award
+08 Free Striker Awd.: Yes
+09 Striker Diff.: Easy
+10 Striker E.B. Diff.: Easy
+11 Free Cities: 0
+12 L.A. Tkt. In Order: 1
+13 Final Match Diff.: Medium
+14 Final Match Chal.: Challenger
+15 Goal Lit / Ball: Yes
+16 Free Tv Award: Yes
+17 Rmps Spot Rlovr: Off
+18 Max Kickbacks: 1
+19 Starting Kickbks: 1
+20 Kickback Memory: Medium
+21 Free Magnagoalie: Yes
+22 Striker E.B. Mem.: Yes
+23 Wash. D.C. E.B. Mem.: Yes
+24 Special Memory: No
+25 A-Mode Sound: Yes
+26 A-Mode Music: No
+27 Header Save: Yes
+28 Endgame Lock Rel.: Yes
+29 Spec. Challenge: Yes
+30 Free Ride Time: 5
+31 Lock Magnet Time: 90
+32 Disable Rollovrs: No
 
 Game State
 ----------

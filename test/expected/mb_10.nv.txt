@@ -141,7 +141,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -156,6 +156,40 @@ A.1 Standard Adjustments
 32 No Bonus Flips: Yes
 33 Game Re-Start: Slow
 34 Allow Chase Ball: Yes
+
+A.2 Feature Adjustments
+-----------------------
+01 Ball Saves: Off
+02 Ball Save Time: 3
+03 Ex. Ball Percnt.: 30
+04 Creature Timer: 20
+05 Ball/Chain Timer: 30
+06 Frank. B.P. Spot/B.S.: No
+07 Mayhem Timer: 45
+08 Drac. Letters: 3
+09 Drac-Atk. Timer: 30
+10 Monsters Ex. Ball: 3
+11 Instr. Spec.: 4
+12 Max. Instr. Spec.: 1
+13 C. Loop Ex. Ball 1: 12
+14 C. Loop Ex. Ball 2: 30
+15 Special Memory: No
+16 Knocker Sound: Yes
+17 Plyr Tournament: Yes
+18 Family Mode: No
+19 Attract Music: No
+20 Attract Sounds: Yes
+21 Timed Plunger: Off
+22 Flipper Plunger: No
+23 Disbale P-Flip: No
+24 Disable Bride: No
+25 Disable U/D Bnk.: No
+26 Disable Frank.: No
+27 Disable Rmp. Lok.: No
+29 Disable Mummy: No
+30 Disable L. Gate: No
+31 Disable R. Gate: No
+32 Disable Dracula: No
 
 Game State
 ----------

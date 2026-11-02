@@ -154,7 +154,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -168,6 +168,27 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Attract Sounds: Off
+02 Special Percent: 3%
+03 Extraball Percnt: 12%
+04 Timed Plunger: Off
+05 Flipper Plunger: Off
+06 Kickback Setting: Medium
+07 Extraball Memory: On
+08 Consolation Ball: On
+09 Getaway Timer: 0:00:20
+10 Video Mode Timer: 0:00:14
+11 Freeway Timer: 0:00:08
+12 Photo Shoot: Off
+13 Multiball Percnt: 20%
+14 S. Charger Timer: 0:00:20
+15 Divertor Broken: Off
+16 Up/Dn Ramp Broke: Off
+17 Spot L. On S. Ramp: On
+18 Use Mars Lamp: On
 
 Game State
 ----------

@@ -1,4 +1,4 @@
-Using maps/williams/wpc/cftbl_l4.map.json for cftbl_l4c.nv
+Using maps/williams/wpc/cftbl_l4c.map.json for cftbl_l4c.nv
 Dumping known entries for cftbl_l4c.nv [Creature from the Black Lagoon (L-4C Competition + LED Ghost MOD)]...
 
 B.2 EARNINGS AUDS.
@@ -149,7 +149,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -163,6 +163,29 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Special: 3%
+02 Lite Special: 3%
+03 Multiball: 20%
+04 Extra Ball: 13%
+05 Attract Sounds: Off
+06 Sup. Jack. Cnt: 20
+07 Ball Save Time: 6
+08 Mega Menu Timer: 20
+09 Restart M.Ball: 12
+10 Spot Targets: Yes
+11 Big Mill. Timer: 12
+12 Big Mill. Limit: 20
+13 Video Mode Timer: 12
+14 Video K.O. Cnt: 17
+15 Reset Kiss: No
+16 Rotate Lamps: Yes
+17 Family Mode: No
+18 Rmp Strt Mde Cnt: 4
+19 Girl Search: T-Play
+20 T-Play S.B. Mill.: Yes
 
 Game State
 ----------

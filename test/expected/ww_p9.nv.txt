@@ -1,4 +1,4 @@
-Using maps/williams/wpc/ww_l5.map.json for ww_p9.nv
+Using maps/williams/wpc/ww_l2.map.json for ww_p9.nv
 Dumping known entries for ww_p9.nv [White Water (P-9 Prototype LED Ghost Fix)]...
 
 B.2 EARNINGS AUDS.
@@ -156,7 +156,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -170,6 +170,24 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Ex. Ball Percent: 25
+02 Ramp Ex. Ball 1: 12
+03 Ramp Ex. Ball 2: On
+04 Bldr. Ex.B. Memory: Yes
+05 Ramp Ex. B. Memory: Yes
+06 Mystery E.B.Memory: Yes
+07 Hurry Up Start: 20,000,000
+08 Hot Foot Percent: 25
+09 Hot Foot Count: 4
+10 Kickback Memory: Off
+11 Insanity Record: 12
+12 Percent Special: 5
+13 Disable Bigfoot: No
+14 Attract Sounds: Off
+15 Flipper Sounds: On
 
 Game State
 ----------

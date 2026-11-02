@@ -125,7 +125,7 @@ A.1 Standard Adjustments
 17 Ex. Ball Ticket: No
 18 Max. Tick./Player: 25
 19 Match Feature: 7%
-20 Custom Message: ON
+20 Custom Message: On
 21 Language: English
 22 Clock Style: AM / PM
 23 Date Style: Mmm. DD, YY
@@ -139,6 +139,28 @@ A.1 Standard Adjustments
 31 Ticket Exp. Board: No
 32 No Bonus Flips: No
 33 Game Re-Start: Slow
+
+A.2 Feature Adjustments
+-----------------------
+01 Ex. Ball Count: 6
+02 Attract Sounds: Off
+03 Family Mode: No
+04 Shots For Mode: 1
+05 Ballsave Time: 0:00:05
+06 Manhunt Timer: 0:00:30
+07 Sniper Timer: 0:00:30
+08 Stakeout Timer: 0:00:30
+09 Pursuit Timer: 0:00:30
+10 Safecrackr Timer: 0:00:30
+11 Bad Imper. Timer: 0:00:30
+12 Meltdown Timer: 0:00:30
+13 Battle Tnk Timer: 0:00:30
+14 Super Grnd Champ.: 350,000,000
+15 Super HSTD 1: 320,000,000
+16 Super HSTD 2: 310,000,000
+17 Super HSTD 3: 300,000,000
+18 Super HSTD 4: 290,000,000
+19 Buy Extra Ball: 1 Credit
 
 Game State
 ----------

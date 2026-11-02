@@ -210,12 +210,14 @@ A.2 Feature Adjustments
 13 Combos/Computer: 10
 14 Computer Memory: YES
 15 A-Mode Sound: YES
-16 A-Mode Music: YES
+16 A-Mode Music: NO
 17 Cred. Champ. Demo: 1
 18 Flipper Plunger: NO
 19 Claw Disabled: NO
 20 Eyeball E.B. Level: 3
 21 Eyeball E.B. Mem.: YES
+22 Backup Demo Champ: 500
+23 Secret Features: On
 24 Match Speech: ON
 25 Crash Ball Save: EASY
 
