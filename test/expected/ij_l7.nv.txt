@@ -236,8 +236,8 @@ A.2 Feature Adjustments
 15 Castle Grnwld Tm.: 0:00:25
 16 Tank Chase Tm.: 0:00:25
 17 3 Challenges Tm.: 0:00:25
-18 Raven Bar Level: 2
-19 Choose Wise Lev.: 1
+18 Raven Bar Level: Level 2
+19 Choose Wise Lev.: Level 1
 20 Jackpot Mult. Tmr.: 0:00:10
 21 Path Start Level: 2
 22 Adv. Continue. Tmr.: 0:00:10

@@ -1,5 +1,5 @@
 Using maps/williams/wpc/t2_l2.map.json for t2_l2.nv
-Dumping known entries for t2_l2.nv [Terminator 2: Judgment Day (L-2)]...
+Dumping known entries for t2_l2.nv [Terminator 2: Judgment Day (L-2, L-3 Sound)]...
 
 B.2 EARNINGS AUDS.
 ------------------

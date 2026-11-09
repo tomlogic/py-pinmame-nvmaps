@@ -197,16 +197,16 @@ A.2 Feature Adjustments
 03 V.Mode Auto.Ex.Ball: 10%
 04 V. Mode Ex.Ball: 3 Waves
 05 W.H.O. Auto. Ex.Ball: 10%
-06 1st Ex.B. Lit At: 2
-07 Next Ex.B. Lit At: 4 W-H-O
+06 1st Ex.B. Lit At: W-H-O 2
+07 Next Ex.B. Lit At: +4 W-H-O
 08 Mem. Extra Ball: Yes
 09 Mem. W-H-O Timer: Yes
 10 1st W-H-O Timer: 0:00:10
 11 2nd W-H-O Timer: 0:00:08
 12 3rd W-H-O Timer: 0:00:07
 13 Last W-H-O Timer: 0:00:06
-14 Easy Locks For: 1
-15 Easy 3X5 For: 1
+14 Easy Locks For: Jackpot 1
+15 Easy 3X5 For: Jackpot 1
 16 3b. Jackpt./Davros: 2
 17 2b. Jackpt./Davros: 3
 18 Rematch 1st Ball: 0:00:10

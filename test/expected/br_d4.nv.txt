@@ -193,9 +193,9 @@ A.2 Feature Adjustments
 19 Attract Sound: Off
 20 Special Pct: 7%
 21 Special Lt. After: 2 Shp Sunk
-22 Swing Rig. Start: 1
-23 Walk Plank Start: 1
-24 Knife Thrw Start: 1
+22 Swing Rig. Start: Level 1
+23 Walk Plank Start: Level 1
+24 Knife Thrw Start: Level 1
 25 Video Gm. Levels: On
 26 Cannon Levels: On
 27 Cannon Lev. Start: 1

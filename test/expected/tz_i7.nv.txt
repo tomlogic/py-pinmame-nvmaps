@@ -209,7 +209,7 @@ A.2 Feature Adjustments
 33 Cred. Champ. Zone: 1
 34 A.Mode Clock Time: Yes
 35 Balls In Gumball: 3
-36 Last Free Ride: 1
+36 Last Free Ride: Ball 1
 37 Freeplay Message: On
 
 Game State

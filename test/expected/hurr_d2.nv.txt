@@ -152,7 +152,7 @@ A.2 Feature Adjustments
 -----------------------
 01 Pct. Extra Balls: 25%
 02 Pct. Special: 4%
-03 E.B. Lights At: 3X
+03 E.B. Lights At: Bonus 3X
 04 Sp. Lights At: 3 M. Balls
 05 Multiball Diff.: Easy
 06 Ferris Diff.: Medium
