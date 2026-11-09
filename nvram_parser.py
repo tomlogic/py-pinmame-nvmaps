@@ -777,7 +777,7 @@ class RamMapping(object):
             return "%d:%02d:%02d" % (h, m, s)
         elif units == 'minutes':
             return "%d:%02d:00" % divmod(value, 60)
-        return format_number(value) + self.entry.get('suffix', '')
+        return self.entry.get('prefix', '') + format_number(value) + self.entry.get('suffix', '')
 
     def entry_values(self) -> List[str]:
         """Return a list of values for an entry with enum or dipsw encoding."""
